@@ -10,19 +10,19 @@
     <lastBuildDate>Sun, 06 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://thqnhat.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploy Azure Bastion as Code with Terraform</title>
-      <link>https://thqnhat.github.io/post/2020-12-06-azure-bastion-with-terraform/</link>
+      <link>https://thqnhat.github.io/post/2020/2020-12-06-azure-bastion-with-terraform/</link>
       <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://thqnhat.github.io/post/2020-12-06-azure-bastion-with-terraform/</guid>
+      <guid>https://thqnhat.github.io/post/2020/2020-12-06-azure-bastion-with-terraform/</guid>
       <description>Coming soon!</description>
     </item>
     
     <item>
       <title>First post!</title>
-      <link>https://thqnhat.github.io/post/2020-12-06-first-post/</link>
+      <link>https://thqnhat.github.io/post/2020/2020-12-06-first-post/</link>
       <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://thqnhat.github.io/post/2020-12-06-first-post/</guid>
+      <guid>https://thqnhat.github.io/post/2020/2020-12-06-first-post/</guid>
       <description>Yeah. This is real. My blog is live :)
 Long time ago, I would like to make a blog to share my experience and my point of view but I&amp;rsquo;m not able to arrange myself to do that. Recently, I viewed some technical blogs that hosted by GitHub and they are inspring me how I can build fastly a blog with GitHub pages.
 And that I would like to share with you in this article.</description>
