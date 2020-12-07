@@ -61,7 +61,7 @@ And that I would like to share with you in this article.">
   "headline": "First post!",
   "description" : "Yeah. This is real. My blog is live :)\nLong time ago, I would like to make a blog to share my experience and my point of view but I\u0026rsquo;m not able to arrange myself to do that. Recently, I viewed some technical blogs that hosted by GitHub and they are inspring me how I can build fastly a blog with GitHub pages.\nAnd that I would like to share with you in this article.",
   "inLanguage" : "en",
-  "wordCount":  564 ,
+  "wordCount":  570 ,
   "datePublished" : "2020-12-06T00:00:00",
   "dateModified" : "2020-12-06T00:00:00",
   "image" : "https:\/\/thqnhat.github.io\/img\/devops.png",
@@ -244,7 +244,7 @@ Long time ago, I would like to make a blog to share my experience and my point o
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;564&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;570&nbsp;words
   
   
   
@@ -272,19 +272,19 @@ Long time ago, I would like to make a blog to share my experience and my point o
 <p><strong>Steps to go:</strong></p>
 <!-- raw HTML omitted -->
 <h2 id="1-install-hugo-on-a-linux-machine">1. Install Hugo on a Linux machine</h2>
-<p>You can download the lastest version of Hugo (<em>0.79.0</em> at the time writing this article) from the origin website here.
-I&rsquo;m using a Ubuntu machine. So, I will run the command below to download it :</p>
+<p>You can download the lastest version of Hugo (<em>0.79.0</em> at the time writing this article) from <a href="https://github.com/gohugoio/hugo/releases/">Hugo&rsquo;s origin website</a>{:target=&quot;_blank&quot;}.
+I&rsquo;m using a Ubuntu machine. Therefore, I just need to run the below command line to download it :</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> ~
 $ wget https://github.com/gohugoio/hugo/releases/download/v0.79.0/hugo_0.79.0_Linux-64bit.tar.gz
 $ tar -xvf hugo_0.79.0_Linux-64bit.tar.gz
 $ sudo cp hugo /usr/local/bin
-</code></pre></div><p>You can test if the installation work as expected with this command:</p>
+</code></pre></div><p>I can test if the installation work as expected with this command line:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ hugo version
 </code></pre></div><h2 id="2-create-a-new-static-website">2. Create a new static website</h2>
-<p>Now, we start to create a static website. Let&rsquo;s run this command:</p>
+<p>Now, we start to create a static website. Let&rsquo;s run this script:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> ~
 $ hugo new site myblog
-</code></pre></div><p>The command above will create a website&rsquo;s folder named <strong>myblog</strong> with the default structure on my root folder:</p>
+</code></pre></div><p>The above script will create a website&rsquo;s folder named <strong>myblog</strong> with the default structure on my root folder:</p>
 <p><img src="../images/1_hugo_structure_default.png" alt="Hugo&rsquo;s website default structure"></p>
 <ul>
 <li>content: folder containing yours pages and yours posts</li>
@@ -295,16 +295,16 @@ $ hugo new site myblog
 <li>config.toml: your configuration file</li>
 </ul>
 <h2 id="3-download-a-custom-theme">3. Download a custom theme</h2>
-<p>A website is created but the content is still empty. You can choose the best theme that fit your requirement on the Hugo theme: <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></p>
-<p>From the themes folder of created website, let&rsquo;s run the command below to download a theme (<em>Fuji</em> in my case):</p>
+<p>A default website is created but it&rsquo;s content is still empty. You can choose the best theme for it on the <a href="https://themes.gohugo.io/">Hugo theme</a>{:target=&quot;_blank&quot;}.</p>
+<p>From the themes folder of <strong>myblog</strong> website, let&rsquo;s run the below command line to download a custom theme named <em>Fuji</em> :</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> ~
 $ <span class="nb">cd</span> myblog/themes/
 $ git clone https://github.com/amzrk2/hugo-theme-fuji
-</code></pre></div><p>Then, we override the default configuration of website created by Hugo (<em>config.toml</em>) with the configuration of Fuji theme.</p>
+</code></pre></div><p>Then, we need to override the default configuration of our website (<em>config.toml</em>) with the configuration given by Fuji theme.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> ~
 $ <span class="nb">cd</span> myblog/
 $ cp ./themes/hugo-theme-fuji/exampleSite/config.toml ./config.toml
-</code></pre></div><p>Make sure that the theme parameter in config.toml match with the theme found in themes folder.</p>
+</code></pre></div><p>Just make sure that the theme&rsquo;s name found in config.toml match with the theme&rsquo;s name folder.</p>
 <p><img src="../images/2_hugo_theme_config.png" alt="theme config"></p>
 <p>Next, we could run the website on our local machine:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> ~
@@ -315,12 +315,13 @@ $ hugo server
 <p>The next step is creating a empty GitHub repository that host your website&rsquo;s generated contents.
 From your GitHub account, create a new reposity with name: [your_github_username].github.io
 Let&rsquo;s use the default configurations (don&rsquo;t select &ldquo;Add a README file&rdquo;)</p>
-<h2 id="4-deploy-your-generated-contents-to-the-github-repository">4. Deploy your generated contents to the GitHub repository</h2>
-<p>Let&rsquo;s run the below command to generate our website&rsquo;s contents:</p>
+<h2 id="4-deploy-your-generated-static-contents-into-the-github-repository">4. Deploy your generated static contents into the GitHub repository</h2>
+<p>Let&rsquo;s run the below command line to generate the website&rsquo;s static contents:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> ~
 $ <span class="nb">cd</span> myblog/
 $ hugo
-</code></pre></div><p>The above command will create a <em>public</em> folder containing a generated contents (with all html &amp; css files).</p>
+</code></pre></div><p>The above command will create a <em>public</em> folder containing all generated contents (html &amp; css files).</p>
+<p>*<a href="../images/4_hugo_public_folder.png">public folder</a></p>
 <p>Now, we can initialize a git project and push the generated contents to the repository created on GitHub.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">cd</span> ~
 $ <span class="nb">cd</span> myblog/public/
