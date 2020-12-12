@@ -7,10 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Basic terminology in Google Cloud Platform - Home</title>
-  <meta name="description" content="This is the first part of GCP&rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).
-Topics to cover:
- Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.">
+  <title>Cloud DNS - Home</title>
+  <meta name="description" content="In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.
+In that example, I have two virtual machines:
+ instance-core: 10.23.0.2 instance-svc: 10.23.0.19
+who are located in the same VPC named apps-vpc.  The internal DNS of vm instance-svc could be found using this curl:">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -46,8 +47,8 @@ Topics to cover:
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/thqnhat.github.io\/post\/2020\/12\/gcp\/basic-terminology\/",
-          "name": "Basic terminology in google cloud platform"
+          "@id": "https:\/\/thqnhat.github.io\/post\/2020\/12\/gcp\/cloud-dns\/",
+          "name": "Cloud d n s"
         }
     }]
 }
@@ -58,15 +59,15 @@ Topics to cover:
   "author": {
     "name" : "Nhat Tong"
   },
-  "headline": "Basic terminology in Google Cloud Platform",
-  "description" : "This is the first part of GCP\u0026rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).\nTopics to cover:\n Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.",
+  "headline": "Cloud DNS",
+  "description" : "In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it\u0026rsquo;s internal IP or it\u0026rsquo;s internal DNS.\nIn that example, I have two virtual machines:\n instance-core: 10.23.0.2 instance-svc: 10.23.0.19\nwho are located in the same VPC named apps-vpc.  The internal DNS of vm instance-svc could be found using this curl:",
   "inLanguage" : "en",
-  "wordCount":  1097 ,
+  "wordCount":  474 ,
   "datePublished" : "2020-12-12T00:00:00",
   "dateModified" : "2020-12-12T00:00:00",
   "image" : "https:\/\/thqnhat.github.io\/devops.png",
   "keywords" : [ "gcp" ],
-  "mainEntityOfPage" : "https:\/\/thqnhat.github.io\/post\/2020\/12\/gcp\/basic-terminology\/",
+  "mainEntityOfPage" : "https:\/\/thqnhat.github.io\/post\/2020\/12\/gcp\/cloud-dns\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/thqnhat.github.io",
@@ -80,19 +81,18 @@ Topics to cover:
 }
 </script>
 
-<meta property="og:title" content="Basic terminology in Google Cloud Platform" />
-<meta property="og:description" content="This is the first part of GCP&rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).
-Topics to cover:
- Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.">
+<meta property="og:title" content="Cloud DNS" />
+<meta property="og:description" content="In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.
+In that example, I have two virtual machines:
+ instance-core: 10.23.0.2 instance-svc: 10.23.0.19
+who are located in the same VPC named apps-vpc.  The internal DNS of vm instance-svc could be found using this curl:">
 <meta property="og:image" content="https://thqnhat.github.io/devops.png" />
-<meta property="og:url" content="https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/" />
+<meta property="og:url" content="https://thqnhat.github.io/post/2020/12/gcp/cloud-dns/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
-  <meta name="twitter:title" content="Basic terminology in Google Cloud Platform" />
-  <meta name="twitter:description" content="This is the first part of GCP&rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).
-Topics to cover:
- Google Cloud Projects and …">
+  <meta name="twitter:title" content="Cloud DNS" />
+  <meta name="twitter:description" content="In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using …">
   <meta name="twitter:image" content="https://thqnhat.github.io/devops.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://thqnhat.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -243,7 +243,7 @@ Topics to cover:
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Basic terminology in Google Cloud Platform</h1>
+                <h1>Cloud DNS</h1>
               
               
               
@@ -254,10 +254,10 @@ Topics to cover:
   <i class="fas fa-calendar"></i>&nbsp;December 12, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1097&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;474&nbsp;words
   
   
   
@@ -278,132 +278,81 @@ Topics to cover:
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>This is the first part of GCP&rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).</p>
-<p>Topics to cover:</p>
+        <p>In the <a href="https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/" target="_blank">previous article</a> we covered some basic terminology in GCP.
+As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.</p>
+<p>In that example, I have two virtual machines:</p>
 <ul>
-<li>Google Cloud</li>
-<li>Projects and networks</li>
-<li>Internal IP and External IP</li>
-<li>DNS resolution for internal IP</li>
-<li>DNS resolution for external IP</li>
-<li>Cloud DNS</li>
-<li>Firewall</li>
-<li>Route</li>
+<li>instance-core: 10.23.0.2</li>
+<li>instance-svc: 10.23.0.19<br>
+who are located in the same VPC named <em>apps-vpc</em>.</li>
 </ul>
-<h3 id="google-cloud"><strong>Google Cloud</strong></h3>
-<p><img src="../images/1_google_cloud.png" alt="Google Cloud"></p>
-<p>Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.</p>
-<p>A region is a specific geographical location that consists of zones. A zone is a deployment area for Google Cloud resources within a region. Google Cloud&rsquo;s services and resources can be zonal, regional, multiregional or global.</p>
-<p><u><em>Zonal resources:</em></u><br>
-Zonal resources are created and are operated within a single zone. If a zone becomes unavailable, all of zonal resources in that zone are unavailable until that zone is restored. For example, a Virtual Machine is a zonal resource.</p>
-<p><u><em>Regional resources:</em></u><br>
-Regional resources are resources that are redundantly deployed across multiple zones within a region. For example, an App Engine application is a regional resource.</p>
-<p><u><em>Multiregional resources:</em></u>   <br>
-Some Google Cloud services are managed by Google to be redundant and distributed within and across regions. For example: Datastore, Firestore, Cloud Storage, BigQuery,&hellip;</p>
-<p><u><em>Global resources:</em></u><br>
-Global resources are resources that span all available regions. For example: Virtual Private Cloud.</p>
-<p>The PoPs are where Google’s network is connected to the rest of the internet.</p>
-<h3 id="projects-and-networks"><strong>Projects and networks</strong></h3>
-<p>Projects are the key organizer of infrastructure resources in GCP. A project may contain networks (up to 5 networks by default), subnetworks, firewalls, routes or other available resources in GCP. It associates the resources and services with billing.</p>
-<p>A Virtual Private Cloud or VPC is Google&rsquo;s managed networking functionality for your cloud resources. <strong>It has no IP address range and spans all regions (a global resource)</strong>. A VPC can contain one or more subnetworks (or subnets).</p>
-<p><img src="../images/3_vpc_isolation.png" alt="VPC Isolation"></p>
-<p>Please note that private communication is scoped to the deployed VPC by default. It means that all virtual machines in the same network can communicate over internal IP (even if they are located in different regions).</p>
-<p>In the above figure, A and B are on the same network (network #1). So, they can communicate privately using their internal IP or their internal DNS. Otherwise, C and D are on a different network (even if the same region), they must use the external IP (public IP) for the communication.</p>
-<h3 id="internal-ip-and-external-ip"><strong>Internal IP and External IP</strong></h3>
-<p>In GCP, each virtual machine (vm) can have two IP addresses assigned: internal IP and external IP.
-An internal IP is a private IP that allows private communication within the created network.
-An external IP or public IP is optional. This ip allows your vm to communicate with other resources/vms on a different network.
-The vm doesn&rsquo;t know the external IP. The external IP is mapped to the internal IP.</p>
-<p><img src="../images/4_internal_external_IP.png" alt="Internal and External IP"></p>
-<h3 id="dns-resolution-for-internal-ip"><strong>DNS resolution for internal IP</strong></h3>
-<p>When you create a vm instance, an internal DNS is also created and is mapped to your internal IP.
-The internal DNS will be: [INSTANCE_NAME].[ZONE_NAME].c.[PROJECT_ID].internal
-or you can run this curl to have this information:</p>
+<p>The internal DNS of vm <em>instance-svc</em> could be found using this curl:</p>
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">curl</span> <span class="s">&#34;http://metadata.google.internal/computeMetadata/v1/instance/hostname&#34;</span> <span class="o">-</span><span class="nx">H</span> <span class="s">&#34;Metadata-Flavor: Google&#34;</span>
-</code></pre></div><p><img src="../images/5_internal_DNS.png" alt="Internal DNS"></p>
-<p>As you saw above, from another vm in the same network, you can use ping this vm using the internal DNS instead of internal IP.</p>
-<p>Specifically, the name resolution, in this case, is handled by internal DNS resolver (<strong>169.254.169.254</strong>). For more information, please refer to this page <a href="https://cloud.google.com/compute/docs/internal-dns">https://cloud.google.com/compute/docs/internal-dns</a>.</p>
-<h3 id="dns-resolution-for-external-ip"><strong>DNS resolution for external IP</strong></h3>
-<p>If you need to communicate with another vm on a different network or go to the Internet, you may need an external IP. You need to be careful because this IP will be exposed to the Internet.</p>
-<p><img src="../images/6_external_IP.png" alt="External IP"></p>
-<p>With an external IP, your vm can communicate with other services on the Internet.</p>
-<p>Go to the Internet without the external IP: KO (by default). The additional configurations will be required to allow your vm to go to the Internet only with the internal IP. We will talk about it later.</p>
-<p><img src="../images/7_internet_without_external_ip.png" alt="Internet without external IP"></p>
-<p>Go to the Internet with the external IP: OK
-<img src="../images/8_internet_with_external_ip.png" alt="Internet with external IP"></p>
-<p>In that case, another vm on a different network(<em>instance-host2</em>) can reach out to your vm using the external IP.</p>
-<p><img src="../images/9_ping_with_external_IP.png" alt="Ping from a vm on different network"></p>
-<p>If you would like a fully qualified domain name (FQDN) instead of an IP, you may consider using Cloud DNS to create your dns zones and dns records. I cover this topic in a <a href="https://thqnhat.github.io/post/2020/12/gcp/cloud-dns/" target="_blank">separated article</a>.</p>
-<h3 id="cloud-dns"><strong>Cloud DNS</strong></h3>
-<p>Google Cloud DNS is a scalable, reliable and managed authoritative Domain Name System (DNS) service running on the same infrastructure as Google.<br>
-It has low latency, high availability and is a cost-effective way to make your applications and services available to your users.<br>
+</code></pre></div><p><u>Example 1:</u> from the vm <em>instance-core</em>, ping the vm <em>instance-svc</em> using it&rsquo;s internal IP.</p>
+<p><img src="../images/12_ping_internal_IP.png" alt="Ping vm using internal IP"></p>
+<p><u>Example 2:</u> from the vm <em>instance-core</em>, ping the vm <em>instance-svc</em> using it&rsquo;s internal DNS.</p>
+<p><img src="../images/13_ping_internal_DNS.png" alt="Ping vm using internal DNS"></p>
+<p><u>Example 3:</u> if VPC peering is enabled, you could ping the vm using internal IP from a vm (<em>instance-host2</em>) on a different network (<em>shared-vpc2</em>)</p>
+<p><img src="../images/14_ping_VPC_internal_IP.png" alt="Ping vm using internal DNS"></p>
+<p><u>Example 4:</u> you cannot ping the vm using internal DNS from a vm (<em>instance-host2</em>) on a different network (<em>shared-vpc2</em>)</p>
+<p><img src="../images/15_ping_VPC_internal_DNS.png" alt="Ping vm using internal DNS"></p>
+<p><strong>So, what if you always want to use a fully qualified domain name (FQDN) to reach out to your virtual machine from a different network instead of an IP address ?</strong></p>
+<p>Cloud DNS is your solution!
+Google Cloud DNS is a scalable, reliable and managed authoritative Domain Name System (DNS) service running on the same infrastructure as Google.
+It has low latency, high availability and is a cost-effective way to make your applications and services available to your users.
 Cloud DNS translates requests for domain names like <a href="http://www.google.com">www.google.com</a> into IP addresses like 74.125.29.101.</p>
-<h3 id="firewall"><strong>Firewall</strong></h3>
-<p>GCP firewall rules protect your virtual machine instances from unapproved connections, both inbound (called also &ldquo;ingress&rdquo;) and outbound (called also &ldquo;egress&rdquo;).</p>
-<p>Although firewall rules are applied to the network as a whole, connections are allowed
-or denied at the instance level. Therefore, firewall rules are not only between your instances and other networks but also between individual instances within the same network.</p>
-<p>A firewall rule is composed of the following parameters:</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th style="text-align:center">Description</th>
-<th style="text-align:right">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>direction</td>
-<td style="text-align:center">ingress for inbound connection and egress for outbound connection</td>
-<td style="text-align:right">ingress</td>
-</tr>
-<tr>
-<td>source</td>
-<td style="text-align:center">ip address or service account of source</td>
-<td style="text-align:right">10.0.0.1/29</td>
-</tr>
-<tr>
-<td>source port</td>
-<td style="text-align:center"></td>
-<td style="text-align:right">*</td>
-</tr>
-<tr>
-<td>destination</td>
-<td style="text-align:center">ip address or service account of destination</td>
-<td style="text-align:right">10.0.1.0/28</td>
-</tr>
-<tr>
-<td>destination port</td>
-<td style="text-align:center"></td>
-<td style="text-align:right">22</td>
-</tr>
-<tr>
-<td>action</td>
-<td style="text-align:center">allow or deny</td>
-<td style="text-align:right">allow</td>
-</tr>
-<tr>
-<td>priority</td>
-<td style="text-align:center">governs the order in which rules are evaluated. The first matching rule is applied</td>
-<td style="text-align:right">1000</td>
-</tr>
-</tbody>
-</table>
-<p><img src="../images/10_firewall_rules.png" alt="firewall rules"></p>
-<p>By default, every VPC network has two implied firewall rules. These rules exist, but are not shown in the Cloud Console:</p>
-<ol>
-<li>Implied allow egress rule. An egress rule whose action is allowed, destination is 0.0.0.0/0, and priority is the lowest possible (65535) lets any instance send traffic to any destination (Internet included). A higher priority rule may override this rule and restrict outbound access.</li>
-<li>Implied deny ingress rule. An ingress rule whose action is denied, source is 0.0.0.0/0, and priority is the lowest possible (65535). Therefore, the incoming connections to your instances are blocked by default. A higher priority rule may override this rule and allow incoming access.</li>
-</ol>
-<h3 id="route"><strong>Route</strong></h3>
-<p>A route is a mapping of an IP range to a destination.
-Every network (VPC) has:</p>
+<h3 id="create-a-dns-privated-zone"><strong>Create a dns privated zone</strong></h3>
+<p>From the producer network, project <em>host-project1</em> which contain the first VPC (<em>apps-vpc</em>), create a private zone dns named <em>demodns.getcontacts.fr</em></p>
 <ul>
-<li>Routes that let instances in a network send traffic directly to each other</li>
-<li>A default route that directs packets to the Internet (Default internet gateway)</li>
+<li>Zone type: Private</li>
+<li>Zone name: demo-dns-private-zone</li>
+<li>DNS name: demodns.getcontacts.fr</li>
+<li>Options: Default (Private)</li>
+<li>Networks: apps-vpc</li>
 </ul>
-<p><img src="../images/11_default_routes.png" alt="default routes"></p>
-<p>For example, my VPC has two subnets (10.23.0.0/28 &amp; 10.23.0.16/28). By default, three routes are created. One for each subnet and the default route to the Internet.</p>
+<p><img src="../images/16_cloud_dns_private_zone.png" alt="Cloud DNS Private Zone"></p>
+<h3 id="create-dns-record-set"><strong>Create dns record set</strong></h3>
+<p>Inside of this dns private zone, you will create two records set to map a DNS name to an internal IP of your virtual machine</p>
+<ul>
+<li>DNS Name: instance-core.demodns.getcontacts.fr</li>
+<li>Resource Record Type: A</li>
+<li>TTL: 5</li>
+<li>TTL Unit: minutes</li>
+<li>IPv4: 10.23.0.2</li>
+</ul>
+<hr>
+<ul>
+<li>DNS Name: instance-svc.demodns.getcontacts.fr</li>
+<li>Resource Record Type: A</li>
+<li>TTL: 5</li>
+<li>TTL Unit: minutes</li>
+<li>IPv4: 10.23.0.19</li>
+</ul>
+<p><img src="../images/17_cloud_dns_record_set.png" alt="Cloud DNS Record Set"></p>
+<h3 id="create-a-peering-dns"><strong>Create a peering DNS</strong></h3>
+<p>From the consumer network, project <em>host-project2</em> that contains the second VPC (<em>shared-vpc2</em>), you create a peering dns to <em>demodns.getcontacts.fr</em> on <em>apps-vpc</em></p>
+<ul>
+<li>Zone type: Private</li>
+<li>Zone name: demo-dns-private-zone</li>
+<li>DNS name: demodns.getcontacts.fr</li>
+<li>Options: DNS Peering</li>
+<li>Networks: shared-vpc2</li>
+<li>Peer project: host-project1</li>
+<li>Peer network: apps-vpc</li>
+</ul>
+<p><img src="../images/18_cloud_dns_peering.png" alt="Cloud DNS Peering"></p>
+<p>Finally, you would have a side by side configuration between the producer network <em>host-project1</em> and the consumer network <em>host-project2</em></p>
+<p><img src="../images/19_cloud_dns_producer_consumer_dns_peering.png" alt="Cloud DNS Peering Side by Side"></p>
+<p>Now, everything is done. You can make some tests.
+Firstly, from the consumer network <em>host-project2</em>, the DNS resolution to resolve the vm located on the producer network must be worked using the DNS name.</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">dig</span> <span class="nx">instance</span><span class="o">-</span><span class="nx">core</span><span class="p">.</span><span class="nx">demodns</span><span class="p">.</span><span class="nx">getcontacts</span><span class="p">.</span><span class="nx">fr</span>
+<span class="nx">dig</span> <span class="nx">instance</span><span class="o">-</span><span class="nx">svc</span><span class="p">.</span><span class="nx">demodns</span><span class="p">.</span><span class="nx">getcontacts</span><span class="p">.</span><span class="nx">fr</span>
+</code></pre></div><p><img src="../images/20_cloud_dns_dig.png" alt="Cloud DNS Resolution"></p>
+<p>That works like a charm! :)</p>
+<p>If you have a peering enabled between two VPC, you can also ping these vms using their&rsquo;s dns name.</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">ping</span> <span class="o">-</span><span class="nx">c</span> <span class="mi">3</span> <span class="nx">instance</span><span class="o">-</span><span class="nx">core</span><span class="p">.</span><span class="nx">demodns</span><span class="p">.</span><span class="nx">getcontacts</span><span class="p">.</span><span class="nx">fr</span>
+<span class="nx">ping</span> <span class="o">-</span><span class="nx">c</span> <span class="mi">3</span> <span class="nx">instance</span><span class="o">-</span><span class="nx">svc</span><span class="p">.</span><span class="nx">demodns</span><span class="p">.</span><span class="nx">getcontacts</span><span class="p">.</span><span class="nx">fr</span>
+</code></pre></div><p><img src="../images/21_cloud_dns_ping.png" alt="Cloud DNS Resolution"></p>
 
 
         
@@ -426,7 +375,7 @@ Every network (VPC) has:</p>
                   <ul>
                 
                 
-                    <li><a href="/post/2020/12/gcp/cloud-dns/">Cloud DNS</a></li>
+                    <li><a href="/post/2020/12/gcp/basic-terminology/">Basic terminology in Google Cloud Platform</a></li>
                 
               </ul>
 
@@ -438,9 +387,13 @@ Every network (VPC) has:</p>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://thqnhat.github.io/post/2020/12/gcp/cloud-dns/" data-toggle="tooltip" data-placement="top" title="Cloud DNS">&larr; Previous Post</a>
+              <a href="https://thqnhat.github.io/post/2020/12/azure/azure-bastion-with-terraform/" data-toggle="tooltip" data-placement="top" title="Deploy Azure Bastion as Code with Terraform">&larr; Previous Post</a>
             </li>
           
+          
+            <li class="next">
+              <a href="https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/" data-toggle="tooltip" data-placement="top" title="Basic terminology in Google Cloud Platform">Next Post &rarr;</a>
+            </li>
           
         </ul>
       

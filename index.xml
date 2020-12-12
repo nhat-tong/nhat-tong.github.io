@@ -20,6 +20,18 @@ Topics to cover:
     </item>
     
     <item>
+      <title>Cloud DNS</title>
+      <link>https://thqnhat.github.io/post/2020/12/gcp/cloud-dns/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://thqnhat.github.io/post/2020/12/gcp/cloud-dns/</guid>
+      <description>In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&amp;rsquo;s internal IP or it&amp;rsquo;s internal DNS.
+In that example, I have two virtual machines:
+ instance-core: 10.23.0.2 instance-svc: 10.23.0.19
+who are located in the same VPC named apps-vpc.  The internal DNS of vm instance-svc could be found using this curl:</description>
+    </item>
+    
+    <item>
       <title>Deploy Azure Bastion as Code with Terraform</title>
       <link>https://thqnhat.github.io/post/2020/12/azure/azure-bastion-with-terraform/</link>
       <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
