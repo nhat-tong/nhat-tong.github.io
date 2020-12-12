@@ -9,7 +9,7 @@
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
     <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://thqnhat.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>basic terminology in Google Cloud Platform</title>
+      <title>Basic terminology in Google Cloud Platform</title>
       <link>https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/</link>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
@@ -17,35 +17,6 @@
       <description>This is the first part of GCP&amp;rsquo;s serie. In this article, you will familiar with somes of basic terminilogy used in Google Cloud Platform (GCP).
 Topics to cover:
  Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.</description>
-    </item>
-    
-    <item>
-      <title>Infrastructure as Code with Terraform</title>
-      <link>https://thqnhat.github.io/post/2020/12/terraform/infrastructure-as-code-with-terraform/</link>
-      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://thqnhat.github.io/post/2020/12/terraform/infrastructure-as-code-with-terraform/</guid>
-      <description>Coming soon!
-Terraform Provider
-Terraform schema
-Install terraform
-terraform init
-terraform plan
-terraform apply
-terraform destroy
-terraform local
-terraform data</description>
-    </item>
-    
-    <item>
-      <title>Test connectivity between host project and service project</title>
-      <link>https://thqnhat.github.io/post/2020/12/gcp/gcp-shared-vpc-part-1/</link>
-      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://thqnhat.github.io/post/2020/12/gcp/gcp-shared-vpc-part-1/</guid>
-      <description>Create a Google Workspace (G Suite) In Google Cloud Platform (GCP), you can design your network using host project and service project model. This model is centralize. It allow you to maintain your network easier.
-A host project is a project which contains your Shared-VPC and it&amp;rsquo;s subnets. A service project is a project which contains the vm instances which use the subnet created in your shared VPC.
-Here is the model: In this article, I will show you how to implement it.</description>
     </item>
     
     <item>

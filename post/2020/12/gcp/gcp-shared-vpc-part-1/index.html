@@ -7,7 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>gcp - Home</title>
+  <title>Test connectivity between host project and service project - Home</title>
+  <meta name="description" content="Create a Google Workspace (G Suite) In Google Cloud Platform (GCP), you can design your network using host project and service project model. This model is centralize. It allow you to maintain your network easier.
+A host project is a project which contains your Shared-VPC and it&rsquo;s subnets. A service project is a project which contains the vm instances which use the subnet created in your shared VPC.
+Here is the model: In this article, I will show you how to implement it.">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -28,14 +31,66 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/thqnhat.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/thqnhat.github.io\/post\/2020\/12\/gcp\/gcp-shared-vpc-part-1\/",
+          "name": "Test connectivity between host project and service project"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Nhat Tong"
+  },
+  "headline": "Test connectivity between host project and service project",
+  "description" : "Create a Google Workspace (G Suite) In Google Cloud Platform (GCP), you can design your network using host project and service project model. This model is centralize. It allow you to maintain your network easier.\nA host project is a project which contains your Shared-VPC and it\u0026rsquo;s subnets. A service project is a project which contains the vm instances which use the subnet created in your shared VPC.\nHere is the model: In this article, I will show you how to implement it.",
+  "inLanguage" : "en",
+  "wordCount":  291 ,
+  "datePublished" : "2020-12-10T00:00:00",
+  "dateModified" : "2020-12-10T00:00:00",
+  "image" : "https:\/\/thqnhat.github.io\/devops.png",
+  "keywords" : [ "gcp" ],
+  "mainEntityOfPage" : "https:\/\/thqnhat.github.io\/post\/2020\/12\/gcp\/gcp-shared-vpc-part-1\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/thqnhat.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/thqnhat.github.io\/devops.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="gcp" />
+<meta property="og:title" content="Test connectivity between host project and service project" />
+<meta property="og:description" content="Create a Google Workspace (G Suite) In Google Cloud Platform (GCP), you can design your network using host project and service project model. This model is centralize. It allow you to maintain your network easier.
+A host project is a project which contains your Shared-VPC and it&rsquo;s subnets. A service project is a project which contains the vm instances which use the subnet created in your shared VPC.
+Here is the model: In this article, I will show you how to implement it.">
 <meta property="og:image" content="https://thqnhat.github.io/devops.png" />
-<meta property="og:url" content="https://thqnhat.github.io/tags/gcp/" />
+<meta property="og:url" content="https://thqnhat.github.io/post/2020/12/gcp/gcp-shared-vpc-part-1/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
-  <meta name="twitter:title" content="gcp" />
+  <meta name="twitter:title" content="Test connectivity between host project and service project" />
+  <meta name="twitter:description" content="Create a Google Workspace (G Suite) In Google Cloud Platform (GCP), you can design your network using host project and service project model. This model is centralize. It allow you to maintain your …">
   <meta name="twitter:image" content="https://thqnhat.github.io/devops.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://thqnhat.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -184,14 +239,29 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="tags-heading">
+            <div class="post-heading">
               
-                <h1>gcp</h1>
-              
-              
-                <hr class="small">
+                <h1>Test connectivity between host project and service project</h1>
               
               
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;December 10, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;291&nbsp;words
+  
+  
+  
+</span>
+
+
               
             </div>
           </div>
@@ -202,62 +272,116 @@
 
 
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p><strong>Create a Google Workspace (G Suite)</strong>
+In Google Cloud Platform (GCP), you can design your network using host project and service project model. This model is centralize. It allow you to maintain your network easier.</p>
+<p>A host project is a project which contains your Shared-VPC and it&rsquo;s subnets.
+A service project is a project which contains the vm instances which use the subnet created in your shared VPC.</p>
+<p>Here is the model:
+<img src="" alt="Shared VPC"></p>
+<p>In this article, I will show you how to implement it. Firstly, you need create an organization (A Shared-VPC cannot be activated if you don&rsquo;t have any organization).
+An organization will be created for you when your account Google Workspace (G Suite formely) is created. You will have 14 days trial at the time writing of this article then your billing will be started.</p>
+<p>Here is a sample:
+<img src="" alt="Google Workspace"></p>
+<p><strong>Create a free trial Google Workspace account</strong></p>
+<p>Go to and create a free trial account.
+You need to provide your credit&rsquo;s card informations but you aren&rsquo;t charged yet until the end of free trial.</p>
+<p>To create an Google Workspace account, you need to have your own domain (like toto.com). If you don&rsquo;t have your domain, you can buy the domain at GoDaddy.com. This domain will be your organization in GCP.</p>
+<p>At the end, you will receive a notification informing you that your organization is created.
+<img src="" alt="Your organization"></p>
+<p>In my case, I created the account with my own domain (getcontacts.fr)
+<strong>Connect to Google Cloud Console</strong></p>
+<p><strong>Create a host project and subnets</strong>
+<strong>Enable Shared VPC</strong>
+<strong>Create firewall rules</strong>
+<strong>Create vm</strong></p>
+<p><strong>Create a service project and subnet</strong>
+<strong>Create vm</strong></p>
+<p><strong>Test connectivity using private ip between vm in host project and service project</strong>
+<strong>Test connectivity using internal dns between vm in host project and service project</strong></p>
+<p>[INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal</p>
+
+
         
-        <div class="posts-list">
+          <div class="blog-tags">
+            
+              <a href="https://thqnhat.github.io/tags/gcp/">gcp</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
           
-            <article class="post-preview">
-    <a href="https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/">
-        <h2 class="post-title">Basic terminology in Google Cloud Platform</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;December 12, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1086&nbsp;words
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        This is the first part of GCP&rsquo;s serie. In this article, you will familiar with somes of basic terminilogy used in Google Cloud Platform (GCP).
-Topics to cover:
- Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.
-        <a href="https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://thqnhat.github.io/tags/gcp/">gcp</a>&nbsp;
-        
-    </div>
-    
-
-</article>
+            
           
-        </div>
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="/post/2020/12/gcp/basic-terminology/">Basic terminology in Google Cloud Platform</a></li>
+                
+              </ul>
+
+          
         
-      </div>
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://thqnhat.github.io/post/2020/12/azure/azure-bastion-with-terraform/" data-toggle="tooltip" data-placement="top" title="Deploy Azure Bastion as Code with Terraform">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://thqnhat.github.io/post/2020/12/terraform/infrastructure-as-code-with-terraform/" data-toggle="tooltip" data-placement="top" title="Infrastructure as Code with Terraform">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "thqnhat-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+          
+        
+        
+      
+
     </div>
   </div>
+</div>
 
       
 <footer>
