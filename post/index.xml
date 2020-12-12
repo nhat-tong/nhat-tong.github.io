@@ -14,7 +14,7 @@
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/</guid>
-      <description>This is the first part of GCP&amp;rsquo;s serie. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).
+      <description>This is the first part of GCP&amp;rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).
 Topics to cover:
  Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.</description>
     </item>
