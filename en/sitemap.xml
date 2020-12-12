@@ -3,114 +3,114 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/</loc>
+    <loc>https://nhat-tong.github.io/post/2020/12/gcp/basic-terminology/</loc>
     <lastmod>2020-12-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://thqnhat.github.io/tags/gcp/</loc>
+    <loc>https://nhat-tong.github.io/tags/gcp/</loc>
     <lastmod>2020-12-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://thqnhat.github.io/post/2020/12/gcp/cloud-dns/</loc>
+    <loc>https://nhat-tong.github.io/post/2020/12/gcp/cloud-dns/</loc>
     <lastmod>2020-12-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://thqnhat.github.io/</loc>
-    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://thqnhat.github.io/fr/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://thqnhat.github.io/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://thqnhat.github.io/post/</loc>
-    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://thqnhat.github.io/tags/</loc>
+    <loc>https://nhat-tong.github.io/</loc>
     <lastmod>2020-12-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://thqnhat.github.io/fr/tags/"
+                href="https://nhat-tong.github.io/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://thqnhat.github.io/tags/"
+                href="https://nhat-tong.github.io/"
                 />
   </url>
   
   <url>
-    <loc>https://thqnhat.github.io/tags/azure/</loc>
+    <loc>https://nhat-tong.github.io/post/</loc>
+    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/tags/</loc>
+    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://nhat-tong.github.io/fr/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nhat-tong.github.io/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/tags/azure/</loc>
     <lastmod>2020-12-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://thqnhat.github.io/post/2020/12/azure/azure-bastion-with-terraform/</loc>
+    <loc>https://nhat-tong.github.io/post/2020/12/azure/azure-bastion-with-terraform/</loc>
     <lastmod>2020-12-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://thqnhat.github.io/post/2020/12/first-post/</loc>
+    <loc>https://nhat-tong.github.io/post/2020/12/first-post/</loc>
     <lastmod>2020-12-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://thqnhat.github.io/tags/terraform/</loc>
+    <loc>https://nhat-tong.github.io/tags/terraform/</loc>
     <lastmod>2020-12-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://thqnhat.github.io/page/about/</loc>
+    <loc>https://nhat-tong.github.io/page/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://thqnhat.github.io/fr/page/about/"
+                href="https://nhat-tong.github.io/fr/page/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://thqnhat.github.io/page/about/"
+                href="https://nhat-tong.github.io/page/about/"
                 />
   </url>
   
   <url>
-    <loc>https://thqnhat.github.io/categories/</loc>
+    <loc>https://nhat-tong.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://thqnhat.github.io/fr/categories/"
+                href="https://nhat-tong.github.io/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://thqnhat.github.io/categories/"
+                href="https://nhat-tong.github.io/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://thqnhat.github.io/page/</loc>
+    <loc>https://nhat-tong.github.io/page/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://thqnhat.github.io/fr/page/"
+                href="https://nhat-tong.github.io/fr/page/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://thqnhat.github.io/page/"
+                href="https://nhat-tong.github.io/page/"
                 />
   </url>
   

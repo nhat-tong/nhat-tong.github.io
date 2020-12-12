@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gcp on Home</title>
-    <link>https://thqnhat.github.io/tags/gcp/</link>
+    <link>https://nhat-tong.github.io/tags/gcp/</link>
     <description>Recent content in gcp on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://thqnhat.github.io/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://nhat-tong.github.io/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Basic terminology in Google Cloud Platform</title>
-      <link>https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/</link>
+      <link>https://nhat-tong.github.io/post/2020/12/gcp/basic-terminology/</link>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/</guid>
+      <guid>https://nhat-tong.github.io/post/2020/12/gcp/basic-terminology/</guid>
       <description>This is the first part of GCP&amp;rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).
 Topics to cover:
  Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.</description>
@@ -21,10 +21,10 @@ Topics to cover:
     
     <item>
       <title>Google Cloud DNS</title>
-      <link>https://thqnhat.github.io/post/2020/12/gcp/cloud-dns/</link>
+      <link>https://nhat-tong.github.io/post/2020/12/gcp/cloud-dns/</link>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://thqnhat.github.io/post/2020/12/gcp/cloud-dns/</guid>
+      <guid>https://nhat-tong.github.io/post/2020/12/gcp/cloud-dns/</guid>
       <description>In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&amp;rsquo;s internal IP or it&amp;rsquo;s internal DNS.
 In that example, I have two virtual machines:
  instance-core: 10.23.0.2 instance-svc: 10.23.0.19

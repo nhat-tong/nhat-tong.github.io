@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home</title>
-    <link>https://thqnhat.github.io/fr/</link>
+    <link>https://nhat-tong.github.io/fr/</link>
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
-    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster><atom:link href="https://thqnhat.github.io/fr/index.xml" rel="self" type="application/rss+xml" />
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster><atom:link href="https://nhat-tong.github.io/fr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About me</title>
-      <link>https://thqnhat.github.io/fr/page/about/</link>
+      <link>https://nhat-tong.github.io/fr/page/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://thqnhat.github.io/fr/page/about/</guid>
+      <guid>https://nhat-tong.github.io/fr/page/about/</guid>
       <description>Bonjour,
 Bienvenu à mon blog.</description>
     </item>

@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Home</title>
-    <link>https://thqnhat.github.io/categories/</link>
+    <link>https://nhat-tong.github.io/categories/</link>
     <description>Recent content in Categories on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
-    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster><atom:link href="https://thqnhat.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster><atom:link href="https://nhat-tong.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
