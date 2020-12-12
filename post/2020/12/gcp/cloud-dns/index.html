@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Cloud DNS - Home</title>
+  <title>Google Cloud DNS - Home</title>
   <meta name="description" content="In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.
 In that example, I have two virtual machines:
  instance-core: 10.23.0.2 instance-svc: 10.23.0.19
@@ -48,7 +48,7 @@ who are located in the same VPC named apps-vpc.  The internal DNS of vm instance
         "position": 3,
         "item": {
           "@id": "https:\/\/thqnhat.github.io\/post\/2020\/12\/gcp\/cloud-dns\/",
-          "name": "Cloud d n s"
+          "name": "Google cloud d n s"
         }
     }]
 }
@@ -59,10 +59,10 @@ who are located in the same VPC named apps-vpc.  The internal DNS of vm instance
   "author": {
     "name" : "Nhat Tong"
   },
-  "headline": "Cloud DNS",
+  "headline": "Google Cloud DNS",
   "description" : "In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it\u0026rsquo;s internal IP or it\u0026rsquo;s internal DNS.\nIn that example, I have two virtual machines:\n instance-core: 10.23.0.2 instance-svc: 10.23.0.19\nwho are located in the same VPC named apps-vpc.  The internal DNS of vm instance-svc could be found using this curl:",
   "inLanguage" : "en",
-  "wordCount":  474 ,
+  "wordCount":  475 ,
   "datePublished" : "2020-12-12T00:00:00",
   "dateModified" : "2020-12-12T00:00:00",
   "image" : "https:\/\/thqnhat.github.io\/devops.png",
@@ -81,7 +81,7 @@ who are located in the same VPC named apps-vpc.  The internal DNS of vm instance
 }
 </script>
 
-<meta property="og:title" content="Cloud DNS" />
+<meta property="og:title" content="Google Cloud DNS" />
 <meta property="og:description" content="In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.
 In that example, I have two virtual machines:
  instance-core: 10.23.0.2 instance-svc: 10.23.0.19
@@ -91,7 +91,7 @@ who are located in the same VPC named apps-vpc.  The internal DNS of vm instance
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
-  <meta name="twitter:title" content="Cloud DNS" />
+  <meta name="twitter:title" content="Google Cloud DNS" />
   <meta name="twitter:description" content="In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using …">
   <meta name="twitter:image" content="https://thqnhat.github.io/devops.png" />
   <meta name="twitter:card" content="summary" />
@@ -243,7 +243,7 @@ who are located in the same VPC named apps-vpc.  The internal DNS of vm instance
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Cloud DNS</h1>
+                <h1>Google Cloud DNS</h1>
               
               
               
@@ -257,7 +257,7 @@ who are located in the same VPC named apps-vpc.  The internal DNS of vm instance
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;474&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;475&nbsp;words
   
   
   
@@ -348,7 +348,7 @@ Firstly, from the consumer network <em>host-project2</em>, the DNS resolution to
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">dig</span> <span class="nx">instance</span><span class="o">-</span><span class="nx">core</span><span class="p">.</span><span class="nx">demodns</span><span class="p">.</span><span class="nx">getcontacts</span><span class="p">.</span><span class="nx">fr</span>
 <span class="nx">dig</span> <span class="nx">instance</span><span class="o">-</span><span class="nx">svc</span><span class="p">.</span><span class="nx">demodns</span><span class="p">.</span><span class="nx">getcontacts</span><span class="p">.</span><span class="nx">fr</span>
 </code></pre></div><p><img src="../images/20_cloud_dns_dig.png" alt="Cloud DNS Resolution"></p>
-<p>That works like a charm! :)</p>
+<p>That works like a charm! ☀️ ☀️</p>
 <p>If you have a peering enabled between two VPC, you can also ping these vms using their&rsquo;s dns name.</p>
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">ping</span> <span class="o">-</span><span class="nx">c</span> <span class="mi">3</span> <span class="nx">instance</span><span class="o">-</span><span class="nx">core</span><span class="p">.</span><span class="nx">demodns</span><span class="p">.</span><span class="nx">getcontacts</span><span class="p">.</span><span class="nx">fr</span>
 <span class="nx">ping</span> <span class="o">-</span><span class="nx">c</span> <span class="mi">3</span> <span class="nx">instance</span><span class="o">-</span><span class="nx">svc</span><span class="p">.</span><span class="nx">demodns</span><span class="p">.</span><span class="nx">getcontacts</span><span class="p">.</span><span class="nx">fr</span>
