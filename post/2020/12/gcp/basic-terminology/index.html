@@ -61,7 +61,7 @@ Topics to cover:
   "headline": "Basic terminology in Google Cloud Platform",
   "description" : "This is the first part of GCP\u0026rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).\nTopics to cover:\n Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.",
   "inLanguage" : "en",
-  "wordCount":  1097 ,
+  "wordCount":  1100 ,
   "datePublished" : "2020-12-12T00:00:00",
   "dateModified" : "2020-12-12T00:00:00",
   "image" : "https:\/\/thqnhat.github.io\/devops.png",
@@ -257,7 +257,7 @@ Topics to cover:
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1097&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1100&nbsp;words
   
   
   
@@ -324,7 +324,7 @@ or you can run this curl to have this information:</p>
 <p>As you saw above, from another vm in the same network, you can use ping this vm using the internal DNS instead of internal IP.</p>
 <p>Specifically, the name resolution, in this case, is handled by internal DNS resolver (<strong>169.254.169.254</strong>). For more information, please refer to this page <a href="https://cloud.google.com/compute/docs/internal-dns">https://cloud.google.com/compute/docs/internal-dns</a>.</p>
 <h3 id="dns-resolution-for-external-ip"><strong>DNS resolution for external IP</strong></h3>
-<p>If you need to communicate with another vm on a different network or go to the Internet, you may need an external IP. You need to be careful because this IP will be exposed to the Internet.</p>
+<p>If you need to communicate with another vm on a different network (without VPC Peering) or go to the Internet, you may need an external IP. You need to be careful because this IP will be exposed to the Internet.</p>
 <p><img src="../images/6_external_IP.png" alt="External IP"></p>
 <p>With an external IP, your vm can communicate with other services on the Internet.</p>
 <p>Go to the Internet without the external IP: KO (by default). The additional configurations will be required to allow your vm to go to the Internet only with the internal IP. We will talk about it later.</p>
