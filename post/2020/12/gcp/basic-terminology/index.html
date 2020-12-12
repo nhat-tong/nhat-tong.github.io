@@ -61,7 +61,7 @@ Topics to cover:
   "headline": "Basic terminology in Google Cloud Platform",
   "description" : "This is the first part of GCP\u0026rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).\nTopics to cover:\n Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.",
   "inLanguage" : "en",
-  "wordCount":  1087 ,
+  "wordCount":  1085 ,
   "datePublished" : "2020-12-12T00:00:00",
   "dateModified" : "2020-12-12T00:00:00",
   "image" : "https:\/\/thqnhat.github.io\/devops.png",
@@ -257,7 +257,7 @@ Topics to cover:
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1087&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1085&nbsp;words
   
   
   
@@ -305,10 +305,10 @@ Global resources are resources that span all available regions. For example: Vir
 <p>The PoPs are where Google’s network is connected to the rest of the internet.</p>
 <h3 id="projects-and-networks"><strong>Projects and networks</strong></h3>
 <p>Projects are the key organizer of infrastructure resources in GCP. A project may contain networks (up to 5 networks by default), subnetworks, firewalls, routes or other available resources in GCP. It associates the resources and services with billing.</p>
-<p>A Virtual Private Cloud or VPC is Google&rsquo;s managed networking functionality for your cloud resources. <strong>It has no IP address range</strong> and spans all regions (a global resource). A VPC can contain one or more subnetworks (or subnets).</p>
+<p>A Virtual Private Cloud or VPC is Google&rsquo;s managed networking functionality for your cloud resources. <strong>It has no IP address range and spans all regions (a global resource)</strong>. A VPC can contain one or more subnetworks (or subnets).</p>
 <p><img src="../images/3_vpc_isolation.png" alt="VPC Isolation"></p>
 <p>Please note that private communication is scoped to the deployed VPC by default. It means that all virtual machines in the same network can communicate over internal IP (even if they are located in different regions).</p>
-<p>In the above figure, A and B are on the same network (network #1). So, they can communicate privately using their internal IP or their internal DNS. Otherwise, C and D are on a different network (network #2 even if the same region), they must use the external IP (public IP) for the communication.</p>
+<p>In the above figure, A and B are on the same network (network #1). So, they can communicate privately using their internal IP or their internal DNS. Otherwise, C and D are on a different network (even if the same region), they must use the external IP (public IP) for the communication.</p>
 <h3 id="internal-ip-and-external-ip"><strong>Internal IP and External IP</strong></h3>
 <p>In GCP, each virtual machine (vm) can have two IP addresses assigned: internal IP and external IP.
 An internal IP is a private IP that allows private communication within the created network.
@@ -318,12 +318,9 @@ The vm doesn&rsquo;t know the external IP. The external IP is mapped to the inte
 <h3 id="dns-resolution-for-internal-ip"><strong>DNS resolution for internal IP</strong></h3>
 <p>When you create a vm instance, an internal DNS is also created and is mapped to your internal IP.
 The internal DNS will be: [INSTANCE_NAME].[ZONE_NAME].c.[PROJECT_ID].internal
-or you can run this curl to have this information:
-<highlight>
-curl &ldquo;<a href="http://metadata.google.internal/computeMetadata/v1/instance/hostname%22">http://metadata.google.internal/computeMetadata/v1/instance/hostname&quot;</a><br>
--H &ldquo;Metadata-Flavor: Google&rdquo;
-</highlight></p>
-<p><img src="../images/5_internal_DNS.png" alt="Internal DNS"></p>
+or you can run this curl to have this information:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">curl</span> <span class="s">&#34;http://metadata.google.internal/computeMetadata/v1/instance/hostname&#34;</span> <span class="o">-</span><span class="nx">H</span> <span class="s">&#34;Metadata-Flavor: Google&#34;</span>
+</code></pre></div><p><img src="../images/5_internal_DNS.png" alt="Internal DNS"></p>
 <p>As you saw above, from another vm in the same network, you can use ping this vm using the internal DNS instead of internal IP.</p>
 <p>Specifically, the name resolution, in this case, is handled by internal DNS resolver (<strong>169.254.169.254</strong>). For more information, please refer to this page <a href="https://cloud.google.com/compute/docs/internal-dns">https://cloud.google.com/compute/docs/internal-dns</a>.</p>
 <h3 id="dns-resolution-for-external-ip"><strong>DNS resolution for external IP</strong></h3>
