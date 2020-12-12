@@ -3,23 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://thqnhat.github.io/tags/azure/</loc>
-    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
+    <loc>https://thqnhat.github.io/tags/gcp/</loc>
+    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://thqnhat.github.io/post/2020/12/azure-bastion-with-terraform/</loc>
-    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://thqnhat.github.io/post/2020/12/first-post/</loc>
-    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
+    <loc>https://thqnhat.github.io/post/2020/12/gcp/gcp-basic-terminology/</loc>
+    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://thqnhat.github.io/</loc>
-    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -34,12 +29,12 @@
   
   <url>
     <loc>https://thqnhat.github.io/post/</loc>
-    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://thqnhat.github.io/tags/</loc>
-    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -53,7 +48,32 @@
   </url>
   
   <url>
+    <loc>https://thqnhat.github.io/post/2020/12/terraform/infrastructure-as-code-with-terraform/</loc>
+    <lastmod>2020-12-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thqnhat.github.io/tags/terraform/</loc>
+    <lastmod>2020-12-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thqnhat.github.io/post/2020/12/gcp/gcp-shared-vpc-part-1/</loc>
+    <lastmod>2020-12-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thqnhat.github.io/tags/azure/</loc>
+    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thqnhat.github.io/post/2020/12/azure/azure-bastion-with-terraform/</loc>
+    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thqnhat.github.io/post/2020/12/first-post/</loc>
     <lastmod>2020-12-06T00:00:00+00:00</lastmod>
   </url>
   

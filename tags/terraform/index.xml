@@ -7,13 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sun, 06 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://thqnhat.github.io/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://thqnhat.github.io/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Infrastructure as Code with Terraform</title>
+      <link>https://thqnhat.github.io/post/2020/12/terraform/infrastructure-as-code-with-terraform/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://thqnhat.github.io/post/2020/12/terraform/infrastructure-as-code-with-terraform/</guid>
+      <description>Coming soon!
+Terraform Provider
+Terraform schema
+Install terraform
+terraform init
+terraform plan
+terraform apply
+terraform destroy
+terraform local
+terraform data</description>
+    </item>
+    
     <item>
       <title>Deploy Azure Bastion as Code with Terraform</title>
-      <link>https://thqnhat.github.io/post/2020/12/azure-bastion-with-terraform/</link>
+      <link>https://thqnhat.github.io/post/2020/12/azure/azure-bastion-with-terraform/</link>
       <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://thqnhat.github.io/post/2020/12/azure-bastion-with-terraform/</guid>
+      <guid>https://thqnhat.github.io/post/2020/12/azure/azure-bastion-with-terraform/</guid>
       <description>Coming soon!</description>
     </item>
     

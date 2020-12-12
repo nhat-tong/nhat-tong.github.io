@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Home</title>
-    <link>https://thqnhat.github.io/post/</link>
-    <description>Recent content in Posts on Home</description>
+    <title>gcp on Home</title>
+    <link>https://thqnhat.github.io/tags/gcp/</link>
+    <description>Recent content in gcp on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://thqnhat.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://thqnhat.github.io/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GCP basic terminology</title>
       <link>https://thqnhat.github.io/post/2020/12/gcp/gcp-basic-terminology/</link>
@@ -20,24 +20,6 @@ Topics to cover:
     </item>
     
     <item>
-      <title>Infrastructure as Code with Terraform</title>
-      <link>https://thqnhat.github.io/post/2020/12/terraform/infrastructure-as-code-with-terraform/</link>
-      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://thqnhat.github.io/post/2020/12/terraform/infrastructure-as-code-with-terraform/</guid>
-      <description>Coming soon!
-Terraform Provider
-Terraform schema
-Install terraform
-terraform init
-terraform plan
-terraform apply
-terraform destroy
-terraform local
-terraform data</description>
-    </item>
-    
-    <item>
       <title>Test connectivity between host project and service project</title>
       <link>https://thqnhat.github.io/post/2020/12/gcp/gcp-shared-vpc-part-1/</link>
       <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
@@ -46,26 +28,6 @@ terraform data</description>
       <description>Create a Google Workspace (G Suite) In Google Cloud Platform (GCP), you can design your network using host project and service project model. This model is centralize. It allow you to maintain your network easier.
 A host project is a project which contains your Shared-VPC and it&amp;rsquo;s subnets. A service project is a project which contains the vm instances which use the subnet created in your shared VPC.
 Here is the model: In this article, I will show you how to implement it.</description>
-    </item>
-    
-    <item>
-      <title>Deploy Azure Bastion as Code with Terraform</title>
-      <link>https://thqnhat.github.io/post/2020/12/azure/azure-bastion-with-terraform/</link>
-      <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://thqnhat.github.io/post/2020/12/azure/azure-bastion-with-terraform/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
-      <title>First post!</title>
-      <link>https://thqnhat.github.io/post/2020/12/first-post/</link>
-      <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://thqnhat.github.io/post/2020/12/first-post/</guid>
-      <description>Yeah. This is real. My blog is live 😊
-A long time ago, I would like to make a blog to share my experience and my point of view but I&amp;rsquo;m not able to arrange myself to do that. Recently, I viewed some technical blogs hosted by GitHub and they are inspiring me on how to build fastly a blog with GitHub pages.
-And that I want to share with you in this article.</description>
     </item>
     
   </channel>
