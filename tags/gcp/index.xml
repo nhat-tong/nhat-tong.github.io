@@ -9,7 +9,7 @@
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
     <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://nhat-tong.github.io/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Google Private Access &amp; Cloud NAT</title>
+      <title>GCP-Google Private Access &amp; Cloud NAT</title>
       <link>https://nhat-tong.github.io/post/2020/12/gcp/private-access-cloud-nat-3/</link>
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
@@ -20,7 +20,7 @@ We will create a bucket in the project host-project1 named test-bucket and uploa
     </item>
     
     <item>
-      <title>Basic Google Cloud DNS</title>
+      <title>GCP-Basic Google Cloud DNS</title>
       <link>https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/</link>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
@@ -32,7 +32,7 @@ who are located in the same VPC named apps-vpc.</description>
     </item>
     
     <item>
-      <title>Basic networking terminology in Google Cloud Platform</title>
+      <title>GCP-Basic networking terminology in Google Cloud Platform</title>
       <link>https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/</link>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
