@@ -7,11 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Basic Google Cloud DNS - Home</title>
-  <meta name="description" content="This is the second part of GCP&rsquo;s series. In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.
-In that example, I have two virtual machines:
- instance-core: 10.23.0.2 instance-svc: 10.23.0.19
-who are located in the same VPC named apps-vpc.">
+  <title>Google Private Access &amp; Cloud NAT - Home</title>
+  <meta name="description" content="This is the third part of GCP&rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is deployed.
+Currently, the below virtual machine instance-core doesn&rsquo;t have an external IP.
+We will create a bucket in the project host-project1 named test-bucket and upload a test file test-file.txt into this bucket.">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -47,8 +46,8 @@ who are located in the same VPC named apps-vpc.">
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/nhat-tong.github.io\/post\/2020\/12\/gcp\/basic-cloud-dns-3\/",
-          "name": "Basic google cloud d n s"
+          "@id": "https:\/\/nhat-tong.github.io\/post\/2020\/12\/gcp\/private-access-cloud-nat-3\/",
+          "name": "Google private access \u0026 cloud n a t"
         }
     }]
 }
@@ -59,15 +58,15 @@ who are located in the same VPC named apps-vpc.">
   "author": {
     "name" : "Nhat Tong"
   },
-  "headline": "Basic Google Cloud DNS",
-  "description" : "This is the second part of GCP\u0026rsquo;s series. In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it\u0026rsquo;s internal IP or it\u0026rsquo;s internal DNS.\nIn that example, I have two virtual machines:\n instance-core: 10.23.0.2 instance-svc: 10.23.0.19\nwho are located in the same VPC named apps-vpc.",
+  "headline": "Google Private Access \u0026 Cloud NAT",
+  "description" : "This is the third part of GCP\u0026rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is deployed.\nCurrently, the below virtual machine instance-core doesn\u0026rsquo;t have an external IP.\nWe will create a bucket in the project host-project1 named test-bucket and upload a test file test-file.txt into this bucket.",
   "inLanguage" : "en",
-  "wordCount":  483 ,
-  "datePublished" : "2020-12-12T00:00:00",
-  "dateModified" : "2020-12-12T00:00:00",
+  "wordCount":  549 ,
+  "datePublished" : "2020-12-13T00:00:00",
+  "dateModified" : "2020-12-13T00:00:00",
   "image" : "https:\/\/nhat-tong.github.io\/devops.png",
   "keywords" : [ "gcp" ],
-  "mainEntityOfPage" : "https:\/\/nhat-tong.github.io\/post\/2020\/12\/gcp\/basic-cloud-dns-3\/",
+  "mainEntityOfPage" : "https:\/\/nhat-tong.github.io\/post\/2020\/12\/gcp\/private-access-cloud-nat-3\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/nhat-tong.github.io",
@@ -81,18 +80,17 @@ who are located in the same VPC named apps-vpc.">
 }
 </script>
 
-<meta property="og:title" content="Basic Google Cloud DNS" />
-<meta property="og:description" content="This is the second part of GCP&rsquo;s series. In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.
-In that example, I have two virtual machines:
- instance-core: 10.23.0.2 instance-svc: 10.23.0.19
-who are located in the same VPC named apps-vpc.">
+<meta property="og:title" content="Google Private Access &amp; Cloud NAT" />
+<meta property="og:description" content="This is the third part of GCP&rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is deployed.
+Currently, the below virtual machine instance-core doesn&rsquo;t have an external IP.
+We will create a bucket in the project host-project1 named test-bucket and upload a test file test-file.txt into this bucket.">
 <meta property="og:image" content="https://nhat-tong.github.io/devops.png" />
-<meta property="og:url" content="https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/" />
+<meta property="og:url" content="https://nhat-tong.github.io/post/2020/12/gcp/private-access-cloud-nat-3/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
-  <meta name="twitter:title" content="Basic Google Cloud DNS" />
-  <meta name="twitter:description" content="This is the second part of GCP&rsquo;s series. In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same …">
+  <meta name="twitter:title" content="Google Private Access &amp; Cloud NAT" />
+  <meta name="twitter:description" content="This is the third part of GCP&rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is …">
   <meta name="twitter:image" content="https://nhat-tong.github.io/devops.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://nhat-tong.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -243,7 +241,7 @@ who are located in the same VPC named apps-vpc.">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Basic Google Cloud DNS</h1>
+                <h1>Google Private Access &amp; Cloud NAT</h1>
               
               
               
@@ -251,13 +249,13 @@ who are located in the same VPC named apps-vpc.">
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;December 12, 2020
+  <i class="fas fa-calendar"></i>&nbsp;December 13, 2020
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;483&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;549&nbsp;words
   
   
   
@@ -278,81 +276,54 @@ who are located in the same VPC named apps-vpc.">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>This is the second part of GCP&rsquo;s series. In the <a href="https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/" target="_blank">previous article</a> we covered some basic terminology in GCP.
-As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.</p>
-<p>In that example, I have two virtual machines:</p>
+        <p>This is the third part of GCP&rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is deployed.</p>
+<p>Currently, the below virtual machine <em>instance-core</em> doesn&rsquo;t have an external IP.</p>
+<p><img src="../images/22_vm_without_external_ip.png" alt="vm without external ip"></p>
+<p>We will create a bucket in the project <em>host-project1</em> named <em>test-bucket</em> and upload a test file <em>test-file.txt</em> into this bucket.</p>
+<p><img src="../images/23_test_bucket.png" alt="test bucket"></p>
+<p>Then, we try to download this file from the vm <em>instance-core</em> with this gcloud command line:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">gsutil</span> <span class="nx">cp</span> <span class="nx">gs</span><span class="p">:</span><span class="c1">//test-bucket-13122020/test-file.txt .
+</span></code></pre></div><p><img src="../images/24_google_access_KO.png" alt="access KO"></p>
+<p>Unfortunately, the above command didn&rsquo;t work because the vm cannot reach out to Google&rsquo;s APIs and services without an external IP or the service Private Google Access is disabled. In that case, Private Google Access is a good option.</p>
+<h3 id="enable-private-google-access"><strong>Enable Private Google Access</strong></h3>
+<p>Private Google Access is enabled at the subnet level. When it is enabled, instances in the subnet that only have private IP addresses can send traffic to Google APIs and services through the default route (0.0.0.0/0) with a next hop to the default internet gateway.</p>
+<p><img src="../images/25_enable_private_google_access.png" alt="enable private google access"></p>
+<p>Let&rsquo;s run the test again:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">gsutil</span> <span class="nx">cp</span> <span class="nx">gs</span><span class="p">:</span><span class="c1">//test-bucket-13122020/test-file.txt .
+</span></code></pre></div><p><img src="../images/26_google_access_OK.png" alt="google access OK"></p>
+<p><strong>It should works!</strong></p>
+<p>Let&rsquo;s say that our vm needs to go the Internet to download the patches, configurations, etc&hellip;</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">curl</span> <span class="nx">https</span><span class="p">:</span><span class="c1">//example.com
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">sudo</span> <span class="nx">apt</span><span class="o">-</span><span class="nx">get</span> <span class="nx">update</span>
+</code></pre></div><p>Although the vm <em>instance-host1</em> can now access certain Google APIs and services without an external IP address, the instance cannot access the internet for updates and patches.</p>
+<p><img src="../images/27_go_internet_KO_without_NAT.png" alt="go internet KO"></p>
+<p>In that case, you can think about Google Cloud NAT.</p>
+<h3 id="google-cloud-nat"><strong>Google Cloud NAT</strong></h3>
+<p>The Cloud NAT service allows Google Cloud VM instances that don&rsquo;t have external IP addresses to connect to the internet.</p>
+<p>Cloud NAT implements outbound NAT in conjunction with a default route to allow your instances to reach the internet.</p>
+<p>It doesn&rsquo;t implement inbound NAT. Hosts outside of your VPC network can respond only to established connections initiated by your instances; they cannot initiate their own connections to your instances using Cloud NAT.</p>
+<p>Cloud NAT service is a specific VPC and is a specific region. Therefore, a Cloud NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.</p>
+<p>To allow the vm <em>instance-core</em> to go to the Internet, let&rsquo;s create a Cloud NAT gateway on the VPC <em>apps-vpc</em> in which the vm is deployed.</p>
 <ul>
-<li>instance-core: 10.23.0.2</li>
-<li>instance-svc: 10.23.0.19<br>
-who are located in the same VPC named <em>apps-vpc</em>.</li>
+<li>Gateway name: cloud-nat-to-internet</li>
+<li>VPC Network: apps-vpc</li>
+<li>Region: must be the same region as instance-core (europe-west3)</li>
+<li>Cloud Router: create a new one if not exists</li>
+<li>NAT mapping - Source: you can select the subnet to NAT. By default, all subnets in VPC are selected.</li>
+<li>NAT IP addresses: Automatic</li>
 </ul>
-<p>The internal DNS of vm <em>instance-svc</em> could be found using this curl:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">curl</span> <span class="s">&#34;http://metadata.google.internal/computeMetadata/v1/instance/hostname&#34;</span> <span class="o">-</span><span class="nx">H</span> <span class="s">&#34;Metadata-Flavor: Google&#34;</span>
-</code></pre></div><p><u>Example 1:</u> from the vm <em>instance-core</em>, ping the vm <em>instance-svc</em> using it&rsquo;s internal IP.</p>
-<p><img src="../images/12_ping_internal_IP.png" alt="Ping vm using internal IP"></p>
-<p><u>Example 2:</u> from the vm <em>instance-core</em>, ping the vm <em>instance-svc</em> using it&rsquo;s internal DNS.</p>
-<p><img src="../images/13_ping_internal_DNS.png" alt="Ping vm using internal DNS"></p>
-<p><u>Example 3:</u> if VPC peering is enabled, you could ping the vm using internal IP from a vm (<em>instance-host2</em>) on a different network (<em>shared-vpc2</em>)</p>
-<p><img src="../images/14_ping_VPC_internal_IP.png" alt="Ping vm using internal DNS"></p>
-<p><u>Example 4:</u> you cannot ping the vm using internal DNS from a vm (<em>instance-host2</em>) on a different network (<em>shared-vpc2</em>)</p>
-<p><img src="../images/15_ping_VPC_internal_DNS.png" alt="Ping vm using internal DNS"></p>
-<p><strong>So, what if you always want to use a fully qualified domain name (FQDN) to reach out to your virtual machine from a different network instead of an IP address ?</strong></p>
-<p>Cloud DNS is your solution!
-Google Cloud DNS is a scalable, reliable and managed authoritative Domain Name System (DNS) service running on the same infrastructure as Google.
-It has low latency, high availability and is a cost-effective way to make your applications and services available to your users.
-Cloud DNS translates requests for domain names like <a href="http://www.google.com">www.google.com</a> into IP addresses like 74.125.29.101.</p>
-<h3 id="create-a-dns-privated-zone"><strong>Create a dns privated zone</strong></h3>
-<p>From the producer network, project <em>host-project1</em> which contain the first VPC (<em>apps-vpc</em>), create a private zone dns named <em>demodns.getcontacts.fr</em></p>
-<ul>
-<li>Zone type: Private</li>
-<li>Zone name: demo-dns-private-zone</li>
-<li>DNS name: demodns.getcontacts.fr</li>
-<li>Options: Default (Private)</li>
-<li>Networks: apps-vpc</li>
-</ul>
-<p><img src="../images/16_cloud_dns_private_zone.png" alt="Cloud DNS Private Zone"></p>
-<h3 id="create-dns-record-set"><strong>Create dns record set</strong></h3>
-<p>Inside of this dns private zone, you will create two records set to map a DNS name to an internal IP of your virtual machine</p>
-<ul>
-<li>DNS Name: instance-core.demodns.getcontacts.fr</li>
-<li>Resource Record Type: A</li>
-<li>TTL: 5</li>
-<li>TTL Unit: minutes</li>
-<li>IPv4: 10.23.0.2</li>
-</ul>
-<hr>
-<ul>
-<li>DNS Name: instance-svc.demodns.getcontacts.fr</li>
-<li>Resource Record Type: A</li>
-<li>TTL: 5</li>
-<li>TTL Unit: minutes</li>
-<li>IPv4: 10.23.0.19</li>
-</ul>
-<p><img src="../images/17_cloud_dns_record_set.png" alt="Cloud DNS Record Set"></p>
-<h3 id="create-a-peering-dns"><strong>Create a peering DNS</strong></h3>
-<p>From the consumer network, project <em>host-project2</em> that contains the second VPC (<em>shared-vpc2</em>), you create a peering dns to <em>demodns.getcontacts.fr</em> on <em>apps-vpc</em></p>
-<ul>
-<li>Zone type: Private</li>
-<li>Zone name: demo-dns-private-zone</li>
-<li>DNS name: demodns.getcontacts.fr</li>
-<li>Options: DNS Peering</li>
-<li>Networks: shared-vpc2</li>
-<li>Peer project: host-project1</li>
-<li>Peer network: apps-vpc</li>
-</ul>
-<p><img src="../images/18_cloud_dns_peering.png" alt="Cloud DNS Peering"></p>
-<p>Finally, you would have a side by side configuration between the producer network <em>host-project1</em> and the consumer network <em>host-project2</em></p>
-<p><img src="../images/19_cloud_dns_producer_consumer_dns_peering.png" alt="Cloud DNS Peering Side by Side"></p>
-<p>Now, everything is done. You can make some tests.
-Firstly, from the consumer network <em>host-project2</em>, the DNS resolution to resolve the vm located on the producer network must be worked using the DNS name.</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">dig</span> <span class="nx">instance</span><span class="o">-</span><span class="nx">core</span><span class="p">.</span><span class="nx">demodns</span><span class="p">.</span><span class="nx">getcontacts</span><span class="p">.</span><span class="nx">fr</span>
-<span class="nx">dig</span> <span class="nx">instance</span><span class="o">-</span><span class="nx">svc</span><span class="p">.</span><span class="nx">demodns</span><span class="p">.</span><span class="nx">getcontacts</span><span class="p">.</span><span class="nx">fr</span>
-</code></pre></div><p><img src="../images/20_cloud_dns_dig.png" alt="Cloud DNS Resolution"></p>
-<p>That works like a charm! ☀️ ☀️</p>
-<p>If you have a peering enabled between two VPC, you can also ping these vms using their&rsquo;s dns name.</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">ping</span> <span class="o">-</span><span class="nx">c</span> <span class="mi">3</span> <span class="nx">instance</span><span class="o">-</span><span class="nx">core</span><span class="p">.</span><span class="nx">demodns</span><span class="p">.</span><span class="nx">getcontacts</span><span class="p">.</span><span class="nx">fr</span>
-<span class="nx">ping</span> <span class="o">-</span><span class="nx">c</span> <span class="mi">3</span> <span class="nx">instance</span><span class="o">-</span><span class="nx">svc</span><span class="p">.</span><span class="nx">demodns</span><span class="p">.</span><span class="nx">getcontacts</span><span class="p">.</span><span class="nx">fr</span>
-</code></pre></div><p><img src="../images/21_cloud_dns_ping.png" alt="Cloud DNS Resolution"></p>
+<p><img src="../images/28_create_nat_gateways.png" alt="create cloud nat gateway"></p>
+<p>Let&rsquo;s wait some minutes until the status of service becomes <em>Running</em>.</p>
+<p><img src="../images/28_cloud_nat_running.png" alt="cloud nat status"></p>
+<p>Now, let&rsquo;s test the connection to the Internet:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">sudo</span> <span class="nx">apt</span><span class="o">-</span><span class="nx">get</span> <span class="nx">update</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">curl</span> <span class="nx">ipconfig</span><span class="p">.</span><span class="nx">io</span>
+</code></pre></div><p><strong>And that works fine!</strong></p>
+<p><img src="../images/29_go_to_Internet_OK.png" alt="go to internet with Cloud Nat"></p>
+<p>You recognized also that the Cloud Nat assigned to us n public IP allowing us to go the Internet without an external IP assigned on the vm.</p>
+<p>This public IP is dynamic (changed and managed by Google) and it is the same IP for all virtual machines in the VPC.</p>
+<p>If you would like to use a static IP address, you can change the option <strong>NAT IP Addresses</strong> from <em>Automatic</em> to <em>Manual</em>.</p>
+<p><img src="../30_cloud_nat_static_IP.png" alt="cloud nat static IP"></p>
 
 
         
@@ -375,7 +346,7 @@ Firstly, from the consumer network <em>host-project2</em>, the DNS resolution to
                   <ul>
                 
                 
-                    <li><a href="/post/2020/12/gcp/private-access-cloud-nat-3/">Google Private Access &amp; Cloud NAT</a></li>
+                    <li><a href="/post/2020/12/gcp/basic-cloud-dns-3/">Basic Google Cloud DNS</a></li>
                 
                     <li><a href="/post/2020/12/gcp/basic-networking-terminology-1/">Basic networking terminology in Google Cloud Platform</a></li>
                 
@@ -389,13 +360,9 @@ Firstly, from the consumer network <em>host-project2</em>, the DNS resolution to
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/" data-toggle="tooltip" data-placement="top" title="Basic networking terminology in Google Cloud Platform">&larr; Previous Post</a>
+              <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/" data-toggle="tooltip" data-placement="top" title="Basic Google Cloud DNS">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://nhat-tong.github.io/post/2020/12/gcp/private-access-cloud-nat-3/" data-toggle="tooltip" data-placement="top" title="Google Private Access &amp; Cloud NAT">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
