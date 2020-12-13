@@ -14,9 +14,12 @@
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://nhat-tong.github.io/post/2020/12/gcp/private-access-cloud-nat-3/</guid>
-      <description>This is the third part of GCP&amp;rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is deployed.
-Currently, the below virtual machine instance-core doesn&amp;rsquo;t have an external IP.
-We will create a bucket in the project host-project1 named test-bucket and upload a test file test-file.txt into this bucket.</description>
+      <description>&lt;p&gt;This is the third part of GCP&amp;rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is deployed.&lt;/p&gt;
+&lt;p&gt;Topics to cover:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Private Google Access&lt;/li&gt;
+&lt;li&gt;Cloud NAT&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -25,10 +28,8 @@ We will create a bucket in the project host-project1 named test-bucket and uploa
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/</guid>
-      <description>This is the second part of GCP&amp;rsquo;s series. In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&amp;rsquo;s internal IP or it&amp;rsquo;s internal DNS.
-In that example, I have two virtual machines:
- instance-core: 10.23.0.2 instance-svc: 10.23.0.19
-who are located in the same VPC named apps-vpc.</description>
+      <description>&lt;p&gt;This is the second part of GCP&amp;rsquo;s series. In the &lt;a href=&#34;https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/&#34; target=&#34;_blank&#34;&gt;previous article&lt;/a&gt; we covered some basic terminology in GCP.&lt;/p&gt;
+&lt;p&gt;As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&amp;rsquo;s internal IP or it&amp;rsquo;s internal DNS.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,9 +38,18 @@ who are located in the same VPC named apps-vpc.</description>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/</guid>
-      <description>This is the first part of GCP&amp;rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).
-Topics to cover:
- Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.</description>
+      <description>&lt;p&gt;This is the first part of GCP&amp;rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).&lt;/p&gt;
+&lt;p&gt;Topics to cover:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Google Cloud&lt;/li&gt;
+&lt;li&gt;Projects and networks&lt;/li&gt;
+&lt;li&gt;Internal IP and External IP&lt;/li&gt;
+&lt;li&gt;DNS resolution for internal IP&lt;/li&gt;
+&lt;li&gt;DNS resolution for external IP&lt;/li&gt;
+&lt;li&gt;Cloud DNS&lt;/li&gt;
+&lt;li&gt;Firewall&lt;/li&gt;
+&lt;li&gt;Route&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

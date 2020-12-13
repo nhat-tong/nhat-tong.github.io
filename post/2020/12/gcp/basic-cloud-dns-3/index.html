@@ -8,10 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>GCP-Basic Google Cloud DNS - Home</title>
-  <meta name="description" content="This is the second part of GCP&rsquo;s series. In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.
-In that example, I have two virtual machines:
- instance-core: 10.23.0.2 instance-svc: 10.23.0.19
-who are located in the same VPC named apps-vpc.">
+  <meta name="description" content="This is the second part of GCP&rsquo;s series. In the previous article we covered some basic terminology in GCP.
+As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -60,7 +58,7 @@ who are located in the same VPC named apps-vpc.">
     "name" : "Nhat Tong"
   },
   "headline": "GCP-Basic Google Cloud DNS",
-  "description" : "This is the second part of GCP\u0026rsquo;s series. In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it\u0026rsquo;s internal IP or it\u0026rsquo;s internal DNS.\nIn that example, I have two virtual machines:\n instance-core: 10.23.0.2 instance-svc: 10.23.0.19\nwho are located in the same VPC named apps-vpc.",
+  "description" : "This is the second part of GCP\u0026rsquo;s series. In the previous article we covered some basic terminology in GCP.\nAs you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it\u0026rsquo;s internal IP or it\u0026rsquo;s internal DNS.\n",
   "inLanguage" : "en",
   "wordCount":  483 ,
   "datePublished" : "2020-12-12T00:00:00",
@@ -82,17 +80,16 @@ who are located in the same VPC named apps-vpc.">
 </script>
 
 <meta property="og:title" content="GCP-Basic Google Cloud DNS" />
-<meta property="og:description" content="This is the second part of GCP&rsquo;s series. In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.
-In that example, I have two virtual machines:
- instance-core: 10.23.0.2 instance-svc: 10.23.0.19
-who are located in the same VPC named apps-vpc.">
+<meta property="og:description" content="This is the second part of GCP&rsquo;s series. In the previous article we covered some basic terminology in GCP.
+As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.">
 <meta property="og:image" content="https://nhat-tong.github.io/devops.png" />
 <meta property="og:url" content="https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
   <meta name="twitter:title" content="GCP-Basic Google Cloud DNS" />
-  <meta name="twitter:description" content="This is the second part of GCP&rsquo;s series. In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same …">
+  <meta name="twitter:description" content="This is the second part of GCP&rsquo;s series. In the previous article we covered some basic terminology in GCP.
+As you know, each virtual machine created has an internal IP assigned. From the same …">
   <meta name="twitter:image" content="https://nhat-tong.github.io/devops.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://nhat-tong.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -266,8 +263,8 @@ who are located in the same VPC named apps-vpc.">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>This is the second part of GCP&rsquo;s series. In the <a href="https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/" target="_blank">previous article</a> we covered some basic terminology in GCP.
-As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.</p>
+        <p>This is the second part of GCP&rsquo;s series. In the <a href="https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/" target="_blank">previous article</a> we covered some basic terminology in GCP.</p>
+<p>As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.</p>
 <p>In that example, I have two virtual machines:</p>
 <ul>
 <li>instance-core: 10.23.0.2</li>
@@ -341,7 +338,6 @@ Firstly, from the consumer network <em>host-project2</em>, the DNS resolution to
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">ping</span> <span class="o">-</span><span class="nx">c</span> <span class="mi">3</span> <span class="nx">instance</span><span class="o">-</span><span class="nx">core</span><span class="p">.</span><span class="nx">demodns</span><span class="p">.</span><span class="nx">getcontacts</span><span class="p">.</span><span class="nx">fr</span>
 <span class="nx">ping</span> <span class="o">-</span><span class="nx">c</span> <span class="mi">3</span> <span class="nx">instance</span><span class="o">-</span><span class="nx">svc</span><span class="p">.</span><span class="nx">demodns</span><span class="p">.</span><span class="nx">getcontacts</span><span class="p">.</span><span class="nx">fr</span>
 </code></pre></div><p><img src="../images/21_cloud_dns_ping.png" alt="Cloud DNS Resolution"></p>
-
 
         
           <div class="blog-tags">

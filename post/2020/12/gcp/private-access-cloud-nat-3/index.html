@@ -9,8 +9,11 @@
 
   <title>GCP-Google Private Access &amp; Cloud NAT - Home</title>
   <meta name="description" content="This is the third part of GCP&rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is deployed.
-Currently, the below virtual machine instance-core doesn&rsquo;t have an external IP.
-We will create a bucket in the project host-project1 named test-bucket and upload a test file test-file.txt into this bucket.">
+Topics to cover:
+
+Private Google Access
+Cloud NAT
+">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -59,9 +62,9 @@ We will create a bucket in the project host-project1 named test-bucket and uploa
     "name" : "Nhat Tong"
   },
   "headline": "GCP-Google Private Access \u0026 Cloud NAT",
-  "description" : "This is the third part of GCP\u0026rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is deployed.\nCurrently, the below virtual machine instance-core doesn\u0026rsquo;t have an external IP.\nWe will create a bucket in the project host-project1 named test-bucket and upload a test file test-file.txt into this bucket.",
+  "description" : "This is the third part of GCP\u0026rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is deployed.\nTopics to cover:\n Private Google Access Cloud NAT ",
   "inLanguage" : "en",
-  "wordCount":  552 ,
+  "wordCount":  560 ,
   "datePublished" : "2020-12-13T00:00:00",
   "dateModified" : "2020-12-13T00:00:00",
   "image" : "https:\/\/nhat-tong.github.io\/devops.png",
@@ -82,8 +85,11 @@ We will create a bucket in the project host-project1 named test-bucket and uploa
 
 <meta property="og:title" content="GCP-Google Private Access &amp; Cloud NAT" />
 <meta property="og:description" content="This is the third part of GCP&rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is deployed.
-Currently, the below virtual machine instance-core doesn&rsquo;t have an external IP.
-We will create a bucket in the project host-project1 named test-bucket and upload a test file test-file.txt into this bucket.">
+Topics to cover:
+
+Private Google Access
+Cloud NAT
+">
 <meta property="og:image" content="https://nhat-tong.github.io/devops.png" />
 <meta property="og:url" content="https://nhat-tong.github.io/post/2020/12/gcp/private-access-cloud-nat-3/" />
 <meta property="og:type" content="website" />
@@ -243,7 +249,7 @@ We will create a bucket in the project host-project1 named test-bucket and uploa
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;552&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;560&nbsp;words
   
   
   
@@ -265,6 +271,11 @@ We will create a bucket in the project host-project1 named test-bucket and uploa
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>This is the third part of GCP&rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is deployed.</p>
+<p>Topics to cover:</p>
+<ul>
+<li>Private Google Access</li>
+<li>Cloud NAT</li>
+</ul>
 <p>Currently, the below virtual machine <em>instance-core</em> doesn&rsquo;t have an external IP.</p>
 <p><img src="../images/22_vm_without_external_ip.png" alt="vm without external ip"></p>
 <p>We will create a bucket in the project <em>host-project1</em> named <em>test-bucket</em> and upload a test file <em>test-file.txt</em> into this bucket.</p>
@@ -313,7 +324,6 @@ We will create a bucket in the project host-project1 named test-bucket and uploa
 <p>If you would like to use a static IP address, you can change the option <strong>NAT IP Addresses</strong> from <em>Automatic</em> to <em>Manual</em>.</p>
 <p><img src="../images/30_cloud_nat_static_IP.png" alt="cloud nat static IP"></p>
 <p>Happy practicing!</p>
-
 
         
           <div class="blog-tags">
