@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://nhat-tong.github.io/post/2020/12/gcp/basic-terminology/</loc>
+    <loc>https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/</loc>
+    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/</loc>
     <lastmod>2020-12-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -13,7 +18,7 @@
   </url>
   
   <url>
-    <loc>https://nhat-tong.github.io/post/2020/12/gcp/cloud-dns/</loc>
+    <loc>https://nhat-tong.github.io/post/2020/12/gcp/private-connection-3/</loc>
     <lastmod>2020-12-12T00:00:00+00:00</lastmod>
   </url>
   

@@ -215,8 +215,54 @@
           
           
             <article class="post-preview">
-    <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-terminology/">
-        <h2 class="post-title">Basic terminology in Google Cloud Platform</h2>
+    <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/">
+        <h2 class="post-title">Basic Google Cloud DNS</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;December 12, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;483&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        This is the second part of GCP&rsquo;s series. In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.
+In that example, I have two virtual machines:
+ instance-core: 10.23.0.2 instance-svc: 10.23.0.19
+who are located in the same VPC named apps-vpc.
+        <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://nhat-tong.github.io/tags/gcp/">gcp</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/">
+        <h2 class="post-title">Basic networking terminology in Google Cloud Platform</h2>
         
         
         
@@ -245,7 +291,7 @@
         This is the first part of GCP&rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).
 Topics to cover:
  Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.
-        <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-terminology/" class="post-read-more">[Read More]</a>
+        <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/" class="post-read-more">[Read More]</a>
         
     </div>
 
@@ -260,8 +306,8 @@ Topics to cover:
 </article>
           
             <article class="post-preview">
-    <a href="https://nhat-tong.github.io/post/2020/12/gcp/cloud-dns/">
-        <h2 class="post-title">Google Cloud DNS</h2>
+    <a href="https://nhat-tong.github.io/post/2020/12/gcp/private-connection-3/">
+        <h2 class="post-title">Google Private Connection</h2>
         
         
         
@@ -274,10 +320,10 @@ Topics to cover:
   <i class="fas fa-calendar"></i>&nbsp;December 12, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;475&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;76&nbsp;words
   
   
   
@@ -287,11 +333,11 @@ Topics to cover:
     </p>
     <div class="post-entry">
         
-        In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.
-In that example, I have two virtual machines:
- instance-core: 10.23.0.2 instance-svc: 10.23.0.19
-who are located in the same VPC named apps-vpc.  The internal DNS of vm instance-svc could be found using this curl:
-        <a href="https://nhat-tong.github.io/post/2020/12/gcp/cloud-dns/" class="post-read-more">[Read More]</a>
+        Problem
+External IP
+Outgoing connection to the Internet using internal IP https://cloud.google.com/nat/docs/overview
+Cloud NAT gateways are associated with subnet IP address ranges in a single region and a single VPC network. A Cloud NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.
+        <a href="https://nhat-tong.github.io/post/2020/12/gcp/private-connection-3/" class="post-read-more">[Read More]</a>
         
     </div>
 

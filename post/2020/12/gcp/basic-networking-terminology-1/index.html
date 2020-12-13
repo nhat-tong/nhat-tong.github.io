@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Basic networking terminology in Google Cloud Platform - Home</title>
+  <meta name="description" content="This is the first part of GCP&rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).
+Topics to cover:
+ Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.">
+  <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Home",
+    
+    "url": "https:\/\/nhat-tong.github.io"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/nhat-tong.github.io"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/nhat-tong.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/nhat-tong.github.io\/post\/2020\/12\/gcp\/basic-networking-terminology-1\/",
+          "name": "Basic networking terminology in google cloud platform"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Nhat Tong"
+  },
+  "headline": "Basic networking terminology in Google Cloud Platform",
+  "description" : "This is the first part of GCP\u0026rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).\nTopics to cover:\n Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.",
+  "inLanguage" : "en",
+  "wordCount":  1100 ,
+  "datePublished" : "2020-12-12T00:00:00",
+  "dateModified" : "2020-12-12T00:00:00",
+  "image" : "https:\/\/nhat-tong.github.io\/devops.png",
+  "keywords" : [ "gcp" ],
+  "mainEntityOfPage" : "https:\/\/nhat-tong.github.io\/post\/2020\/12\/gcp\/basic-networking-terminology-1\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/nhat-tong.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/nhat-tong.github.io\/devops.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Basic networking terminology in Google Cloud Platform" />
+<meta property="og:description" content="This is the first part of GCP&rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).
+Topics to cover:
+ Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.">
+<meta property="og:image" content="https://nhat-tong.github.io/devops.png" />
+<meta property="og:url" content="https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Home" />
+
+  <meta name="twitter:title" content="Basic networking terminology in Google Cloud Platform" />
+  <meta name="twitter:description" content="This is the first part of GCP&rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).
+Topics to cover:
+ Google Cloud Projects and …">
+  <meta name="twitter:image" content="https://nhat-tong.github.io/devops.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://nhat-tong.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.79.0" />
+  <link rel="alternate" href="https://nhat-tong.github.io/index.xml" type="application/rss+xml" title="Home"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://nhat-tong.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://nhat-tong.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://nhat-tong.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://nhat-tong.github.io">Home</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+          
+            <li>
+              
+                
+              
+                
+                  <a href="/fr" lang="fr">fr</a>
+                
+              
+            </li>
+          
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Home" href="https://nhat-tong.github.io">
+            <img class="avatar-img" src="https://nhat-tong.github.io/devops.png" alt="Home" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Basic networking terminology in Google Cloud Platform</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;December 12, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1100&nbsp;words
+  
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>This is the first part of GCP&rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).</p>
+<p>Topics to cover:</p>
+<ul>
+<li>Google Cloud</li>
+<li>Projects and networks</li>
+<li>Internal IP and External IP</li>
+<li>DNS resolution for internal IP</li>
+<li>DNS resolution for external IP</li>
+<li>Cloud DNS</li>
+<li>Firewall</li>
+<li>Route</li>
+</ul>
+<h3 id="google-cloud"><strong>Google Cloud</strong></h3>
+<p><img src="../images/1_google_cloud.png" alt="Google Cloud"></p>
+<p>Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.</p>
+<p>A region is a specific geographical location that consists of zones. A zone is a deployment area for Google Cloud resources within a region. Google Cloud&rsquo;s services and resources can be zonal, regional, multiregional or global.</p>
+<p><u><em>Zonal resources:</em></u><br>
+Zonal resources are created and are operated within a single zone. If a zone becomes unavailable, all of zonal resources in that zone are unavailable until that zone is restored. For example, a Virtual Machine is a zonal resource.</p>
+<p><u><em>Regional resources:</em></u><br>
+Regional resources are resources that are redundantly deployed across multiple zones within a region. For example, an App Engine application is a regional resource.</p>
+<p><u><em>Multiregional resources:</em></u>   <br>
+Some Google Cloud services are managed by Google to be redundant and distributed within and across regions. For example: Datastore, Firestore, Cloud Storage, BigQuery,&hellip;</p>
+<p><u><em>Global resources:</em></u><br>
+Global resources are resources that span all available regions. For example: Virtual Private Cloud.</p>
+<p>The PoPs are where Google’s network is connected to the rest of the internet.</p>
+<h3 id="projects-and-networks"><strong>Projects and networks</strong></h3>
+<p>Projects are the key organizer of infrastructure resources in GCP. A project may contain networks (up to 5 networks by default), subnetworks, firewalls, routes or other available resources in GCP. It associates the resources and services with billing.</p>
+<p>A Virtual Private Cloud or VPC is Google&rsquo;s managed networking functionality for your cloud resources. <strong>It has no IP address range and spans all regions (a global resource)</strong>. A VPC can contain one or more subnetworks (or subnets).</p>
+<p><img src="../images/3_vpc_isolation.png" alt="VPC Isolation"></p>
+<p>Please note that private communication is scoped to the deployed VPC by default. It means that all virtual machines in the same network can communicate over internal IP (even if they are located in different regions).</p>
+<p>In the above figure, A and B are on the same network (network #1). So, they can communicate privately using their internal IP or their internal DNS. Otherwise, C and D are on a different network (even if the same region), they must use the external IP (public IP) for the communication.</p>
+<h3 id="internal-ip-and-external-ip"><strong>Internal IP and External IP</strong></h3>
+<p>In GCP, each virtual machine (vm) can have two IP addresses assigned: internal IP and external IP.
+An internal IP is a private IP that allows private communication within the created network.
+An external IP or public IP is optional. This ip allows your vm to communicate with other resources/vms on a different network.
+The vm doesn&rsquo;t know the external IP. The external IP is mapped to the internal IP.</p>
+<p><img src="../images/4_internal_external_IP.png" alt="Internal and External IP"></p>
+<h3 id="dns-resolution-for-internal-ip"><strong>DNS resolution for internal IP</strong></h3>
+<p>When you create a vm instance, an internal DNS is also created and is mapped to your internal IP.
+The internal DNS will be: [INSTANCE_NAME].[ZONE_NAME].c.[PROJECT_ID].internal
+or you can run this curl to have this information:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">curl</span> <span class="s">&#34;http://metadata.google.internal/computeMetadata/v1/instance/hostname&#34;</span> <span class="o">-</span><span class="nx">H</span> <span class="s">&#34;Metadata-Flavor: Google&#34;</span>
+</code></pre></div><p><img src="../images/5_internal_DNS.png" alt="Internal DNS"></p>
+<p>As you saw above, from another vm in the same network, you can use ping this vm using the internal DNS instead of internal IP.</p>
+<p>Specifically, the name resolution, in this case, is handled by internal DNS resolver (<strong>169.254.169.254</strong>). For more information, please refer to this page <a href="https://cloud.google.com/compute/docs/internal-dns">https://cloud.google.com/compute/docs/internal-dns</a>.</p>
+<h3 id="dns-resolution-for-external-ip"><strong>DNS resolution for external IP</strong></h3>
+<p>If you need to communicate with another vm on a different network (without VPC Peering) or go to the Internet, you may need an external IP. You need to be careful because this IP will be exposed to the Internet.</p>
+<p><img src="../images/6_external_IP.png" alt="External IP"></p>
+<p>With an external IP, your vm can communicate with other services on the Internet.</p>
+<p>Go to the Internet without the external IP: KO (by default). The additional configurations will be required to allow your vm to go to the Internet only with the internal IP. We will talk about it later.</p>
+<p><img src="../images/7_internet_without_external_ip.png" alt="Internet without external IP"></p>
+<p>Go to the Internet with the external IP: OK
+<img src="../images/8_internet_with_external_ip.png" alt="Internet with external IP"></p>
+<p>In that case, another vm on a different network(<em>instance-host2</em>) can reach out to your vm using the external IP.</p>
+<p><img src="../images/9_ping_with_external_IP.png" alt="Ping from a vm on different network"></p>
+<p>If you would like a fully qualified domain name (FQDN) instead of an IP, you may consider using Cloud DNS to create your dns zones and dns records. I cover this topic in a <a href="https://thqnhat.github.io/post/2020/12/gcp/cloud-dns/" target="_blank">separated article</a>.</p>
+<h3 id="cloud-dns"><strong>Cloud DNS</strong></h3>
+<p>Google Cloud DNS is a scalable, reliable and managed authoritative Domain Name System (DNS) service running on the same infrastructure as Google.<br>
+It has low latency, high availability and is a cost-effective way to make your applications and services available to your users.<br>
+Cloud DNS translates requests for domain names like <a href="http://www.google.com">www.google.com</a> into IP addresses like 74.125.29.101.</p>
+<h3 id="firewall"><strong>Firewall</strong></h3>
+<p>GCP firewall rules protect your virtual machine instances from unapproved connections, both inbound (called also &ldquo;ingress&rdquo;) and outbound (called also &ldquo;egress&rdquo;).</p>
+<p>Although firewall rules are applied to the network as a whole, connections are allowed
+or denied at the instance level. Therefore, firewall rules are not only between your instances and other networks but also between individual instances within the same network.</p>
+<p>A firewall rule is composed of the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:right">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>direction</td>
+<td style="text-align:center">ingress for inbound connection and egress for outbound connection</td>
+<td style="text-align:right">ingress</td>
+</tr>
+<tr>
+<td>source</td>
+<td style="text-align:center">ip address or service account of source</td>
+<td style="text-align:right">10.0.0.1/29</td>
+</tr>
+<tr>
+<td>source port</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">*</td>
+</tr>
+<tr>
+<td>destination</td>
+<td style="text-align:center">ip address or service account of destination</td>
+<td style="text-align:right">10.0.1.0/28</td>
+</tr>
+<tr>
+<td>destination port</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">22</td>
+</tr>
+<tr>
+<td>action</td>
+<td style="text-align:center">allow or deny</td>
+<td style="text-align:right">allow</td>
+</tr>
+<tr>
+<td>priority</td>
+<td style="text-align:center">governs the order in which rules are evaluated. The first matching rule is applied</td>
+<td style="text-align:right">1000</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../images/10_firewall_rules.png" alt="firewall rules"></p>
+<p>By default, every VPC network has two implied firewall rules. These rules exist, but are not shown in the Cloud Console:</p>
+<ol>
+<li>Implied allow egress rule. An egress rule whose action is allowed, destination is 0.0.0.0/0, and priority is the lowest possible (65535) lets any instance send traffic to any destination (Internet included). A higher priority rule may override this rule and restrict outbound access.</li>
+<li>Implied deny ingress rule. An ingress rule whose action is denied, source is 0.0.0.0/0, and priority is the lowest possible (65535). Therefore, the incoming connections to your instances are blocked by default. A higher priority rule may override this rule and allow incoming access.</li>
+</ol>
+<h3 id="route"><strong>Route</strong></h3>
+<p>A route is a mapping of an IP range to a destination.
+Every network (VPC) has:</p>
+<ul>
+<li>Routes that let instances in a network send traffic directly to each other</li>
+<li>A default route that directs packets to the Internet (Default internet gateway)</li>
+</ul>
+<p><img src="../images/11_default_routes.png" alt="default routes"></p>
+<p>For example, my VPC has two subnets (10.23.0.0/28 &amp; 10.23.0.16/28). By default, three routes are created. One for each subnet and the default route to the Internet.</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://nhat-tong.github.io/tags/gcp/">gcp</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+          
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="/post/2020/12/gcp/basic-cloud-dns-3/">Basic Google Cloud DNS</a></li>
+                
+                    <li><a href="/post/2020/12/gcp/private-connection-3/">Google Private Connection</a></li>
+                
+              </ul>
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://nhat-tong.github.io/post/2020/12/gcp/private-connection-3/" data-toggle="tooltip" data-placement="top" title="Google Private Connection">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/" data-toggle="tooltip" data-placement="top" title="Basic Google Cloud DNS">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nhattong" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+          
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:thqnhat@outlook.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/nhat-tong" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/hoang-quoc-nhat-tong-8b738233" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://nhat-tong.github.com">Nhat Tong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://nhat-tong.github.io">Home</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://nhat-tong.github.io/js/main.js"></script>
+<script src="https://nhat-tong.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://nhat-tong.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

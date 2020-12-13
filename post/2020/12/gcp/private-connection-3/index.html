@@ -7,7 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>gcp - Home</title>
+  <title>Google Private Connection - Home</title>
+  <meta name="description" content="Problem
+External IP
+Outgoing connection to the Internet using internal IP https://cloud.google.com/nat/docs/overview
+Cloud NAT gateways are associated with subnet IP address ranges in a single region and a single VPC network. A Cloud NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -28,14 +32,70 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/nhat-tong.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/nhat-tong.github.io\/post\/2020\/12\/gcp\/private-connection-3\/",
+          "name": "Google private connection"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Nhat Tong"
+  },
+  "headline": "Google Private Connection",
+  "description" : "Problem\nExternal IP\nOutgoing connection to the Internet using internal IP https:\/\/cloud.google.com\/nat\/docs\/overview\nCloud NAT gateways are associated with subnet IP address ranges in a single region and a single VPC network. A Cloud NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.",
+  "inLanguage" : "en",
+  "wordCount":  76 ,
+  "datePublished" : "2020-12-12T00:00:00",
+  "dateModified" : "2020-12-12T00:00:00",
+  "image" : "https:\/\/nhat-tong.github.io\/devops.png",
+  "keywords" : [ "gcp" ],
+  "mainEntityOfPage" : "https:\/\/nhat-tong.github.io\/post\/2020\/12\/gcp\/private-connection-3\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/nhat-tong.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/nhat-tong.github.io\/devops.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="gcp" />
+<meta property="og:title" content="Google Private Connection" />
+<meta property="og:description" content="Problem
+External IP
+Outgoing connection to the Internet using internal IP https://cloud.google.com/nat/docs/overview
+Cloud NAT gateways are associated with subnet IP address ranges in a single region and a single VPC network. A Cloud NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.">
 <meta property="og:image" content="https://nhat-tong.github.io/devops.png" />
-<meta property="og:url" content="https://nhat-tong.github.io/tags/gcp/" />
+<meta property="og:url" content="https://nhat-tong.github.io/post/2020/12/gcp/private-connection-3/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
-  <meta name="twitter:title" content="gcp" />
+  <meta name="twitter:title" content="Google Private Connection" />
+  <meta name="twitter:description" content="Problem
+External IP
+Outgoing connection to the Internet using internal IP https://cloud.google.com/nat/docs/overview
+Cloud NAT gateways are associated with subnet IP address ranges in a single region …">
   <meta name="twitter:image" content="https://nhat-tong.github.io/devops.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://nhat-tong.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -184,131 +244,14 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="tags-heading">
+            <div class="post-heading">
               
-                <h1>gcp</h1>
-              
-              
-                <hr class="small">
+                <h1>Google Private Connection</h1>
               
               
               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-
-    
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="posts-list">
-          
-            <article class="post-preview">
-    <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/">
-        <h2 class="post-title">Basic Google Cloud DNS</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;December 12, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;483&nbsp;words
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        This is the second part of GCP&rsquo;s series. In the previous article we covered some basic terminology in GCP. As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.
-In that example, I have two virtual machines:
- instance-core: 10.23.0.2 instance-svc: 10.23.0.19
-who are located in the same VPC named apps-vpc.
-        <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://nhat-tong.github.io/tags/gcp/">gcp</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/">
-        <h2 class="post-title">Basic networking terminology in Google Cloud Platform</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;December 12, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1100&nbsp;words
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        This is the first part of GCP&rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).
-Topics to cover:
- Google Cloud Projects and networks Internal IP and External IP DNS resolution for internal IP DNS resolution for external IP Cloud DNS Firewall Route  Google Cloud Google Cloud consists of regions (icons in blue), points of presence or PoPs (dots in blue), a global private network (blue lines) and services.
-        <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://nhat-tong.github.io/tags/gcp/">gcp</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://nhat-tong.github.io/post/2020/12/gcp/private-connection-3/">
-        <h2 class="post-title">Google Private Connection</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
+              
+                <span class="post-meta">
   
   
   <i class="fas fa-calendar"></i>&nbsp;December 12, 2020
@@ -324,32 +267,107 @@ Topics to cover:
 </span>
 
 
-    </p>
-    <div class="post-entry">
-        
-        Problem
-External IP
-Outgoing connection to the Internet using internal IP https://cloud.google.com/nat/docs/overview
-Cloud NAT gateways are associated with subnet IP address ranges in a single region and a single VPC network. A Cloud NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.
-        <a href="https://nhat-tong.github.io/post/2020/12/gcp/private-connection-3/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://nhat-tong.github.io/tags/gcp/">gcp</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
+              
+            </div>
+          </div>
         </div>
-        
       </div>
     </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p><u>Problem</u></p>
+<p>External IP</p>
+<p><strong>Outgoing connection to the Internet using internal IP</strong>
+<a href="https://cloud.google.com/nat/docs/overview">https://cloud.google.com/nat/docs/overview</a></p>
+<p>Cloud NAT gateways are associated with subnet IP address ranges in a single region and a single VPC network. A Cloud NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.</p>
+<p><strong>Outgoing connection to the Google Service&rsquo;s</strong></p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://nhat-tong.github.io/tags/gcp/">gcp</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+          
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="/post/2020/12/gcp/basic-cloud-dns-3/">Basic Google Cloud DNS</a></li>
+                
+                    <li><a href="/post/2020/12/gcp/basic-networking-terminology-1/">Basic networking terminology in Google Cloud Platform</a></li>
+                
+              </ul>
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://nhat-tong.github.io/post/2020/12/azure/azure-bastion-with-terraform/" data-toggle="tooltip" data-placement="top" title="Deploy Azure Bastion as Code with Terraform">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/" data-toggle="tooltip" data-placement="top" title="Basic networking terminology in Google Cloud Platform">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nhattong" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+          
+        
+        
+      
+
+    </div>
   </div>
+</div>
 
       
 <footer>
