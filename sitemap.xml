@@ -1,16 +1,72 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-  <sitemap>
-    <loc>https://nhat-tong.github.io/en/sitemap.xml</loc>
-    
-      <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-    
-  </sitemap>
+  <url>
+    <loc>https://nhat-tong.github.io/tags/gcp/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url>
   
-  <sitemap>
-    <loc>https://nhat-tong.github.io/fr/sitemap.xml</loc>
-    
-  </sitemap>
+  <url>
+    <loc>https://nhat-tong.github.io/post/2020/12/gcp/private-access-cloud-nat-3/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url>
   
-</sitemapindex>
+  <url>
+    <loc>https://nhat-tong.github.io/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/post/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/tags/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/</loc>
+    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/</loc>
+    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/tags/azure/</loc>
+    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/post/2020/12/azure/azure-bastion-with-terraform/</loc>
+    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/post/2020/12/first-post/</loc>
+    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/tags/terraform/</loc>
+    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/page/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/page/</loc>
+  </url>
+  
+</urlset>

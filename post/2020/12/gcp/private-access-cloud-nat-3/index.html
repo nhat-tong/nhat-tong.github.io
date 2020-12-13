@@ -61,7 +61,7 @@ We will create a bucket in the project host-project1 named test-bucket and uploa
   "headline": "Google Private Access \u0026 Cloud NAT",
   "description" : "This is the third part of GCP\u0026rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is deployed.\nCurrently, the below virtual machine instance-core doesn\u0026rsquo;t have an external IP.\nWe will create a bucket in the project host-project1 named test-bucket and upload a test file test-file.txt into this bucket.",
   "inLanguage" : "en",
-  "wordCount":  549 ,
+  "wordCount":  552 ,
   "datePublished" : "2020-12-13T00:00:00",
   "dateModified" : "2020-12-13T00:00:00",
   "image" : "https:\/\/nhat-tong.github.io\/devops.png",
@@ -140,18 +140,6 @@ We will create a bucket in the project host-project1 named test-bucket and uploa
           
         
 
-        
-          
-            <li>
-              
-                
-              
-                
-                  <a href="/fr" lang="fr">fr</a>
-                
-              
-            </li>
-          
         
 
         
@@ -255,7 +243,7 @@ We will create a bucket in the project host-project1 named test-bucket and uploa
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;549&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;552&nbsp;words
   
   
   
@@ -320,10 +308,11 @@ We will create a bucket in the project host-project1 named test-bucket and uploa
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">curl</span> <span class="nx">ipconfig</span><span class="p">.</span><span class="nx">io</span>
 </code></pre></div><p><strong>And that works fine!</strong></p>
 <p><img src="../images/29_go_to_Internet_OK.png" alt="go to internet with Cloud Nat"></p>
-<p>You recognized also that the Cloud Nat assigned to us n public IP allowing us to go the Internet without an external IP assigned on the vm.</p>
+<p>You recognized also that the Cloud Nat assigned to us a public IP <em>35.246.154.29</em> allowing us to go the Internet without an external IP assigned on the vm.</p>
 <p>This public IP is dynamic (changed and managed by Google) and it is the same IP for all virtual machines in the VPC.</p>
 <p>If you would like to use a static IP address, you can change the option <strong>NAT IP Addresses</strong> from <em>Automatic</em> to <em>Manual</em>.</p>
-<p><img src="../30_cloud_nat_static_IP.png" alt="cloud nat static IP"></p>
+<p><img src="../images/30_cloud_nat_static_IP.png" alt="cloud nat static IP"></p>
+<p>Happy practicing!</p>
 
 
         
