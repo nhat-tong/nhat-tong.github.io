@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nhat-tong.github.io/tags/azure/</loc>
+    <lastmod>2020-12-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/post/2020/12/azure/azure-resilency/</loc>
+    <lastmod>2020-12-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/</loc>
+    <lastmod>2020-12-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/post/</loc>
+    <lastmod>2020-12-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nhat-tong.github.io/tags/</loc>
+    <lastmod>2020-12-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nhat-tong.github.io/tags/gcp/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://nhat-tong.github.io/post/2020/12/gcp/private-access-cloud-nat-3/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nhat-tong.github.io/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nhat-tong.github.io/post/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nhat-tong.github.io/tags/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -35,11 +45,6 @@
   <url>
     <loc>https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/</loc>
     <lastmod>2020-12-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nhat-tong.github.io/tags/azure/</loc>
-    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
