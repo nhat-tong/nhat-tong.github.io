@@ -8,9 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Cloud NAT with multiple VPC - Home</title>
-  <meta name="description" content="As you know in the previous article, we could take advantages of Cloud NAT to go to the Internet without an external IP. A NAT Gateway work well with Shared VPC allowing your instances on the same Shared VPC to go to the Internet without an external IP.
+  <meta name="description" content="As you know in the previous article, we could take advantage of Cloud NAT to go to the Internet without an external IP.
 But the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.
-So, how we can use Cloud NAT in case of we have some VPC ? I will explain to you in this article.">
+So, how we can use Cloud NAT in case of we have some VPC networks ? I will explain to you in this article.">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -59,9 +59,9 @@ So, how we can use Cloud NAT in case of we have some VPC ? I will explain to you
     "name" : "Nhat Tong"
   },
   "headline": "Cloud NAT with multiple VPC",
-  "description" : "As you know in the previous article, we could take advantages of Cloud NAT to go to the Internet without an external IP. A NAT Gateway work well with Shared VPC allowing your instances on the same Shared VPC to go to the Internet without an external IP.\nBut the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.\nSo, how we can use Cloud NAT in case of we have some VPC ? I will explain to you in this article.\n",
+  "description" : "As you know in the previous article, we could take advantage of Cloud NAT to go to the Internet without an external IP.\nBut the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.\nSo, how we can use Cloud NAT in case of we have some VPC networks ? I will explain to you in this article.\n",
   "inLanguage" : "en",
-  "wordCount":  982 ,
+  "wordCount":  1048 ,
   "datePublished" : "2020-12-13T00:00:00",
   "dateModified" : "2020-12-13T00:00:00",
   "image" : "https:\/\/nhat-tong.github.io\/devops.png",
@@ -81,16 +81,17 @@ So, how we can use Cloud NAT in case of we have some VPC ? I will explain to you
 </script>
 
 <meta property="og:title" content="Cloud NAT with multiple VPC" />
-<meta property="og:description" content="As you know in the previous article, we could take advantages of Cloud NAT to go to the Internet without an external IP. A NAT Gateway work well with Shared VPC allowing your instances on the same Shared VPC to go to the Internet without an external IP.
+<meta property="og:description" content="As you know in the previous article, we could take advantage of Cloud NAT to go to the Internet without an external IP.
 But the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.
-So, how we can use Cloud NAT in case of we have some VPC ? I will explain to you in this article.">
+So, how we can use Cloud NAT in case of we have some VPC networks ? I will explain to you in this article.">
 <meta property="og:image" content="https://nhat-tong.github.io/devops.png" />
 <meta property="og:url" content="https://nhat-tong.github.io/post/2020/12/gcp/cloud-nat-multi-vpc-4/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
   <meta name="twitter:title" content="Cloud NAT with multiple VPC" />
-  <meta name="twitter:description" content="As you know in the previous article, we could take advantages of Cloud NAT to go to the Internet without an external IP. A NAT Gateway work well with Shared VPC allowing your instances on the same …">
+  <meta name="twitter:description" content="As you know in the previous article, we could take advantage of Cloud NAT to go to the Internet without an external IP.
+But the NAT gateway created in one VPC network cannot provide NAT to VMs in …">
   <meta name="twitter:image" content="https://nhat-tong.github.io/devops.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://nhat-tong.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -243,7 +244,7 @@ So, how we can use Cloud NAT in case of we have some VPC ? I will explain to you
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;982&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1048&nbsp;words
   
   
   
@@ -264,29 +265,29 @@ So, how we can use Cloud NAT in case of we have some VPC ? I will explain to you
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>As you know in the previous article, we could take advantages of Cloud NAT to go to the Internet without an external IP. A NAT Gateway work well with Shared VPC allowing your instances on the same Shared VPC to go to the Internet without an external IP.</p>
+        <p>As you know in the previous article, we could take advantage of Cloud NAT to go to the Internet without an external IP.</p>
 <p>But the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.</p>
-<p>So, how we can use Cloud NAT in case of we have some VPC ? I will explain to you in this article.</p>
-<h3 id="install-a-nat-gatewat-per-vpc"><strong>Install a NAT Gatewat per VPC</strong></h3>
-<p>This is a simplest solution. NAT Gateway must be tied to a specific VPC. So you can set up a NAT Gateway on each VPC to allow your traffic to go to the Internet without an external IP assigned on each vm.</p>
-<p>In this article, I will show you how to set up only one NAT Gateway but this architecture works well on multiple VPC.</p>
+<p>So, how we can use Cloud NAT in case of we have some VPC networks ? I will explain to you in this article.</p>
+<h3 id="set-up-a-nat-gatewat-per-vpc"><strong>Set up a NAT Gatewat per VPC</strong></h3>
+<p>This is the simplest solution. The NAT Gateway must be tied to a specific VPC. So you can set up a NAT Gateway on each VPC to allow your traffic to go to the Internet without an external IP assigned on each vm. But this solution is may be expensive if you have a number of VPC.</p>
+<p>In this article, we will discuss how to set up only one NAT Gateway but that solution works well with multiple VPC.</p>
 <h3 id="clean-existing-vpc"><strong>Clean existing VPC</strong></h3>
-<p>To ensure that all will be works as expected, you need delete the existing VPC with it&rsquo;s firewall. We need create some new VPC to test this architecture.</p>
-<h3 id="current-architecture"><strong>Current architecture</strong></h3>
+<p>To ensure that our solution will be working as expected, you need to delete the existing VPC with its firewall. Also, we are going to create some new VPC to test this architecture.</p>
+<h3 id="our-architecture"><strong>Our architecture</strong></h3>
 <p><img src="../images/cloud_nat_multiple_VPC.png" alt="Cloud Nat Architecture"></p>
-<p>According to our above architecture, we have three GCP projects: host-project1, host-project2 and service-project.</p>
-<p>On the <em>host-project1</em>, we have two VPC on the region <em>europe-west1</em>:</p>
+<p>According to the above architecture, we have three GCP projects: host-project1, host-project2 and service-project.</p>
+<p>On the <em>host-project1</em>, we have two VPC created on the region <em>europe-west1</em>:</p>
 <ul>
-<li>base-vpc (base-snet: 10.23.0.16/28): it is a Shared VPC. His subnet is shared with the instances created in <em>service-project</em>. We create an vm instance inside of this VPC named <em>base-vm</em> (europe-west1, zone b, Ubuntu 18.04, e2-micro, no External IP)</li>
-<li>interco-vpc (interco-snet: 10.22.0.0/28): VPC on which Cloud NAT is installed. We create an vm instance named <em>forwarder-vm</em> (europe-west1, zone b, Ubuntu 18.04, e2-micro, <strong>IP Forwarding On</strong> and no External IP) with two interfaces:
+<li>base-vpc (base-snet: 10.23.0.16/28): it&rsquo;s a Shared VPC. His subnet is shared with the instances created in <em>service-project</em>. We create an vm instance inside of this VPC named <em>base-vm</em> (europe-west1, zone b, Ubuntu 18.04, e2-micro, no External IP)</li>
+<li>interco-vpc (interco-snet: 10.22.0.0/28): VPC on which Cloud NAT is installed. We create an vm instance named <em>forwarder-vm</em> (europe-west1, zone b, Ubuntu 18.04, e2-micro, <strong>IP Forwarding On</strong> and no External IP) with two network interfaces:
 <ul>
 <li>nic0: nic principal which point to interco-snet 10.22.0.0/28</li>
 <li>nic1: nic secondary which point to base-snet 10.23.0.16/28</li>
 </ul>
 </li>
 </ul>
-<p>Some defaut routes have been created for us. Then, we need to create some firewall rules to allow traffic of ssh,icmp,http and https.</p>
-<p>So, create 3 firewall rules on base-vpc and two firewall rules on interco-vpc:</p>
+<p>Some default routes have been created for us. Then, we need to create some firewall rules to allow traffic of ssh,icmp,http and https.</p>
+<p>So, create three firewall rules on <em>base-vpc</em> and two firewall rules on <em>interco-vpc</em>:</p>
 <ul>
 <li>Name: allow-ssh-base-vpc or allow-ssh-interco-vpc
 <ul>
@@ -320,11 +321,11 @@ So, how we can use Cloud NAT in case of we have some VPC ? I will explain to you
 </li>
 </ul>
 <p><img src="../images/31_multiple_cloud_nat_fw.png" alt="Firewall rules"></p>
-<p>On the <em>service-project1</em>, we create an vm instance named <em>svc-vm</em> inside of base-snet.</p>
+<p>On the <em>service-project</em>, we create a vm instance named <em>svc-vm</em> inside of base-snet.</p>
 <p>On the <em>host-project2</em>, we have:</p>
 <ul>
-<li>apps-vpc (apps-snet: <em>10.23.0.32/28</em>): it is a Shared VPC. Then, this VPC is peered with base-vpc.
-Like base-vpc, we create two firewall rules to allowing incoming connection on ssh or icmp.</li>
+<li>apps-vpc (apps-snet: <em>10.23.0.32/28</em>): it&rsquo;s also a Shared VPC. Then, this VPC has peered with base-vpc.
+Like base-vpc, we create some firewall rules to allowing incoming connections using ssh or icmp.</li>
 </ul>
 <h3 id="create-a-cloud-nat"><strong>Create a Cloud NAT</strong></h3>
 <p>Create a Cloud NAT with following configurations:</p>
@@ -337,8 +338,8 @@ Like base-vpc, we create two firewall rules to allowing incoming connection on s
 <li>NAT IP Addresses: Automatic</li>
 </ul>
 <p><img src="../images/32_multiple_cloud_nat_gateway.png" alt="NAT Gateway"></p>
-<h3 id="create-route-to-internet"><strong>Create route to Internet</strong></h3>
-<p>We need to ensure that all trafic from <em>base-vpc</em> to be able to reach out to the Internet, we will a route to <em>forwarder-vm</em> :</p>
+<h3 id="create-a-route-to-internet"><strong>Create a route to Internet</strong></h3>
+<p>We need to ensure that all traffic from <em>base-vpc</em> to be able to reach out to the Internet, we will create a new route on <em>base-vpc</em> forwarding it&rsquo;s traffic to <em>forwarder-vm</em> :</p>
 <ul>
 <li>Name: my-route-to-the-internet</li>
 <li>Network: base-vpc</li>
@@ -347,7 +348,7 @@ Like base-vpc, we create two firewall rules to allowing incoming connection on s
 <li>Next hop: Specify IP address (IP of <em>forwarder-vm</em> on nic1 created above)</li>
 </ul>
 <p><img src="../images/33_multiple_cloud_nat_route_internet.png" alt="route to the Internet"></p>
-<h3 id="enabling-ip-forwarding"><strong>Enabling IP Forwarding</strong></h3>
+<h3 id="enable-ip-forwarding"><strong>Enable IP Forwarding</strong></h3>
 <p>On the <em>forwarder-vm</em>, you need to enable IP Forwarding:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
 </code></pre></div><p>To turn port forwarding on permanently, you will have to edit the /etc/sysctl.conf file. Open the file with sudo privileges by typing:</p>
@@ -359,23 +360,26 @@ Like base-vpc, we create two firewall rules to allowing incoming connection on s
 sudo sysctl --system
 </code></pre></div><p><img src="../images/34_multiple_cloud_nat_ip_forwarding.png" alt="IP Forwarding"></p>
 <h3 id="add-the-forwarding-rules"><strong>Add the Forwarding Rules</strong></h3>
-<p>You can see network interface&rsquo;s list with this command:</p>
+<p>You can list the network interface with this command:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ipconfig
-</code></pre></div><p>As a result, we have two interfaces: ens4 (primary interface) and ens5 (secondary interface).</p>
+</code></pre></div><p>As shown, we have two interfaces: ens4 (primary interface) and ens5 (secondary interface).</p>
 <p><img src="../images/34_multiple_cloud_nat_nic.png" alt="IP Forwarding"></p>
-<p>You need to configure our firewall so that the traffic coming to primary interface will be forwarded to secondary interface and vice-versa.</p>
+<p>Then, we need to configure our firewall so that the traffic coming to the primary interface can be forwarded to the secondary interface and vice-versa.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo iptables -A FORWARD -i ens4 -o ens5 -j ACCEPT   
 sudo iptables -A FORWARD -i ens5 -o ens4 -j ACCEPT
-</code></pre></div><p>Check:</p>
+</code></pre></div><p><u>Check:</u></p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo iptables -L
-</code></pre></div><h3 id="add-the-nat-rules"><strong>Add the NAT Rules</strong></h3>
-<p>Next, we’ll add the rules that will tell iptables how to route the traffic to the Internet (SNAT).</p>
+</code></pre></div><p><img src="../images/44_multiple_cloud_nat_forwarding_rules.png" alt="forward"></p>
+<h3 id="add-the-nat-rules"><strong>Add the NAT Rules</strong></h3>
+<p>Next, we’ll add two nat rules (<em>POSTROUTING</em>) that will tell iptables how to route the traffic on port 80/443 to the Internet (SNAT).</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo iptables -t nat -A POSTROUTING -p tcp --dport 80 -j MASQUERADE
-</code></pre></div><p>Check:</p>
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 443 -j MASQUERADE
+</code></pre></div><p><u>Check:</u></p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo iptables -t nat -L -n
-</code></pre></div><h3 id="test-connectivity"><strong>Test connectivity</strong></h3>
-<p>At that time, the traffic on <em>base-vpc</em> and it&rsquo;s service project could go to the Internet via Cloud NAT installed on <em>interco-vpc</em> without an external IP.</p>
-<p>From <em>base-vm</em> on <em>base-vpc</em>, run these below commands:</p>
+</code></pre></div><p><img src="../images/45_multiple_cloud_nat_nat_rules.png" alt="nat rules"></p>
+<h3 id="test-connectivity-between-vm-on-base-vpc-to-the-internet"><strong>Test connectivity between vm on base-vpc to the Internet</strong></h3>
+<p>At that time, the traffic on <em>base-vpc</em> could go to the Internet via Cloud NAT installed on <em>interco-vpc</em> without an external IP.</p>
+<p>From <em>base-vm</em> on <em>base-vpc</em>, run the below commands:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">curl ipconfig.io
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">curl http://example.com
 </code></pre></div><p><img src="../images/36_multiple_cloud_nat_base_vm.png" alt="base vm"></p>
@@ -387,22 +391,23 @@ sudo iptables -A FORWARD -i ens5 -o ens4 -j ACCEPT
 <p><img src="../images/37_multiple_cloud_nat_svc_vm.png" alt="svc vm"></p>
 <h3 id="add-a-vpc-peering"><strong>Add a VPC Peering</strong></h3>
 <p>So, our configuration works well with only one Shared VPC at that time.</p>
-<p>On the <em>host-project2</em>, let&rsquo;s create a peering between the VPC <em>apps-vpc</em> and <em>base-vpc</em> (Import custom routes &amp; Export custom routes).</p>
-<p><em>Peering from apps-vpc to base-vpc</em></p>
+<p>On the <em>host-project2</em>, let&rsquo;s create a peering between the VPC <em>apps-vpc</em> and <em>base-vpc</em> (Import custom routes &amp; Export custom routes) and vice-versa.</p>
+<p><em>Peering from apps-vpc to base-vpc:</em></p>
 <p><img src="../images/38_multiple_cloud_nat_apps_vpc_peering_base_vpc.png" alt="apps-vpc to base-vpc"></p>
-<p><em>Peering from base-vpc to apps-vpc</em></p>
+<p><em>Peering from base-vpc to apps-vpc:</em></p>
 <p><img src="../images/39_multiple_cloud_nat_base_vpc_peering_apps_vpc.png" alt="base-vpc to apps-vpc"></p>
-<p>We recognized also that our route <em>my-route-to-internet</em> 0.0.0.0/0 on <em>base-vpc</em> have been propagated automatically to <em>apps-vpc</em> via VPC Peering.</p>
+<p>We notice also that our route <em>my-route-to-internet</em> (0.0.0.0/0) on <em>base-vpc</em> have been propagated automatically to <em>apps-vpc</em> via VPC Peering.</p>
 <p><img src="../images/40_multiple_cloud_nat_route_internet_peering.png" alt="route via peering"></p>
 <p>Now, we need to delete VPC&rsquo;s default route to the Internet on <em>apps-vpc</em>.</p>
 <p><img src="../images/41_multiple_cloud_nat_defaut_route.png" alt="default route"></p>
-<p>On the <em>forwarder-vm</em>, we add a new route allowing the traffic back to our subnet <em>10.25.0.0/29</em> on <em>apps-vpc</em></p>
+<p>On the <em>forwarder-vm</em>, we add a new route allowing the traffic from <em>forwarder-vm</em> comes back to our subnet <em>10.23.0.32/28</em> on <em>apps-vpc</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo ip route add 10.23.0.32/28 via 10.23.0.17 dev ens5
 </code></pre></div><p><img src="../images/42_multiple_cloud_nat_return_route.png" alt="return route"></p>
 <p>OK! Well done! Now, we can check the connectivity to the internet from <em>apps-vm</em> on <em>apps-vpc</em> via Cloud NAT.</p>
 <p><img src="../images/43_multiple_cloud_nat_apps_vm.png" alt="apps vm"></p>
 <p>Yeah! It works 😊</p>
-<p>You may be recognized that we have the same public IP assigned <em>34.78.4.25</em> by Cloud NAT during our tests on different VPC.</p>
+<p>You may notice that we have the same public IP assigned <strong>34.78.4.25</strong> by Cloud NAT during our tests on different VPC.</p>
+<p>This solution is also flexible. You could add a secondary <em>forwarder-vm</em> to ensure a good quality of service. Either, you could set up a middleware to control your traffic to the Internet (<em>squid</em> for example).</p>
 
         
           <div class="blog-tags">

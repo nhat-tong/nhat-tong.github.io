@@ -95,9 +95,9 @@
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://nhat-tong.github.io/post/2020/12/gcp/cloud-nat-multi-vpc-4/</guid>
-      <description>&lt;p&gt;As you know in the previous article, we could take advantages of Cloud NAT to go to the Internet without an external IP. A NAT Gateway work well with Shared VPC allowing your instances on the same Shared VPC to go to the Internet without an external IP.&lt;/p&gt;
+      <description>&lt;p&gt;As you know in the previous article, we could take advantage of Cloud NAT to go to the Internet without an external IP.&lt;/p&gt;
 &lt;p&gt;But the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.&lt;/p&gt;
-&lt;p&gt;So, how we can use Cloud NAT in case of we have some VPC ? I will explain to you in this article.&lt;/p&gt;</description>
+&lt;p&gt;So, how we can use Cloud NAT in case of we have some VPC networks ? I will explain to you in this article.&lt;/p&gt;</description>
     </item>
     
     <item>
