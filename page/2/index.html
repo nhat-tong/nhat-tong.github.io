@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Posts - Home</title>
+  <title>Home - Home</title>
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -29,13 +29,13 @@
 }
 </script>
 
-<meta property="og:title" content="Posts" />
+<meta property="og:title" content="Home" />
 <meta property="og:image" content="https://nhat-tong.github.io/devops.png" />
-<meta property="og:url" content="https://nhat-tong.github.io/post/" />
+<meta property="og:url" content="https://nhat-tong.github.io/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
-  <meta name="twitter:title" content="Posts" />
+  <meta name="twitter:title" content="Home" />
   <meta name="twitter:image" content="https://nhat-tong.github.io/devops.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://nhat-tong.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -165,36 +165,54 @@
 
 
   
+    <div id="header-big-imgs" data-num-img=1 
+      
+         
+          data-img-src-1="img/sphere.jpg" 
+         
+         
+      ></div>
+  
 
-  <header class="header-section ">
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="page-heading">
+                <h1>My journey to DevOps</h1>
+                  
+                    
+                      <hr class="small">
+                      <span class="page-subheading">Learn something new everyday...</span>
+                    
+                  
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
     
     <div class="intro-header no-img">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="post-heading">
+            <div class="page-heading">
               
-                <h1>Posts</h1>
-              
-              
+                <h1>My journey to DevOps</h1>
               
               
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;December 14, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;0&nbsp;words
-  
-  
-  
-</span>
-
-
+                <hr class="small">
+              
+              
+                
+                  <span class="page-subheading">Learn something new everyday...</span>
+                
+              
               
             </div>
           </div>
@@ -205,35 +223,19 @@
 
 
     
-  <div class="container" role="main">
+  <div role="main" class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
+
         <div class="posts-list">
           
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
           
             
 
 <article class="post-preview">
-    <a href="https://nhat-tong.github.io/post/2020/12/gcp/cloud-nat-multi-vpc-4/">
-        <h2 class="post-title">Cloud NAT with multiple VPC</h2>
+    <a href="https://nhat-tong.github.io/post/2020/12/gcp/private-access-cloud-nat-3/">
+        <h2 class="post-title">GCP-Google Private Access &amp; Cloud NAT</h2>
         
         
         
@@ -246,10 +248,10 @@
   <i class="fas fa-calendar"></i>&nbsp;December 13, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;982&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;560&nbsp;words
   
   
   
@@ -259,9 +261,13 @@
     </p>
     <div class="post-entry">
         
-        As you know in the previous article, we could take advantages of Cloud NAT to go to the Internet without an external IP. A NAT Gateway work well with Shared VPC allowing your instances on the same Shared VPC to go to the Internet without an external IP.
-But the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.
-        <a href="https://nhat-tong.github.io/post/2020/12/gcp/cloud-nat-multi-vpc-4/" class="post-read-more">[Read More]</a>
+        <p>This is the third part of GCP&rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is deployed.</p>
+<p>Topics to cover:</p>
+<ul>
+<li>Private Google Access</li>
+<li>Cloud NAT</li>
+</ul>
+        <a href="https://nhat-tong.github.io/post/2020/12/gcp/private-access-cloud-nat-3/" class="post-read-more">[Read More]</a>
         
     </div>
 
@@ -277,14 +283,167 @@ But the NAT gateway created in one VPC network cannot provide NAT to VMs in othe
 
 
           
+            
+
+<article class="post-preview">
+    <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/">
+        <h2 class="post-title">GCP-Basic Google Cloud DNS</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;December 12, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;483&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>This is the second part of GCP&rsquo;s series. In the <a href="https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/" target="_blank">previous article</a> we covered some basic terminology in GCP.</p>
+<p>As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&rsquo;s internal IP or it&rsquo;s internal DNS.</p>
+        <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://nhat-tong.github.io/tags/gcp/">gcp</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+
+
+          
+            
+
+<article class="post-preview">
+    <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/">
+        <h2 class="post-title">GCP-Basic networking terminology in Google Cloud Platform</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;December 12, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1100&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>This is the first part of GCP&rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).</p>
+<p>Topics to cover:</p>
+<ul>
+<li>Google Cloud</li>
+<li>Projects and networks</li>
+<li>Internal IP and External IP</li>
+<li>DNS resolution for internal IP</li>
+<li>DNS resolution for external IP</li>
+<li>Cloud DNS</li>
+<li>Firewall</li>
+<li>Route</li>
+</ul>
+        <a href="https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://nhat-tong.github.io/tags/gcp/">gcp</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+
+
+          
+            
+          
+            
+
+<article class="post-preview">
+    <a href="https://nhat-tong.github.io/post/2020/12/first-post/">
+        <h2 class="post-title">First post!</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;December 6, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;597&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>Yeah. This is real. My blog is live 😊</p>
+<p>A long time ago, I would like to make a blog to share my experience and my point of view but I&rsquo;m not able to arrange myself to do that.</p>
+<p>Recently, I read some technical blogs hosted by GitHub and they are inspiring me on how to build fastly a blog with GitHub pages.</p>
+<p>And that I want to share with you in this article.</p>
+        <a href="https://nhat-tong.github.io/post/2020/12/first-post/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+
+</article>
+
+
+          
         </div>
+
         
           <ul class="pager main-pager">
             
-            
-              <li class="next">
-                <a href="https://nhat-tong.github.io/post/page/2/">Older Posts &rarr;</a>
+              <li class="previous">
+                <a href="https://nhat-tong.github.io/page/1/">&larr; Newer Posts</a>
               </li>
+            
             
           </ul>
         
@@ -293,6 +452,14 @@ But the NAT gateway created in one VPC network cannot provide NAT to VMs in othe
   </div>
 
       
+    <div class="page-meta">
+  
+  
+  
+</div>
+
+
+  
 <footer>
   <div class="container">
     <div class="row">
