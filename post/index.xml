@@ -27,12 +27,14 @@
     </item>
     
     <item>
-      <title>Create an organization</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/create-an-organization/</link>
+      <title>Create a Google Workspace account</title>
+      <link>https://nhat-tong.github.io/post/2020/12/gcp/create-google-workspace-account/</link>
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/create-an-organization/</guid>
-      <description>Coming soon!</description>
+      <guid>https://nhat-tong.github.io/post/2020/12/gcp/create-google-workspace-account/</guid>
+      <description>If you need to test/use some advanced functionalities on Google Cloud Platform (GCP), you have to create your own organization.
+This article covers some steps to guide you on how to create an account.
+Create a Google Workspace account A Google workspace account (Formerly G Suite) is an administration account This account allows you to manage your organization (manage users, manages groups, manage IAM,&amp;hellip;.) Also, it includes collaboration tools like Gmail, Calendar, Meet, Chat, Drive, Docs, Sheets, Slides, Forms, Sites, and more.</description>
     </item>
     
     <item>
