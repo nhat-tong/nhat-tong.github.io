@@ -61,7 +61,7 @@ So, how we can use Cloud NAT in case of we have some VPC networks ? I will expla
   "headline": "Cloud NAT with multiple VPC",
   "description" : "As you know in the previous article, we could take advantage of Cloud NAT to go to the Internet without an external IP.\nBut the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.\nSo, how we can use Cloud NAT in case of we have some VPC networks ? I will explain to you in this article.\n",
   "inLanguage" : "en",
-  "wordCount":  1048 ,
+  "wordCount":  1060 ,
   "datePublished" : "2020-12-13T00:00:00",
   "dateModified" : "2020-12-13T00:00:00",
   "image" : "https:\/\/nhat-tong.github.io\/devops.png",
@@ -244,7 +244,7 @@ But the NAT gateway created in one VPC network cannot provide NAT to VMs in …"
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1048&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1060&nbsp;words
   
   
   
@@ -382,6 +382,7 @@ sudo iptables -t nat -A POSTROUTING -p tcp --dport 443 -j MASQUERADE
 <p>From <em>base-vm</em> on <em>base-vpc</em>, run the below commands:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">curl ipconfig.io
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">curl http://example.com
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">curl https://portal.azure.com
 </code></pre></div><p><img src="../images/36_multiple_cloud_nat_base_vm.png" alt="base vm"></p>
 <p>The connectivity to the Internet works as expected!</p>
 <p>Now, from <em>svc-vm</em> on the <em>service-project</em>, run the same command:</p>
@@ -404,10 +405,16 @@ sudo iptables -t nat -A POSTROUTING -p tcp --dport 443 -j MASQUERADE
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo ip route add 10.23.0.32/28 via 10.23.0.17 dev ens5
 </code></pre></div><p><img src="../images/42_multiple_cloud_nat_return_route.png" alt="return route"></p>
 <p>OK! Well done! Now, we can check the connectivity to the internet from <em>apps-vm</em> on <em>apps-vpc</em> via Cloud NAT.</p>
-<p><img src="../images/43_multiple_cloud_nat_apps_vm.png" alt="apps vm"></p>
-<p>Yeah! It works 😊</p>
-<p>You may notice that we have the same public IP assigned <strong>34.78.4.25</strong> by Cloud NAT during our tests on different VPC.</p>
-<p>This solution is also flexible. You could add a secondary <em>forwarder-vm</em> to ensure a good quality of service. Either, you could set up a middleware to control your traffic to the Internet (<em>squid</em> for example).</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">curl ipconfig.io
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">curl http://example.com
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></div><p>curl <a href="https://portal.azure.com">https://portal.azure.com</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">![apps vm](../images/43_multiple_cloud_nat_apps_vm.png)
+
+Yeah! It works 😊
+
+You may notice that we have the same public IP assigned **34.78.4.25** by Cloud NAT during our tests on different VPC.
+
+This solution is also flexible. You could add a secondary *forwarder-vm* to ensure a good quality of service. Either, you could set up a middleware to control your web traffic (http/https) to the Internet (*squid* for example).</code></pre></div>
 
         
           <div class="blog-tags">
