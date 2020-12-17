@@ -9,7 +9,8 @@
 
   <title>Cloud NAT with multiple VPC - Home</title>
   <meta name="description" content="As you know in the previous article, we could take advantages of Cloud NAT to go to the Internet without an external IP. A NAT Gateway work well with Shared VPC allowing your instances on the same Shared VPC to go to the Internet without an external IP.
-But the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.">
+But the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.
+So, how we can use Cloud NAT in case of we have some VPC ? I will explain to you in this article.">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,7 +59,7 @@ But the NAT gateway created in one VPC network cannot provide NAT to VMs in othe
     "name" : "Nhat Tong"
   },
   "headline": "Cloud NAT with multiple VPC",
-  "description" : "As you know in the previous article, we could take advantages of Cloud NAT to go to the Internet without an external IP. A NAT Gateway work well with Shared VPC allowing your instances on the same Shared VPC to go to the Internet without an external IP.\nBut the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.",
+  "description" : "As you know in the previous article, we could take advantages of Cloud NAT to go to the Internet without an external IP. A NAT Gateway work well with Shared VPC allowing your instances on the same Shared VPC to go to the Internet without an external IP.\nBut the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.\nSo, how we can use Cloud NAT in case of we have some VPC ? I will explain to you in this article.\n",
   "inLanguage" : "en",
   "wordCount":  982 ,
   "datePublished" : "2020-12-13T00:00:00",
@@ -81,7 +82,8 @@ But the NAT gateway created in one VPC network cannot provide NAT to VMs in othe
 
 <meta property="og:title" content="Cloud NAT with multiple VPC" />
 <meta property="og:description" content="As you know in the previous article, we could take advantages of Cloud NAT to go to the Internet without an external IP. A NAT Gateway work well with Shared VPC allowing your instances on the same Shared VPC to go to the Internet without an external IP.
-But the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.">
+But the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.
+So, how we can use Cloud NAT in case of we have some VPC ? I will explain to you in this article.">
 <meta property="og:image" content="https://nhat-tong.github.io/devops.png" />
 <meta property="og:url" content="https://nhat-tong.github.io/post/2020/12/gcp/cloud-nat-multi-vpc-4/" />
 <meta property="og:type" content="website" />
@@ -271,7 +273,7 @@ But the NAT gateway created in one VPC network cannot provide NAT to VMs in othe
 <h3 id="clean-existing-vpc"><strong>Clean existing VPC</strong></h3>
 <p>To ensure that all will be works as expected, you need delete the existing VPC with it&rsquo;s firewall. We need create some new VPC to test this architecture.</p>
 <h3 id="current-architecture"><strong>Current architecture</strong></h3>
-<p><img src="https://tinyurl.com/cloud-nat" alt="Cloud Nat Architecture"></p>
+<p><img src="../images/cloud_nat_multiple_VPC.png" alt="Cloud Nat Architecture"></p>
 <p>According to our above architecture, we have three GCP projects: host-project1, host-project2 and service-project.</p>
 <p>On the <em>host-project1</em>, we have two VPC on the region <em>europe-west1</em>:</p>
 <ul>
@@ -401,7 +403,6 @@ sudo iptables -A FORWARD -i ens5 -o ens4 -j ACCEPT
 <p><img src="../images/43_multiple_cloud_nat_apps_vm.png" alt="apps vm"></p>
 <p>Yeah! It works 😊</p>
 <p>You may be recognized that we have the same public IP assigned <em>34.78.4.25</em> by Cloud NAT during our tests on different VPC.</p>
-
 
         
           <div class="blog-tags">
