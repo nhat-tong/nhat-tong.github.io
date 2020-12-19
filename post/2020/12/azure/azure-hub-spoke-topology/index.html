@@ -9,7 +9,9 @@
 
   <title>Azure-Hub Spoke topology - Home</title>
   <meta name="description" content="Today, we will implement a hub-spoke topology in Azure.
-The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network. The spokes are virtual networks that peer with the hub and can be used to isolate workloads. For more information, we refer to this document: https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke.
+The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.
+The spokes are virtual networks that peer with the hub and can be used to isolate workloads.
+For more information, we refer to this document: https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke.
 In our case-study, we don&rsquo;t have on-premises network, so the architecture will be adjusted a little bit:
 Our hub-spoke">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
@@ -60,7 +62,7 @@ Our hub-spoke">
     "name" : "Nhat Tong"
   },
   "headline": "Azure-Hub Spoke topology",
-  "description" : "Today, we will implement a hub-spoke topology in Azure.\nThe hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network. The spokes are virtual networks that peer with the hub and can be used to isolate workloads. For more information, we refer to this document: https:\/\/docs.microsoft.com\/en-us\/azure\/architecture\/reference-architectures\/hybrid-networking\/hub-spoke.\nIn our case-study, we don\u0026rsquo;t have on-premises network, so the architecture will be adjusted a little bit:\nOur hub-spoke\n",
+  "description" : "Today, we will implement a hub-spoke topology in Azure.\nThe hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.\nThe spokes are virtual networks that peer with the hub and can be used to isolate workloads.\nFor more information, we refer to this document: https:\/\/docs.microsoft.com\/en-us\/azure\/architecture\/reference-architectures\/hybrid-networking\/hub-spoke.\nIn our case-study, we don\u0026rsquo;t have on-premises network, so the architecture will be adjusted a little bit:\nOur hub-spoke\n",
   "inLanguage" : "en",
   "wordCount":  540 ,
   "datePublished" : "2020-12-19T00:00:00",
@@ -83,7 +85,9 @@ Our hub-spoke">
 
 <meta property="og:title" content="Azure-Hub Spoke topology" />
 <meta property="og:description" content="Today, we will implement a hub-spoke topology in Azure.
-The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network. The spokes are virtual networks that peer with the hub and can be used to isolate workloads. For more information, we refer to this document: https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke.
+The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.
+The spokes are virtual networks that peer with the hub and can be used to isolate workloads.
+For more information, we refer to this document: https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke.
 In our case-study, we don&rsquo;t have on-premises network, so the architecture will be adjusted a little bit:
 Our hub-spoke">
 <meta property="og:image" content="https://nhat-tong.github.io/devops.png" />
@@ -93,7 +97,8 @@ Our hub-spoke">
 
   <meta name="twitter:title" content="Azure-Hub Spoke topology" />
   <meta name="twitter:description" content="Today, we will implement a hub-spoke topology in Azure.
-The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network. The spokes are virtual networks …">
+The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.
+The spokes are virtual networks …">
   <meta name="twitter:image" content="https://nhat-tong.github.io/devops.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://nhat-tong.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -268,7 +273,9 @@ The hub is a virtual network in Azure that acts as a central point of connectivi
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>Today, we will implement a hub-spoke topology in Azure.</p>
-<p>The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network. The spokes are virtual networks that peer with the hub and can be used to isolate workloads. For more information, we refer to this document: <a href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke">https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke</a>.</p>
+<p>The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.</p>
+<p>The spokes are virtual networks that peer with the hub and can be used to isolate workloads.</p>
+<p>For more information, we refer to this document: <a href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke">https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke</a>.</p>
 <p>In our case-study, we don&rsquo;t have <em>on-premises network</em>, so the architecture will be adjusted a little bit:</p>
 <p><a href="../images/">Our hub-spoke</a></p>
 <h3 id="create-hub--spoke-virtual-network"><strong>Create Hub &amp; Spoke virtual network</strong></h3>
@@ -317,8 +324,9 @@ sudo iptables -I OUTPUT -d 10.23.1.32/28 -j DROP
 What if you need to give access to some new users?</p>
 <p>You may think about Azure Portal. It has a built-in functionality <em>Reset password</em> allowing you to create a new user. Let&rsquo;s do that.</p>
 <p><img src="../images/51_azure_hub_spoke_bad_user.png" alt="hub-spoke bad user"></p>
-<p>Oops!!! Our user is created via Azure Portal with <em>/bin/bash</em>. It means that this user can open a shell session on the jump host machine!!!
-<strong>It is dangerous</strong>. The user may have a shell on the spoke machines but you never give the user a shell on the jump host machine (except this user is on your team).</p>
+<p>Oops!!! Our user is created via Azure Portal with <em>/bin/bash</em>. It means that this user can open a shell session on the jump host machine!!!</p>
+<p><strong>It is dangerous</strong>.</p>
+<p>The user may have a shell on the spoke machines but you never give the user a shell on the jump host machine (except this user is on your team).</p>
 <p><img src="../images/52_azure_hub_spoke_bad_user_shell.png" alt="hub-spoke bad user shell"></p>
 <p>Instead of using <em>Reset password</em> functionality on Azure Portal. You could run a script to achieve the same job. Let&rsquo;s delete the baduser:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo userdel baduser -r
