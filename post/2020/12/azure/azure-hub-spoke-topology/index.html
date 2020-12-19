@@ -7,8 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Basic Azure Networking - Home</title>
-  <meta name="description" content="Coming soon!">
+  <title>Azure-Hub Spoke topology - Home</title>
+  <meta name="description" content="Today, we will implement a hub-spoke topology in Azure.
+The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network. The spokes are virtual networks that peer with the hub and can be used to isolate workloads. For more information, we refer to this document: https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke.
+In our case-study, we don&rsquo;t have on-premises network, so the architecture will be adjusted a little bit:
+Our hub-spoke">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -44,8 +47,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/nhat-tong.github.io\/post\/2020\/12\/azure\/basic-azure-networking\/",
-          "name": "Basic azure networking"
+          "@id": "https:\/\/nhat-tong.github.io\/post\/2020\/12\/azure\/azure-hub-spoke-topology\/",
+          "name": "Azure hub spoke topology"
         }
     }]
 }
@@ -56,15 +59,15 @@
   "author": {
     "name" : "Nhat Tong"
   },
-  "headline": "Basic Azure Networking",
-  "description" : "Coming soon!",
+  "headline": "Azure-Hub Spoke topology",
+  "description" : "Today, we will implement a hub-spoke topology in Azure.\nThe hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network. The spokes are virtual networks that peer with the hub and can be used to isolate workloads. For more information, we refer to this document: https:\/\/docs.microsoft.com\/en-us\/azure\/architecture\/reference-architectures\/hybrid-networking\/hub-spoke.\nIn our case-study, we don\u0026rsquo;t have on-premises network, so the architecture will be adjusted a little bit:\nOur hub-spoke\n",
   "inLanguage" : "en",
-  "wordCount":  2 ,
-  "datePublished" : "2020-12-14T00:00:00",
-  "dateModified" : "2020-12-14T00:00:00",
+  "wordCount":  540 ,
+  "datePublished" : "2020-12-19T00:00:00",
+  "dateModified" : "2020-12-19T00:00:00",
   "image" : "https:\/\/nhat-tong.github.io\/devops.png",
   "keywords" : [ "azure" ],
-  "mainEntityOfPage" : "https:\/\/nhat-tong.github.io\/post\/2020\/12\/azure\/basic-azure-networking\/",
+  "mainEntityOfPage" : "https:\/\/nhat-tong.github.io\/post\/2020\/12\/azure\/azure-hub-spoke-topology\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/nhat-tong.github.io",
@@ -78,15 +81,19 @@
 }
 </script>
 
-<meta property="og:title" content="Basic Azure Networking" />
-<meta property="og:description" content="Coming soon!">
+<meta property="og:title" content="Azure-Hub Spoke topology" />
+<meta property="og:description" content="Today, we will implement a hub-spoke topology in Azure.
+The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network. The spokes are virtual networks that peer with the hub and can be used to isolate workloads. For more information, we refer to this document: https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke.
+In our case-study, we don&rsquo;t have on-premises network, so the architecture will be adjusted a little bit:
+Our hub-spoke">
 <meta property="og:image" content="https://nhat-tong.github.io/devops.png" />
-<meta property="og:url" content="https://nhat-tong.github.io/post/2020/12/azure/basic-azure-networking/" />
+<meta property="og:url" content="https://nhat-tong.github.io/post/2020/12/azure/azure-hub-spoke-topology/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
-  <meta name="twitter:title" content="Basic Azure Networking" />
-  <meta name="twitter:description" content="Coming soon!">
+  <meta name="twitter:title" content="Azure-Hub Spoke topology" />
+  <meta name="twitter:description" content="Today, we will implement a hub-spoke topology in Azure.
+The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network. The spokes are virtual networks …">
   <meta name="twitter:image" content="https://nhat-tong.github.io/devops.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://nhat-tong.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -225,7 +232,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Basic Azure Networking</h1>
+                <h1>Azure-Hub Spoke topology</h1>
               
               
               
@@ -233,13 +240,13 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;December 14, 2020
+  <i class="fas fa-calendar"></i>&nbsp;December 19, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;2&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;540&nbsp;words
   
   
   
@@ -260,8 +267,72 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>Coming soon!</p>
+        <p>Today, we will implement a hub-spoke topology in Azure.</p>
+<p>The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network. The spokes are virtual networks that peer with the hub and can be used to isolate workloads. For more information, we refer to this document: <a href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke">https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke</a>.</p>
+<p>In our case-study, we don&rsquo;t have <em>on-premises network</em>, so the architecture will be adjusted a little bit:</p>
+<p><a href="../images/">Our hub-spoke</a></p>
+<h3 id="create-hub--spoke-virtual-network"><strong>Create Hub &amp; Spoke virtual network</strong></h3>
+<p>At this step, we will create three virtual networks (vnet):</p>
+<ul>
+<li>Hub virtual network (hub-vnet): region France Central</li>
+<li>Spoke 1 virtual network (finance-vnet): region West Europe</li>
+<li>Spoke 2 virtual network (it-vnet): region North Europe</li>
+</ul>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/8cfb93b789a27350ee8f630c880a2e1f.js"></script>
 
+<h3 id="create-virtual-machines"><strong>Create virtual machines</strong></h3>
+<p>Then, we create three Ubuntu 18.04 virtual machines:</p>
+<ul>
+<li>bastion-vm: a jumphost machine located in hub network</li>
+<li>accounting-vm: an accounting vm located in spoke1 (finance) network</li>
+<li>security-vm: a security vm located in spoke2 (it) network</li>
+</ul>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/7168f2b727d89cbbf8c752c8a28d5f92.js"></script>
+
+<h3 id="add-peering-between-hub-network-and-spokes-network"><strong>Add peering between hub network and spokes network</strong></h3>
+<p>Next, we peer the hub network to each spoke allowing the traffic flows between them.</p>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/a512e7bcb2c9d0d81426efd25ae93eb3.js"></script>
+
+<h3 id="test-connectivity-from-jumphost-on-hub-network-to-the-vm-on-each-spoke"><strong>Test connectivity from jumphost on hub network to the vm on each spoke</strong></h3>
+<p>When the peering is done, the traffic can flow from the hub network to each spoke network.
+So, we could check this connectivity from <em>bastion-vm</em>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ping -c 3 10.23.0.4
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ping -c 3 10.23.1.36
+</code></pre></div><p><img src="../images/47_azure_hub_spoke_ping.png" alt="hub-spoke ping"></p>
+<h3 id="restriction-access-to-spoke-with-iptables"><strong>Restriction access to spoke with iptables</strong></h3>
+<p>By default, the firewall iptables on the <em>bastion-vm</em> is empty. It means that all users could access spoke vm (<em>accounting-vm</em> and <em>security-vm</em>).</p>
+<p><img src="../images/48_azure_hub_spoke_iptables_default.png" alt="hub-spoke iptables default"></p>
+<p>We need to configure the firewall to restrict access.
+Firstly, run the below command to block all access to spoke networks:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo iptables -I OUTPUT -d 10.23.0.0/28 -j DROP
+
+sudo iptables -I OUTPUT -d 10.23.1.32/28 -j DROP
+</code></pre></div><p>Then, we could give access to a specific user to a specific subnet. For example, we could give cicd user to have only access to <em>finance-subnet</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo iptables -I OUTPUT -m owner --uid-owner cicd -d 10.23.0.0/28 -j ACCEPT
+</code></pre></div><p><img src="../images/49_azure_hub_spoke_iptables_custom.png" alt="hub-spoke custom iptables"></p>
+<p>Now, the access of cicd user is restricted only to <em>finance-subnet</em>. The traffic to <em>it-subnet</em> is denied.</p>
+<p><img src="../images/50_azure_hub_spoke_iptables_custom_result.png" alt="hub-spoke custom iptables result"></p>
+<h3 id="add-new-user-on-jump-host-machine"><strong>Add new user on jump host machine</strong></h3>
+<p>Yeah. The firewall on jump host machine (<em>bastion-vm</em>) works as expected.
+What if you need to give access to some new users?</p>
+<p>You may think about Azure Portal. It has a built-in functionality <em>Reset password</em> allowing you to create a new user. Let&rsquo;s do that.</p>
+<p><img src="../images/51_azure_hub_spoke_bad_user.png" alt="hub-spoke bad user"></p>
+<p>Oops!!! Our user is created via Azure Portal with <em>/bin/bash</em>. It means that this user can open a shell session on the jump host machine!!!
+<strong>It is dangerous</strong>. The user may have a shell on the spoke machines but you never give the user a shell on the jump host machine (except this user is on your team).</p>
+<p><img src="../images/52_azure_hub_spoke_bad_user_shell.png" alt="hub-spoke bad user shell"></p>
+<p>Instead of using <em>Reset password</em> functionality on Azure Portal. You could run a script to achieve the same job. Let&rsquo;s delete the baduser:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo userdel baduser -r
+</code></pre></div><p>And then create a gooduser with <em>/bin/false</em>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">/bin/bash
+sudo -i
+useradd -m --shell /bin/false gooduser
+
+mkdir -p /home/gooduser/.ssh/
+echo &#34;[USER_PUBLIC_KEY]&#34; &gt; /home/gooduser/.ssh/authorized_keys
+</code></pre></div><p>Now, you could configure the firewall iptables to give access to this user to subnets that you want:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo iptables -I OUTPUT -m owner --uid-owner gooduser -d 10.23.0.0/28 -j ACCEPT
+sudo iptables -I OUTPUT -m owner --uid-owner gooduser -d 10.23.1.32/28 -j ACCEPT
+</code></pre></div>
 
         
           <div class="blog-tags">
@@ -283,9 +354,9 @@
                   <ul>
                 
                 
-                    <li><a href="/post/2020/12/azure/azure-hub-spoke-topology/">Azure-Hub Spoke topology</a></li>
-                
                     <li><a href="/post/2020/12/azure/azure-resilency/">Azure Resiliency</a></li>
+                
+                    <li><a href="/post/2020/12/azure/basic-azure-networking/">Basic Azure Networking</a></li>
                 
                     <li><a href="/post/2020/12/azure/azure-bastion-with-terraform/">Azure-Deploy Azure Bastion as Code with Terraform</a></li>
                 
@@ -299,13 +370,9 @@
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://nhat-tong.github.io/post/2020/12/gcp/create-google-workspace-account/" data-toggle="tooltip" data-placement="top" title="Create a Google Workspace account">&larr; Previous Post</a>
+              <a href="https://nhat-tong.github.io/post/2020/12/azure/azure-resilency/" data-toggle="tooltip" data-placement="top" title="Azure Resiliency">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://nhat-tong.github.io/post/2020/12/azure/azure-resilency/" data-toggle="tooltip" data-placement="top" title="Azure Resiliency">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
