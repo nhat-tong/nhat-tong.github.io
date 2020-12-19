@@ -64,7 +64,7 @@ Our hub-spoke">
   "headline": "Azure-Hub Spoke topology",
   "description" : "Today, we will implement a hub-spoke topology in Azure.\nThe hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.\nThe spokes are virtual networks that peer with the hub and can be used to isolate workloads.\nFor more information, we refer to this document: https:\/\/docs.microsoft.com\/en-us\/azure\/architecture\/reference-architectures\/hybrid-networking\/hub-spoke.\nIn our case-study, we don\u0026rsquo;t have on-premises network, so the architecture will be adjusted a little bit:\nOur hub-spoke\n",
   "inLanguage" : "en",
-  "wordCount":  575 ,
+  "wordCount":  595 ,
   "datePublished" : "2020-12-19T00:00:00",
   "dateModified" : "2020-12-19T00:00:00",
   "image" : "https:\/\/nhat-tong.github.io\/devops.png",
@@ -251,7 +251,7 @@ The spokes are virtual networks …">
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;575&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;595&nbsp;words
   
   
   
@@ -297,7 +297,7 @@ The spokes are virtual networks …">
 <script type="application/javascript" src="https://gist.github.com/nhat-tong/7168f2b727d89cbbf8c752c8a28d5f92.js"></script>
 
 <h3 id="add-peering-between-hub-network-and-spokes-network"><strong>Add peering between hub network and spokes network</strong></h3>
-<p>Next, we peer the hub network to each spoke allowing the traffic flows between them.</p>
+<p>By default, the traffic cannot flow from one virtual network to another virtual network. We need to add the peering (two way) to allow the traffic flow from the hub network to each spoke network.</p>
 <script type="application/javascript" src="https://gist.github.com/nhat-tong/a512e7bcb2c9d0d81426efd25ae93eb3.js"></script>
 
 <h3 id="test-connectivity-from-jumphost-on-hub-network-to-the-vm-on-each-spoke"><strong>Test connectivity from jumphost on hub network to the vm on each spoke</strong></h3>
