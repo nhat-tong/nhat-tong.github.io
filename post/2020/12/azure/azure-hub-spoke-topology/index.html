@@ -64,7 +64,7 @@ Our hub-spoke">
   "headline": "Azure-Hub Spoke topology",
   "description" : "Today, we will implement a hub-spoke topology in Azure.\nThe hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.\nThe spokes are virtual networks that peer with the hub and can be used to isolate workloads.\nFor more information, we refer to this document: https:\/\/docs.microsoft.com\/en-us\/azure\/architecture\/reference-architectures\/hybrid-networking\/hub-spoke.\nIn our case-study, we don\u0026rsquo;t have on-premises network, so the architecture will be adjusted a little bit:\nOur hub-spoke\n",
   "inLanguage" : "en",
-  "wordCount":  595 ,
+  "wordCount":  596 ,
   "datePublished" : "2020-12-19T00:00:00",
   "dateModified" : "2020-12-19T00:00:00",
   "image" : "https:\/\/nhat-tong.github.io\/devops.png",
@@ -251,7 +251,7 @@ The spokes are virtual networks …">
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;595&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;596&nbsp;words
   
   
   
@@ -307,14 +307,14 @@ So, we could check this connectivity from <em>bastion-vm</em>:</p>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ping -c 3 10.23.1.36
 </code></pre></div><p><img src="../images/47_azure_hub_spoke_ping.png" alt="hub-spoke ping"></p>
 <h3 id="restriction-access-to-spoke-with-iptables"><strong>Restriction access to spoke with iptables</strong></h3>
-<p>By default, the firewall iptables on the <em>bastion-vm</em> is empty. It means that all users could access spoke vm (<em>accounting-vm</em> and <em>security-vm</em>).</p>
+<p>By default, the firewall iptables on the <em>bastion-vm</em> is empty. It means that all users could access to spoke vm (<em>accounting-vm</em> and <em>security-vm</em>).</p>
 <p><img src="../images/48_azure_hub_spoke_iptables_default.png" alt="hub-spoke iptables default"></p>
 <p>We need to configure the firewall to restrict access.
 Firstly, run the below command to block all access to spoke networks:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo iptables -I OUTPUT -d 10.23.0.0/28 -j DROP
 
 sudo iptables -I OUTPUT -d 10.23.1.32/28 -j DROP
-</code></pre></div><p>Then, we could give access to a specific user to a specific subnet. For example, we could give cicd user to have only access to <em>finance-subnet</em></p>
+</code></pre></div><p>Then, we could give access to a specific user to a specific network. For example, we could give cicd user to have only access to <em>finance-subnet</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo iptables -I OUTPUT -m owner --uid-owner cicd -d 10.23.0.0/28 -j ACCEPT
 </code></pre></div><p><img src="../images/49_azure_hub_spoke_iptables_custom.png" alt="hub-spoke custom iptables"></p>
 <p>Now, the access of cicd user is restricted only to <em>finance-subnet</em>. The traffic to <em>it-subnet</em> is denied.</p>
@@ -326,7 +326,7 @@ What if you need to give access to some new users?</p>
 <p><img src="../images/51_azure_hub_spoke_bad_user.png" alt="hub-spoke bad user"></p>
 <p>Oops!!! Our user is created via Azure Portal with <em>/bin/bash</em>. It means that this user can open a shell session on the jump host machine!!!</p>
 <p><strong>It is dangerous</strong>.</p>
-<p>The user may have a shell on the spoke machines but you never give the user a shell on the jump host machine (except this user is on your team).</p>
+<p>The user may have a shell on the spoke machines but you never give the user a shell on the jump host machine (except this user belongs to your team).</p>
 <p><img src="../images/52_azure_hub_spoke_bad_user_shell.png" alt="hub-spoke bad user shell"></p>
 <p>Instead of using <em>Reset password</em> functionality on Azure Portal. You could run a script to achieve the same job. Let&rsquo;s delete the baduser:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo userdel baduser -r
