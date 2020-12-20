@@ -61,7 +61,7 @@ In the previous article, we discussed the Hub-Spoke Topology. We will expand thi
   "headline": "Azure-Nat Gateway with ProxyOut",
   "description" : "In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn\u0026rsquo;t have a public ip). You don\u0026rsquo;t need to do anything to have internet access.\nBut what if you would like to control the web traffic (http\/https) to the internet from your virtual networks (due to the company\u0026rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.\nIn the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.\n",
   "inLanguage" : "en",
-  "wordCount":  438 ,
+  "wordCount":  462 ,
   "datePublished" : "2020-12-20T00:00:00",
   "dateModified" : "2020-12-20T00:00:00",
   "image" : "https:\/\/nhat-tong.github.io\/devops.png",
@@ -243,7 +243,7 @@ In the previous article, we discussed the Hub-Spoke Topology. We will expand thi
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;438&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;462&nbsp;words
   
   
   
@@ -327,9 +327,9 @@ curl http://example.com
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">curl ipconfig.io
 curl http://example.com
 </code></pre></div><p><img src="../images/57_azure_nat_proxyout_nat_security_vm.png" alt="security vm"></p>
-<p>You may notice that our vm instances on different subnetworks use the same Public IP <strong>20.74.16.23</strong> of Nat Gateway and the web traffic flow to proxyout instances before go out to the Internet.</p>
+<p>You may notice that our vm instances on different subnetworks use the same Public IP <strong>20.74.16.23</strong> of Nat Gateway and the web traffic flow to proxyout instances before going out to the Internet.</p>
 <p><img src="../images/53_azure_nat_proxyout_result.png" alt="Proxyout"></p>
-<p>So, you could install a middleware (<em>squid</em> for example) on <em>proxyout</em> instances to control (allow/deny) your traffic to the Internet.</p>
+<p>As you see, our proxyout instances are the central place where all web traffic from different networks coming before going out to the Internet. So you may think to install a middleware on these instances (<em>squid</em> for example) to allow/deny the traffic if needed.</p>
 
         
           <div class="blog-tags">
