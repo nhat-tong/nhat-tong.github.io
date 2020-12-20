@@ -34,7 +34,7 @@
     </item>
     
     <item>
-      <title>Create a Google Workspace account</title>
+      <title>GCP-Create a Google Workspace account</title>
       <link>https://nhat-tong.github.io/post/2020/12/gcp/create-google-workspace-account/</link>
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
@@ -44,7 +44,7 @@
     </item>
     
     <item>
-      <title>Cloud NAT with multiple VPC</title>
+      <title>GCP-Cloud NAT with multiple VPC</title>
       <link>https://nhat-tong.github.io/post/2020/12/gcp/cloud-nat-multi-vpc-4/</link>
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
