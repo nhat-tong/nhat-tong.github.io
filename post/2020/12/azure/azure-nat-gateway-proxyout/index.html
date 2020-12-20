@@ -7,13 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Azure-Hub Spoke topology - Home</title>
-  <meta name="description" content="Today, we will implement a hub-spoke topology in Azure.
-The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.
-The spokes are virtual networks that peer with the hub and can be used to isolate workloads.
-For more information, we refer to this document: https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke.
-In our case-study, we don&rsquo;t have on-premises network, so the architecture will be adjusted a little bit:
-Our hub-spoke">
+  <title>Azure-Nat Gateway with ProxyOut - Home</title>
+  <meta name="description" content="In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&rsquo;t have a public ip). You don&rsquo;t need to do anything to have internet access.
+But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.
+In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -49,8 +46,8 @@ Our hub-spoke">
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/nhat-tong.github.io\/post\/2020\/12\/azure\/azure-hub-spoke-topology\/",
-          "name": "Azure hub spoke topology"
+          "@id": "https:\/\/nhat-tong.github.io\/post\/2020\/12\/azure\/azure-nat-gateway-proxyout\/",
+          "name": "Azure nat gateway with proxy out"
         }
     }]
 }
@@ -61,15 +58,15 @@ Our hub-spoke">
   "author": {
     "name" : "Nhat Tong"
   },
-  "headline": "Azure-Hub Spoke topology",
-  "description" : "Today, we will implement a hub-spoke topology in Azure.\nThe hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.\nThe spokes are virtual networks that peer with the hub and can be used to isolate workloads.\nFor more information, we refer to this document: https:\/\/docs.microsoft.com\/en-us\/azure\/architecture\/reference-architectures\/hybrid-networking\/hub-spoke.\nIn our case-study, we don\u0026rsquo;t have on-premises network, so the architecture will be adjusted a little bit:\nOur hub-spoke\n",
+  "headline": "Azure-Nat Gateway with ProxyOut",
+  "description" : "In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn\u0026rsquo;t have a public ip). You don\u0026rsquo;t need to do anything to have internet access.\nBut what if you would like to control the web traffic (http\/https) to the internet from your virtual networks (due to the company\u0026rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.\nIn the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.\n",
   "inLanguage" : "en",
-  "wordCount":  596 ,
-  "datePublished" : "2020-12-19T00:00:00",
-  "dateModified" : "2020-12-19T00:00:00",
+  "wordCount":  438 ,
+  "datePublished" : "2020-12-20T00:00:00",
+  "dateModified" : "2020-12-20T00:00:00",
   "image" : "https:\/\/nhat-tong.github.io\/devops.png",
   "keywords" : [ "azure" ],
-  "mainEntityOfPage" : "https:\/\/nhat-tong.github.io\/post\/2020\/12\/azure\/azure-hub-spoke-topology\/",
+  "mainEntityOfPage" : "https:\/\/nhat-tong.github.io\/post\/2020\/12\/azure\/azure-nat-gateway-proxyout\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/nhat-tong.github.io",
@@ -83,22 +80,17 @@ Our hub-spoke">
 }
 </script>
 
-<meta property="og:title" content="Azure-Hub Spoke topology" />
-<meta property="og:description" content="Today, we will implement a hub-spoke topology in Azure.
-The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.
-The spokes are virtual networks that peer with the hub and can be used to isolate workloads.
-For more information, we refer to this document: https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke.
-In our case-study, we don&rsquo;t have on-premises network, so the architecture will be adjusted a little bit:
-Our hub-spoke">
+<meta property="og:title" content="Azure-Nat Gateway with ProxyOut" />
+<meta property="og:description" content="In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&rsquo;t have a public ip). You don&rsquo;t need to do anything to have internet access.
+But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.
+In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.">
 <meta property="og:image" content="https://nhat-tong.github.io/devops.png" />
-<meta property="og:url" content="https://nhat-tong.github.io/post/2020/12/azure/azure-hub-spoke-topology/" />
+<meta property="og:url" content="https://nhat-tong.github.io/post/2020/12/azure/azure-nat-gateway-proxyout/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
-  <meta name="twitter:title" content="Azure-Hub Spoke topology" />
-  <meta name="twitter:description" content="Today, we will implement a hub-spoke topology in Azure.
-The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.
-The spokes are virtual networks …">
+  <meta name="twitter:title" content="Azure-Nat Gateway with ProxyOut" />
+  <meta name="twitter:description" content="In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&rsquo;t have a public ip). You don&rsquo;t need to do anything to have internet …">
   <meta name="twitter:image" content="https://nhat-tong.github.io/devops.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://nhat-tong.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -237,7 +229,7 @@ The spokes are virtual networks …">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Azure-Hub Spoke topology</h1>
+                <h1>Azure-Nat Gateway with ProxyOut</h1>
               
               
               
@@ -245,13 +237,13 @@ The spokes are virtual networks …">
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;December 19, 2020
+  <i class="fas fa-calendar"></i>&nbsp;December 20, 2020
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;596&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;438&nbsp;words
   
   
   
@@ -272,75 +264,72 @@ The spokes are virtual networks …">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>Today, we will implement a hub-spoke topology in Azure.</p>
-<p>The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.</p>
-<p>The spokes are virtual networks that peer with the hub and can be used to isolate workloads.</p>
-<p>For more information, we refer to this document: <a href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke">https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke</a>.</p>
-<p>In our case-study, we don&rsquo;t have <em>on-premises network</em>, so the architecture will be adjusted a little bit:</p>
-<p><a href="../images/">Our hub-spoke</a></p>
-<h3 id="create-hub--spoke-virtual-network"><strong>Create Hub &amp; Spoke virtual network</strong></h3>
-<p>At this step, we will create three virtual networks (vnet):</p>
+        <p>In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&rsquo;t have a public ip). You don&rsquo;t need to do anything to have internet access.</p>
+<p>But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.</p>
+<p>In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.</p>
+<h3 id="our-architecture-modified"><strong>Our architecture modified</strong></h3>
+<p>As you saw in the previous architecture, we have three virtual networks:</p>
 <ul>
 <li>Hub virtual network (hub-vnet): region France Central</li>
 <li>Spoke 1 virtual network (finance-vnet): region West Europe</li>
 <li>Spoke 2 virtual network (it-vnet): region North Europe</li>
 </ul>
-<script type="application/javascript" src="https://gist.github.com/nhat-tong/8cfb93b789a27350ee8f630c880a2e1f.js"></script>
-
-<h3 id="create-virtual-machines"><strong>Create virtual machines</strong></h3>
-<p>Then, we create three Ubuntu 18.04 virtual machines:</p>
+<p>We need to control the web traffic from all spoke networks to the Internet .</p>
+<p>We will add a new virtual network:</p>
 <ul>
-<li>bastion-vm: a jumphost machine located in hub network with a public ip to allow access from outside</li>
-<li>accounting-vm: an accounting vm located in spoke1 (finance) network without public ip. The access is allowed only from the jump host machine.</li>
-<li>security-vm: a security vm located in spoke2 (it) network without public ip. The access is allowed only from the jump host machine.</li>
+<li>Proxyout virtual network (proxyout-vnet): region France Central</li>
 </ul>
-<script type="application/javascript" src="https://gist.github.com/nhat-tong/7168f2b727d89cbbf8c752c8a28d5f92.js"></script>
+<p>On this new virtual network, we place two virtual machines (proxyout) behind a Azure Load Balancer Standard to receive/control  the web traffic (http/https) from other spoke networks. You could install a middleware (<em>squid</em>) to allow/deny the access.</p>
+<p>So, our architecture will be the following:</p>
+<p><img src="../images/" alt="Proxyout Architecture"></p>
+<h3 id="create-proxyout-load-balancer"><strong>Create proxyout load balancer</strong></h3>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/d5294d6ca0410cea4e89503127683e8b.js"></script>
 
-<h3 id="add-peering-between-hub-network-and-spokes-network"><strong>Add peering between hub network and spokes network</strong></h3>
-<p>By default, the traffic cannot flow from one virtual network to another virtual network. We need to add the peering (two way) to allow the traffic flow from the hub network to each spoke network.</p>
-<script type="application/javascript" src="https://gist.github.com/nhat-tong/a512e7bcb2c9d0d81426efd25ae93eb3.js"></script>
+<ul>
+<li>Private IP address of Load Balancer: <em>10.2.0.4</em></li>
+</ul>
+<h3 id="create-proxyout-virtual-network--virtual-machine"><strong>Create proxyout virtual network &amp; virtual machine</strong></h3>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/1eaa9fcd4173b1dcdcf055c23c25197c.js"></script>
 
-<h3 id="test-connectivity-from-jumphost-on-hub-network-to-the-vm-on-each-spoke"><strong>Test connectivity from jumphost on hub network to the vm on each spoke</strong></h3>
-<p>When the peering is done, the traffic can flow from the hub network to each spoke network.
-So, we could check this connectivity from <em>bastion-vm</em>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ping -c 3 10.23.0.4
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ping -c 3 10.23.1.36
-</code></pre></div><p><img src="../images/47_azure_hub_spoke_ping.png" alt="hub-spoke ping"></p>
-<h3 id="restriction-access-to-spoke-with-iptables"><strong>Restriction access to spoke with iptables</strong></h3>
-<p>By default, the firewall iptables on the <em>bastion-vm</em> is empty. It means that all users could access to spoke vm (<em>accounting-vm</em> and <em>security-vm</em>).</p>
-<p><img src="../images/48_azure_hub_spoke_iptables_default.png" alt="hub-spoke iptables default"></p>
-<p>We need to configure the firewall to restrict access.
-Firstly, run the below command to block all access to spoke networks:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo iptables -I OUTPUT -d 10.23.0.0/28 -j DROP
+<ul>
+<li>Private IP address of proxyout1-vm: <em>10.2.0.5</em></li>
+<li>Private IP address of proxyout2-vm: <em>10.2.0.6</em></li>
+</ul>
+<h3 id="create-a-routable-for-each-spoke-subnet"><strong>Create a routable for each spoke subnet</strong></h3>
+<p>Now, the proxyout network is created. We could create a route on each spoke subnetwork to override the route by default to the internet passing to the lb of proxyout <strong>10.2.0.4</strong></p>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/d1965037e7a5174afc2938deba4e5fd3.js"></script>
 
-sudo iptables -I OUTPUT -d 10.23.1.32/28 -j DROP
-</code></pre></div><p>Then, we could give access to a specific user to a specific network. For example, we could give cicd user to have only access to <em>finance-subnet</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo iptables -I OUTPUT -m owner --uid-owner cicd -d 10.23.0.0/28 -j ACCEPT
-</code></pre></div><p><img src="../images/49_azure_hub_spoke_iptables_custom.png" alt="hub-spoke custom iptables"></p>
-<p>Now, the access of cicd user is restricted only to <em>finance-subnet</em>. The traffic to <em>it-subnet</em> is denied.</p>
-<p><img src="../images/50_azure_hub_spoke_iptables_custom_result.png" alt="hub-spoke custom iptables result"></p>
-<h3 id="add-new-user-on-jump-host-machine"><strong>Add new user on jump host machine</strong></h3>
-<p>Yeah. The firewall on jump host machine (<em>bastion-vm</em>) works as expected.
-What if you need to give access to some new users?</p>
-<p>You may think about Azure Portal. It has a built-in functionality <em>Reset password</em> allowing you to create a new user. Let&rsquo;s do that.</p>
-<p><img src="../images/51_azure_hub_spoke_bad_user.png" alt="hub-spoke bad user"></p>
-<p>Oops!!! Our user is created via Azure Portal with <em>/bin/bash</em>. It means that this user can open a shell session on the jump host machine!!!</p>
-<p><strong>It is dangerous</strong>.</p>
-<p>The user may have a shell on the spoke machines but you never give the user a shell on the jump host machine (except this user belongs to your team).</p>
-<p><img src="../images/52_azure_hub_spoke_bad_user_shell.png" alt="hub-spoke bad user shell"></p>
-<p>Instead of using <em>Reset password</em> functionality on Azure Portal. You could run a script to achieve the same job. Let&rsquo;s delete the baduser:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo userdel baduser -r
-</code></pre></div><p>And then create a gooduser with <em>/bin/false</em>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">/bin/bash
-sudo -i
-useradd -m --shell /bin/false gooduser
+<p><img src="../images/53_azure_nat_proxyout_routetable.png" alt="route table"></p>
+<h3 id="create-a-peering-between-proxyout-vnet-and-each-spoke-vnet"><strong>Create a peering between proxyout vnet and each spoke vnet</strong></h3>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/b6612f81410a3e0ed50ec6e852d323c4.js"></script>
 
-mkdir -p /home/gooduser/.ssh/
-echo &#34;[USER_PUBLIC_KEY]&#34; &gt; /home/gooduser/.ssh/authorized_keys
-</code></pre></div><p>Now, you could configure the firewall iptables to give access to this user to subnets that you want:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo iptables -I OUTPUT -m owner --uid-owner gooduser -d 10.23.0.0/28 -j ACCEPT
-sudo iptables -I OUTPUT -m owner --uid-owner gooduser -d 10.23.1.32/28 -j ACCEPT
-</code></pre></div>
+<h3 id="create-a-nat-gateway"><strong>Create a NAT Gateway</strong></h3>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/6848998acb5866d8ce927ceee8dcb77b.js"></script>
+
+<p><img src="../images/54_azure_nat_proxyout_nat_gateway.png" alt="nat gateway"></p>
+<ul>
+<li>Public IP assigned to NAT: <em>20.74.16.23</em></li>
+</ul>
+<h3 id="enable-ip-forwarding-on-proxyout-instance-and-create-a-nat-rules"><strong>Enable IP Forwarding on proxyout instance and create a NAT rules</strong></h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
+
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 80 -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 443 -j MASQUERADE
+</code></pre></div><p><u>Check</u>:</p>
+<p><img src="../images/55_azure_nat_proxyout_nat_ip_forwarding.png" alt="IP Forwarding"></p>
+<h3 id="test-connectivity-to-the-internet-from-finance-subnet"><strong>Test connectivity to the Internet from finance subnet</strong></h3>
+<p>Now, from the <em>accounting-vm</em> located on <em>finance-subnet</em>, run the below command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">curl ipconfig.io
+curl http://example.com
+</code></pre></div><p><img src="../images/56_azure_nat_proxyout_nat_accounting_vm.png" alt="accounting vm"></p>
+<h3 id="test-connectivity-to-the-internet-from-it-subnet"><strong>Test connectivity to the Internet from it subnet</strong></h3>
+<p>From the <em>security-vm</em> located on <em>it-subnet</em>, run the same command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">curl ipconfig.io
+curl http://example.com
+</code></pre></div><p><img src="../images/57_azure_nat_proxyout_nat_security_vm.png" alt="security vm"></p>
+<p>You may notice that our vm instances on different subnetworks use the same Public IP <strong>20.74.16.23</strong> of Nat Gateway and the web traffic flow to proxyout instances before go out to the Internet.</p>
+<p><img src="../images/53_azure_nat_proxyout_result.png" alt="Proxyout"></p>
+<p>So, you could install a middleware (<em>squid</em> for example) on <em>proxyout</em> instances to control (allow/deny) your traffic to the Internet.</p>
 
         
           <div class="blog-tags">
@@ -362,7 +351,7 @@ sudo iptables -I OUTPUT -m owner --uid-owner gooduser -d 10.23.1.32/28 -j ACCEPT
                   <ul>
                 
                 
-                    <li><a href="/post/2020/12/azure/azure-nat-gateway-proxyout/">Azure-Nat Gateway with ProxyOut</a></li>
+                    <li><a href="/post/2020/12/azure/azure-hub-spoke-topology/">Azure-Hub Spoke topology</a></li>
                 
                     <li><a href="/post/2020/12/azure/azure-resilency/">Azure Resiliency</a></li>
                 
@@ -380,13 +369,9 @@ sudo iptables -I OUTPUT -m owner --uid-owner gooduser -d 10.23.1.32/28 -j ACCEPT
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://nhat-tong.github.io/post/2020/12/azure/azure-resilency/" data-toggle="tooltip" data-placement="top" title="Azure Resiliency">&larr; Previous Post</a>
+              <a href="https://nhat-tong.github.io/post/2020/12/azure/azure-hub-spoke-topology/" data-toggle="tooltip" data-placement="top" title="Azure-Hub Spoke topology">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://nhat-tong.github.io/post/2020/12/azure/azure-nat-gateway-proxyout/" data-toggle="tooltip" data-placement="top" title="Azure-Nat Gateway with ProxyOut">Next Post &rarr;</a>
-            </li>
           
         </ul>
       

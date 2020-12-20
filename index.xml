@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sat, 19 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://nhat-tong.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://nhat-tong.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure-Nat Gateway with ProxyOut</title>
+      <link>https://nhat-tong.github.io/post/2020/12/azure/azure-nat-gateway-proxyout/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://nhat-tong.github.io/post/2020/12/azure/azure-nat-gateway-proxyout/</guid>
+      <description>&lt;p&gt;In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&amp;rsquo;t have a public ip). You don&amp;rsquo;t need to do anything to have internet access.&lt;/p&gt;
+&lt;p&gt;But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&amp;rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.&lt;/p&gt;
+&lt;p&gt;In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Azure-Hub Spoke topology</title>
       <link>https://nhat-tong.github.io/post/2020/12/azure/azure-hub-spoke-topology/</link>
