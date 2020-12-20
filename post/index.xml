@@ -98,17 +98,5 @@
 &lt;/ul&gt;</description>
     </item>
     
-    <item>
-      <title>First post!</title>
-      <link>https://nhat-tong.github.io/post/2020/12/first-post/</link>
-      <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/first-post/</guid>
-      <description>&lt;p&gt;Yeah. This is real. My blog is live 😊&lt;/p&gt;
-&lt;p&gt;A long time ago, I would like to make a blog to share my experience and my point of view but I&amp;rsquo;m not able to arrange myself to do that.&lt;/p&gt;
-&lt;p&gt;Recently, I read some technical blogs hosted by GitHub and they are inspiring me on how to build fastly a blog with GitHub pages.&lt;/p&gt;
-&lt;p&gt;And that I want to share with you in this article.&lt;/p&gt;</description>
-    </item>
-    
   </channel>
 </rss>
