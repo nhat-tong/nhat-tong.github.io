@@ -28,6 +28,11 @@
   </url>
   
   <url>
+    <loc>https://nhat-tong.github.io/tags/terraform/</loc>
+    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nhat-tong.github.io/post/2020/12/azure/azure-hub-spoke-topology/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
   </url>
@@ -109,11 +114,6 @@
   
   <url>
     <loc>https://nhat-tong.github.io/post/2020/12/first-post/</loc>
-    <lastmod>2020-12-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nhat-tong.github.io/tags/terraform/</loc>
     <lastmod>2020-12-06T00:00:00+00:00</lastmod>
   </url>
   
