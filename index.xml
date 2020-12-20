@@ -34,24 +34,6 @@
     </item>
     
     <item>
-      <title>Azure Resiliency</title>
-      <link>https://nhat-tong.github.io/post/2020/12/azure/azure-resilency/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/azure/azure-resilency/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
-      <title>Basic Azure Networking</title>
-      <link>https://nhat-tong.github.io/post/2020/12/azure/basic-azure-networking/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/azure/basic-azure-networking/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
       <title>Create a Google Workspace account</title>
       <link>https://nhat-tong.github.io/post/2020/12/gcp/create-google-workspace-account/</link>
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
@@ -59,60 +41,6 @@
       <guid>https://nhat-tong.github.io/post/2020/12/gcp/create-google-workspace-account/</guid>
       <description>&lt;p&gt;If you need to test/use some advanced functionalities on Google Cloud Platform (GCP), you have to create your own organization.&lt;/p&gt;
 &lt;p&gt;This article covers some steps to guide you on how to create a workspace account.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Host project and Service project model</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/case-study-shared-vpc-host-project-service-project/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/case-study-shared-vpc-host-project-service-project/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
-      <title>Peering a Shared VPC with a Custom VPC</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/case-study-shared-vpc-peering-custom-vpc/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/case-study-shared-vpc-peering-custom-vpc/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
-      <title>Peering a Shared VPC with another Shared VPC</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/case-study-shared-vpc-peering-shared-vpc/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/case-study-shared-vpc-peering-shared-vpc/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
-      <title>Private connection</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/private-connection/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/private-connection/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
-      <title>Shared VPC</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/shared-vpc/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/shared-vpc/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
-      <title>VPC Peering</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/vpc-peering/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/vpc-peering/</guid>
-      <description>Coming soon!</description>
     </item>
     
     <item>
@@ -168,15 +96,6 @@
 &lt;li&gt;Firewall&lt;/li&gt;
 &lt;li&gt;Route&lt;/li&gt;
 &lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Azure-Deploy Azure Bastion as Code with Terraform</title>
-      <link>https://nhat-tong.github.io/post/2020/12/azure/azure-bastion-with-terraform/</link>
-      <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/azure/azure-bastion-with-terraform/</guid>
-      <description>Coming soon!</description>
     </item>
     
     <item>

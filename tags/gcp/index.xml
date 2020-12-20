@@ -19,60 +19,6 @@
     </item>
     
     <item>
-      <title>Host project and Service project model</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/case-study-shared-vpc-host-project-service-project/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/case-study-shared-vpc-host-project-service-project/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
-      <title>Peering a Shared VPC with a Custom VPC</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/case-study-shared-vpc-peering-custom-vpc/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/case-study-shared-vpc-peering-custom-vpc/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
-      <title>Peering a Shared VPC with another Shared VPC</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/case-study-shared-vpc-peering-shared-vpc/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/case-study-shared-vpc-peering-shared-vpc/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
-      <title>Private connection</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/private-connection/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/private-connection/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
-      <title>Shared VPC</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/shared-vpc/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/shared-vpc/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
-      <title>VPC Peering</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/vpc-peering/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/vpc-peering/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
       <title>Cloud NAT with multiple VPC</title>
       <link>https://nhat-tong.github.io/post/2020/12/gcp/cloud-nat-multi-vpc-4/</link>
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>

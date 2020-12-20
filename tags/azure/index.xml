@@ -33,32 +33,5 @@
 &lt;p&gt;&lt;a href=&#34;../images/&#34;&gt;Our hub-spoke&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
-    <item>
-      <title>Azure Resiliency</title>
-      <link>https://nhat-tong.github.io/post/2020/12/azure/azure-resilency/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/azure/azure-resilency/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
-      <title>Basic Azure Networking</title>
-      <link>https://nhat-tong.github.io/post/2020/12/azure/basic-azure-networking/</link>
-      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/azure/basic-azure-networking/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
-    <item>
-      <title>Azure-Deploy Azure Bastion as Code with Terraform</title>
-      <link>https://nhat-tong.github.io/post/2020/12/azure/azure-bastion-with-terraform/</link>
-      <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/azure/azure-bastion-with-terraform/</guid>
-      <description>Coming soon!</description>
-    </item>
-    
   </channel>
 </rss>
