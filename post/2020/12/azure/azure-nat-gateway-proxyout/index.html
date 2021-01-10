@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Azure-Nat Gateway with ProxyOut - Home</title>
+  <title>Azure-Nat Gateway with Virtual Network Appliance - Home</title>
   <meta name="description" content="In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&rsquo;t have a public ip). You don&rsquo;t need to do anything to have internet access.
 But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.
 In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.">
@@ -47,7 +47,7 @@ In the previous article, we discussed the Hub-Spoke Topology. We will expand thi
         "position": 3,
         "item": {
           "@id": "https:\/\/nhat-tong.github.io\/post\/2020\/12\/azure\/azure-nat-gateway-proxyout\/",
-          "name": "Azure nat gateway with proxy out"
+          "name": "Azure nat gateway with virtual network appliance"
         }
     }]
 }
@@ -58,7 +58,7 @@ In the previous article, we discussed the Hub-Spoke Topology. We will expand thi
   "author": {
     "name" : "Nhat Tong"
   },
-  "headline": "Azure-Nat Gateway with ProxyOut",
+  "headline": "Azure-Nat Gateway with Virtual Network Appliance",
   "description" : "In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn\u0026rsquo;t have a public ip). You don\u0026rsquo;t need to do anything to have internet access.\nBut what if you would like to control the web traffic (http\/https) to the internet from your virtual networks (due to the company\u0026rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.\nIn the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.\n",
   "inLanguage" : "en",
   "wordCount":  462 ,
@@ -80,7 +80,7 @@ In the previous article, we discussed the Hub-Spoke Topology. We will expand thi
 }
 </script>
 
-<meta property="og:title" content="Azure-Nat Gateway with ProxyOut" />
+<meta property="og:title" content="Azure-Nat Gateway with Virtual Network Appliance" />
 <meta property="og:description" content="In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&rsquo;t have a public ip). You don&rsquo;t need to do anything to have internet access.
 But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.
 In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.">
@@ -89,11 +89,10 @@ In the previous article, we discussed the Hub-Spoke Topology. We will expand thi
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
-  <meta name="twitter:title" content="Azure-Nat Gateway with ProxyOut" />
+  <meta name="twitter:title" content="Azure-Nat Gateway with Virtual Network Appliance" />
   <meta name="twitter:description" content="In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&rsquo;t have a public ip). You don&rsquo;t need to do anything to have internet …">
   <meta name="twitter:image" content="https://nhat-tong.github.io/devops.png" />
   <meta name="twitter:card" content="summary" />
-  <link href='https://nhat-tong.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta name="generator" content="Hugo 0.79.0" />
   <link rel="alternate" href="https://nhat-tong.github.io/index.xml" type="application/rss+xml" title="Home"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -229,7 +228,7 @@ In the previous article, we discussed the Hub-Spoke Topology. We will expand thi
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Azure-Nat Gateway with ProxyOut</h1>
+                <h1>Azure-Nat Gateway with Virtual Network Appliance</h1>
               
               
               
@@ -281,7 +280,7 @@ In the previous article, we discussed the Hub-Spoke Topology. We will expand thi
 </ul>
 <p>On this new virtual network, we place two virtual machines (proxyout) behind a Azure Load Balancer Standard to receive/control  the web traffic (http/https) from other spoke networks. You could install a middleware (<em>squid</em>) to allow/deny the access.</p>
 <p>So, our architecture will be the following:</p>
-<p><img src="../images/" alt="Proxyout Architecture"></p>
+<p><img src="../images/59_azure_hub_spoke_nva.png" alt="Proxyout Architecture"></p>
 <h3 id="create-proxyout-load-balancer"><strong>Create proxyout load balancer</strong></h3>
 <script type="application/javascript" src="https://gist.github.com/nhat-tong/d5294d6ca0410cea4e89503127683e8b.js"></script>
 
@@ -369,6 +368,10 @@ curl http://example.com
             </li>
           
           
+            <li class="next">
+              <a href="https://nhat-tong.github.io/post/2021/01/azure/azure-az-500-exam/" data-toggle="tooltip" data-placement="top" title="Some thoughts about Azure Security Engineer Associate exam (AZ-500)">Next Post &rarr;</a>
+            </li>
+          
         </ul>
       
 
@@ -449,7 +452,7 @@ curl http://example.com
 
           &nbsp;&bull;&nbsp;&copy;
           
-            2020
+            2021
           
 
           
