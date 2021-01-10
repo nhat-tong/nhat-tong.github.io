@@ -9,8 +9,23 @@
 
   <title>Azure-Nat Gateway with Virtual Network Appliance - Home</title>
   <meta name="description" content="In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&rsquo;t have a public ip). You don&rsquo;t need to do anything to have internet access.
-But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.
-In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.">
+But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control the outbound access.
+In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.
+Our architecture modified:
+As you saw in the previous architecture, we have three virtual networks:
+
+Hub virtual network (hub-vnet): region France Central
+Spoke 1 virtual network (finance-vnet): region West Europe
+Spoke 2 virtual network (it-vnet): region North Europe
+
+We need to control the web traffic from all spoke networks to the Internet .
+We will add a new virtual network:
+
+Proxyout virtual network (proxyout-vnet): region France Central
+
+On this new virtual network, we place two virtual machines (proxyout) behind a Azure Load Balancer Standard to receive/control  the web traffic (http/https) from other spoke networks. You could install a middleware (squid) to allow/deny the access.
+So, our architecture will be the following:
+">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -59,9 +74,9 @@ In the previous article, we discussed the Hub-Spoke Topology. We will expand thi
     "name" : "Nhat Tong"
   },
   "headline": "Azure-Nat Gateway with Virtual Network Appliance",
-  "description" : "In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn\u0026rsquo;t have a public ip). You don\u0026rsquo;t need to do anything to have internet access.\nBut what if you would like to control the web traffic (http\/https) to the internet from your virtual networks (due to the company\u0026rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.\nIn the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.\n",
+  "description" : "In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn\u0026rsquo;t have a public ip). You don\u0026rsquo;t need to do anything to have internet access.\nBut what if you would like to control the web traffic (http\/https) to the internet from your virtual networks (due to the company\u0026rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control the outbound access.\nIn the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.\nOur architecture modified: As you saw in the previous architecture, we have three virtual networks:\n Hub virtual network (hub-vnet): region France Central Spoke 1 virtual network (finance-vnet): region West Europe Spoke 2 virtual network (it-vnet): region North Europe  We need to control the web traffic from all spoke networks to the Internet .\nWe will add a new virtual network:\n Proxyout virtual network (proxyout-vnet): region France Central  On this new virtual network, we place two virtual machines (proxyout) behind a Azure Load Balancer Standard to receive\/control the web traffic (http\/https) from other spoke networks. You could install a middleware (squid) to allow\/deny the access.\nSo, our architecture will be the following:\n",
   "inLanguage" : "en",
-  "wordCount":  462 ,
+  "wordCount":  463 ,
   "datePublished" : "2020-12-20T00:00:00",
   "dateModified" : "2020-12-20T00:00:00",
   "image" : "https:\/\/blog.nhat-tong.com\/devops.png",
@@ -82,8 +97,23 @@ In the previous article, we discussed the Hub-Spoke Topology. We will expand thi
 
 <meta property="og:title" content="Azure-Nat Gateway with Virtual Network Appliance" />
 <meta property="og:description" content="In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&rsquo;t have a public ip). You don&rsquo;t need to do anything to have internet access.
-But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.
-In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.">
+But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control the outbound access.
+In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.
+Our architecture modified:
+As you saw in the previous architecture, we have three virtual networks:
+
+Hub virtual network (hub-vnet): region France Central
+Spoke 1 virtual network (finance-vnet): region West Europe
+Spoke 2 virtual network (it-vnet): region North Europe
+
+We need to control the web traffic from all spoke networks to the Internet .
+We will add a new virtual network:
+
+Proxyout virtual network (proxyout-vnet): region France Central
+
+On this new virtual network, we place two virtual machines (proxyout) behind a Azure Load Balancer Standard to receive/control  the web traffic (http/https) from other spoke networks. You could install a middleware (squid) to allow/deny the access.
+So, our architecture will be the following:
+">
 <meta property="og:image" content="https://blog.nhat-tong.com/devops.png" />
 <meta property="og:url" content="https://blog.nhat-tong.com/post/2020/12/azure/azure-nat-gateway-proxyout/" />
 <meta property="og:type" content="website" />
@@ -242,7 +272,7 @@ In the previous article, we discussed the Hub-Spoke Topology. We will expand thi
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;462&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;463&nbsp;words
   
   
   
@@ -264,9 +294,9 @@ In the previous article, we discussed the Hub-Spoke Topology. We will expand thi
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&rsquo;t have a public ip). You don&rsquo;t need to do anything to have internet access.</p>
-<p>But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.</p>
+<p>But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control the outbound access.</p>
 <p>In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.</p>
-<h3 id="our-architecture-modified"><strong>Our architecture modified</strong></h3>
+<h3 id="our-architecture-modified"><strong>Our architecture modified:</strong></h3>
 <p>As you saw in the previous architecture, we have three virtual networks:</p>
 <ul>
 <li>Hub virtual network (hub-vnet): region France Central</li>

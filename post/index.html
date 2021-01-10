@@ -228,7 +228,7 @@
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;7&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1328&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1330&nbsp;words
   
   
   
@@ -239,8 +239,9 @@
     <div class="post-entry">
         
         <p>Yesterday, I have passed the Azure Security Engineer Associate exam (AZ-500) after two months of preparation.
-It&rsquo;s quite tricky but I learned a lot from this exam.</p>
-<p>In this article, I would like to share with you some important points considering this exam.</p>
+It&rsquo;s quite tricky but I learned a lot from this exam 😊</p>
+<p><img src="../images/microsoft-certified-azure-security-engineer-associate.png" alt="badge"></p>
+<p>In this article, I would like to share with you some important points considering the mentioned exam.</p>
 <h3 id="exams-format"><strong>Exam&rsquo;s Format:</strong></h3>
 <ul>
 <li>55 questions (with an important part of lab questions)</li>
@@ -285,7 +286,7 @@ It&rsquo;s quite tricky but I learned a lot from this exam.</p>
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;462&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;463&nbsp;words
   
   
   
@@ -296,8 +297,23 @@ It&rsquo;s quite tricky but I learned a lot from this exam.</p>
     <div class="post-entry">
         
         <p>In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&rsquo;t have a public ip). You don&rsquo;t need to do anything to have internet access.</p>
-<p>But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.</p>
+<p>But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control the outbound access.</p>
 <p>In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.</p>
+<h3 id="our-architecture-modified"><strong>Our architecture modified:</strong></h3>
+<p>As you saw in the previous architecture, we have three virtual networks:</p>
+<ul>
+<li>Hub virtual network (hub-vnet): region France Central</li>
+<li>Spoke 1 virtual network (finance-vnet): region West Europe</li>
+<li>Spoke 2 virtual network (it-vnet): region North Europe</li>
+</ul>
+<p>We need to control the web traffic from all spoke networks to the Internet .</p>
+<p>We will add a new virtual network:</p>
+<ul>
+<li>Proxyout virtual network (proxyout-vnet): region France Central</li>
+</ul>
+<p>On this new virtual network, we place two virtual machines (proxyout) behind a Azure Load Balancer Standard to receive/control  the web traffic (http/https) from other spoke networks. You could install a middleware (<em>squid</em>) to allow/deny the access.</p>
+<p>So, our architecture will be the following:</p>
+<p><img src="../images/59_azure_hub_spoke_nva.png" alt="Proxyout Architecture"></p>
         <a href="https://blog.nhat-tong.com/post/2020/12/azure/azure-nat-gateway-proxyout/" class="post-read-more">[Read More]</a>
         
     </div>
@@ -332,7 +348,7 @@ It&rsquo;s quite tricky but I learned a lot from this exam.</p>
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;594&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;593&nbsp;words
   
   
   
@@ -345,8 +361,9 @@ It&rsquo;s quite tricky but I learned a lot from this exam.</p>
         <p>Today, we will implement a hub-spoke topology in Azure.</p>
 <p>The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.</p>
 <p>The spokes are virtual networks that peer with the hub and can be used to isolate workloads.</p>
-<p>For more information, we refer to this document: <a href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke">https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke</a>.</p>
+<p>For more information, we refer to <a href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke" target="_blank"><u>this document.</u></a></p>
 <p>In our case-study, we don&rsquo;t have <em>on-premises network</em>, so the architecture will be adjusted a little bit:</p>
+<p><img src="../images/58_azure_hub_spoke.png" alt="Our hub-spoke"></p>
         <a href="https://blog.nhat-tong.com/post/2020/12/azure/azure-hub-spoke-topology/" class="post-read-more">[Read More]</a>
         
     </div>
