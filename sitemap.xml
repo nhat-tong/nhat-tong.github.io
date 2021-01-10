@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.nhat-tong.com/tags/azure/</loc>
+    <lastmod>2021-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.nhat-tong.com/</loc>
     <lastmod>2021-01-07T00:00:00+00:00</lastmod>
   </url>
@@ -18,17 +23,12 @@
   </url>
   
   <url>
-    <loc>https://blog.nhat-tong.com/tags/azure/</loc>
-    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
+    <loc>https://blog.nhat-tong.com/tags/</loc>
+    <lastmod>2021-01-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/post/2020/12/azure/azure-nat-gateway-proxyout/</loc>
-    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.nhat-tong.com/tags/</loc>
     <lastmod>2020-12-20T00:00:00+00:00</lastmod>
   </url>
   

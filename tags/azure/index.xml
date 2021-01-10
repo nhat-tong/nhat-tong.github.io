@@ -7,7 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some thoughts about Azure Security Engineer Associate exam (AZ-500)</title>
+      <link>https://blog.nhat-tong.com/post/2021/01/azure/azure-az-500-exam/</link>
+      <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2021/01/azure/azure-az-500-exam/</guid>
+      <description>&lt;p&gt;Yesterday, I have passed the Azure Security Engineer Associate exam (AZ-500) after two months of preparation.
+It&amp;rsquo;s quite tricky but I learned a lot from this exam.&lt;/p&gt;
+&lt;p&gt;In this article, I would like to share with you some important points considering this exam.&lt;/p&gt;
+&lt;h3 id=&#34;exams-format&#34;&gt;&lt;strong&gt;Exam&amp;rsquo;s Format:&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;55 questions (with an important part of lab questions)&lt;/li&gt;
+&lt;li&gt;1 case study&lt;/li&gt;
+&lt;li&gt;180 minutes&lt;/li&gt;
+&lt;li&gt;skills measured: &lt;a href=&#34;https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3VC70&#34; target=&#34;_blank&#34;&gt;&lt;u&gt;link&lt;/u&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;preparation-guide&#34;&gt;&lt;strong&gt;Preparation Guide:&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Microsoft Learning is your good friend: &lt;a href=&#34;https://docs.microsoft.com/en-us/learn/certifications/azure-security-engineer?tab=tab-learning-paths&#34; target=&#34;_blank&#34;&gt;&lt;u&gt;link&lt;/u&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Also, Stanislas Quastana (Microsoft&amp;rsquo;s Cloud Solution Architect) wrote a great article on his blog in concern of this exam: &lt;a href=&#34;https://stanislas.io/2019/04/25/preparation-guide-for-microsoft-az-500-microsoft-azure-security-technologies-certification/&#34; target=&#34;_blank&#34;&gt;&lt;u&gt;link&lt;/u&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>Azure-Nat Gateway with Virtual Network Appliance</title>
       <link>https://blog.nhat-tong.com/post/2020/12/azure/azure-nat-gateway-proxyout/</link>
