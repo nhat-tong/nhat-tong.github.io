@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Home</title>
-    <link>https://nhat-tong.github.io/post/</link>
+    <link>https://blog.nhat-tong.com/post/</link>
     <description>Recent content in Posts on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Thu, 07 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nhat-tong.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Some thoughts about Azure Security Engineer Associate exam (AZ-500)</title>
-      <link>https://nhat-tong.github.io/post/2021/01/azure/azure-az-500-exam/</link>
+      <link>https://blog.nhat-tong.com/post/2021/01/azure/azure-az-500-exam/</link>
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2021/01/azure/azure-az-500-exam/</guid>
+      <guid>https://blog.nhat-tong.com/post/2021/01/azure/azure-az-500-exam/</guid>
       <description>&lt;p&gt;Yesterday, I have passed the Azure Security Engineer Associate exam (AZ-500) after two months of preparation.
 It&amp;rsquo;s quite tricky but I learned a lot from this exam.&lt;/p&gt;
 &lt;p&gt;In this article, I would like to share with you some important points considering this exam.&lt;/p&gt;
@@ -33,10 +33,10 @@ It&amp;rsquo;s quite tricky but I learned a lot from this exam.&lt;/p&gt;
     
     <item>
       <title>Azure-Nat Gateway with Virtual Network Appliance</title>
-      <link>https://nhat-tong.github.io/post/2020/12/azure/azure-nat-gateway-proxyout/</link>
+      <link>https://blog.nhat-tong.com/post/2020/12/azure/azure-nat-gateway-proxyout/</link>
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/azure/azure-nat-gateway-proxyout/</guid>
+      <guid>https://blog.nhat-tong.com/post/2020/12/azure/azure-nat-gateway-proxyout/</guid>
       <description>&lt;p&gt;In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&amp;rsquo;t have a public ip). You don&amp;rsquo;t need to do anything to have internet access.&lt;/p&gt;
 &lt;p&gt;But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&amp;rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.&lt;/p&gt;
 &lt;p&gt;In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.&lt;/p&gt;</description>
@@ -44,10 +44,10 @@ It&amp;rsquo;s quite tricky but I learned a lot from this exam.&lt;/p&gt;
     
     <item>
       <title>Azure-Hub Spoke topology</title>
-      <link>https://nhat-tong.github.io/post/2020/12/azure/azure-hub-spoke-topology/</link>
+      <link>https://blog.nhat-tong.com/post/2020/12/azure/azure-hub-spoke-topology/</link>
       <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/azure/azure-hub-spoke-topology/</guid>
+      <guid>https://blog.nhat-tong.com/post/2020/12/azure/azure-hub-spoke-topology/</guid>
       <description>&lt;p&gt;Today, we will implement a hub-spoke topology in Azure.&lt;/p&gt;
 &lt;p&gt;The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.&lt;/p&gt;
 &lt;p&gt;The spokes are virtual networks that peer with the hub and can be used to isolate workloads.&lt;/p&gt;
@@ -57,10 +57,10 @@ It&amp;rsquo;s quite tricky but I learned a lot from this exam.&lt;/p&gt;
     
     <item>
       <title>GCP-Cloud NAT with multiple VPC</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/cloud-nat-multi-vpc-4/</link>
+      <link>https://blog.nhat-tong.com/post/2020/12/gcp/cloud-nat-multi-vpc-4/</link>
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/cloud-nat-multi-vpc-4/</guid>
+      <guid>https://blog.nhat-tong.com/post/2020/12/gcp/cloud-nat-multi-vpc-4/</guid>
       <description>&lt;p&gt;As you know in the previous article, we could take advantage of Cloud NAT to go to the Internet without an external IP.&lt;/p&gt;
 &lt;p&gt;But the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.&lt;/p&gt;
 &lt;p&gt;So, how we can use Cloud NAT in case of we have some VPC networks ? I will explain to you in this article.&lt;/p&gt;</description>
@@ -68,10 +68,10 @@ It&amp;rsquo;s quite tricky but I learned a lot from this exam.&lt;/p&gt;
     
     <item>
       <title>GCP-Google Private Access &amp; Cloud NAT</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/private-access-cloud-nat-3/</link>
+      <link>https://blog.nhat-tong.com/post/2020/12/gcp/private-access-cloud-nat-3/</link>
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/private-access-cloud-nat-3/</guid>
+      <guid>https://blog.nhat-tong.com/post/2020/12/gcp/private-access-cloud-nat-3/</guid>
       <description>&lt;p&gt;This is the third part of GCP&amp;rsquo;s series. In the first article, you have seen that a virtual machine needs to have an external IP to reach out to the services outside of the VPC in which it is deployed.&lt;/p&gt;
 &lt;p&gt;Topics to cover:&lt;/p&gt;
 &lt;ul&gt;
@@ -82,20 +82,20 @@ It&amp;rsquo;s quite tricky but I learned a lot from this exam.&lt;/p&gt;
     
     <item>
       <title>GCP-Basic Google Cloud DNS</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/</link>
+      <link>https://blog.nhat-tong.com/post/2020/12/gcp/basic-cloud-dns-3/</link>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/basic-cloud-dns-3/</guid>
+      <guid>https://blog.nhat-tong.com/post/2020/12/gcp/basic-cloud-dns-3/</guid>
       <description>&lt;p&gt;This is the second part of GCP&amp;rsquo;s series. In the &lt;a href=&#34;https://thqnhat.github.io/post/2020/12/gcp/basic-terminology/&#34; target=&#34;_blank&#34;&gt;previous article&lt;/a&gt; we covered some basic terminology in GCP.&lt;/p&gt;
 &lt;p&gt;As you know, each virtual machine created has an internal IP assigned. From the same network, you can reach out to this vm using it&amp;rsquo;s internal IP or it&amp;rsquo;s internal DNS.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>GCP-Basic networking terminology in Google Cloud Platform</title>
-      <link>https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/</link>
+      <link>https://blog.nhat-tong.com/post/2020/12/gcp/basic-networking-terminology-1/</link>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/gcp/basic-networking-terminology-1/</guid>
+      <guid>https://blog.nhat-tong.com/post/2020/12/gcp/basic-networking-terminology-1/</guid>
       <description>&lt;p&gt;This is the first part of GCP&amp;rsquo;s series. In this article, you will familiar with some of the basic terminology used in Google Cloud Platform (GCP).&lt;/p&gt;
 &lt;p&gt;Topics to cover:&lt;/p&gt;
 &lt;ul&gt;

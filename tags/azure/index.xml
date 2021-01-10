@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>azure on Home</title>
-    <link>https://nhat-tong.github.io/tags/azure/</link>
+    <link>https://blog.nhat-tong.com/tags/azure/</link>
     <description>Recent content in azure on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://nhat-tong.github.io/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/azure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azure-Nat Gateway with Virtual Network Appliance</title>
-      <link>https://nhat-tong.github.io/post/2020/12/azure/azure-nat-gateway-proxyout/</link>
+      <link>https://blog.nhat-tong.com/post/2020/12/azure/azure-nat-gateway-proxyout/</link>
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/azure/azure-nat-gateway-proxyout/</guid>
+      <guid>https://blog.nhat-tong.com/post/2020/12/azure/azure-nat-gateway-proxyout/</guid>
       <description>&lt;p&gt;In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&amp;rsquo;t have a public ip). You don&amp;rsquo;t need to do anything to have internet access.&lt;/p&gt;
 &lt;p&gt;But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&amp;rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control this access.&lt;/p&gt;
 &lt;p&gt;In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.&lt;/p&gt;</description>
@@ -21,10 +21,10 @@
     
     <item>
       <title>Azure-Hub Spoke topology</title>
-      <link>https://nhat-tong.github.io/post/2020/12/azure/azure-hub-spoke-topology/</link>
+      <link>https://blog.nhat-tong.com/post/2020/12/azure/azure-hub-spoke-topology/</link>
       <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://nhat-tong.github.io/post/2020/12/azure/azure-hub-spoke-topology/</guid>
+      <guid>https://blog.nhat-tong.com/post/2020/12/azure/azure-hub-spoke-topology/</guid>
       <description>&lt;p&gt;Today, we will implement a hub-spoke topology in Azure.&lt;/p&gt;
 &lt;p&gt;The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.&lt;/p&gt;
 &lt;p&gt;The spokes are virtual networks that peer with the hub and can be used to isolate workloads.&lt;/p&gt;
