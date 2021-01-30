@@ -7,7 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Thu, 07 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GCP-Sharing networks across projects</title>
+      <link>https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/</link>
+      <pubDate>Sat, 30 Jan 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/</guid>
+      <description>&lt;p&gt;In GCP, you have two options for sharing networks across GCP projects: Shared VPC and VPC Network Peering.&lt;/p&gt;
+&lt;p&gt;In this article, we discuss more detail its features and how to implement them.&lt;/p&gt;
+&lt;h3 id=&#34;shared-vpc-overview&#34;&gt;&lt;strong&gt;Shared VPC overview&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Shared VPC is a centralized approach to multi-project networking allowing an organization to connect resources from multiple projects to a common Virtual Private Cloud (VPC) network, so that they can communicate with each other securely and efficiently using &lt;strong&gt;internal IPs&lt;/strong&gt; from that network.&lt;/li&gt;
+&lt;li&gt;When you use Shared VPC, you designate a project as a host project and attach one or more other service projects to it&lt;/li&gt;
+&lt;li&gt;Shared VPC network is created and managed by a Shared VPC Admin which is nominated by an Organization Admin&lt;/li&gt;
+&lt;li&gt;Shared VPC Admin is responsible to enable shared vpc feature on the host project and attach service projects to the host project. He can also delegate access to some or all subnets in the shared VPC network by granting the &lt;em&gt;compute.networkUser&lt;/em&gt; role for Service Project Admins at the project level or the subnet level&lt;/li&gt;
+&lt;li&gt;Service Project Admins in his turn maintain ownership and control over resources defined in their service projects. They could create and manage resources (vm instances, instance templates, instance groups, static internal ip, load balancers) in the shared VPC.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../images/gcp_shared_vpc_example.png&#34; alt=&#34;shared vpc&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Azure Security Engineer Associate exam (AZ-500)</title>
       <link>https://blog.nhat-tong.com/post/2021/01/azure/azure-az-500-exam/</link>
@@ -20,8 +39,8 @@ It&amp;rsquo;s quite tricky but I learned a lot from this exam 😊&lt;/p&gt;
 &lt;p&gt;In this article, I would like to share with you some important points considering the mentioned exam.&lt;/p&gt;
 &lt;h3 id=&#34;exams-format&#34;&gt;&lt;strong&gt;Exam&amp;rsquo;s Format:&lt;/strong&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;55 questions (with an important part of lab questions)&lt;/li&gt;
-&lt;li&gt;1 case study&lt;/li&gt;
+&lt;li&gt;51 questions (with an important part of lab questions)&lt;/li&gt;
+&lt;li&gt;1 case study (4 questions in general)&lt;/li&gt;
 &lt;li&gt;180 minutes&lt;/li&gt;
 &lt;li&gt;skills measured: &lt;a href=&#34;https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3VC70&#34; target=&#34;_blank&#34;&gt;&lt;u&gt;link&lt;/u&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -125,6 +144,15 @@ It&amp;rsquo;s quite tricky but I learned a lot from this exam 😊&lt;/p&gt;
 &lt;li&gt;Firewall&lt;/li&gt;
 &lt;li&gt;Route&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://blog.nhat-tong.com/post/2021/01/gcp/instance-group/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2021/01/gcp/instance-group/</guid>
+      <description></description>
     </item>
     
     <item>

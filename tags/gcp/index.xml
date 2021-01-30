@@ -7,7 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GCP-Sharing networks across projects</title>
+      <link>https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/</link>
+      <pubDate>Sat, 30 Jan 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/</guid>
+      <description>&lt;p&gt;In GCP, you have two options for sharing networks across GCP projects: Shared VPC and VPC Network Peering.&lt;/p&gt;
+&lt;p&gt;In this article, we discuss more detail its features and how to implement them.&lt;/p&gt;
+&lt;h3 id=&#34;shared-vpc-overview&#34;&gt;&lt;strong&gt;Shared VPC overview&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Shared VPC is a centralized approach to multi-project networking allowing an organization to connect resources from multiple projects to a common Virtual Private Cloud (VPC) network, so that they can communicate with each other securely and efficiently using &lt;strong&gt;internal IPs&lt;/strong&gt; from that network.&lt;/li&gt;
+&lt;li&gt;When you use Shared VPC, you designate a project as a host project and attach one or more other service projects to it&lt;/li&gt;
+&lt;li&gt;Shared VPC network is created and managed by a Shared VPC Admin which is nominated by an Organization Admin&lt;/li&gt;
+&lt;li&gt;Shared VPC Admin is responsible to enable shared vpc feature on the host project and attach service projects to the host project. He can also delegate access to some or all subnets in the shared VPC network by granting the &lt;em&gt;compute.networkUser&lt;/em&gt; role for Service Project Admins at the project level or the subnet level&lt;/li&gt;
+&lt;li&gt;Service Project Admins in his turn maintain ownership and control over resources defined in their service projects. They could create and manage resources (vm instances, instance templates, instance groups, static internal ip, load balancers) in the shared VPC.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../images/gcp_shared_vpc_example.png&#34; alt=&#34;shared vpc&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>GCP-Cloud NAT with multiple VPC</title>
       <link>https://blog.nhat-tong.com/post/2020/12/gcp/cloud-nat-multi-vpc-4/</link>

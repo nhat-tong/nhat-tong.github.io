@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>GCP-Sharing networks across projects - Home</title>
+  <meta name="description" content="In GCP, you have two options for sharing networks across GCP projects: Shared VPC and VPC Network Peering.
+In this article, we discuss more detail its features and how to implement them.
+Shared VPC overview
+
+Shared VPC is a centralized approach to multi-project networking allowing an organization to connect resources from multiple projects to a common Virtual Private Cloud (VPC) network, so that they can communicate with each other securely and efficiently using internal IPs from that network.
+When you use Shared VPC, you designate a project as a host project and attach one or more other service projects to it
+Shared VPC network is created and managed by a Shared VPC Admin which is nominated by an Organization Admin
+Shared VPC Admin is responsible to enable shared vpc feature on the host project and attach service projects to the host project. He can also delegate access to some or all subnets in the shared VPC network by granting the compute.networkUser role for Service Project Admins at the project level or the subnet level
+Service Project Admins in his turn maintain ownership and control over resources defined in their service projects. They could create and manage resources (vm instances, instance templates, instance groups, static internal ip, load balancers) in the shared VPC.
+
+">
+  <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Home",
+    
+    "url": "https:\/\/blog.nhat-tong.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/blog.nhat-tong.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/blog.nhat-tong.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/blog.nhat-tong.com\/post\/2021\/01\/gcp\/sharing-networks\/",
+          "name": "G c p sharing networks across projects"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Nhat Tong"
+  },
+  "headline": "GCP-Sharing networks across projects",
+  "description" : "In GCP, you have two options for sharing networks across GCP projects: Shared VPC and VPC Network Peering.\nIn this article, we discuss more detail its features and how to implement them.\nShared VPC overview  Shared VPC is a centralized approach to multi-project networking allowing an organization to connect resources from multiple projects to a common Virtual Private Cloud (VPC) network, so that they can communicate with each other securely and efficiently using internal IPs from that network. When you use Shared VPC, you designate a project as a host project and attach one or more other service projects to it Shared VPC network is created and managed by a Shared VPC Admin which is nominated by an Organization Admin Shared VPC Admin is responsible to enable shared vpc feature on the host project and attach service projects to the host project. He can also delegate access to some or all subnets in the shared VPC network by granting the compute.networkUser role for Service Project Admins at the project level or the subnet level Service Project Admins in his turn maintain ownership and control over resources defined in their service projects. They could create and manage resources (vm instances, instance templates, instance groups, static internal ip, load balancers) in the shared VPC.  ",
+  "inLanguage" : "en",
+  "wordCount":  1251 ,
+  "datePublished" : "2021-01-30T00:00:00",
+  "dateModified" : "2021-01-30T00:00:00",
+  "image" : "https:\/\/blog.nhat-tong.com\/devops.png",
+  "keywords" : [ "gcp, terraform" ],
+  "mainEntityOfPage" : "https:\/\/blog.nhat-tong.com\/post\/2021\/01\/gcp\/sharing-networks\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/blog.nhat-tong.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/blog.nhat-tong.com\/devops.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="GCP-Sharing networks across projects" />
+<meta property="og:description" content="In GCP, you have two options for sharing networks across GCP projects: Shared VPC and VPC Network Peering.
+In this article, we discuss more detail its features and how to implement them.
+Shared VPC overview
+
+Shared VPC is a centralized approach to multi-project networking allowing an organization to connect resources from multiple projects to a common Virtual Private Cloud (VPC) network, so that they can communicate with each other securely and efficiently using internal IPs from that network.
+When you use Shared VPC, you designate a project as a host project and attach one or more other service projects to it
+Shared VPC network is created and managed by a Shared VPC Admin which is nominated by an Organization Admin
+Shared VPC Admin is responsible to enable shared vpc feature on the host project and attach service projects to the host project. He can also delegate access to some or all subnets in the shared VPC network by granting the compute.networkUser role for Service Project Admins at the project level or the subnet level
+Service Project Admins in his turn maintain ownership and control over resources defined in their service projects. They could create and manage resources (vm instances, instance templates, instance groups, static internal ip, load balancers) in the shared VPC.
+
+">
+<meta property="og:image" content="https://blog.nhat-tong.com/devops.png" />
+<meta property="og:url" content="https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Home" />
+
+  <meta name="twitter:title" content="GCP-Sharing networks across projects" />
+  <meta name="twitter:description" content="In GCP, you have two options for sharing networks across GCP projects: Shared VPC and VPC Network Peering.
+In this article, we discuss more detail its features and how to implement them.
+Shared VPC …">
+  <meta name="twitter:image" content="https://blog.nhat-tong.com/devops.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.79.0" />
+  <link rel="alternate" href="https://blog.nhat-tong.com/index.xml" type="application/rss+xml" title="Home"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.nhat-tong.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://blog.nhat-tong.com/css/highlight.min.css" /><link rel="stylesheet" href="https://blog.nhat-tong.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://blog.nhat-tong.com">Home</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Home" href="https://blog.nhat-tong.com">
+            <img class="avatar-img" src="https://blog.nhat-tong.com/devops.png" alt="Home" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>GCP-Sharing networks across projects</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;January 30, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1251&nbsp;words
+  
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>In GCP, you have two options for sharing networks across GCP projects: Shared VPC and VPC Network Peering.</p>
+<p>In this article, we discuss more detail its features and how to implement them.</p>
+<h3 id="shared-vpc-overview"><strong>Shared VPC overview</strong></h3>
+<ul>
+<li>Shared VPC is a centralized approach to multi-project networking allowing an organization to connect resources from multiple projects to a common Virtual Private Cloud (VPC) network, so that they can communicate with each other securely and efficiently using <strong>internal IPs</strong> from that network.</li>
+<li>When you use Shared VPC, you designate a project as a host project and attach one or more other service projects to it</li>
+<li>Shared VPC network is created and managed by a Shared VPC Admin which is nominated by an Organization Admin</li>
+<li>Shared VPC Admin is responsible to enable shared vpc feature on the host project and attach service projects to the host project. He can also delegate access to some or all subnets in the shared VPC network by granting the <em>compute.networkUser</em> role for Service Project Admins at the project level or the subnet level</li>
+<li>Service Project Admins in his turn maintain ownership and control over resources defined in their service projects. They could create and manage resources (vm instances, instance templates, instance groups, static internal ip, load balancers) in the shared VPC.</li>
+</ul>
+<p><img src="../images/gcp_shared_vpc_example.png" alt="shared vpc"></p>
+<h3 id="vpc-network-peering-overview"><strong>VPC Network Peering overview</strong></h3>
+<ul>
+<li>VPC Network Peering is a decentralized or distributed approach to multi-project networking, because each VPC network may remain under the control of separate administrator groups and maintains its own global firewall and routing tables</li>
+<li>Each side of a peering association is set up independently</li>
+<li>No subnet IP range overlap across peered VPC networks</li>
+<li>Transitive peering is not supported</li>
+</ul>
+<p><img src="../images/vpc_peering_example.png" alt="vpc peering"></p>
+<h3 id="shared-vpc-vs-vpc-network-peering"><strong>Shared VPC vs VPC Network Peering</strong></h3>
+<p><img src="../images/gcp_shared_vpc_peering_model.png" alt="comparaison"></p>
+<p>You should consider <u>Shared VPC</u> when:</p>
+<ul>
+<li>configuring private communication between VPC networks within the same organization</li>
+<li>configuring private communication across projects. Shared VPC cannot be used between VPC networks in the same project</li>
+<li>preferring a centralized approach to multi-project networking, because security and network policy occurs in a single designated VPC network</li>
+</ul>
+<p>You should consider <u>VPC Network Peering</u> when:</p>
+<ul>
+<li>configuring private communication between VPC networks in different organizations</li>
+<li>configuring private communication between VPC networks in the same project (it also works across projects)</li>
+<li>preferring a decentralized approach, because each VPC network can remain under the control of separate administrator groups and maintains its own global firewall and routing tables</li>
+</ul>
+<p><u>In GCP, you can peer a Shared VPC</u>. It means:</p>
+<ul>
+<li>You can peer a Shared VPC with another Shared VPC</li>
+<li>You can peer a Shared VPC with a custom VPC</li>
+<li>You may consider combining Shared VPC and VPC Network Peering features when designing your network</li>
+</ul>
+<h3 id="sample-architecture"><strong>Sample architecture</strong></h3>
+<p>Here is the sample architecture that we will work on this article:</p>
+<p><img src="../images/shared_vpc_architecture.png" alt="architecture"></p>
+<p>This architecture includes:</p>
+<ul>
+<li>two host projects (host-project-demo1 and host-project-demo) containing a shared vpc in each project (share-vpc-1 and share-vpc-2)</li>
+<li>a service project is attached to host-project-demo1</li>
+<li>vpc peering established between two shared-vpc</li>
+</ul>
+<h3 id="implementing"><strong>Implementing</strong></h3>
+<ol>
+<li><u>Nominate a Shared VPC Admin to create/manage shared vpc networks:</u>. If this step is already done, you can jump into the next one. More information: <a href="https://cloud.google.com/vpc/docs/provisioning-shared-vpc?hl=en" target="_blank">link</a></li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud auth login ORG_ADMIN
+
+gcloud organizations add-iam-policy-binding ORG_ID \
+  --member=&#39;user:EMAIL_ADDRESS&#39; \
+  --role=&#34;roles/compute.xpnAdmin&#34;
+
+gcloud organizations add-iam-policy-binding ORG_ID \
+  --member=&#39;user:EMAIL_ADDRESS&#39; \
+  --role=&#34;roles/resourcemanager.projectIamAdmin&#34;
+
+gcloud auth revoke ORG_ADMIN
+</code></pre></div><p>If you nominate a Shared VPC Admin for a service account, just replace <em>&ndash;member=&lsquo;user:EMAIL_ADDRESS&rsquo;</em> by <em>&ndash;member=&lsquo;serviceAccount:SA_EMAIL_ADDRESS&rsquo;</em></p>
+<p><img src="../images/gcp_nominate_shared_vpc_admin.png" alt="Shared VPC Admin"></p>
+<ol start="2">
+<li><u>Create three projects with terraform (two host projects and one service project)</u></li>
+</ol>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/feb736e0d95acc573a7ce323ae32d1a1.js"></script>
+
+<ol start="3">
+<li><u>Create two VPC, its subnetworks and firewall rules</u></li>
+</ol>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/8abe418d3814b42037fe1fca28805c01.js"></script>
+
+<p><u>Enable Shared VPC feature for two created vpc above:</u></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud auth login SHARED_VPC_ADMIN
+gcloud compute shared-vpc enable HOST_PROJECT_ID
+</code></pre></div><ol start="4">
+<li><u>Associate a service project to host project</u></li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud auth login SHARED_VPC_ADMIN
+
+gcloud compute shared-vpc associated-projects add SERVICE_PROJECT_ID --host-project HOST_PROJECT_ID
+</code></pre></div><p>At this stade, you have two options:</p>
+<ul>
+<li>If you want to share all subnets of host project for service project, create this policy binding below:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud auth login SHARED_VPC_ADMIN
+
+gcloud projects add-iam-policy-binding HOST_PROJECT_ID \
+--member &#34;user:SERVICE_PROJECT_ADMIN&#34; \
+--role &#34;roles/compute.networkUser&#34;
+</code></pre></div><p>On the GCP Console, you should see that all subnets in your shared vpc will be shared with service projects.</p>
+<p><img src="../images/association_project_level.png" alt="share all subnets"></p>
+<p>Or you can then check usable subnets by running the below command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud compute networks subnets list-usable --project HOST_PROJECT_ID
+</code></pre></div><ul>
+<li>In some cases, you want to restrict the access of service project to one or some subnets in the host project. In such cases, create this policy binding below:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">gcloud auth login SHARED_VPC_ADMIN
+
+gcloud beta compute networks subnets get-iam-policy SUBNET_NAME <span class="se">\
+</span><span class="se"></span>    --region SUBNET_REGION <span class="se">\
+</span><span class="se"></span>    --project HOST_PROJECT_ID <span class="se">\
+</span><span class="se"></span>    --format json &gt; subnet-policy.json
+
+gcloud beta compute networks subnets set-iam-policy SUBNET_NAME subnet-policy.json <span class="se">\
+</span><span class="se"></span>    --region SUBNET_REGION <span class="se">\
+</span><span class="se"></span>    --project HOST_PROJECT_ID
+</code></pre></div><p>The subnet-policy.json will be the following:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;bindings&#34;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+     <span class="nt">&#34;members&#34;</span><span class="p">:</span> <span class="p">[</span>
+           <span class="s2">&#34;user:[YOUR_USER_EMAIL]&#34;</span><span class="p">,</span>
+           <span class="s2">&#34;group:[YOUR_GROUP_EMAIL]&#34;</span>
+           <span class="s2">&#34;serviceAccount:[YOUR_SERVICE_ACCOUNT_EMAIL]&#34;</span>
+        <span class="p">],</span>
+        <span class="nt">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;roles/compute.networkUser&#34;</span>
+  <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&#34;etag&#34;</span><span class="p">:</span> <span class="s2">&#34;[YOUR_ETAG_STRING]&#34;</span>
+<span class="p">}</span>
+</code></pre></div><p>On the GCP Console, you should see that only subnet SUBNET_NAME in your shared vpc will be shared with IAM members described above (<em>subnet-policy.json</em>) of service project.</p>
+<p><img src="../images/association_subnet_level.png" alt="share some subnets"></p>
+<p>In this example, I restricted only the access of two members (a user and a service account) of service project <em>service-project2</em> to <em>security-snet</em> on the <em>host-project-demo1</em>. It means that the Service Project Admin can only create resources on this granted subnet and cannot do any operation on <em>demo-subnet</em>.</p>
+<ol start="5">
+<li><u>Create two instances in each host project and one instance on the service project</u></li>
+</ol>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/54c2bfc60703c23e154baa2a63436aae.js"></script>
+
+<ol start="6">
+<li><u>Test private connectivity between networks</u></li>
+</ol>
+<ul>
+<li>Test private connectivity between an instance on the service project (10.23.0.2) and an instance on shared vpc of host-project-demo1 (10.23.0.4): <strong>OK</strong></li>
+</ul>
+<p><img src="../images/test_connectivity_service_project_shared_vpc.png" alt="test connectivity between service project and host project"></p>
+<ul>
+<li>Test private connectivity between an instance on the shared vpc of host-project-demo1 and an instance on shared vpc of host-project-demo: <strong>KO</strong></li>
+</ul>
+<p><img src="../images/test_connectivity_two_shared_vpc_KO.png" alt="test connectivity between twp shared vpc without peering"></p>
+<p>The first test worked because two instances are on the same VPC network (shared-vpc-1 in this case) and firewall rules allow the incoming traffic.</p>
+<p>The second test didn&rsquo;t work because two instances are on different VPC networks (shared-vpc-1 and shared-vpc-2). By default, the instances on the different networks cannot reach out to each other without VPC Peering.</p>
+<ol start="7">
+<li><u>Add VPC Network Peering between shared vpc networks to enable the private communication</u></li>
+</ol>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/ee308cb7717553b79140cb102c96400e.js"></script>
+
+<ol start="8">
+<li><u>Test again private connectivity between shared vpc networks</u></li>
+</ol>
+<p>Now, let&rsquo;s run again the precedent test to check the private connectivity between two shared vpc with peerings enabled.</p>
+<p><img src="../images/test_connectivity_two_shared_vpc_OK.png" alt="test connectivity between two shared vpc with peering"></p>
+<p><u>It works!</u></p>
+<p>Let&rsquo;s check the connectivity from the instance on the service project (10.23.0.2) to the instance on the shared-vpc-2 of host-project-demo (10.23.1.4)</p>
+<p><img src="../images/test_connectivity_service_project_shared_vpc_2.png" alt="test connectivity between service project and host project 2"></p>
+<p><u>It works also!</u> 😊</p>
+<h3 id="billing"><strong>Billing</strong></h3>
+<p><u>Billing for resources that participate in a Shared VPC network is attributed to the service project where the resource is located</u>, even though the resource uses the Shared VPC network in the host project.</p>
+<p><u>Billing for egress traffic generated by a resource is attributed to the project where the resource is defined.</u> For example, if an instance is created in a service project but uses a Shared VPC network, any billing for egress traffic that it generates is attributed to its service project.</p>
+<p>For more information, please refer to this <a href="https://cloud.google.com/vpc/docs/shared-vpc#billing" target="_blank">link</a>.</p>
+<h3 id="shared-vpc-and-vpc-network-peering-limits"><strong>Shared VPC and VPC Network Peering Limits</strong></h3>
+<ul>
+<li>Shared VPC Limits :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align:center">Limit         Notes</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of service projects that can be attached to a host project</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:right">subject to be increased</td>
+</tr>
+<tr>
+<td>Number of Shared VPC host projects in a single organization</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:right">subject to be increased</td>
+</tr>
+<tr>
+<td>Number of host projects to which a service project can attach</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">cannot be increased</td>
+</tr>
+</tbody>
+</table>
+<p>For more information, please refer to this <a href="https://cloud.google.com/vpc/docs/quota#shared-vpc" target="_blank">link</a>.</p>
+<ul>
+<li>VPC Network Peering Limits:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align:center">Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum number of connections to a single VPC network</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td>Maximum number of static routes in a peering group</td>
+<td style="text-align:center">300</td>
+</tr>
+<tr>
+<td>Maximum number of forwarding rules for internal protocol forwarding in a peering group</td>
+<td style="text-align:center">100</td>
+</tr>
+</tbody>
+</table>
+<p>For more information, please refer to this <a href="https://cloud.google.com/vpc/docs/quota#vpc-peering" target="_blank">link</a>.</p>
+<h3 id="examples-and-use-cases"><strong>Examples and use cases</strong></h3>
+<p>Some use cases are described at this <a href="https://cloud.google.com/vpc/docs/shared-vpc#use_cases" target="_blank">link</a>.</p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://blog.nhat-tong.com/tags/gcp/">gcp</a>&nbsp;
+            
+              <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+          
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="/post/2020/12/azure/azure-nat-gateway-proxyout/">Azure-Nat Gateway with Virtual Network Appliance</a></li>
+                
+                    <li><a href="/post/2020/12/azure/azure-hub-spoke-topology/">Azure-Hub Spoke topology</a></li>
+                
+                    <li><a href="/post/2020/12/gcp/cloud-nat-multi-vpc-4/">GCP-Cloud NAT with multiple VPC</a></li>
+                
+                    <li><a href="/post/2020/12/gcp/private-access-cloud-nat-3/">GCP-Google Private Access &amp; Cloud NAT</a></li>
+                
+                    <li><a href="/post/2020/12/gcp/basic-cloud-dns-3/">GCP-Basic Google Cloud DNS</a></li>
+                
+              </ul>
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://blog.nhat-tong.com/post/2021/01/azure/azure-az-500-exam/" data-toggle="tooltip" data-placement="top" title="Azure Security Engineer Associate exam (AZ-500)">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nhattong" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+          
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:thqnhat@outlook.com" title="Email me" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/nhat-tong" title="GitHub" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/hoang-quoc-nhat-tong-8b738233" title="LinkedIn" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://nhat-tong.github.com">Nhat Tong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2021
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://blog.nhat-tong.com">Home</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://blog.nhat-tong.com/js/main.js"></script>
+<script src="https://blog.nhat-tong.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://blog.nhat-tong.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

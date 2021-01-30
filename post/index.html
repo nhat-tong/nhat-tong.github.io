@@ -181,7 +181,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;January 7, 2021
+  <i class="fas fa-calendar"></i>&nbsp;January 30, 2021
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
@@ -209,6 +209,61 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+    <a href="https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/">
+        <h2 class="post-title">GCP-Sharing networks across projects</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;January 30, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1251&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>In GCP, you have two options for sharing networks across GCP projects: Shared VPC and VPC Network Peering.</p>
+<p>In this article, we discuss more detail its features and how to implement them.</p>
+<h3 id="shared-vpc-overview"><strong>Shared VPC overview</strong></h3>
+<ul>
+<li>Shared VPC is a centralized approach to multi-project networking allowing an organization to connect resources from multiple projects to a common Virtual Private Cloud (VPC) network, so that they can communicate with each other securely and efficiently using <strong>internal IPs</strong> from that network.</li>
+<li>When you use Shared VPC, you designate a project as a host project and attach one or more other service projects to it</li>
+<li>Shared VPC network is created and managed by a Shared VPC Admin which is nominated by an Organization Admin</li>
+<li>Shared VPC Admin is responsible to enable shared vpc feature on the host project and attach service projects to the host project. He can also delegate access to some or all subnets in the shared VPC network by granting the <em>compute.networkUser</em> role for Service Project Admins at the project level or the subnet level</li>
+<li>Service Project Admins in his turn maintain ownership and control over resources defined in their service projects. They could create and manage resources (vm instances, instance templates, instance groups, static internal ip, load balancers) in the shared VPC.</li>
+</ul>
+<p><img src="../images/gcp_shared_vpc_example.png" alt="shared vpc"></p>
+        <a href="https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.nhat-tong.com/tags/gcp/">gcp</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
+        
+    </div>
+    
+
+</article>
           
             <article class="post-preview">
     <a href="https://blog.nhat-tong.com/post/2021/01/azure/azure-az-500-exam/">
@@ -244,8 +299,8 @@ It&rsquo;s quite tricky but I learned a lot from this exam 😊</p>
 <p>In this article, I would like to share with you some important points considering the mentioned exam.</p>
 <h3 id="exams-format"><strong>Exam&rsquo;s Format:</strong></h3>
 <ul>
-<li>55 questions (with an important part of lab questions)</li>
-<li>1 case study</li>
+<li>51 questions (with an important part of lab questions)</li>
+<li>1 case study (4 questions in general)</li>
 <li>180 minutes</li>
 <li>skills measured: <a href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3VC70" target="_blank"><u>link</u></a></li>
 </ul>
@@ -262,6 +317,8 @@ It&rsquo;s quite tricky but I learned a lot from this exam 😊</p>
     <div class="blog-tags">
         
         <a href="https://blog.nhat-tong.com/tags/azure/">azure</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/az-500/">az-500</a>&nbsp;
         
     </div>
     
@@ -567,6 +624,42 @@ It&rsquo;s quite tricky but I learned a lot from this exam 😊</p>
         <a href="https://blog.nhat-tong.com/tags/gcp/">gcp</a>&nbsp;
         
     </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://blog.nhat-tong.com/post/2021/01/gcp/instance-group/">
+        <h2 class="post-title"></h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;January 1, 0001
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;0&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        
+        
+    </div>
+
     
 
 </article>
