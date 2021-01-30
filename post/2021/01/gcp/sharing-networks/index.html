@@ -573,6 +573,23 @@ gcloud beta compute networks subnets set-iam-policy SUBNET_NAME subnet-policy.js
         
         
       
+      <meta property="og:title" content="GCP-Sharing networks across projects" />
+<meta property="og:description" content="In GCP, you have two options for sharing networks across GCP projects: Shared VPC and VPC Network Peering.
+In this article, we discuss more detail its features and how to implement them.
+Shared VPC overview
+
+Shared VPC is a centralized approach to multi-project networking allowing an organization to connect resources from multiple projects to a common Virtual Private Cloud (VPC) network, so that they can communicate with each other securely and efficiently using internal IPs from that network.
+When you use Shared VPC, you designate a project as a host project and attach one or more other service projects to it
+Shared VPC network is created and managed by a Shared VPC Admin which is nominated by an Organization Admin
+Shared VPC Admin is responsible to enable shared vpc feature on the host project and attach service projects to the host project. He can also delegate access to some or all subnets in the shared VPC network by granting the compute.networkUser role for Service Project Admins at the project level or the subnet level
+Service Project Admins in his turn maintain ownership and control over resources defined in their service projects. They could create and manage resources (vm instances, instance templates, instance groups, static internal ip, load balancers) in the shared VPC.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/" />
+<meta property="og:image" content="https://blog.nhat-tong.com/images/gcp_shared_vpc_example.png" />
+<meta property="article:published_time" content="2021-01-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-30T00:00:00+00:00" />
 
     </div>
   </div>
