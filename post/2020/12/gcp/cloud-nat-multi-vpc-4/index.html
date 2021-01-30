@@ -481,7 +481,17 @@ sudo iptables -t nat -A POSTROUTING -p tcp --dport 443 -j MASQUERADE
         
         
       
+      <div>
+        <meta property="og:title" content="GCP-Cloud NAT with multiple VPC" />
+<meta property="og:description" content="As you know in the previous article, we could take advantage of Cloud NAT to go to the Internet without an external IP.
+But the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.
+So, how we can use Cloud NAT in case of we have some VPC networks ? I will explain to you in this article." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.nhat-tong.com/post/2020/12/gcp/cloud-nat-multi-vpc-4/" />
+<meta property="article:published_time" content="2020-12-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-12-13T00:00:00+00:00" />
 
+      </div>
     </div>
   </div>
 </div>

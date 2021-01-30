@@ -429,7 +429,32 @@ curl http://example.com
         
         
       
+      <div>
+        <meta property="og:title" content="Azure-Nat Gateway with Virtual Network Appliance" />
+<meta property="og:description" content="In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&rsquo;t have a public ip). You don&rsquo;t need to do anything to have internet access.
+But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control the outbound access.
+In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.
+Our architecture modified:
+As you saw in the previous architecture, we have three virtual networks:
 
+Hub virtual network (hub-vnet): region France Central
+Spoke 1 virtual network (finance-vnet): region West Europe
+Spoke 2 virtual network (it-vnet): region North Europe
+
+We need to control the web traffic from all spoke networks to the Internet .
+We will add a new virtual network:
+
+Proxyout virtual network (proxyout-vnet): region France Central
+
+On this new virtual network, we place two virtual machines (proxyout) behind a Azure Load Balancer Standard to receive/control  the web traffic (http/https) from other spoke networks. You could install a middleware (squid) to allow/deny the access.
+So, our architecture will be the following:
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.nhat-tong.com/post/2020/12/azure/azure-nat-gateway-proxyout/" />
+<meta property="article:published_time" content="2020-12-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-12-20T00:00:00+00:00" />
+
+      </div>
     </div>
   </div>
 </div>
