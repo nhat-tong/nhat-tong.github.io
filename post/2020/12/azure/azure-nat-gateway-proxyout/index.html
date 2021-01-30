@@ -79,7 +79,7 @@ So, our architecture will be the following:
   "wordCount":  463 ,
   "datePublished" : "2020-12-20T00:00:00",
   "dateModified" : "2020-12-20T00:00:00",
-  "image" : "https:\/\/blog.nhat-tong.com\/devops.png",
+  "image" : "https:\/\/blog.nhat-tong.com",
   "keywords" : [ "azure, terraform" ],
   "mainEntityOfPage" : "https:\/\/blog.nhat-tong.com\/post\/2020\/12\/azure\/azure-nat-gateway-proxyout\/",
   "publisher" : {
@@ -87,7 +87,7 @@ So, our architecture will be the following:
     "name" : "https:\/\/blog.nhat-tong.com",
     "logo" : {
         "@type" : "ImageObject",
-        "url" : "https:\/\/blog.nhat-tong.com\/devops.png",
+        "url" : "https:\/\/blog.nhat-tong.com",
         "height" :  60 ,
         "width" :  60
     }
@@ -114,14 +114,12 @@ Proxyout virtual network (proxyout-vnet): region France Central
 On this new virtual network, we place two virtual machines (proxyout) behind a Azure Load Balancer Standard to receive/control  the web traffic (http/https) from other spoke networks. You could install a middleware (squid) to allow/deny the access.
 So, our architecture will be the following:
 ">
-<meta property="og:image" content="https://blog.nhat-tong.com/devops.png" />
 <meta property="og:url" content="https://blog.nhat-tong.com/post/2020/12/azure/azure-nat-gateway-proxyout/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
   <meta name="twitter:title" content="Azure-Nat Gateway with Virtual Network Appliance" />
   <meta name="twitter:description" content="In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&rsquo;t have a public ip). You don&rsquo;t need to do anything to have internet …">
-  <meta name="twitter:image" content="https://blog.nhat-tong.com/devops.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.79.0" />
   <link rel="alternate" href="https://blog.nhat-tong.com/index.xml" type="application/rss+xml" title="Home"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
@@ -175,14 +173,6 @@ So, our architecture will be the following:
       </ul>
     </div>
 
-    
-      <div class="avatar-container">
-        <div class="avatar-img-border">
-          <a title="Home" href="https://blog.nhat-tong.com">
-            <img class="avatar-img" src="https://blog.nhat-tong.com/devops.png" alt="Home" />
-          </a>
-        </div>
-      </div>
     
 
   </div>
