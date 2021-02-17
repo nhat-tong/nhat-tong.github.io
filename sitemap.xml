@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>https://blog.nhat-tong.com/tags/iam/</loc>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.nhat-tong.com/post/</loc>
     <lastmod>2021-02-14T00:00:00+00:00</lastmod>
   </url>
@@ -34,6 +39,11 @@
   
   <url>
     <loc>https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/</loc>
+    <lastmod>2021-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/vpc/</loc>
     <lastmod>2021-01-30T00:00:00+00:00</lastmod>
   </url>
   
