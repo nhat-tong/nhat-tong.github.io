@@ -310,14 +310,14 @@ GCP allows you to set IAM policies at any of these levels.</p>
 <li><u>Predefined</u>: IAM predefined roles apply to <b>a particular GCP service</b> in a project
 <ul>
 <li>
-<p>For Google Compute Engine service, you have some predefined roles like Compute Instance Admin, Compute Network Admin, Compute Storage Admin. For more information, click <a href="https://cloud.google.com/compute/docs/access/iam#predefinedroles?hl=en" target="_blank">here</a>.</p>
+<p>For <u>Google Compute Engine</u> service, you have some predefined roles like Compute Instance Admin, Compute Network Admin, Compute Storage Admin. For more information, click <a href="https://cloud.google.com/compute/docs/access/iam#predefinedroles?hl=en" target="_blank">here</a>.</p>
 </li>
 <li>
-<p>For Google Cloud Storage service, you have some predefined roles like Storage Object Creator, Storage Object Viewer, Storage Admin, etc&hellip;
+<p>For <u>Google Cloud Storage</u> service, you have some predefined roles like Storage Object Creator, Storage Object Viewer, Storage Admin, etc&hellip;
 For more information, click <a href="https://cloud.google.com/storage/docs/access-control/iam-roles?hl=en" target="_blank">here</a></p>
 </li>
 <li>
-<p>The sample principle will be applied to other GCP services. You can find corresponding predefined roles on Google documentation.</p>
+<p>The sample principle will be applied to other GCP services. You can find the corresponding predefined roles on Google documentation.</p>
 </li>
 <li>
 <p>Google recommend using <u>Predefined roles</u> instead of <u>Basic roles</u></p>
@@ -364,7 +364,7 @@ For more information, click <a href="https://cloud.google.com/storage/docs/acces
 </ul>
 </li>
 <li>Google recommends granting the IAM permissions to Google Groups or to service accounts instead of granting to individual accounts</li>
-<li>For example, we create a new sample service account:
+<li>For example, we create a new service account:
 <ul>
 <li>From IAM &amp; Admin page, click on Service Account on the sidebar</li>
 <li>Give it a name and grant it some IAM roles</li>
@@ -400,13 +400,13 @@ For more information, click <a href="https://cloud.google.com/storage/docs/acces
 </ul>
 <script type="application/javascript" src="https://gist.github.com/nhat-tong/ee38aa8ab80bc9c5b501e0fa99311f62.js"></script>
 
-<p>You could also grant your custom roles at the resource level: vpc network, vpc subnetwork, bucket storage, etc&hellip;</p>
+<p>You could also grant your custom roles <u>at the resource level</u>: vpc network, vpc subnetwork, bucket storage, etc&hellip;</p>
 <h2 id="gcloud">gcloud</h2>
-<p>You can also create the custom roles using gcloud command line:</p>
+<p>You can also create the custom role using gcloud command line:</p>
 <ul>
-<li>Get role description:</li>
+<li>Get role&rsquo;s description:</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud iam roles describe [role-id]
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud iam roles describe [role_id]
 </code></pre></div><ul>
 <li>Create a custom role using YAML file:</li>
 </ul>
@@ -419,30 +419,30 @@ For more information, click <a href="https://cloud.google.com/storage/docs/acces
 </span></code></pre></div><ul>
 <li>Then, execute the following command to create a custom role at the organization level:</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud iam roles create role-id --organization=organization-id --file=[yaml-file-path]
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">gcloud iam roles create <span class="o">[</span>role_id<span class="o">]</span> --organization<span class="o">=[</span>organization_id<span class="o">]</span> --file<span class="o">=[</span>yaml-file-path<span class="o">]</span>
 </code></pre></div><ul>
 <li>Or, execute the below command to create a custom role at the project level:</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud iam roles create role-id --project=project-id --file=[yaml-file-path]
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">gcloud iam roles create <span class="o">[</span>role_id<span class="o">]</span> --project<span class="o">=[</span>project_id<span class="o">]</span> --file<span class="o">=[</span>yaml-file-path<span class="o">]</span>
 </code></pre></div><ul>
 <li>
 <p>Grant this role to an existing member:</p>
 <ul>
 <li>At the organization level:</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud organizations add-iam-policy-binding ORG_ID \
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud organizations add-iam-policy-binding [organization_id] \
 --member=&#39;[member_type]:EMAIL_ADDRESS&#39; \
 --role=&#34;roles/[role_id]&#34;
 </code></pre></div><ul>
 <li>At the folder level:</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud resource-manager folders add-iam-policy-binding FOLDER_ID \
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud resource-manager folders add-iam-policy-binding [folder_id] \
 --member=&#39;[member_type]:EMAIL_ADDRESS&#39; \
 --role=&#34;roles/[role_id]&#34;
 </code></pre></div><ul>
 <li>At the project level:</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud projects add-iam-policy-binding PROJECT_ID \
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud projects add-iam-policy-binding [project_id] \
 --member &#34;[member_type]:EMAIL_ADDRESS&#34; \
 --role &#34;roles/[role_id]&#34;
 </code></pre></div><p>where [member_type] can be one of these values:</p>
