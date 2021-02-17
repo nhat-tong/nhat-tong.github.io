@@ -4,31 +4,36 @@
   
   <url>
     <loc>https://blog.nhat-tong.com/tags/gcp/</loc>
-    <lastmod>2021-01-30T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/</loc>
-    <lastmod>2021-01-30T00:00:00+00:00</lastmod>
+    <loc>https://blog.nhat-tong.com/post/2021/01/gcp/iam-breakdown/</loc>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/</loc>
-    <lastmod>2021-01-30T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/post/</loc>
-    <lastmod>2021-01-30T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/tags/</loc>
-    <lastmod>2021-01-30T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/tags/terraform/</loc>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/</loc>
     <lastmod>2021-01-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -75,6 +80,10 @@
   <url>
     <loc>https://blog.nhat-tong.com/post/2020/12/gcp/basic-networking-terminology-1/</loc>
     <lastmod>2020-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/post/2021/01/azure/azure-networks/</loc>
   </url>
   
   <url>

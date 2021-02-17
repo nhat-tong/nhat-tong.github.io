@@ -7,7 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sat, 30 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GCP-IAM (Identity and Access Management)</title>
+      <link>https://blog.nhat-tong.com/post/2021/01/gcp/iam-breakdown/</link>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2021/01/gcp/iam-breakdown/</guid>
+      <description>&lt;p&gt;In this article, we discuss an important part of GCP: IAM or Identity and Access Management.&lt;/p&gt;
+&lt;p&gt;Before going into details, let&amp;rsquo;s take a quick look at IAM Hierarchy.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/cloud_iam_resource_hierarchy_2.png&#34; alt=&#34;Cloud IAM Hierarchy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, IAM includes some basic objects at each level: organization, folders, projects and resources.
+GCP allows you to set IAM policies at any of these levels.&lt;/p&gt;
+&lt;p&gt;Understanding these IAM objects and how to set IAM at the corresponding level will help you to design your solution following Google&amp;rsquo;s recommended best practices.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>GCP-Sharing networks across projects</title>
       <link>https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/</link>
@@ -144,6 +158,15 @@ It&amp;rsquo;s quite tricky but I learned a lot from this exam 😊&lt;/p&gt;
 &lt;li&gt;Firewall&lt;/li&gt;
 &lt;li&gt;Route&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://blog.nhat-tong.com/post/2021/01/azure/azure-networks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2021/01/azure/azure-networks/</guid>
+      <description></description>
     </item>
     
     <item>
