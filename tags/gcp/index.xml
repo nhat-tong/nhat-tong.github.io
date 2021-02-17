@@ -10,10 +10,10 @@
     <lastBuildDate>Sun, 14 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GCP-IAM (Identity and Access Management)</title>
-      <link>https://blog.nhat-tong.com/post/2021/01/gcp/iam-breakdown/</link>
+      <link>https://blog.nhat-tong.com/post/2021/02/gcp/iam-breakdown/</link>
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://blog.nhat-tong.com/post/2021/01/gcp/iam-breakdown/</guid>
+      <guid>https://blog.nhat-tong.com/post/2021/02/gcp/iam-breakdown/</guid>
       <description>&lt;p&gt;In this article, we discuss an important part of GCP: IAM or Identity and Access Management.&lt;/p&gt;
 &lt;p&gt;Before going into details, let&amp;rsquo;s take a quick look at IAM Hierarchy.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../images/cloud_iam_resource_hierarchy_2.png&#34; alt=&#34;Cloud IAM Hierarchy&#34;&gt;&lt;/p&gt;
