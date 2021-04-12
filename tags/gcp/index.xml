@@ -32,15 +32,6 @@ GCP allows you to set IAM policies at any of these levels.&lt;/p&gt;
     </item>
     
     <item>
-      <title>GCP-Instance groups</title>
-      <link></link>
-      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid></guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>GCP-Sharing networks across projects</title>
       <link>https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/</link>
       <pubDate>Sat, 30 Jan 2021 00:00:00 +0000</pubDate>

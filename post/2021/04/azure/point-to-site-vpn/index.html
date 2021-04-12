@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Azure-Connect on-premises networks to Azure using VPN gateways (part 1) - Home</title>
+  <meta name="description" content="A virtual private network (VPN) is a type of private interconnected network.
+VPNs are typically deployed to connect two or more trusted private networks to one another over an untrusted network (over the Internet).
+Traffic is encrypted while traveling over the untrusted network to prevent eavesdropping or other attacks.
+You may consider three types of gateway below when designing your hybrid network:
+
+Point-to-site (P2S) VPN: allows client computers in local to connect remotely to your network in Azure using IPSec/OpenVPN/SSTP protocols
+Site-to-site (S2S) VPN: connect your on-premises networks to Azure through dedicated VPN devices or connect multiple virtual networks in Azure together. Protocols supported: IPSec/IKE
+Azure ExpressRoute: connect your on-premises networks to Azure over a private network. It means that your traffic will be not travel over the Internet.
+
+In this first part, we will discuss the Point-to-Site VPN.">
+  <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Home",
+    
+    "url": "https:\/\/blog.nhat-tong.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/blog.nhat-tong.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/blog.nhat-tong.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/blog.nhat-tong.com\/post\/2021\/04\/azure\/point-to-site-vpn\/",
+          "name": "Azure connect on premises networks to azure using v p n gateways (part 1)"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Nhat Tong"
+  },
+  "headline": "Azure-Connect on-premises networks to Azure using VPN gateways (part 1)",
+  "description" : "A virtual private network (VPN) is a type of private interconnected network.\nVPNs are typically deployed to connect two or more trusted private networks to one another over an untrusted network (over the Internet).\nTraffic is encrypted while traveling over the untrusted network to prevent eavesdropping or other attacks.\nYou may consider three types of gateway below when designing your hybrid network:\n Point-to-site (P2S) VPN: allows client computers in local to connect remotely to your network in Azure using IPSec\/OpenVPN\/SSTP protocols Site-to-site (S2S) VPN: connect your on-premises networks to Azure through dedicated VPN devices or connect multiple virtual networks in Azure together. Protocols supported: IPSec\/IKE Azure ExpressRoute: connect your on-premises networks to Azure over a private network. It means that your traffic will be not travel over the Internet.  In this first part, we will discuss the Point-to-Site VPN.\n",
+  "inLanguage" : "en",
+  "wordCount":  1256 ,
+  "datePublished" : "2021-04-11T00:00:00",
+  "dateModified" : "2021-04-11T00:00:00",
+  "image" : "https:\/\/blog.nhat-tong.com",
+  "keywords" : [ "azure, terraform, vpn" ],
+  "mainEntityOfPage" : "https:\/\/blog.nhat-tong.com\/post\/2021\/04\/azure\/point-to-site-vpn\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/blog.nhat-tong.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/blog.nhat-tong.com",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Azure-Connect on-premises networks to Azure using VPN gateways (part 1)" />
+<meta property="og:description" content="A virtual private network (VPN) is a type of private interconnected network.
+VPNs are typically deployed to connect two or more trusted private networks to one another over an untrusted network (over the Internet).
+Traffic is encrypted while traveling over the untrusted network to prevent eavesdropping or other attacks.
+You may consider three types of gateway below when designing your hybrid network:
+
+Point-to-site (P2S) VPN: allows client computers in local to connect remotely to your network in Azure using IPSec/OpenVPN/SSTP protocols
+Site-to-site (S2S) VPN: connect your on-premises networks to Azure through dedicated VPN devices or connect multiple virtual networks in Azure together. Protocols supported: IPSec/IKE
+Azure ExpressRoute: connect your on-premises networks to Azure over a private network. It means that your traffic will be not travel over the Internet.
+
+In this first part, we will discuss the Point-to-Site VPN.">
+<meta property="og:url" content="https://blog.nhat-tong.com/post/2021/04/azure/point-to-site-vpn/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Home" />
+
+  <meta name="twitter:title" content="Azure-Connect on-premises networks to Azure using VPN gateways (part …" />
+  <meta name="twitter:description" content="A virtual private network (VPN) is a type of private interconnected network.
+VPNs are typically deployed to connect two or more trusted private networks to one another over an untrusted network (over …">
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.79.0" />
+  <link rel="alternate" href="https://blog.nhat-tong.com/index.xml" type="application/rss+xml" title="Home"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.nhat-tong.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://blog.nhat-tong.com/css/highlight.min.css" /><link rel="stylesheet" href="https://blog.nhat-tong.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://blog.nhat-tong.com">Home</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Azure-Connect on-premises networks to Azure using VPN gateways (part 1)</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;April 11, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1256&nbsp;words
+  
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>A virtual private network (VPN) is a type of private interconnected network.</p>
+<p>VPNs are typically deployed to connect two or more trusted private networks to one another over an untrusted network (over the Internet).</p>
+<p>Traffic is encrypted while traveling over the untrusted network to prevent eavesdropping or other attacks.</p>
+<p>You may consider three types of gateway below when designing your hybrid network:</p>
+<ul>
+<li>Point-to-site (P2S) VPN: allows client computers in local to connect remotely to your network in Azure using IPSec/OpenVPN/SSTP protocols</li>
+<li>Site-to-site (S2S) VPN: connect your on-premises networks to Azure through dedicated VPN devices or connect multiple virtual networks in Azure together. Protocols supported: IPSec/IKE</li>
+<li>Azure ExpressRoute: connect your on-premises networks to Azure over a private network. It means that your traffic will be not travel over the Internet.</li>
+</ul>
+<p>In this first part, we will discuss the Point-to-Site VPN.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Point-to-Site VPN lets you connect from a single computer from anywhere to anything located in your virtual network.</p>
+<p>As part of the Point-to-Site configuration, you install a certificate and a VPN client configuration package, which contains the settings that allow your computer to connect to any virtual machine or role instance within the virtual network. It&rsquo;s great when you want to connect to a virtual network, but aren&rsquo;t located on-premises.</p>
+<p>Here are some characteristics of this type VPN:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">Point to site</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Azure supported services</td>
+<td style="text-align:center">Cloud services and VMs</td>
+</tr>
+<tr>
+<td>Typical bandwidth</td>
+<td style="text-align:center">Depends on <a href="https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways#gwsku" target="_blank">VPN Gateway SKU</a></td>
+</tr>
+<tr>
+<td>Protocols supported</td>
+<td style="text-align:center">SSTP, OpenVPN and IPsec</td>
+</tr>
+<tr>
+<td>Routing</td>
+<td style="text-align:center">RouteBased (dynamic)</td>
+</tr>
+<tr>
+<td>Connection resiliency</td>
+<td style="text-align:center">Active-passive</td>
+</tr>
+<tr>
+<td>Use case</td>
+<td style="text-align:center">Secure access to Azure virtual networks for remote users</td>
+</tr>
+<tr>
+<td>Pricing</td>
+<td style="text-align:center"><a href="https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/" target="_blank">Pricing</a></td>
+</tr>
+</tbody>
+</table>
+<p>By default, this VPN gateway is deployed as two instances in an <strong>active/passive</strong> configuration, even if you only see one VPN gateway resource in Azure.</p>
+<p>When planned maintenance or unplanned disruption affects the active instance, the passive instance automatically assumes responsibility for connections without any user intervention.</p>
+<p>If you need a HA configuration, you may consider an <strong>active/active</strong> VPN configuration supported by Site-to-Site VPN or Azure ExpressRoute.</p>
+<h2 id="schema">Schema</h2>
+<p><img src="../images/azure_p2s_vpn.png" alt="azure point-to-site vpn"></p>
+<h2 id="provision-the-azure-resources-using-terraform">Provision the Azure resources using Terraform</h2>
+<ul>
+<li>
+<p>main.tf: create a virtual network, three subnets and a virtual network gateway
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/3bddc16a49891b240b6dc1ab0fe696eb.js"></script>
+</p>
+</li>
+<li>
+<p>vm.tf: create two virtual machines located in FrontendSubnet and BackendSubnet. We will test the connection to these vms from the local computer once the VPN is configured.
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/21b583abf236acf3ca6a006a452f3b0f.js"></script>
+</p>
+</li>
+</ul>
+<h2 id="create-certificates-for-vpn-authentication">Create certificates for VPN authentication:</h2>
+<p>In order for VPN connections from your local computer to be authenticated to access your virtual network in Azure, you must create two certificates: a root certificate which will be declared to your virtual network gateway in Azure, and a client certificate stored in your local computer which will be signed with the root certificate.</p>
+<h3 id="windows">Windows:</h3>
+<ol>
+<li>Create the self-signed root certificate using Powershell:</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="nv">$cert</span> <span class="p">=</span> <span class="nb">New-SelfSignedCertificate</span> <span class="n">-Type</span> <span class="n">Custom</span> <span class="n">-KeySpec</span> <span class="n">Signature</span> <span class="p">`</span>
+<span class="n">-Subject</span> <span class="s2">&#34;CN=P2SRootCert&#34;</span> <span class="n">-KeyExportPolicy</span> <span class="n">Exportable</span> <span class="p">`</span>
+<span class="n">-HashAlgorithm</span> <span class="n">sha256</span> <span class="n">-KeyLength</span> <span class="n">2048</span> <span class="p">`</span>
+<span class="n">-CertStoreLocation</span> <span class="s2">&#34;Cert:\CurrentUser\My&#34;</span> <span class="n">-KeyUsageProperty</span> <span class="n">Sign</span> <span class="n">-KeyUsage</span> <span class="n">CertSign</span>
+</code></pre></div><p>Open Certificate Manager (certmgr), go to Personal &gt; Certificates. Select <strong>P2SRootCert</strong> certificate and then export it on .CER format (without private key). Name this file as <strong>P2SRootCert.cer</strong></p>
+<p><img src="../images/azure_p2s_windows_certificate.png" alt="p2s windows certificate"></p>
+<p>Open the certificat <strong>P2SRootCert.cer</strong> with a text editor and save the key between &ldquo;&mdash;&ndash;BEGIN CERTIFICATE&mdash;&ndash;&rdquo; and &ldquo;&mdash;&ndash;END CERTIFICATE&mdash;&ndash;&rdquo;.</p>
+<p>This is your public data of root certificate encoded on base64. You need to declare it later to your Azure VPN gateway configuration.</p>
+<ol start="2">
+<li>Generate a client certificate signed by your new root certificate using Powershell:</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="nb">New-SelfSignedCertificate</span> <span class="n">-Type</span> <span class="n">Custom</span> <span class="n">-DnsName</span> <span class="n">P2SChildCert</span> <span class="n">-KeySpec</span> <span class="n">Signature</span> <span class="p">`</span>
+<span class="n">-Subject</span> <span class="s2">&#34;CN=P2SChildCert&#34;</span> <span class="n">-KeyExportPolicy</span> <span class="n">Exportable</span> <span class="p">`</span>
+<span class="n">-HashAlgorithm</span> <span class="n">sha256</span> <span class="n">-KeyLength</span> <span class="n">2048</span> <span class="p">`</span>
+<span class="n">-CertStoreLocation</span> <span class="s2">&#34;Cert:\CurrentUser\My&#34;</span> <span class="p">`</span>
+<span class="n">-Signer</span> <span class="nv">$cert</span> <span class="n">-TextExtension</span> <span class="p">@(</span><span class="s2">&#34;2.5.29.37={text}1.3.6.1.5.5.7.3.2&#34;</span><span class="p">)</span>
+</code></pre></div><p>The VPN client installed on your local computer will use this certificate to authenticate its connection to your virtual network in Azure.</p>
+<h3 id="linux">Linux:</h3>
+<p><a href="https://docs.microsoft.com/en-us/azure/storage/files/storage-files-configure-p2s-vpn-linux" target="_blank">Configure P2S Linux using StrongSwan</a></p>
+<p>You can follow the steps below to install a VPN client on a Ubuntu machine.</p>
+<ol>
+<li>Install strongwan utilities:</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install strongswan strongswan-pki libstrongswan-extra-plugins curl libxml2-utils cifs-utils
+</code></pre></div><ol start="2">
+<li>Create certificates for VPN authentication: a root certificate and a client certificate signed by the root certificate</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">rootCertName</span><span class="o">=</span><span class="s2">&#34;P2SRootCertLinux&#34;</span>
+<span class="nv">username</span><span class="o">=</span><span class="s2">&#34;linux&#34;</span>
+<span class="nv">password</span><span class="o">=</span><span class="s2">&#34;[YOUR_PASSWORD]&#34;</span>
+
+mkdir temp
+<span class="nb">cd</span> temp
+
+sudo ipsec pki --gen --outform pem &gt; rootKey.pem
+sudo ipsec pki --self --in rootKey.pem --dn <span class="s2">&#34;CN=</span><span class="nv">$rootCertName</span><span class="s2">&#34;</span> --ca --outform pem &gt; rootCert.pem
+
+<span class="nv">rootCertificate</span><span class="o">=</span><span class="k">$(</span>openssl x509 -in rootCert.pem -outform der <span class="p">|</span> base64 -w0 <span class="p">;</span> <span class="nb">echo</span><span class="k">)</span>
+<span class="nb">echo</span> <span class="nv">$rootCertificate</span>
+sudo ipsec pki --gen --size <span class="m">4096</span> --outform pem &gt; <span class="s2">&#34;clientKey.pem&#34;</span>
+sudo ipsec pki --pub --in <span class="s2">&#34;clientKey.pem&#34;</span> <span class="p">|</span> <span class="se">\
+</span><span class="se"></span>sudo ipsec pki <span class="se">\
+</span><span class="se"></span>    --issue <span class="se">\
+</span><span class="se"></span>    --cacert rootCert.pem <span class="se">\
+</span><span class="se"></span>    --cakey rootKey.pem <span class="se">\
+</span><span class="se"></span>    --dn <span class="s2">&#34;CN=</span><span class="nv">$username</span><span class="s2">&#34;</span> <span class="se">\
+</span><span class="se"></span>    --san <span class="nv">$username</span> <span class="se">\
+</span><span class="se"></span>    --flag clientAuth <span class="se">\
+</span><span class="se"></span>    --outform pem &gt; <span class="s2">&#34;clientCert.pem&#34;</span>
+
+openssl pkcs12 -in <span class="s2">&#34;clientCert.pem&#34;</span> -inkey <span class="s2">&#34;clientKey.pem&#34;</span> -certfile rootCert.pem -export -out <span class="s2">&#34;client.p12&#34;</span> -password <span class="s2">&#34;pass:</span><span class="nv">$password</span><span class="s2">&#34;</span>
+</code></pre></div><p>Save the root certificate content. You need to declare it to your virtual gateway in Azure.</p>
+<ol start="3">
+<li>Configure the VPN client: replace the placeholder [YOUR_PASSWORD] and run the following script</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
+<span class="nv">username</span><span class="o">=</span><span class="s2">&#34;linux&#34;</span>
+<span class="nv">password</span><span class="o">=</span><span class="s2">&#34;[YOUR_PASSWORD]&#34;</span>
+<span class="nv">ipsecconfig</span><span class="o">=</span><span class="s2">&#34;/etc/ipsec.conf&#34;</span>
+
+<span class="c1"># These values will be found in Generic/VpnSettings.xml of vpn configuration downloaded from Azure Portal</span>
+<span class="nv">vpnServer</span><span class="o">=</span><span class="s2">&#34;[VpnServer]&#34;</span>
+<span class="nv">vpnType</span><span class="o">=</span><span class="s2">&#34;[VpnType]&#34;</span>
+<span class="nv">routes</span><span class="o">=</span><span class="s2">&#34;[Routes]&#34;</span>
+
+<span class="c1"># Backup current config</span>
+sudo cp <span class="nv">$ipsecconfig</span> <span class="s2">&#34;/etc/ipsec.conf.backup&#34;</span>
+
+<span class="c1"># Copy VPN certificates</span>
+sudo cp <span class="s2">&#34;Generic/VpnServerRoot.cer&#34;</span> <span class="s2">&#34;/etc/ipsec.d/cacerts&#34;</span>
+sudo cp <span class="s2">&#34;temp/</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">.p12&#34;</span> <span class="s2">&#34;/etc/ipsec.d/private&#34;</span>
+
+<span class="c1"># Update ipsec.conf to create a connection to Azure</span>
+<span class="nb">echo</span> -e <span class="s2">&#34;\nconn azure&#34;</span> <span class="p">|</span> sudo tee -a <span class="nv">$ipsecconfig</span> &gt; /dev/null
+<span class="nb">echo</span> -e <span class="s2">&#34;\tkeyexchange=</span><span class="nv">$vpnType</span><span class="s2">&#34;</span> <span class="p">|</span> sudo tee -a <span class="nv">$ipsecconfig</span> &gt; /dev/null
+<span class="nb">echo</span> -e <span class="s2">&#34;\ttype=tunnel&#34;</span> <span class="p">|</span> sudo tee -a <span class="nv">$ipsecconfig</span> &gt; /dev/null
+<span class="nb">echo</span> -e <span class="s2">&#34;\tleftfirewall=yes&#34;</span> <span class="p">|</span> sudo tee -a <span class="nv">$ipsecconfig</span> &gt; /dev/null
+<span class="nb">echo</span> -e <span class="s2">&#34;\tleft=%any&#34;</span> <span class="p">|</span> sudo tee -a <span class="nv">$ipsecconfig</span> &gt; /dev/null
+<span class="nb">echo</span> -e <span class="s2">&#34;\tleftauth=eap-tls&#34;</span> <span class="p">|</span> sudo tee -a <span class="nv">$ipsecconfig</span> &gt; /dev/null
+<span class="nb">echo</span> -e <span class="s2">&#34;\tleftid=%client&#34;</span> <span class="p">|</span> sudo tee -a <span class="nv">$ipsecconfig</span> &gt; /dev/null
+<span class="nb">echo</span> -e <span class="s2">&#34;\tright=</span><span class="nv">$vpnServer</span><span class="s2">&#34;</span> <span class="p">|</span> sudo tee -a <span class="nv">$ipsecconfig</span> &gt; /dev/null
+<span class="nb">echo</span> -e <span class="s2">&#34;\trightid=%</span><span class="nv">$vpnServer</span><span class="s2">&#34;</span> <span class="p">|</span> sudo tee -a <span class="nv">$ipsecconfig</span> &gt; /dev/null
+<span class="nb">echo</span> -e <span class="s2">&#34;\trightsubnet=</span><span class="nv">$routes</span><span class="s2">&#34;</span> <span class="p">|</span> sudo tee -a <span class="nv">$ipsecconfig</span> &gt; /dev/null
+<span class="nb">echo</span> -e <span class="s2">&#34;\tleftsourceip=%config&#34;</span> <span class="p">|</span> sudo tee -a <span class="nv">$ipsecconfig</span> &gt; /dev/null 
+<span class="nb">echo</span> -e <span class="s2">&#34;\tauto=add&#34;</span> <span class="p">|</span> sudo tee -a <span class="nv">$ipsecconfig</span> &gt; /dev/null
+
+<span class="nb">echo</span> <span class="s2">&#34;: P12 client.p12 &#39;</span><span class="nv">$password</span><span class="s2">&#39;&#34;</span> <span class="p">|</span> sudo tee -a <span class="s2">&#34;/etc/ipsec.secrets&#34;</span> &gt; /dev/null
+</code></pre></div><h2 id="declare-the-root-certificates-to-your-virtual-network-gateway-in-azure">Declare the root certificates to your virtual network gateway in Azure:</h2>
+<p>You can update Terraform code to include these certificates.</p>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/2fc2f69c57a91d53bb8aae3cc9d059e5.js"></script>
+
+<h2 id="test-vpn-connection">Test VPN connection</h2>
+<p>The virtual network gateway can take up to 30 minutes to be provisioned. When it&rsquo;s finished, you can download VPN Client from Azure Portal to be able to connect to Azure from your local computer.</p>
+<p><img src="../images/azure_p2s_vpngateway.png" alt="azure p2s vpn gateway"></p>
+<ul>
+<li>Address pool: 10.2.0.0/24</li>
+<li>Tunnel type: IKEv2</li>
+<li>Root certificates: PS2RootCert (client Windows), PS2RootCertUbuntu (client Ubuntu)</li>
+<li>Allocated IP addresses: private ip allocated from address pool above for each client</li>
+</ul>
+<h3 id="windows-1">Windows:</h3>
+<p>For Windows computer, you can install a VPN client by running the program located in WindowsAmd64 (Windows 64 bits) or WindowsX86 (Windows 32 bits).</p>
+<p>Once the VPN client is installed on your local computer, go to VPN settings of your computer and select your vnet name and then select Connect.</p>
+<p>Now, you are connected successfully to Azure and you are allocated an ip <strong>10.2.0.2</strong>. This ip come from the address pool <strong>10.2.0.0/24</strong> that you configured earlier in your configuration.</p>
+<p>You can test the connection from this endpoint to your vms located in FrontendSubnet (172.16.1.4) and BackendSubnet (172.16.2.4) on your network.</p>
+<p><img src="../images/azure_p2s_test_connection.png" alt="azure ps2 connection"></p>
+<h3 id="ubuntu">Ubuntu:</h3>
+<ol>
+<li>Update IPSec configuration:</li>
+</ol>
+<p>Locate the IPSec configuration at /etc/ipsec.conf and replace the value of four fields: tkeyexchange, right, rightid and rightsubnet by the values found in Generic/VpnSettings.xml downloaded from Azure Portal.</p>
+<ul>
+<li>tkeyexchange = [VpnType]</li>
+<li>right = [VpnServer]</li>
+<li>rightid = %[VpnServer]</li>
+<li>rightsubnet = [Routes]</li>
+</ul>
+<p>The final configuration of this file look like that:</p>
+<p><img src="../images/azure_p2s_linux_certificate.png" alt="azure p2s linux certificate"></p>
+<ol start="2">
+<li>Start ipsec services:</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo ipsec restart
+sudo ipsec up azure
+</code></pre></div><p>The connection should be established successfully to Azure and then you should be able to ping and connect to your virtual machines from your local computer.</p>
+<p><img src="../images/azure_p2s_test_ubuntu_connection.png" alt="azure p2s linux connection"></p>
+<p>Congratulations! Your point-to-site VPN has been configured successfully! 😊</p>
+<p>Part 2 (Site-to-Site VPN) available here: <a href="" target="_blank">coming soon</a></p>
+<h2 id="references">References</h2>
+<ul>
+<li>VPN Gateways: <a href="https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways">https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways</a></li>
+<li>VPN FAQ: <a href="https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-vpn-faq">https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-vpn-faq</a></li>
+<li>Configure P2S VPN on Linux: <a href="https://docs.microsoft.com/en-us/azure/storage/files/storage-files-configure-p2s-vpn-linux">https://docs.microsoft.com/en-us/azure/storage/files/storage-files-configure-p2s-vpn-linux</a></li>
+</ul>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://blog.nhat-tong.com/tags/azure/">azure</a>&nbsp;
+            
+              <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
+            
+              <a href="https://blog.nhat-tong.com/tags/vpn/">vpn</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+          
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="/post/2021/02/gcp/iam-breakdown/">GCP-IAM (Identity and Access Management)</a></li>
+                
+                    <li><a href="/post/2021/01/gcp/sharing-networks/">GCP-Sharing networks across projects</a></li>
+                
+                    <li><a href="/post/2021/01/azure/azure-az-500-exam/">Azure Security Engineer Associate exam (AZ-500)</a></li>
+                
+                    <li><a href="/post/2020/12/azure/azure-nat-gateway-proxyout/">Azure-Nat Gateway with Virtual Network Appliance</a></li>
+                
+                    <li><a href="/post/2020/12/azure/azure-hub-spoke-topology/">Azure-Hub Spoke topology</a></li>
+                
+              </ul>
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://blog.nhat-tong.com/post/2021/02/gcp/iam-breakdown/" data-toggle="tooltip" data-placement="top" title="GCP-IAM (Identity and Access Management)">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nhattong" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+          
+        
+        
+      
+      <div>
+        <meta property="og:title" content="Azure-Connect on-premises networks to Azure using VPN gateways (part 1)" />
+<meta property="og:description" content="A virtual private network (VPN) is a type of private interconnected network.
+VPNs are typically deployed to connect two or more trusted private networks to one another over an untrusted network (over the Internet).
+Traffic is encrypted while traveling over the untrusted network to prevent eavesdropping or other attacks.
+You may consider three types of gateway below when designing your hybrid network:
+
+Point-to-site (P2S) VPN: allows client computers in local to connect remotely to your network in Azure using IPSec/OpenVPN/SSTP protocols
+Site-to-site (S2S) VPN: connect your on-premises networks to Azure through dedicated VPN devices or connect multiple virtual networks in Azure together. Protocols supported: IPSec/IKE
+Azure ExpressRoute: connect your on-premises networks to Azure over a private network. It means that your traffic will be not travel over the Internet.
+
+In this first part, we will discuss the Point-to-Site VPN." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.nhat-tong.com/post/2021/04/azure/point-to-site-vpn/" />
+<meta property="article:published_time" content="2021-04-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-11T00:00:00+00:00" />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:thqnhat@outlook.com" title="Email me" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/nhat-tong" title="GitHub" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/hoang-quoc-nhat-tong-8b738233" title="LinkedIn" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://nhat-tong.github.com">Nhat Tong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2021
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://blog.nhat-tong.com">Home</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://blog.nhat-tong.com/js/main.js"></script>
+<script src="https://blog.nhat-tong.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://blog.nhat-tong.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

@@ -7,7 +7,71 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Thu, 07 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure-Connect on-premises networks to Azure using VPN gateways (part 1)</title>
+      <link>https://blog.nhat-tong.com/post/2021/04/azure/point-to-site-vpn/</link>
+      <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2021/04/azure/point-to-site-vpn/</guid>
+      <description>&lt;p&gt;A virtual private network (VPN) is a type of private interconnected network.&lt;/p&gt;
+&lt;p&gt;VPNs are typically deployed to connect two or more trusted private networks to one another over an untrusted network (over the Internet).&lt;/p&gt;
+&lt;p&gt;Traffic is encrypted while traveling over the untrusted network to prevent eavesdropping or other attacks.&lt;/p&gt;
+&lt;p&gt;You may consider three types of gateway below when designing your hybrid network:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Point-to-site (P2S) VPN: allows client computers in local to connect remotely to your network in Azure using IPSec/OpenVPN/SSTP protocols&lt;/li&gt;
+&lt;li&gt;Site-to-site (S2S) VPN: connect your on-premises networks to Azure through dedicated VPN devices or connect multiple virtual networks in Azure together. Protocols supported: IPSec/IKE&lt;/li&gt;
+&lt;li&gt;Azure ExpressRoute: connect your on-premises networks to Azure over a private network. It means that your traffic will be not travel over the Internet.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this first part, we will discuss the Point-to-Site VPN.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Azure-Connect on-premises networks to Azure using VPN gateways (part 2)</title>
+      <link></link>
+      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Site to site over the internet  S2S (IPsec/IKE VPN tunnel) configurations are between your on-premises location and Azure. This means that you can connect from any of your computers located on your premises to any virtual machine or role instance within your virtual network, depending on how you choose to configure routing and permissions.
+It&amp;rsquo;s a great option for an always-available cross-premises connection and is well suited for hybrid configurations.</description>
+    </item>
+    
+    <item>
+      <title>Azure-Azure Application Gateway</title>
+      <link></link>
+      <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure-Azure Private Link</title>
+      <link></link>
+      <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure-Azure Private Link</title>
+      <link></link>
+      <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure-RBAC (Role Base Access Control)</title>
+      <link></link>
+      <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Azure Security Engineer Associate exam (AZ-500)</title>
       <link>https://blog.nhat-tong.com/post/2021/01/azure/azure-az-500-exam/</link>
