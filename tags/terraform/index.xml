@@ -7,7 +7,56 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure-Connect on-premises networks to Azure using VPN gateways (part 2)</title>
+      <link>https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn/</link>
+      <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn/</guid>
+      <description>&lt;p&gt;In the previous article (&lt;a href=&#34;https://blog.nhat-tong.com/post/2021/04/azure/point-to-site-vpn/&#34; target=&#34;_blank&#34;&gt;&lt;u&gt;part 1&lt;/u&gt;&lt;/a&gt;), we talk about the Point-to-Site VPN. It&amp;rsquo;s great when you want to connect to Azure from your local computer.&lt;/p&gt;
+&lt;p&gt;In the real world, you may want to connect your entire on-premises networks to Azure or connect multiple virtual networks in Azure together. In this case, you may consider using the Site-to-Site VPN or the Vnet-to-Vnet connection.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/azure_s2s_vpn.png&#34; alt=&#34;azure s2s vpn&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Azure-Connect on-premises networks to Azure using VPN gateways (part 3)</title>
+      <link></link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>&lt;p&gt;In the previous article (&lt;a href=&#34;https://blog.nhat-tong.com/post/2021/04/azure/point-to-site-vpn/&#34; target=&#34;_blank&#34;&gt;&lt;u&gt;part 2&lt;/u&gt;&lt;/a&gt;), we talk about the Point-to-Site VPN. It&amp;rsquo;s great when you want to connect to Azure from your local computer.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GCP-Instance groups</title>
+      <link></link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Terraform part 1</title>
+      <link></link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>What is Terraform ? Terraform is an infrastructure as code (IaC) tool which help you to deploy your infrastructure into multiple providers (Azure, GCP, OCI&amp;hellip;)
+Unlike the others IaC tools (Azure ARM or AWS CloudFormation), Terraform is a cloud agnostics. It means that you can use Terraform to deploy your infrastructure into multiple cloud providers.
+Download Terraform  Windows Linux  Create a first Terraform project   Create a first configuration file</description>
+    </item>
+    
+    <item>
+      <title>Terraform part 2</title>
+      <link></link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Terraform Provider Terraform Plugin Terraform Lifecycle Terraform command  terraform show terraform provisioners terrraform state rm terraform import terraform taint  Terraform dependency Terraform State Locking Terraform module Best practices References:  https://medium.com/bb-tutorials-and-thoughts/250-practice-questions-for-terraform-associate-certification-7a3ccebe6a1a  </description>
+    </item>
+    
     <item>
       <title>Azure-Connect on-premises networks to Azure using VPN gateways (part 1)</title>
       <link>https://blog.nhat-tong.com/post/2021/04/azure/point-to-site-vpn/</link>
@@ -23,17 +72,8 @@
 &lt;li&gt;Site-to-site (S2S) VPN: connect your on-premises networks to Azure through dedicated VPN devices or connect multiple virtual networks in Azure together. Protocols supported: IPSec/IKE&lt;/li&gt;
 &lt;li&gt;Azure ExpressRoute: connect your on-premises networks to Azure over a private network. It means that your traffic will be not travel over the Internet.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;In this first part, we will discuss the Point-to-Site VPN.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Azure-Connect on-premises networks to Azure using VPN gateways (part 2)</title>
-      <link></link>
-      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid></guid>
-      <description>Site to site over the internet  S2S (IPsec/IKE VPN tunnel) configurations are between your on-premises location and Azure. This means that you can connect from any of your computers located on your premises to any virtual machine or role instance within your virtual network, depending on how you choose to configure routing and permissions.
-It&amp;rsquo;s a great option for an always-available cross-premises connection and is well suited for hybrid configurations.</description>
+&lt;p&gt;In this first part, we will discuss the Point-to-Site VPN.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/azure_p2s_vpn.png&#34; alt=&#34;azure point-to-site vpn&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -186,8 +186,8 @@
         <div class="posts-list">
           
             <article class="post-preview">
-    <a href="https://blog.nhat-tong.com/post/2021/04/azure/point-to-site-vpn/">
-        <h2 class="post-title">Azure-Connect on-premises networks to Azure using VPN gateways (part 1)</h2>
+    <a href="https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn/">
+        <h2 class="post-title">Azure-Connect on-premises networks to Azure using VPN gateways (part 2)</h2>
         
         
         
@@ -197,13 +197,13 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;April 11, 2021
+  <i class="fas fa-calendar"></i>&nbsp;April 18, 2021
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1256&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;728&nbsp;words
   
   
   
@@ -213,17 +213,10 @@
     </p>
     <div class="post-entry">
         
-        <p>A virtual private network (VPN) is a type of private interconnected network.</p>
-<p>VPNs are typically deployed to connect two or more trusted private networks to one another over an untrusted network (over the Internet).</p>
-<p>Traffic is encrypted while traveling over the untrusted network to prevent eavesdropping or other attacks.</p>
-<p>You may consider three types of gateway below when designing your hybrid network:</p>
-<ul>
-<li>Point-to-site (P2S) VPN: allows client computers in local to connect remotely to your network in Azure using IPSec/OpenVPN/SSTP protocols</li>
-<li>Site-to-site (S2S) VPN: connect your on-premises networks to Azure through dedicated VPN devices or connect multiple virtual networks in Azure together. Protocols supported: IPSec/IKE</li>
-<li>Azure ExpressRoute: connect your on-premises networks to Azure over a private network. It means that your traffic will be not travel over the Internet.</li>
-</ul>
-<p>In this first part, we will discuss the Point-to-Site VPN.</p>
-        <a href="https://blog.nhat-tong.com/post/2021/04/azure/point-to-site-vpn/" class="post-read-more">[Read More]</a>
+        <p>In the previous article (<a href="https://blog.nhat-tong.com/post/2021/04/azure/point-to-site-vpn/" target="_blank"><u>part 1</u></a>), we talk about the Point-to-Site VPN. It&rsquo;s great when you want to connect to Azure from your local computer.</p>
+<p>In the real world, you may want to connect your entire on-premises networks to Azure or connect multiple virtual networks in Azure together. In this case, you may consider using the Site-to-Site VPN or the Vnet-to-Vnet connection.</p>
+<p><img src="../images/azure_s2s_vpn.png" alt="azure s2s vpn"></p>
+        <a href="https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn/" class="post-read-more">[Read More]</a>
         
     </div>
 
@@ -243,7 +236,7 @@
           
             <article class="post-preview">
     <a href="">
-        <h2 class="post-title">Azure-Connect on-premises networks to Azure using VPN gateways (part 2)</h2>
+        <h2 class="post-title">Azure-Connect on-premises networks to Azure using VPN gateways (part 3)</h2>
         
         
         
@@ -253,13 +246,13 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;April 10, 2021
+  <i class="fas fa-calendar"></i>&nbsp;April 16, 2021
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;307&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;403&nbsp;words
   
   
   
@@ -269,8 +262,7 @@
     </p>
     <div class="post-entry">
         
-        Site to site over the internet  S2S (IPsec/IKE VPN tunnel) configurations are between your on-premises location and Azure. This means that you can connect from any of your computers located on your premises to any virtual machine or role instance within your virtual network, depending on how you choose to configure routing and permissions.
-It&rsquo;s a great option for an always-available cross-premises connection and is well suited for hybrid configurations.
+        <p>In the previous article (<a href="https://blog.nhat-tong.com/post/2021/04/azure/point-to-site-vpn/" target="_blank"><u>part 2</u></a>), we talk about the Point-to-Site VPN. It&rsquo;s great when you want to connect to Azure from your local computer.</p>
         <a href="" class="post-read-more">[Read More]</a>
         
     </div>
@@ -281,6 +273,215 @@ It&rsquo;s a great option for an always-available cross-premises connection and 
         <a href="https://blog.nhat-tong.com/tags/azure/">azure</a>&nbsp;
         
         <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/vpn/">vpn</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="">
+        <h2 class="post-title">GCP-Instance groups</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;April 14, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;0&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.nhat-tong.com/tags/gcp/">gcp</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="">
+        <h2 class="post-title">Terraform part 1</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;April 14, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;108&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        What is Terraform ? Terraform is an infrastructure as code (IaC) tool which help you to deploy your infrastructure into multiple providers (Azure, GCP, OCI&hellip;)
+Unlike the others IaC tools (Azure ARM or AWS CloudFormation), Terraform is a cloud agnostics. It means that you can use Terraform to deploy your infrastructure into multiple cloud providers.
+Download Terraform  Windows Linux  Create a first Terraform project   Create a first configuration file
+        <a href="" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="">
+        <h2 class="post-title">Terraform part 2</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;April 14, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;30&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <h3 id="terraform-provider">Terraform Provider</h3>
+<h3 id="terraform-plugin">Terraform Plugin</h3>
+<h3 id="terraform-lifecycle">Terraform Lifecycle</h3>
+<h3 id="terraform-command">Terraform command</h3>
+<ul>
+<li>terraform show</li>
+<li>terraform provisioners</li>
+<li>terrraform state rm</li>
+<li>terraform import</li>
+<li>terraform taint</li>
+</ul>
+<h3 id="terraform-dependency">Terraform dependency</h3>
+<h3 id="terraform-state-locking">Terraform State Locking</h3>
+<h3 id="terraform-module">Terraform module</h3>
+<h2 id="best-practices">Best practices</h2>
+<h2 id="references">References:</h2>
+<ul>
+<li><a href="https://medium.com/bb-tutorials-and-thoughts/250-practice-questions-for-terraform-associate-certification-7a3ccebe6a1a">https://medium.com/bb-tutorials-and-thoughts/250-practice-questions-for-terraform-associate-certification-7a3ccebe6a1a</a></li>
+</ul>
+
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://blog.nhat-tong.com/post/2021/04/azure/point-to-site-vpn/">
+        <h2 class="post-title">Azure-Connect on-premises networks to Azure using VPN gateways (part 1)</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;April 11, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1254&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>A virtual private network (VPN) is a type of private interconnected network.</p>
+<p>VPNs are typically deployed to connect two or more trusted private networks to one another over an untrusted network (over the Internet).</p>
+<p>Traffic is encrypted while traveling over the untrusted network to prevent eavesdropping or other attacks.</p>
+<p>You may consider three types of gateway below when designing your hybrid network:</p>
+<ul>
+<li>Point-to-site (P2S) VPN: allows client computers in local to connect remotely to your network in Azure using IPSec/OpenVPN/SSTP protocols</li>
+<li>Site-to-site (S2S) VPN: connect your on-premises networks to Azure through dedicated VPN devices or connect multiple virtual networks in Azure together. Protocols supported: IPSec/IKE</li>
+<li>Azure ExpressRoute: connect your on-premises networks to Azure over a private network. It means that your traffic will be not travel over the Internet.</li>
+</ul>
+<p>In this first part, we will discuss the Point-to-Site VPN.</p>
+<p><img src="../images/azure_p2s_vpn.png" alt="azure point-to-site vpn"></p>
+        <a href="https://blog.nhat-tong.com/post/2021/04/azure/point-to-site-vpn/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.nhat-tong.com/tags/azure/">azure</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/vpn/">vpn</a>&nbsp;
         
     </div>
     
@@ -502,57 +703,16 @@ GCP allows you to set IAM policies at any of these levels.</p>
 
 </article>
           
-            <article class="post-preview">
-    <a href="https://blog.nhat-tong.com/post/2020/12/azure/azure-hub-spoke-topology/">
-        <h2 class="post-title">Azure-Hub Spoke topology</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;December 19, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;593&nbsp;words
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <p>Today, we will implement a hub-spoke topology in Azure.</p>
-<p>The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.</p>
-<p>The spokes are virtual networks that peer with the hub and can be used to isolate workloads.</p>
-<p>For more information, we refer to <a href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke" target="_blank"><u>this document.</u></a></p>
-<p>In our case-study, we don&rsquo;t have <em>on-premises network</em>, so the architecture will be adjusted a little bit:</p>
-<p><img src="../images/58_azure_hub_spoke.png" alt="Our hub-spoke"></p>
-        <a href="https://blog.nhat-tong.com/post/2020/12/azure/azure-hub-spoke-topology/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.nhat-tong.com/tags/azure/">azure</a>&nbsp;
-        
-        <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
         </div>
+        
+          <ul class="pager main-pager">
+            
+            
+              <li class="next">
+                <a href="https://blog.nhat-tong.com/tags/terraform/page/2/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
         
       </div>
     </div>

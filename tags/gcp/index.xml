@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sun, 14 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GCP-Instance groups</title>
+      <link></link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>GCP-IAM (Identity and Access Management)</title>
       <link>https://blog.nhat-tong.com/post/2021/02/gcp/iam-breakdown/</link>
