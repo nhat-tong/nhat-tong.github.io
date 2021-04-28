@@ -7,7 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sun, 18 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure-Connect on-premises networks to Azure using VPN gateways (part 3)</title>
+      <link>https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn-ha/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn-ha/</guid>
+      <description>&lt;p&gt;In the previous article (&lt;a href=&#34;https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn/&#34; target=&#34;_blank&#34;&gt;&lt;u&gt;part 2&lt;/u&gt;&lt;/a&gt;), we talk about the Site-to-Site VPN with active/passive configuration.&lt;/p&gt;
+&lt;p&gt;Now, we configure our Site-to-Site VPN with active/active configuration using BGP (Border Gateway Protocol).&lt;/p&gt;
+&lt;p&gt;In the end, we will take a quick look at Azure ExpressRoute.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/azure_expressroute_architecture_schema.png&#34; alt=&#34;azure s2s expressroute&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Terraform part 1</title>
+      <link></link>
+      <pubDate>Tue, 20 Apr 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>&lt;p&gt;Terraform is an infrastructure as code (IaC) tool which help you to automate the deployment of your infrastructure into multiple providers supported by Terraform.&lt;/p&gt;
+&lt;p&gt;Unlike the others IaC tools (Azure ARM or AWS CloudFormation,&amp;hellip;), Terraform is cloud agnostics. It means that you can use Terraform to deploy your infrastructure into multiple cloud providers.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Azure-Connect on-premises networks to Azure using VPN gateways (part 2)</title>
       <link>https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn/</link>
@@ -20,15 +42,6 @@
     </item>
     
     <item>
-      <title>Azure-Connect on-premises networks to Azure using VPN gateways (part 3)</title>
-      <link></link>
-      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid></guid>
-      <description>&lt;p&gt;In the previous article (&lt;a href=&#34;https://blog.nhat-tong.com/post/2021/04/azure/point-to-site-vpn/&#34; target=&#34;_blank&#34;&gt;&lt;u&gt;part 2&lt;/u&gt;&lt;/a&gt;), we talk about the Point-to-Site VPN. It&amp;rsquo;s great when you want to connect to Azure from your local computer.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>GCP-Instance groups</title>
       <link></link>
       <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
@@ -38,23 +51,12 @@
     </item>
     
     <item>
-      <title>Terraform part 1</title>
-      <link></link>
-      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid></guid>
-      <description>What is Terraform ? Terraform is an infrastructure as code (IaC) tool which help you to deploy your infrastructure into multiple providers (Azure, GCP, OCI&amp;hellip;)
-Unlike the others IaC tools (Azure ARM or AWS CloudFormation), Terraform is a cloud agnostics. It means that you can use Terraform to deploy your infrastructure into multiple cloud providers.
-Download Terraform  Windows Linux  Create a first Terraform project   Create a first configuration file</description>
-    </item>
-    
-    <item>
       <title>Terraform part 2</title>
       <link></link>
       <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid></guid>
-      <description>Terraform Provider Terraform Plugin Terraform Lifecycle Terraform command  terraform show terraform provisioners terrraform state rm terraform import terraform taint  Terraform dependency Terraform State Locking Terraform module Best practices References:  https://medium.com/bb-tutorials-and-thoughts/250-practice-questions-for-terraform-associate-certification-7a3ccebe6a1a  </description>
+      <description>Terraform Provider Terraform Plugin Terraform command  terraform show terraform provisioners terrraform state rm terraform import terraform taint  Terraform dependency Terraform State Locking Terraform module Terraform Lifecycle Terraform with multiple environment Best practices References:  https://medium.com/bb-tutorials-and-thoughts/250-practice-questions-for-terraform-associate-certification-7a3ccebe6a1a  </description>
     </item>
     
     <item>

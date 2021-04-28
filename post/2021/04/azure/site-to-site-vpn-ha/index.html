@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Azure-Connect on-premises networks to Azure using VPN gateways (part 3) - Home</title>
+  <meta name="description" content="In the previous article (part 2), we talk about the Site-to-Site VPN with active/passive configuration.
+Now, we configure our Site-to-Site VPN with active/active configuration using BGP (Border Gateway Protocol).
+In the end, we will take a quick look at Azure ExpressRoute.
+">
+  <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Home",
+    
+    "url": "https:\/\/blog.nhat-tong.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/blog.nhat-tong.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/blog.nhat-tong.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/blog.nhat-tong.com\/post\/2021\/04\/azure\/site-to-site-vpn-ha\/",
+          "name": "Azure connect on premises networks to azure using v p n gateways (part 3)"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Nhat Tong"
+  },
+  "headline": "Azure-Connect on-premises networks to Azure using VPN gateways (part 3)",
+  "description" : "In the previous article (part 2), we talk about the Site-to-Site VPN with active\/passive configuration.\nNow, we configure our Site-to-Site VPN with active\/active configuration using BGP (Border Gateway Protocol).\nIn the end, we will take a quick look at Azure ExpressRoute.\n",
+  "inLanguage" : "en",
+  "wordCount":  802 ,
+  "datePublished" : "2021-04-28T00:00:00",
+  "dateModified" : "2021-04-28T00:00:00",
+  "image" : "https:\/\/blog.nhat-tong.com",
+  "keywords" : [ "azure, terraform, vpn, expressroute" ],
+  "mainEntityOfPage" : "https:\/\/blog.nhat-tong.com\/post\/2021\/04\/azure\/site-to-site-vpn-ha\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/blog.nhat-tong.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/blog.nhat-tong.com",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Azure-Connect on-premises networks to Azure using VPN gateways (part 3)" />
+<meta property="og:description" content="In the previous article (part 2), we talk about the Site-to-Site VPN with active/passive configuration.
+Now, we configure our Site-to-Site VPN with active/active configuration using BGP (Border Gateway Protocol).
+In the end, we will take a quick look at Azure ExpressRoute.
+">
+<meta property="og:url" content="https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn-ha/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Home" />
+
+  <meta name="twitter:title" content="Azure-Connect on-premises networks to Azure using VPN gateways (part …" />
+  <meta name="twitter:description" content="In the previous article (part 2), we talk about the Site-to-Site VPN with active/passive configuration.
+Now, we configure our Site-to-Site VPN with active/active configuration using BGP (Border …">
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.79.0" />
+  <link rel="alternate" href="https://blog.nhat-tong.com/index.xml" type="application/rss+xml" title="Home"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.nhat-tong.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://blog.nhat-tong.com/css/highlight.min.css" /><link rel="stylesheet" href="https://blog.nhat-tong.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://blog.nhat-tong.com">Home</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Azure-Connect on-premises networks to Azure using VPN gateways (part 3)</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;April 28, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;802&nbsp;words
+  
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>In the previous article (<a href="https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn/" target="_blank"><u>part 2</u></a>), we talk about the Site-to-Site VPN with active/passive configuration.</p>
+<p>Now, we configure our Site-to-Site VPN with active/active configuration using BGP (Border Gateway Protocol).</p>
+<p>In the end, we will take a quick look at Azure ExpressRoute.</p>
+<p><img src="../images/azure_expressroute_architecture_schema.png" alt="azure s2s expressroute"></p>
+<h2 id="site-to-site-vpn-with-high-availability">Site-to-Site VPN with High Availability</h2>
+<p>You can follow the steps below to enable the active/active configuration on your current VPN tunnel.</p>
+<ol>
+<li><u>Establish an active-active cross-premises connection with only one on-premises VPN device (local network gateway)</u></li>
+</ol>
+<ul>
+<li>
+<p>Use case: in this part, you enable the Azure VPN Gateway using active/active mode.
+Even though you have only one on-premises VPN device (one local network gateway) and one connection resource, both Azure VPN gateway instances will establish S2S VPN tunnels with the on-premises device.</p>
+</li>
+<li>
+<p>Schema:
+<img src="../images/azure_s2s_ha_single_vpn.png" alt="azure s2s ha vpn"></p>
+</li>
+<li>
+<p>Terraform:</p>
+</li>
+</ul>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/0cae730935a44d1838c3a2a267e10d83.js"></script>
+
+<p>You could see that your Azure VPN Gateway is in active/active mode now and the BGP is enabled:</p>
+<p><img src="../images/azure_s2s_vpn_ha_vpngateway.png" alt="azure s2s vpn ha"></p>
+<p>The connection from your on-premises to Azure is still connected using the new configuration:</p>
+<p><img src="../images/azure_s2s_vpn_ha_single_vpn_connection.png" alt="azure s2s vpn ha"></p>
+<ol start="2">
+<li><u>Establish an active-active cross-premises connection with two on-premises VPN device (dual redundancy)</u></li>
+</ol>
+<ul>
+<li>
+<p>Use case: if you have two VPN devices at the same on-premises network, you can achieve dual redundancy by connecting the Azure VPN gateway to the second VPN device.</p>
+</li>
+<li>
+<p>Schema:</p>
+</li>
+</ul>
+<p><img src="../images/azure_s2s_ha_dual_vpn.png" alt="azure s2s ha dual vpn"></p>
+<ul>
+<li>Terraform:</li>
+</ul>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/c21ab7e1f5b8cb38ff6c736b7a6d4f94.js"></script>
+
+<p>You could see that your Azure VPN Gateway is updated from Azure portal:</p>
+<p><img src="../images/azure_s2s_vpn_ha_localgateway.png" alt="azure s2s ha dual vpn"></p>
+<p>The traffic can be flown between networks via the second connection <i>azure_localgw_to_vpn_connection2</i> using BGP:</p>
+<p><img src="../images/azure_s2s_vpn_ha_vpngateway_connection.png" alt="azure s2s ha dual vpn connection">
+<i>With this configuration in place, if you have any issue with one VPN connection, your traffic to Azure is still working thanks to the other connection.</i></p>
+<h2 id="site-to-site-connection-with-ha-vnet-to-vnet">Site-to-Site connection with HA Vnet-to-Vnet</h2>
+<ul>
+<li>Use case: you could also enable the active/active configuration (S2S Vnet-to-Vnet connection) for your virtual networks in Azure</li>
+<li>Schema:</li>
+</ul>
+<p><img src="../images/azure_s2s_vnet2vnet_ha.png" alt="azure vnet2vnet connection"></p>
+<ul>
+<li>
+<p>Terraform:</p>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/99f589d4d81cb0910841a93d02c032be.js"></script>
+
+</li>
+</ul>
+<p>You could see that your VPN gateway is updated from Azure portal:</p>
+<p><img src="../images/azure_s2s_vnet2vnet_ha_config.png" alt="azure vnet2vnet ha"></p>
+<p>The communication should be worked between virtual networks using BGP.</p>
+<p>From the virtual network located in France to the virtual network located in West Europe:
+<img src="../images/azure_s2s_vnet2vnet_ha_connection_vnetfrtovnetwest.png" alt="azure vnet2vnet ha"></p>
+<p>From the virtual network located in West Europe to the virtual network located in France:
+<img src="../images/azure_s2s_vnet2vnet_ha_connection_vnetwesttovnetfr.png" alt="azure vnet2vnet ha"></p>
+<h2 id="site-to-site-connection-with-azure-expressroute">Site-to-Site connection with Azure ExpressRoute</h2>
+<p>Azure ExpressRoute lets you seamlessly extend your on-premises networks into the Microsoft cloud. This connection is dedicated and private and is not travel over the Internet.</p>
+<p>Establishing an ExpressRoute connection enables you to connect to Microsoft cloud services like Azure, Office 365, and Dynamics 365.</p>
+<p>Security is enhanced, connections are more reliable, latency is minimal, and throughput is greatly increased</p>
+<p>Here are some characteristics of this type of connection:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">ExpressRoute</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Azure supported services</td>
+<td style="text-align:center">All supported services</td>
+</tr>
+<tr>
+<td>Typical bandwidth</td>
+<td style="text-align:center">50 Mbps, 100 Mbps, 200 Mbps, 500 Mbps, 1 Gbps, 2 Gbps, 5 Gbps, 10 Gbps. <a href="https://docs.microsoft.com/en-us/azure/expressroute/expressroute-introduction#bandwidth-options">more</a></td>
+</tr>
+<tr>
+<td>Protocols supported</td>
+<td style="text-align:center">Direct connection over VLANs, NSP&rsquo;s VPN technologies (MPLS, VPLS,&hellip;)</td>
+</tr>
+<tr>
+<td>Routing</td>
+<td style="text-align:center">BGP</td>
+</tr>
+<tr>
+<td>Connection resiliency</td>
+<td style="text-align:center">Active-active</td>
+</tr>
+<tr>
+<td>Use case</td>
+<td style="text-align:center">Access to all Azure services, Enterprise/mission critical workloads, Big Data</td>
+</tr>
+<tr>
+<td>Pricing</td>
+<td style="text-align:center"><a href="https://azure.microsoft.com/en-us/pricing/details/expressroute/" target="_blank">Pricing</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="implementing">Implementing</h3>
+<p>To implement ExpressRoute, you need to work with an ExpressRoute partner <a href="https://docs.microsoft.com/en-us/azure/expressroute/expressroute-locations" target="_blank">here</a> (Zayo, Equinix, Orange, Vondafone&hellip;). The partner provides the edge service which is responsible for extending your network to the Microsoft cloud.</p>
+<p>The partner sets up connections to an endpoint in an ExpressRoute location <a href="https://docs.microsoft.com/en-us/azure/expressroute/expressroute-locations-providers" target="_blank">here</a>. These connections enable you to peer your on-premises networks with the virtual networks available through the endpoint. These connections are called <b>circuits</b>.</p>
+<p>A <b>circuit</b> provides a physical connection for transmitting data through the ExpressRoute provider&rsquo;s edge routers to the Microsoft edge routers. A circuit is established across a private wire rather than the public internet. Your on-premises network is connected to the ExpressRoute provider&rsquo;s edge routers. The Microsoft edge routers provide the entry point to the Microsoft cloud.</p>
+<p><img src="../images/azure_expressroute_schema.png" alt="azure expressroute"></p>
+<p>For more information: <a href="https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-expressroute/3-how-expressroute-works" target="_blank">here</a></p>
+<h3 id="architecture-schema">Architecture schema</h3>
+<p><img src="../images/azure_expressroute_architecture_schema.png" alt="azure expressroute architecture"></p>
+<h3 id="steps-to-connect-your-on-premises-networks-to-azure-using-expressroute">Steps to connect your on-premises networks to Azure using ExpressRoute</h3>
+<ul>
+<li>Create an ExpressRoute circuit on Azure side</li>
+<li>Provide the circuit&rsquo;s Service Key to your parner to set up the connection to an endpoint of ExpressRoute</li>
+<li>Once the connection is done and the provider status is displayed on the Azure portal as <b>Provisioned</b>, create a peering configuration for your circuit:
+<ul>
+<li>a private peering to connect your on-premises networks to your virtual networks in Azure</li>
+<li>a Microsoft peering to connect your on-premises networks to Office 365 and its services</li>
+</ul>
+</li>
+<li>Connect your virtual networks to an ExpressRoute circuit
+<ul>
+<li>create an Azure virtual network gateway (type ExpressRoute). This gateway provide the entry point to network traffic that enters from your on-premises network.</li>
+<li>add a connection to connect your circuit to the virtual network gateway created</li>
+</ul>
+</li>
+<li>Test your connection between networks</li>
+</ul>
+<h3 id="terraform">Terraform</h3>
+<script type="application/javascript" src="https://gist.github.com/nhat-tong/77604d2ef29981db6de6538931f00bef.js"></script>
+
+<p>Now, you can see that your ExpressRoute circuit is created but <i>it is not provisioned yet</i>. You may need to work with your service provider to provision this circuit.</p>
+<p><img src="../images/azure_expressroute_circuit_overview.png" alt="azure expressroute circuit"></p>
+<p>The connection between this ExpressRoute circuit and your Azure Network Gateway is created but it&rsquo;s failed at the moment.</p>
+<p><img src="../images/azure_expressroute_gateway_connection.png" alt="azure expressroute connection"></p>
+<p>You can recheck this connection once the ExpressRoute circuit is provisioned successfully.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>S2S active-active connection: <a href="https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-activeactive-rm-powershell">https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-activeactive-rm-powershell</a></li>
+<li>Azure ExpressRoute: <a href="https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-expressroute/3-how-expressroute-works">https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-expressroute/3-how-expressroute-works</a></li>
+<li>Azure ExpressRoute provider: <a href="https://docs.microsoft.com/en-us/azure/expressroute/expressroute-locations">https://docs.microsoft.com/en-us/azure/expressroute/expressroute-locations</a></li>
+<li>Azure ExpressRoute location: <a href="https://docs.microsoft.com/en-us/azure/expressroute/expressroute-locations-providers">https://docs.microsoft.com/en-us/azure/expressroute/expressroute-locations-providers</a></li>
+</ul>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://blog.nhat-tong.com/tags/azure/">azure</a>&nbsp;
+            
+              <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
+            
+              <a href="https://blog.nhat-tong.com/tags/vpn/">vpn</a>&nbsp;
+            
+              <a href="https://blog.nhat-tong.com/tags/expressroute/">expressroute</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+          
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="/post/2021/04/azure/site-to-site-vpn/">Azure-Connect on-premises networks to Azure using VPN gateways (part 2)</a></li>
+                
+                    <li><a href="/post/2021/04/azure/point-to-site-vpn/">Azure-Connect on-premises networks to Azure using VPN gateways (part 1)</a></li>
+                
+                    <li><a href="/post/2021/02/gcp/iam-breakdown/">GCP-IAM (Identity and Access Management)</a></li>
+                
+                    <li><a href="/post/2021/01/gcp/sharing-networks/">GCP-Sharing networks across projects</a></li>
+                
+                    <li><a href="/post/2021/01/azure/azure-az-500-exam/">Azure Security Engineer Associate exam (AZ-500)</a></li>
+                
+              </ul>
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn/" data-toggle="tooltip" data-placement="top" title="Azure-Connect on-premises networks to Azure using VPN gateways (part 2)">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nhattong" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+          
+        
+        
+      
+      <div>
+        <meta property="og:title" content="Azure-Connect on-premises networks to Azure using VPN gateways (part 3)" />
+<meta property="og:description" content="In the previous article (part 2), we talk about the Site-to-Site VPN with active/passive configuration.
+Now, we configure our Site-to-Site VPN with active/active configuration using BGP (Border Gateway Protocol).
+In the end, we will take a quick look at Azure ExpressRoute.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn-ha/" />
+<meta property="article:published_time" content="2021-04-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-28T00:00:00+00:00" />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:thqnhat@outlook.com" title="Email me" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/nhat-tong" title="GitHub" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/hoang-quoc-nhat-tong-8b738233" title="LinkedIn" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://nhat-tong.github.com">Nhat Tong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2021
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://blog.nhat-tong.com">Home</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://blog.nhat-tong.com/js/main.js"></script>
+<script src="https://blog.nhat-tong.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://blog.nhat-tong.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

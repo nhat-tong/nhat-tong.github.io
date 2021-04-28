@@ -4,36 +4,51 @@
   
   <url>
     <loc>https://blog.nhat-tong.com/tags/azure/</loc>
-    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn/</loc>
-    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
+    <loc>https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn-ha/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/expressroute/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/</loc>
-    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/post/</loc>
-    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/tags/</loc>
-    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/tags/terraform/</loc>
-    <lastmod>2021-04-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/tags/vpn/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/iac/</loc>
+    <lastmod>2021-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn/</loc>
     <lastmod>2021-04-18T00:00:00+00:00</lastmod>
   </url>
   
