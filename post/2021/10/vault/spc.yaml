@@ -1,0 +1,25 @@
+apiVersion: secrets-store.csi.x-k8s.io/v1alpha1
+kind: SecretProviderClass
+metadata:
+  name: vault-db-creds
+  namespace: isite
+spec:
+  provider: vault
+  secretObjects:
+    - secretName: vault-db-creds-secret
+      type: Opaque
+      data:
+        - objectName: username
+          key: username
+		    - objectName: password
+		      key: password
+  parameters:
+    roleName: 'isite'
+    vaultAddress: 'http://vault.default:8200'
+    objects: |
+      - objectName: "password"
+        secretPath: "kv/data/isite/bdd"
+        secretKey: "password"
+      - objectName: "username"
+        secretPath: "kv/data/isite/bdd"
+        secretKey: "username"

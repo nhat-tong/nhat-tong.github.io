@@ -3,6 +3,106 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.nhat-tong.com/</loc>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/k8s/</loc>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/post/2021/11/k8s/create_local_cluster/</loc>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/k9s/</loc>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/kind/</loc>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/local-cluster/</loc>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/minikube/</loc>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/post/</loc>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/</loc>
+    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/vault/</loc>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/apiserver/</loc>
+    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/dns/</loc>
+    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/encryption/</loc>
+    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/etcd/</loc>
+    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/kubeconfig/</loc>
+    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/kubectl/</loc>
+    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/master/</loc>
+    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/network/</loc>
+    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/tls/</loc>
+    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/worker/</loc>
+    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.nhat-tong.com/tags/azure/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url>
@@ -14,21 +114,6 @@
   
   <url>
     <loc>https://blog.nhat-tong.com/tags/expressroute/</loc>
-    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.nhat-tong.com/</loc>
-    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.nhat-tong.com/post/</loc>
-    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.nhat-tong.com/tags/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url>
   

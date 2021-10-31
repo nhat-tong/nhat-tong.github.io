@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vault on Home</title>
+    <link>https://blog.nhat-tong.com/tags/vault/</link>
+    <description>Recent content in vault on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
+    <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/vault/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vault on Kubernetes</title>
+      <link></link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Authentication Methods  Userpass AppRole: enable the communication between a machine and Vault Kubernetes  vault auth enable kubernetes configure k8s auth (KUBERNETES_HOST from kubectl cluster-info)  vault write auth/kubernetes/config \ kubernetes_host=&amp;#34;https://$KUBERNETES_HOST:443&amp;#34; \ token_reviewer_jwt=&amp;#34;$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)&amp;#34; \ kubernetes_ca_cert=@/var/run/secrets/kubernetes.io/serviceaccount/ca.crt  create policy allowing read secret at the path:  vault policy write isite-reader - &amp;lt;&amp;lt;EOF path &amp;#34;kv/data/isite/*&amp;#34; { capabilities=[&amp;#34;read&amp;#34;,&amp;#34;list&amp;#34;] } EOF vault policy write isite-writer - &amp;lt;&amp;lt;EOF path &amp;#34;kv/data/isite/*&amp;#34; { capabilities=[&amp;#34;read&amp;#34;,&amp;#34;list&amp;#34;,&amp;#34;create&amp;#34;,&amp;#34;update&amp;#34;,&amp;#34;delete&amp;#34;] } EOF  Create k8s auth role:  vault write auth/kubernetes/role/isite \ bound_service_account_names=default \ bound_service_account_namespaces=isite \ policies=isite-reader \ ttl=24h  Create yaml  apiVersion: v1   kind: Pod metadata: name: payroll namespace: demo labels: app: payroll annotations: vault.</description>
+    </item>
+    
+    <item>
+      <title>Vault on Kubernetes</title>
+      <link></link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vault on Kubernetes</title>
+      <link></link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Vault definition Install Vault  dev mode  vault server -dev storage in memory unseal automatically   stadalone mode ha mode  backend integrated: Raft   vault on k8s cluster  vault auto-unseal </description>
+    </item>
+    
+    <item>
+      <title>Vault on Kubernetes</title>
+      <link></link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Policies  By default, two policies are created:  default root: root policy can do anything within Vault (used with root token) custom policy (admin)  tee payload.json &amp;lt;&amp;lt;EOF   { &amp;ldquo;policy&amp;rdquo;: &amp;ldquo;# Manage auth methods broadly across Vault\npath &amp;quot;auth/&amp;quot;\n{\n capabilities = [&amp;quot;create&amp;quot;, &amp;quot;read&amp;quot;, &amp;quot;update&amp;quot;, &amp;quot;delete&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;sudo&amp;quot;]\n}\n\n# Create, update, and delete auth methods\npath &amp;quot;sys/auth/&amp;quot;\n{\n capabilities = [&amp;quot;create&amp;quot;, &amp;quot;update&amp;quot;, &amp;quot;delete&amp;quot;, &amp;quot;sudo&amp;quot;]\n}\n\n# List auth methods\npath &amp;quot;sys/auth&amp;quot;\n{\n capabilities = [&amp;quot;read&amp;quot;]\n}\n\n# List existing policies\npath &amp;quot;sys/policies/acl&amp;quot;\n{\n capabilities = [&amp;quot;list&amp;quot;]\n}\n\n# Create and manage ACL policies \npath &amp;quot;sys/policies/acl/&amp;quot;\n{\n capabilities = [&amp;quot;create&amp;quot;, &amp;quot;read&amp;quot;, &amp;quot;update&amp;quot;, &amp;quot;delete&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;sudo&amp;quot;]\n}\n\n# List, create, update, and delete key/value secrets\npath &amp;quot;secret/&amp;quot;\n{\n capabilities = [&amp;quot;create&amp;quot;, &amp;quot;read&amp;quot;, &amp;quot;update&amp;quot;, &amp;quot;delete&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;sudo&amp;quot;]\n}\n\n# Manage secrets engines\npath &amp;quot;sys/mounts/*&amp;quot;\n{\n capabilities = [&amp;quot;create&amp;quot;, &amp;quot;read&amp;quot;, &amp;quot;update&amp;quot;, &amp;quot;delete&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;sudo&amp;quot;]\n}\n\n# List existing secrets engines.</description>
+    </item>
+    
+    <item>
+      <title>Vault on Kubernetes</title>
+      <link></link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Secret Engines  Key/Value (kv):  kv (v1) is enabled by default kv (v2) is recommended (added /data in the path) command:  vault secrets list -detailed required policies  path &amp;#34;secret*&amp;#34; { capabilities = [ &amp;#34;create&amp;#34;, &amp;#34;read&amp;#34;, &amp;#34;update&amp;#34;, &amp;#34;delete&amp;#34;, &amp;#34;list&amp;#34; ] }# To enable secrets engines path &amp;#34;sys/mounts/*&amp;#34; { capabilities = [ &amp;#34;create&amp;#34;, &amp;#34;read&amp;#34;, &amp;#34;update&amp;#34;, &amp;#34;delete&amp;#34; ] }  enable kv v2 at /secret:  curl -H &amp;#34;X-Vault-Token: $VAULT_TOKEN&amp;#34; -X POST -d &amp;#39;{ &amp;#34;type&amp;#34;: &amp;#34;kv-v2&amp;#34; }&amp;#39; $VAULT_ADDR/v1/sys/mounts/secret curl -H &amp;#34;X-Vault-Token: $VAULT_TOKEN&amp;#34; -X GET $VAULT_ADDR/v1/sys/mounts | jq  put a new secret:  tee payload.</description>
+    </item>
+    
+    <item>
+      <title>Vault on Kubernetes</title>
+      <link></link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vault on Kubernetes</title>
+      <link></link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Service tokens       Batch tokens </description>
+    </item>
+    
+  </channel>
+</rss>

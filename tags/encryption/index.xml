@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>encryption on Home</title>
+    <link>https://blog.nhat-tong.com/tags/encryption/</link>
+    <description>Recent content in encryption on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/encryption/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Generate an encryption key and include it in a Kubernetes data encrytion config file  Generate encrytion config file  ENCRYPTION_KEY=$(head -c 32 /dev/urandom | base64) cat &amp;gt; encryption-config.yaml &amp;lt;&amp;lt; EOF kind: EncryptionConfig apiVersion: v1 resources: - resources: - secrets providers: - aescbc: keys: - name: key1 secret: ${ENCRYPTION_KEY} - identity: {} EOF  Copy the encrytion config file to the control plane nodes  scp encryption-config.yaml cloud_user@3.218.241.163:~/ scp encryption-config.yaml cloud_user@44.</description>
+    </item>
+    
+  </channel>
+</rss>

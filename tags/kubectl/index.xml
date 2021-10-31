@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kubectl on Home</title>
+    <link>https://blog.nhat-tong.com/tags/kubectl/</link>
+    <description>Recent content in kubectl on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/kubectl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Set the kubectl cluster data KUBERNETES_PUBLIC_ADDRESS=3.81.31.12 kubectl config set-cluster kubernetes-the-hard-way \ --certificate-authority=ca.pem \ --embed-certs=true \ --server=https://${KUBERNETES_PUBLIC_ADDRESS}:6443 Set the credentials for kubectl kubectl config set-credentials admin \ --client-certificate=admin.pem \ --client-key=admin-key.pem Set the context for the cluster kubectl config set-context kubernetes-the-hard-way \ --cluster=kubernetes-the-hard-way \ --user=admin Use the new context created kubectl config use-context kubernetes-the-hard-way </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+  namespace: isite
+  labels:
+    app: demo
+spec:
+  selector:
+    matchLabels:
+      app: demo
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+      labels:
+        app: demo
+    spec:
+      containers:
+        - name: app
+          image: my-app:1.0.0
+          env:
+            - name: USER_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: vault-db-creds-secret
+                  key: username
+            - name: PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: vault-db-creds-secret
+                  key: password
+          volumeMounts:
+            - name: 'vault-db-creds'
+              mountPath: '/mnt/secrets-store'
+              readOnly: true
+      volumes:
+        - name: vault-db-creds
+          csi:
+            driver: 'secrets-store.csi.k8s.io'
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: 'vault-db-creds'

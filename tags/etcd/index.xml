@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>etcd on Home</title>
+    <link>https://blog.nhat-tong.com/tags/etcd/</link>
+    <description>Recent content in etcd on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/etcd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Download and install etcd binary on each controlplane node wget -q --show-progress --https-only --timestamping \ &amp;#34;https://github.com/coreos/etcd/releases/download/v3.3.5/etcd-v3.3.5-linux-amd64.tar.gz&amp;#34; tar -xvf etcd-v3.3.5-linux-amd64.tar.gz sudo mv etcd-v3.3.5-linux-amd64/etcd* /usr/local/bin/ Create etcd directories sudo mkdir -p /etc/etcd /var/lib/etcd sudo cp ca.pem kubernetes-key.pem kubernetes.pem /etc/etcd/ Set env variables ETCD_NAME=controller-0 INTERNAL_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4) CONTROLLER_0_INTERNAL_IP=10.0.1.251 CONTROLLER_1_INTERNAL_IP=10.0.1.178 ETCD_NAME=controller-1 INTERNAL_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4) CONTROLLER_0_INTERNAL_IP=10.0.1.251 CONTROLLER_1_INTERNAL_IP=10.0.1.178 Create etcd systemd unit file cat &amp;lt;&amp;lt; EOF | sudo tee /etc/systemd/system/etcd.service [Unit] Description=etcd Documentation=https://github.com/coreos [Service] ExecStart=/usr/local/bin/etcd \\ --name ${ETCD_NAME} \\ --cert-file=/etc/etcd/kubernetes.</description>
+    </item>
+    
+  </channel>
+</rss>

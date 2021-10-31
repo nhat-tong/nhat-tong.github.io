@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>network on Home</title>
+    <link>https://blog.nhat-tong.com/tags/network/</link>
+    <description>Recent content in network on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Enable IP forwarding on all worker nodes sudo sysctl net.ipv4.conf.all.forwarding=1 echo &amp;#34;net.ipv4.conf.all.forwarding=1&amp;#34; | sudo tee -a /etc/sysctl.conf Install Weave Net in the cluster (on the controller server) kubectl apply -f &amp;#34;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d &amp;#39;\n&amp;#39;)&amp;amp;env.IPALLOC_RANGE=10.200.0.0/16&amp;#34; kubectl get pods -n kube-system Test networking  Create a deployment  cat &amp;lt;&amp;lt; EOF | kubectl apply --kubeconfig admin.kubeconfig -f - apiVersion: apps/v1 kind: Deployment metadata: name: nginx spec: selector: matchLabels: run: nginx replicas: 2 template: metadata: labels: run: nginx spec: containers: - name: my-nginx image: nginx ports: - containerPort: 80 EOF  Create a service on top of this deployment  kubectl expose deployment/nginx   Verify that the networking is working</description>
+    </item>
+    
+  </channel>
+</rss>

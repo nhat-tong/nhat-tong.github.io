@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>k8s on Home</title>
+    <link>https://blog.nhat-tong.com/tags/k8s/</link>
+    <description>Recent content in k8s on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
+    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8s-Create a local cluster</title>
+      <link>https://blog.nhat-tong.com/post/2021/11/k8s/create_local_cluster/</link>
+      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2021/11/k8s/create_local_cluster/</guid>
+      <description>&lt;p&gt;In this article, we will walk through how provisioning a local Kubernetes cluster (single node or multiple nodes).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://d33wubrfki0l68.cloudfront.net/79bdd6c59934dec77bf525514c2416f547407720/a470d/docs/images/diagram.png&#34; alt=&#34;kind architecture&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The next part will guide you to provision a Kubernetes cluster on cloud (Azure or GCP).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vault on Kubernetes</title>
+      <link></link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Authentication Methods  Userpass AppRole: enable the communication between a machine and Vault Kubernetes  vault auth enable kubernetes configure k8s auth (KUBERNETES_HOST from kubectl cluster-info)  vault write auth/kubernetes/config \ kubernetes_host=&amp;#34;https://$KUBERNETES_HOST:443&amp;#34; \ token_reviewer_jwt=&amp;#34;$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)&amp;#34; \ kubernetes_ca_cert=@/var/run/secrets/kubernetes.io/serviceaccount/ca.crt  create policy allowing read secret at the path:  vault policy write isite-reader - &amp;lt;&amp;lt;EOF path &amp;#34;kv/data/isite/*&amp;#34; { capabilities=[&amp;#34;read&amp;#34;,&amp;#34;list&amp;#34;] } EOF vault policy write isite-writer - &amp;lt;&amp;lt;EOF path &amp;#34;kv/data/isite/*&amp;#34; { capabilities=[&amp;#34;read&amp;#34;,&amp;#34;list&amp;#34;,&amp;#34;create&amp;#34;,&amp;#34;update&amp;#34;,&amp;#34;delete&amp;#34;] } EOF  Create k8s auth role:  vault write auth/kubernetes/role/isite \ bound_service_account_names=default \ bound_service_account_namespaces=isite \ policies=isite-reader \ ttl=24h  Create yaml  apiVersion: v1   kind: Pod metadata: name: payroll namespace: demo labels: app: payroll annotations: vault.</description>
+    </item>
+    
+    <item>
+      <title>Vault on Kubernetes</title>
+      <link></link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vault on Kubernetes</title>
+      <link></link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Vault definition Install Vault  dev mode  vault server -dev storage in memory unseal automatically   stadalone mode ha mode  backend integrated: Raft   vault on k8s cluster  vault auto-unseal </description>
+    </item>
+    
+    <item>
+      <title>Vault on Kubernetes</title>
+      <link></link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Policies  By default, two policies are created:  default root: root policy can do anything within Vault (used with root token) custom policy (admin)  tee payload.json &amp;lt;&amp;lt;EOF   { &amp;ldquo;policy&amp;rdquo;: &amp;ldquo;# Manage auth methods broadly across Vault\npath &amp;quot;auth/&amp;quot;\n{\n capabilities = [&amp;quot;create&amp;quot;, &amp;quot;read&amp;quot;, &amp;quot;update&amp;quot;, &amp;quot;delete&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;sudo&amp;quot;]\n}\n\n# Create, update, and delete auth methods\npath &amp;quot;sys/auth/&amp;quot;\n{\n capabilities = [&amp;quot;create&amp;quot;, &amp;quot;update&amp;quot;, &amp;quot;delete&amp;quot;, &amp;quot;sudo&amp;quot;]\n}\n\n# List auth methods\npath &amp;quot;sys/auth&amp;quot;\n{\n capabilities = [&amp;quot;read&amp;quot;]\n}\n\n# List existing policies\npath &amp;quot;sys/policies/acl&amp;quot;\n{\n capabilities = [&amp;quot;list&amp;quot;]\n}\n\n# Create and manage ACL policies \npath &amp;quot;sys/policies/acl/&amp;quot;\n{\n capabilities = [&amp;quot;create&amp;quot;, &amp;quot;read&amp;quot;, &amp;quot;update&amp;quot;, &amp;quot;delete&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;sudo&amp;quot;]\n}\n\n# List, create, update, and delete key/value secrets\npath &amp;quot;secret/&amp;quot;\n{\n capabilities = [&amp;quot;create&amp;quot;, &amp;quot;read&amp;quot;, &amp;quot;update&amp;quot;, &amp;quot;delete&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;sudo&amp;quot;]\n}\n\n# Manage secrets engines\npath &amp;quot;sys/mounts/*&amp;quot;\n{\n capabilities = [&amp;quot;create&amp;quot;, &amp;quot;read&amp;quot;, &amp;quot;update&amp;quot;, &amp;quot;delete&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;sudo&amp;quot;]\n}\n\n# List existing secrets engines.</description>
+    </item>
+    
+    <item>
+      <title>Vault on Kubernetes</title>
+      <link></link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Secret Engines  Key/Value (kv):  kv (v1) is enabled by default kv (v2) is recommended (added /data in the path) command:  vault secrets list -detailed required policies  path &amp;#34;secret*&amp;#34; { capabilities = [ &amp;#34;create&amp;#34;, &amp;#34;read&amp;#34;, &amp;#34;update&amp;#34;, &amp;#34;delete&amp;#34;, &amp;#34;list&amp;#34; ] }# To enable secrets engines path &amp;#34;sys/mounts/*&amp;#34; { capabilities = [ &amp;#34;create&amp;#34;, &amp;#34;read&amp;#34;, &amp;#34;update&amp;#34;, &amp;#34;delete&amp;#34; ] }  enable kv v2 at /secret:  curl -H &amp;#34;X-Vault-Token: $VAULT_TOKEN&amp;#34; -X POST -d &amp;#39;{ &amp;#34;type&amp;#34;: &amp;#34;kv-v2&amp;#34; }&amp;#39; $VAULT_ADDR/v1/sys/mounts/secret curl -H &amp;#34;X-Vault-Token: $VAULT_TOKEN&amp;#34; -X GET $VAULT_ADDR/v1/sys/mounts | jq  put a new secret:  tee payload.</description>
+    </item>
+    
+    <item>
+      <title>Vault on Kubernetes</title>
+      <link></link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vault on Kubernetes</title>
+      <link></link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Service tokens       Batch tokens </description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>1. Provision CA Certificate Authority { cat &amp;gt; ca-config.json &amp;lt;&amp;lt; EOF { &amp;#34;signing&amp;#34;: { &amp;#34;default&amp;#34;: { &amp;#34;expiry&amp;#34;: &amp;#34;8760h&amp;#34; }, &amp;#34;profiles&amp;#34;: { &amp;#34;kubernetes&amp;#34;: { &amp;#34;usages&amp;#34;: [&amp;#34;signing&amp;#34;, &amp;#34;key encipherment&amp;#34;, &amp;#34;server auth&amp;#34;, &amp;#34;client auth&amp;#34;], &amp;#34;expiry&amp;#34;: &amp;#34;8760h&amp;#34; } } } } EOF cat &amp;gt; ca-csr.json &amp;lt;&amp;lt; EOF { &amp;#34;CN&amp;#34;: &amp;#34;Kubernetes&amp;#34;, &amp;#34;key&amp;#34;: { &amp;#34;algo&amp;#34;: &amp;#34;rsa&amp;#34;, &amp;#34;size&amp;#34;: 2048 }, &amp;#34;names&amp;#34;: [ { &amp;#34;C&amp;#34;: &amp;#34;FR&amp;#34;, &amp;#34;L&amp;#34;: &amp;#34;Paris&amp;#34;, &amp;#34;O&amp;#34;: &amp;#34;Kubernetes&amp;#34;, &amp;#34;OU&amp;#34;: &amp;#34;CA&amp;#34;, &amp;#34;ST&amp;#34;: &amp;#34;IDF&amp;#34; } ] } EOF cfssl gencert -initca ca-csr.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>kubeconfig for kubelet (one for each worker node) KUBERNETES_PUBLIC_ADDRESS=172.34.2.0 for instance in worker0.mylabserver.com worker1.mylabserver.com; do kubectl config set-cluster kubernetes-the-hard-way \ --certificate-authority=ca.pem \ --embed-certs=true \ --server=https://${KUBERNETES_PUBLIC_ADDRESS}:6443 \ --kubeconfig=${instance}.kubeconfig kubectl config set-credentials system:node:${instance} \ --client-certificate=${instance}.pem \ --client-key=${instance}-key.pem \ --embed-certs=true \ --kubeconfig=${instance}.kubeconfig kubectl config set-context default \ --cluster=kubernetes-the-hard-way \ --user=system:node:${instance} \ --kubeconfig=${instance}.kubeconfig kubectl config use-context default --kubeconfig=${instance}.kubeconfig done kubeconfig for kube-proxy KUBERNETES_PUBLIC_ADDRESS=172.34.2.0 { kubectl config set-cluster kubernetes-the-hard-way \ --certificate-authority=ca.pem \ --embed-certs=true \ --server=https://${KUBERNETES_PUBLIC_ADDRESS}:6443 \ --kubeconfig=kube-proxy.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Generate an encryption key and include it in a Kubernetes data encrytion config file  Generate encrytion config file  ENCRYPTION_KEY=$(head -c 32 /dev/urandom | base64) cat &amp;gt; encryption-config.yaml &amp;lt;&amp;lt; EOF kind: EncryptionConfig apiVersion: v1 resources: - resources: - secrets providers: - aescbc: keys: - name: key1 secret: ${ENCRYPTION_KEY} - identity: {} EOF  Copy the encrytion config file to the control plane nodes  scp encryption-config.yaml cloud_user@3.218.241.163:~/ scp encryption-config.yaml cloud_user@44.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Download and install etcd binary on each controlplane node wget -q --show-progress --https-only --timestamping \ &amp;#34;https://github.com/coreos/etcd/releases/download/v3.3.5/etcd-v3.3.5-linux-amd64.tar.gz&amp;#34; tar -xvf etcd-v3.3.5-linux-amd64.tar.gz sudo mv etcd-v3.3.5-linux-amd64/etcd* /usr/local/bin/ Create etcd directories sudo mkdir -p /etc/etcd /var/lib/etcd sudo cp ca.pem kubernetes-key.pem kubernetes.pem /etc/etcd/ Set env variables ETCD_NAME=controller-0 INTERNAL_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4) CONTROLLER_0_INTERNAL_IP=10.0.1.251 CONTROLLER_1_INTERNAL_IP=10.0.1.178 ETCD_NAME=controller-1 INTERNAL_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4) CONTROLLER_0_INTERNAL_IP=10.0.1.251 CONTROLLER_1_INTERNAL_IP=10.0.1.178 Create etcd systemd unit file cat &amp;lt;&amp;lt; EOF | sudo tee /etc/systemd/system/etcd.service [Unit] Description=etcd Documentation=https://github.com/coreos [Service] ExecStart=/usr/local/bin/etcd \\ --name ${ETCD_NAME} \\ --cert-file=/etc/etcd/kubernetes.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Download and install binaries (kube-apiserver, kube-controller-manager, kube-scheduler, kubectl) sudo mkdir -p /etc/kubernetes/config wget -q --show-progress --https-only --timestamping \ &amp;#34;https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kube-apiserver&amp;#34; \ &amp;#34;https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kube-controller-manager&amp;#34; \ &amp;#34;https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kube-scheduler&amp;#34; \ &amp;#34;https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kubectl&amp;#34; chmod +x kube-apiserver kube-controller-manager kube-scheduler kubectl sudo mv kube-apiserver kube-controller-manager kube-scheduler kubectl /usr/local/bin/ Configure kube-api-server service  Copy ca and tls certificates  sudo mkdir -p /var/lib/kubernetes/ sudo cp ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem \ service-account-key.pem service-account.pem \ encryption-config.yaml /var/lib/kubernetes/ INTERNAL_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)  Set env variables  ETCD_SERVER_0=10.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Install nginx on the load balancer server sudo apt-get install -y nginx sudo systemctl enable nginx Configure Nginx to balance Kubernetes API traffic across the two controllers  Create custom nginx directory for tcp  sudo mkdir -p /etc/nginx/tcpconf.d sudo vi /etc/nginx/nginx.conf include /etc/nginx/tcpconf.d/*;  Create custom nginx config  cat &amp;lt;&amp;lt; EOF | sudo tee /etc/nginx/tcpconf.d/kubernetes.conf stream { upstream kubernetes { server 10.0.1.233:6443; server 10.0.1.52:6443; } server { listen 6443; listen 443; proxy_pass kubernetes; } } EOF sudo nginx -s reload  Verify that is is working fine  curl -k https://localhost:6443/version </description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Install the required packages sudo apt-get -y install socat conntrack ipset Download and install required binaries (cri, runc, cni, kubectl, kube-proxy, kubelet) wget -q --show-progress --https-only --timestamping \ https://github.com/kubernetes-incubator/cri-tools/releases/download/v1.0.0-beta.0/crictl-v1.0.0-beta.0-linux-amd64.tar.gz \ https://storage.googleapis.com/kubernetes-the-hard-way/runsc \ https://github.com/opencontainers/runc/releases/download/v1.0.0-rc5/runc.amd64 \ https://github.com/containernetworking/plugins/releases/download/v0.6.0/cni-plugins-amd64-v0.6.0.tgz \ https://github.com/containerd/containerd/releases/download/v1.1.0/containerd-1.1.0.linux-amd64.tar.gz \ https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kubectl \ https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kube-proxy \ https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kubelet sudo mkdir -p \ /etc/cni/net.d \ /opt/cni/bin \ /var/lib/kubelet \ /var/lib/kube-proxy \ /var/lib/kubernetes \ /var/run/kubernetes chmod +x kubectl kube-proxy kubelet runc.amd64 runsc sudo mv runc.amd64 runc sudo mv kubectl kube-proxy kubelet runc runsc /usr/local/bin/ sudo tar -xvf crictl-v1.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Set the kubectl cluster data KUBERNETES_PUBLIC_ADDRESS=3.81.31.12 kubectl config set-cluster kubernetes-the-hard-way \ --certificate-authority=ca.pem \ --embed-certs=true \ --server=https://${KUBERNETES_PUBLIC_ADDRESS}:6443 Set the credentials for kubectl kubectl config set-credentials admin \ --client-certificate=admin.pem \ --client-key=admin-key.pem Set the context for the cluster kubectl config set-context kubernetes-the-hard-way \ --cluster=kubernetes-the-hard-way \ --user=admin Use the new context created kubectl config use-context kubernetes-the-hard-way </description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Enable IP forwarding on all worker nodes sudo sysctl net.ipv4.conf.all.forwarding=1 echo &amp;#34;net.ipv4.conf.all.forwarding=1&amp;#34; | sudo tee -a /etc/sysctl.conf Install Weave Net in the cluster (on the controller server) kubectl apply -f &amp;#34;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d &amp;#39;\n&amp;#39;)&amp;amp;env.IPALLOC_RANGE=10.200.0.0/16&amp;#34; kubectl get pods -n kube-system Test networking  Create a deployment  cat &amp;lt;&amp;lt; EOF | kubectl apply --kubeconfig admin.kubeconfig -f - apiVersion: apps/v1 kind: Deployment metadata: name: nginx spec: selector: matchLabels: run: nginx replicas: 2 template: metadata: labels: run: nginx spec: containers: - name: my-nginx image: nginx ports: - containerPort: 80 EOF  Create a service on top of this deployment  kubectl expose deployment/nginx   Verify that the networking is working</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Deploy kube-dns to the cluster (on the controller server) kubectl create -f https://storage.googleapis.com/kubernetes-the-hard-way/kube-dns.yaml kubectl get pods -l k8s-app=kube-dns -n kube-system Test dns resolution kubectl run nginx --image=nginx kubectl expose deployment nginx --port 80 kubectl run busybox --image=radial/busyboxplus:curl --command -- sleep 3600 POD_NAME=$(kubectl get pods -l run=busybox -o jsonpath=&amp;#34;{.items[0].metadata.name}&amp;#34;) kubectl exec $POD_NAME -- curl nginx kubectl exec $POD_NAME -- nslookup nginx </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kubeconfig on Home</title>
+    <link>https://blog.nhat-tong.com/tags/kubeconfig/</link>
+    <description>Recent content in kubeconfig on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/kubeconfig/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>kubeconfig for kubelet (one for each worker node) KUBERNETES_PUBLIC_ADDRESS=172.34.2.0 for instance in worker0.mylabserver.com worker1.mylabserver.com; do kubectl config set-cluster kubernetes-the-hard-way \ --certificate-authority=ca.pem \ --embed-certs=true \ --server=https://${KUBERNETES_PUBLIC_ADDRESS}:6443 \ --kubeconfig=${instance}.kubeconfig kubectl config set-credentials system:node:${instance} \ --client-certificate=${instance}.pem \ --client-key=${instance}-key.pem \ --embed-certs=true \ --kubeconfig=${instance}.kubeconfig kubectl config set-context default \ --cluster=kubernetes-the-hard-way \ --user=system:node:${instance} \ --kubeconfig=${instance}.kubeconfig kubectl config use-context default --kubeconfig=${instance}.kubeconfig done kubeconfig for kube-proxy KUBERNETES_PUBLIC_ADDRESS=172.34.2.0 { kubectl config set-cluster kubernetes-the-hard-way \ --certificate-authority=ca.pem \ --embed-certs=true \ --server=https://${KUBERNETES_PUBLIC_ADDRESS}:6443 \ --kubeconfig=kube-proxy.</description>
+    </item>
+    
+  </channel>
+</rss>

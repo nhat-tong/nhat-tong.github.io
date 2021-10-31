@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8s-Create a local cluster</title>
+      <link>https://blog.nhat-tong.com/post/2021/11/k8s/create_local_cluster/</link>
+      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2021/11/k8s/create_local_cluster/</guid>
+      <description>&lt;p&gt;In this article, we will walk through how provisioning a local Kubernetes cluster (single node or multiple nodes).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://d33wubrfki0l68.cloudfront.net/79bdd6c59934dec77bf525514c2416f547407720/a470d/docs/images/diagram.png&#34; alt=&#34;kind architecture&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The next part will guide you to provision a Kubernetes cluster on cloud (Azure or GCP).&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Azure-Connect on-premises networks to Azure using VPN gateways (part 3)</title>
       <link>https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn-ha/</link>

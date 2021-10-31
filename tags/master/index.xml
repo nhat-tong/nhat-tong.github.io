@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>master on Home</title>
+    <link>https://blog.nhat-tong.com/tags/master/</link>
+    <description>Recent content in master on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/master/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Download and install binaries (kube-apiserver, kube-controller-manager, kube-scheduler, kubectl) sudo mkdir -p /etc/kubernetes/config wget -q --show-progress --https-only --timestamping \ &amp;#34;https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kube-apiserver&amp;#34; \ &amp;#34;https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kube-controller-manager&amp;#34; \ &amp;#34;https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kube-scheduler&amp;#34; \ &amp;#34;https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kubectl&amp;#34; chmod +x kube-apiserver kube-controller-manager kube-scheduler kubectl sudo mv kube-apiserver kube-controller-manager kube-scheduler kubectl /usr/local/bin/ Configure kube-api-server service  Copy ca and tls certificates  sudo mkdir -p /var/lib/kubernetes/ sudo cp ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem \ service-account-key.pem service-account.pem \ encryption-config.yaml /var/lib/kubernetes/ INTERNAL_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)  Set env variables  ETCD_SERVER_0=10.</description>
+    </item>
+    
+  </channel>
+</rss>

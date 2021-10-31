@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>apiserver on Home</title>
+    <link>https://blog.nhat-tong.com/tags/apiserver/</link>
+    <description>Recent content in apiserver on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/apiserver/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Install nginx on the load balancer server sudo apt-get install -y nginx sudo systemctl enable nginx Configure Nginx to balance Kubernetes API traffic across the two controllers  Create custom nginx directory for tcp  sudo mkdir -p /etc/nginx/tcpconf.d sudo vi /etc/nginx/nginx.conf include /etc/nginx/tcpconf.d/*;  Create custom nginx config  cat &amp;lt;&amp;lt; EOF | sudo tee /etc/nginx/tcpconf.d/kubernetes.conf stream { upstream kubernetes { server 10.0.1.233:6443; server 10.0.1.52:6443; } server { listen 6443; listen 443; proxy_pass kubernetes; } } EOF sudo nginx -s reload  Verify that is is working fine  curl -k https://localhost:6443/version </description>
+    </item>
+    
+  </channel>
+</rss>

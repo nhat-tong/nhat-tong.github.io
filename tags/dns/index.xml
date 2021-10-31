@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dns on Home</title>
+    <link>https://blog.nhat-tong.com/tags/dns/</link>
+    <description>Recent content in dns on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes</title>
+      <link></link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Deploy kube-dns to the cluster (on the controller server) kubectl create -f https://storage.googleapis.com/kubernetes-the-hard-way/kube-dns.yaml kubectl get pods -l k8s-app=kube-dns -n kube-system Test dns resolution kubectl run nginx --image=nginx kubectl expose deployment nginx --port 80 kubectl run busybox --image=radial/busyboxplus:curl --command -- sleep 3600 POD_NAME=$(kubectl get pods -l run=busybox -o jsonpath=&amp;#34;{.items[0].metadata.name}&amp;#34;) kubectl exec $POD_NAME -- curl nginx kubectl exec $POD_NAME -- nslookup nginx </description>
+    </item>
+    
+  </channel>
+</rss>
