@@ -14,7 +14,7 @@
       <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/post/2023/11/remotedev/connect_private_vm_part2/</guid>
-      <description>&lt;p&gt;In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.&lt;/p&gt;
+      <description>&lt;p&gt;In this part, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../images/gcp_iap_vscode.png&#34; alt=&#34;IAP via VSCode&#34;&gt;&lt;/p&gt;</description>
     </item>
     

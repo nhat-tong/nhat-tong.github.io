@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Connect to private virtual machine without public IP (part 2) - Home</title>
-  <meta name="description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
+  <meta name="description" content="In this part, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
 ">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
@@ -58,7 +58,7 @@
     "name" : "Nhat Tong"
   },
   "headline": "Connect to private virtual machine without public IP (part 2)",
-  "description" : "In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.\n",
+  "description" : "In this part, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.\n",
   "inLanguage" : "en",
   "wordCount":  404 ,
   "datePublished" : "2023-11-05T00:00:00",
@@ -80,14 +80,14 @@
 </script>
 
 <meta property="og:title" content="Connect to private virtual machine without public IP (part 2)" />
-<meta property="og:description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
+<meta property="og:description" content="In this part, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
 ">
 <meta property="og:url" content="https://blog.nhat-tong.com/post/2023/11/remotedev/connect_private_vm_part2/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
   <meta name="twitter:title" content="Connect to private virtual machine without public IP (part 2)" />
-  <meta name="twitter:description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
+  <meta name="twitter:description" content="In this part, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
 ">
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.79.0" />
@@ -252,7 +252,7 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.</p>
+        <p>In this part, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.</p>
 <p><img src="../images/gcp_iap_vscode.png" alt="IAP via VSCode"></p>
 <h1 id="google-cloud-platform">Google Cloud Platform</h1>
 <h2 id="prerequisites-">Prerequisites :</h2>
@@ -277,8 +277,7 @@ gcloud config set proxy/type http
 gcloud config set proxy/address [PROXY_IP]
 gcloud config set proxy/port [PROXY_PORT]
 </code></pre></div><ul>
-<li>Authenticate to GCP and connect to private instance through iap
-This command also generate a key pair named <em>google_compute_engine</em> if it doesn&rsquo;t exists and then add the public key to the private instance. The private key is stored in local.</li>
+<li>Authenticate to GCP and connect to private instance through iap. This command also generate a key pair named <em>google_compute_engine</em> if it doesn&rsquo;t exists and then add the public key to the private instance. The private key is stored in local.</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud auth login
 gcloud compute ssh [VM_NAME] --tunnel-through-iap
@@ -421,7 +420,7 @@ ssh-keygen -y -f ec2.pem &gt; ec2.pub
       
       <div>
         <meta property="og:title" content="Connect to private virtual machine without public IP (part 2)" />
-<meta property="og:description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
+<meta property="og:description" content="In this part, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.nhat-tong.com/post/2023/11/remotedev/connect_private_vm_part2/" />
