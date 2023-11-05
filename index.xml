@@ -7,23 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sat, 04 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Connect to private virtual machine without public IP (part 1)</title>
       <link>https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part1/</link>
-      <pubDate>Sat, 04 Nov 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part1/</guid>
-      <description>&lt;p&gt;In this article, we will explore the process of establishing a connection to a virtual machine situated within a private subnet without a public IP address. This method significantly enhances security by eliminating the need to expose the virtual machine to the open Internet.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In this article, we will explore the process of establishing a connection to a virtual machine situated within a private subnet without a public IP address. This method significantly enhances security by eliminating the need to expose the virtual machine to the open Internet.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://res.cloudinary.com/practicaldev/image/fetch/s--8ZdgSuAP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/20411077/165264406-14a840a7-af5b-47e1-a5fe-7b32018ae996.jpg&#34; alt=&#34;AWS SSM&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Connect to private virtual machine without public IP (part 2)</title>
       <link>https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part2/</link>
-      <pubDate>Sat, 04 Nov 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part2/</guid>
-      <description>&lt;p&gt;In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/gcp_iap_vscode.png&#34; alt=&#34;IAP via VSCode&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
