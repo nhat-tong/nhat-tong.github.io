@@ -8,8 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Connect to private virtual machine without public IP (part 2) - Home</title>
-  <meta name="description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
-Google Cloud Platform Prerequisites :  Install Google Cloud SDK  Attention: try to avoid spaces while choosing the folder location (for ex: &ldquo;Cloud-SDK&rdquo; instead of &ldquo;Cloud SDK&rdquo;)   Install Remote-SSH extension for Visual Studio Code   Steps  Setup gcloud by running the following command from your Visual Studio Code&rsquo;s terminal:  gcloud config set project [PROJECT_ID] gcloud config set compute/region [REGION] gcloud config set compute/zone [ZONE_NAME] # Optional: if the network is behind a proxy gcloud config set proxy/type http gcloud config set proxy/address [PROXY_IP] gcloud config set proxy/port [PROXY_PORT]  Authenticate to GCP and connect to private instance through iap This command also generate a key pair named google_compute_engine if it doesn&rsquo;t exists and then add the public key to the private instance.">
+  <meta name="description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,11 +57,11 @@ Google Cloud Platform Prerequisites :  Install Google Cloud SDK  Attention: try 
     "name" : "Nhat Tong"
   },
   "headline": "Connect to private virtual machine without public IP (part 2)",
-  "description" : "In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.\nGoogle Cloud Platform Prerequisites :  Install Google Cloud SDK  Attention: try to avoid spaces while choosing the folder location (for ex: \u0026ldquo;Cloud-SDK\u0026rdquo; instead of \u0026ldquo;Cloud SDK\u0026rdquo;)   Install Remote-SSH extension for Visual Studio Code   Steps  Setup gcloud by running the following command from your Visual Studio Code\u0026rsquo;s terminal:  gcloud config set project [PROJECT_ID] gcloud config set compute\/region [REGION] gcloud config set compute\/zone [ZONE_NAME] # Optional: if the network is behind a proxy gcloud config set proxy\/type http gcloud config set proxy\/address [PROXY_IP] gcloud config set proxy\/port [PROXY_PORT]  Authenticate to GCP and connect to private instance through iap This command also generate a key pair named google_compute_engine if it doesn\u0026rsquo;t exists and then add the public key to the private instance.",
+  "description" : "In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.\n",
   "inLanguage" : "en",
   "wordCount":  404 ,
-  "datePublished" : "2023-11-05T00:00:00",
-  "dateModified" : "2023-11-05T00:00:00",
+  "datePublished" : "2023-11-04T00:00:00",
+  "dateModified" : "2023-11-04T00:00:00",
   "image" : "https:\/\/blog.nhat-tong.com",
   "keywords" : [ "iap, ssm, vscode" ],
   "mainEntityOfPage" : "https:\/\/blog.nhat-tong.com\/post\/2023\/11\/compute_engine\/connect_private_vm_part2\/",
@@ -80,15 +79,13 @@ Google Cloud Platform Prerequisites :  Install Google Cloud SDK  Attention: try 
 </script>
 
 <meta property="og:title" content="Connect to private virtual machine without public IP (part 2)" />
-<meta property="og:description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
-Google Cloud Platform Prerequisites :  Install Google Cloud SDK  Attention: try to avoid spaces while choosing the folder location (for ex: &ldquo;Cloud-SDK&rdquo; instead of &ldquo;Cloud SDK&rdquo;)   Install Remote-SSH extension for Visual Studio Code   Steps  Setup gcloud by running the following command from your Visual Studio Code&rsquo;s terminal:  gcloud config set project [PROJECT_ID] gcloud config set compute/region [REGION] gcloud config set compute/zone [ZONE_NAME] # Optional: if the network is behind a proxy gcloud config set proxy/type http gcloud config set proxy/address [PROXY_IP] gcloud config set proxy/port [PROXY_PORT]  Authenticate to GCP and connect to private instance through iap This command also generate a key pair named google_compute_engine if it doesn&rsquo;t exists and then add the public key to the private instance.">
+<meta property="og:description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.">
 <meta property="og:url" content="https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part2/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
   <meta name="twitter:title" content="Connect to private virtual machine without public IP (part 2)" />
-  <meta name="twitter:description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
-Google Cloud Platform Prerequisites :  Install Google Cloud SDK …">
+  <meta name="twitter:description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.">
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.79.0" />
   <link rel="alternate" href="https://blog.nhat-tong.com/index.xml" type="application/rss+xml" title="Home"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
@@ -225,7 +222,7 @@ Google Cloud Platform Prerequisites :  Install Google Cloud SDK …">
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;November 5, 2023
+  <i class="fas fa-calendar"></i>&nbsp;November 4, 2023
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
@@ -339,7 +336,6 @@ ssh-keygen -y -f ec2.pem &gt; ec2.pub
 <h1 id="azure">Azure</h1>
 <p>Not available in Azure</p>
 
-
         
           <div class="blog-tags">
             
@@ -419,12 +415,11 @@ ssh-keygen -y -f ec2.pem &gt; ec2.pub
       
       <div>
         <meta property="og:title" content="Connect to private virtual machine without public IP (part 2)" />
-<meta property="og:description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
-Google Cloud Platform Prerequisites :  Install Google Cloud SDK  Attention: try to avoid spaces while choosing the folder location (for ex: &ldquo;Cloud-SDK&rdquo; instead of &ldquo;Cloud SDK&rdquo;)   Install Remote-SSH extension for Visual Studio Code   Steps  Setup gcloud by running the following command from your Visual Studio Code&rsquo;s terminal:  gcloud config set project [PROJECT_ID] gcloud config set compute/region [REGION] gcloud config set compute/zone [ZONE_NAME] # Optional: if the network is behind a proxy gcloud config set proxy/type http gcloud config set proxy/address [PROXY_IP] gcloud config set proxy/port [PROXY_PORT]  Authenticate to GCP and connect to private instance through iap This command also generate a key pair named google_compute_engine if it doesn&rsquo;t exists and then add the public key to the private instance." />
+<meta property="og:description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part2/" />
-<meta property="article:published_time" content="2023-11-05T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-11-05T00:00:00+00:00" />
+<meta property="article:published_time" content="2023-11-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-11-04T00:00:00+00:00" />
 
       </div>
     </div>

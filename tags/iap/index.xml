@@ -7,25 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sun, 05 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/iap/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/iap/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Connect to private virtual machine without public IP (part 1)</title>
       <link>https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part1/</link>
-      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 Nov 2023 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part1/</guid>
-      <description>In this article, we will explore the process of establishing a connection to a virtual machine situated within a private subnet without a public IP address. This method significantly enhances security by eliminating the need to expose the virtual machine to the open Internet.
-Google Cloud Platform Google Cloud offers a feature known as Identity-Aware Proxy or IAP which enable us to access Compute Engine instances without the need for public IP address.</description>
+      <description>&lt;p&gt;In this article, we will explore the process of establishing a connection to a virtual machine situated within a private subnet without a public IP address. This method significantly enhances security by eliminating the need to expose the virtual machine to the open Internet.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Connect to private virtual machine without public IP (part 2)</title>
       <link>https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part2/</link>
-      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 Nov 2023 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part2/</guid>
-      <description>In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
-Google Cloud Platform Prerequisites :  Install Google Cloud SDK  Attention: try to avoid spaces while choosing the folder location (for ex: &amp;ldquo;Cloud-SDK&amp;rdquo; instead of &amp;ldquo;Cloud SDK&amp;rdquo;)   Install Remote-SSH extension for Visual Studio Code   Steps  Setup gcloud by running the following command from your Visual Studio Code&amp;rsquo;s terminal:  gcloud config set project [PROJECT_ID] gcloud config set compute/region [REGION] gcloud config set compute/zone [ZONE_NAME] # Optional: if the network is behind a proxy gcloud config set proxy/type http gcloud config set proxy/address [PROXY_IP] gcloud config set proxy/port [PROXY_PORT]  Authenticate to GCP and connect to private instance through iap This command also generate a key pair named google_compute_engine if it doesn&amp;rsquo;t exists and then add the public key to the private instance.</description>
+      <description>&lt;p&gt;In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.&lt;/p&gt;</description>
     </item>
     
   </channel>
