@@ -7,13 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>K8s-Create a cloud cluster with CI/CD pipeline - Home</title>
-  <meta name="description" content="In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI/CD pipeline (Azure DevOps Pipeline and Github Action).
-On the first project, we deploy our cluster to AKS through Azure DevOps pipeline.
-
-On the second project, we will use Github action as our CI/CD and we will create a GKE cluster.
-
-The choice of tool is indicatif. You can choose which one which is the best fit for your case/business.">
+  <title>Connect to private virtual machine without public IP (part 1) - Home</title>
+  <meta name="description" content="In this article, we will explore the process of establishing a connection to a virtual machine situated within a private subnet without a public IP address. This method significantly enhances security by eliminating the need to expose the virtual machine to the open Internet.
+">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -49,8 +45,8 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/blog.nhat-tong.com\/post\/2021\/12\/k8s\/cloud_cluster\/",
-          "name": "K8s create a cloud cluster with c i\/ c d pipeline"
+          "@id": "https:\/\/blog.nhat-tong.com\/post\/2023\/11\/remotedev\/connect_private_vm_part1\/",
+          "name": "Connect to private virtual machine without public i p (part 1)"
         }
     }]
 }
@@ -61,15 +57,15 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
   "author": {
     "name" : "Nhat Tong"
   },
-  "headline": "K8s-Create a cloud cluster with CI\/CD pipeline",
-  "description" : "In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI\/CD pipeline (Azure DevOps Pipeline and Github Action).\nOn the first project, we deploy our cluster to AKS through Azure DevOps pipeline.\nOn the second project, we will use Github action as our CI\/CD and we will create a GKE cluster. The choice of tool is indicatif. You can choose which one which is the best fit for your case\/business.\n",
+  "headline": "Connect to private virtual machine without public IP (part 1)",
+  "description" : "In this article, we will explore the process of establishing a connection to a virtual machine situated within a private subnet without a public IP address. This method significantly enhances security by eliminating the need to expose the virtual machine to the open Internet.\n",
   "inLanguage" : "en",
-  "wordCount":  343 ,
-  "datePublished" : "2021-12-01T00:00:00",
-  "dateModified" : "2021-12-01T00:00:00",
+  "wordCount":  362 ,
+  "datePublished" : "2023-11-05T00:00:00",
+  "dateModified" : "2023-11-05T00:00:00",
   "image" : "https:\/\/blog.nhat-tong.com",
-  "keywords" : [ "terraform, azure devops, github action, k8s, aks, gke" ],
-  "mainEntityOfPage" : "https:\/\/blog.nhat-tong.com\/post\/2021\/12\/k8s\/cloud_cluster\/",
+  "keywords" : [ "iap, ssm, remotedev" ],
+  "mainEntityOfPage" : "https:\/\/blog.nhat-tong.com\/post\/2023\/11\/remotedev\/connect_private_vm_part1\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/blog.nhat-tong.com",
@@ -83,19 +79,15 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
 }
 </script>
 
-<meta property="og:title" content="K8s-Create a cloud cluster with CI/CD pipeline" />
-<meta property="og:description" content="In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI/CD pipeline (Azure DevOps Pipeline and Github Action).
-On the first project, we deploy our cluster to AKS through Azure DevOps pipeline.
-
-On the second project, we will use Github action as our CI/CD and we will create a GKE cluster.
-
-The choice of tool is indicatif. You can choose which one which is the best fit for your case/business.">
-<meta property="og:url" content="https://blog.nhat-tong.com/post/2021/12/k8s/cloud_cluster/" />
+<meta property="og:title" content="Connect to private virtual machine without public IP (part 1)" />
+<meta property="og:description" content="In this article, we will explore the process of establishing a connection to a virtual machine situated within a private subnet without a public IP address. This method significantly enhances security by eliminating the need to expose the virtual machine to the open Internet.
+">
+<meta property="og:url" content="https://blog.nhat-tong.com/post/2023/11/remotedev/connect_private_vm_part1/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
-  <meta name="twitter:title" content="K8s-Create a cloud cluster with CI/CD pipeline" />
-  <meta name="twitter:description" content="In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI/CD pipeline (Azure DevOps Pipeline and …">
+  <meta name="twitter:title" content="Connect to private virtual machine without public IP (part 1)" />
+  <meta name="twitter:description" content="In this article, we will explore the process of establishing a connection to a virtual machine situated within a private subnet without a public IP address. This method significantly enhances security …">
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.79.0" />
   <link rel="alternate" href="https://blog.nhat-tong.com/index.xml" type="application/rss+xml" title="Home"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
@@ -224,7 +216,7 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>K8s-Create a cloud cluster with CI/CD pipeline</h1>
+                <h1>Connect to private virtual machine without public IP (part 1)</h1>
               
               
               
@@ -232,13 +224,13 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;December 1, 2021
+  <i class="fas fa-calendar"></i>&nbsp;November 5, 2023
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;343&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;362&nbsp;words
   
   
   
@@ -259,77 +251,96 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI/CD pipeline (Azure DevOps Pipeline and Github Action).</p>
-<p>On the first project, we deploy our cluster to AKS through Azure DevOps pipeline.</p>
-<p><img src="../images/first_project.png" alt="first project"></p>
-<p>On the second project, we will use Github action as our CI/CD and we will create a GKE cluster.
-<img src="../images/second_project.png" alt="second project"></p>
-<p>The choice of tool is indicatif. You can choose which one which is the best fit for your case/business.</p>
-<h2 id="first-project">First project</h2>
-<p>In this project, we will create a AKS cluster using Terraform and deploy it through Azure DevOps pipeline.</p>
-<h2 id="code-terraform">Code Terraform</h2>
-<p>The example is available here: <a href="https://github.com/nhat-tong/k8s-terraform/tree/master/k8s/cloud_cluster/azure" target="_blank">deploy aks cluster using terraform</a></p>
-<p>We need to tell Terraform which credential and which subscription your resources will be deployed to by declare them into provider block:</p>
-<script type="application/javascript" src="https://gist.github.com/nhat-tong/c797021d26da76b6df0bb75fb04438c4.js"></script>
-
-<p>If you want to store terraform state on a remote backend which is recommended, you also need to tell to Terraform which credentials and which backend to work with:</p>
-<script type="application/javascript" src="https://gist.github.com/nhat-tong/77c4aba6656b86dee5412005b06efb97.js"></script>
-
-<p>Our credentials will be given at runtime through Azure DevOps pipeline.</p>
-<h2 id="azuredevops-pipeline">AzureDevOps pipeline</h2>
-<p>If you don&rsquo;t have an account on Azure DevOps, create one by this link: <a href="https://azure.microsoft.com/en-us/services/devops/pipelines/">https://azure.microsoft.com/en-us/services/devops/pipelines/</a>. You can use up to 10 free parallel jobs for your projects.</p>
-<p>The pipeline yaml look like this:</p>
-<script type="application/javascript" src="https://gist.github.com/nhat-tong/9576a97fbe80bc3b9a76baaf9fbb7387.js"></script>
-
-<p>It will:</p>
+        <p>In this article, we will explore the process of establishing a connection to a virtual machine situated within a private subnet without a public IP address. This method significantly enhances security by eliminating the need to expose the virtual machine to the open Internet.</p>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8ZdgSuAP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/20411077/165264406-14a840a7-af5b-47e1-a5fe-7b32018ae996.jpg" alt="AWS SSM"></p>
+<h1 id="google-cloud-platform">Google Cloud Platform</h1>
+<p>Google Cloud offers a feature known as <em>Identity-Aware Proxy</em> or <em>IAP</em> which enable us to access Compute Engine instances without the need for public IP address.</p>
+<h2 id="architecture">Architecture</h2>
+<p><img src="https://cloud.google.com/iap/images/iap-load-balancer.png" alt="GCP IAP"></p>
+<h2 id="steps">Steps</h2>
 <ul>
-<li>install terraform</li>
-<li>connect terraform to backend via terraform init</li>
-<li>show infrastructure changes via terraform plan</li>
-<li>apply theses changes via terraform apply</li>
+<li>Create a private compute engine</li>
 </ul>
-<p>On AzureDevOps, we need to configure two secure files (from Azure DevOps pipeline):</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud compute instances create private-instance \
+  --network=NETWORK_NAME \
+  --subnet=SUBNET_NAME \
+  --zone=ZONE_NAME \
+  --no-address
+</code></pre></div><ul>
+<li>Give the necessary permissions to the user in order to use IAP
 <ul>
-<li>secret.tfvars
-<ul>
-<li>This file contains the following parameters:
-<ul>
-<li>client_id = [YOUR_CLIENT_ID]</li>
-<li>client_secret = [YOUR_CLIENT_SECRET]</li>
-<li>subscription_id = [YOUR_SUB_ID]</li>
-<li>tenant_id = [YOUR_TENANT_ID]</li>
+<li>IAP-Secured Tunnel User (roles/iap.tunnelResourceAccessor)</li>
 </ul>
 </li>
-<li>This file will be passed to Terraform using &ldquo;Partial Configuration&rdquo;. With this in place, we can secure our access to Azure.</li>
+<li>Ensure that VPC&rsquo;s firewall accepting IAP connection from the IP range 35.235.240.0/20</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud compute firewall-rules create allow-ssh-ingress-from-iap \
+  --network=NETWORK_NAME \
+  --direction=INGRESS \
+  --action=allow \
+  --rules=tcp:22 \
+  --source-ranges=35.235.240.0/20
+</code></pre></div><ul>
+<li>Connect to private compute engine through IAP
+<img src="../images/gcp_iap_console.png" alt="IAP via Console"></li>
+</ul>
+<h1 id="amazon-web-services">Amazon Web Services</h1>
+<p>Session Manager, a feature of AWS Systems Manager (SSM), provides a secure and convenient way to access EC2 instances without relying on a public IP address.</p>
+<h2 id="architecture-1">Architecture</h2>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--8ZdgSuAP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/20411077/165264406-14a840a7-af5b-47e1-a5fe-7b32018ae996.jpg" alt="AWS SSM"></p>
+<h2 id="steps-1">Steps</h2>
+<ul>
+<li>Create an EC2 instance in a private subnet with an instance profile allowing to use SSM
+<img src="../images/aws_ec2_instance_role.png" alt="EC2 IAM Role"></li>
+<li>Create 3 interfaces endpoints in the VPC
+<ul>
+<li>com.amazonaws.REGION.ssm</li>
+<li>com.amazonaws.REGION.ssmmessages</li>
+<li>com.amazonaws.REGION.ec2messages
+<img src="../images/aws_vpc_interface_endpoint.png" alt="SSM Endpoints"></li>
 </ul>
 </li>
-<li>sshpubkey: public ssh key to connect to our worker nodes</li>
+<li>Ensure that the security group attached to EC2 instance accepting the traffic on port 443 within the VPC</li>
+<li>Connect to private EC2 through Session Manager
+<img src="../images/aws_ec2_ssm_connect.png" alt="SSM Connect"></li>
 </ul>
-<p><img src="../images/azdevops_secure_files.png" alt="second project"></p>
-<p>So far, so good. Now, we can run our pipeline to create our AKS cluster.</p>
-<h2 id="second-project">Second project</h2>
-<h2 id="code-terraform-1">Code Terraform</h2>
-<p>The example is available here: <a href="https://github.com/nhat-tong/k8s-terraform/tree/master/k8s/cloud_cluster/gcp" target="_blank">deploy gke cluster using terraform</a></p>
-<h2 id="github-action">Github Action</h2>
-<h2 id="create-a-pipeline-on-github">Create a pipeline on Github</h2>
-<p>The pipeline look like this:
-<script type="application/javascript" src="https://gist.github.com/nhat-tong/4ecb15984b96beb220e1310a5657c2c6.js"></script>
-</p>
+<h1 id="azure">Azure</h1>
+<p>Azure Bastion is a service offered by Microsft Azure that provides secure and streamlined remote access to virtual machines within an Azure Virtual Network. It eliminates the need for a public IP address or a VPN connection to access the virtual machines.</p>
+<h2 id="architecture-2">Architecture</h2>
+<p><img src="https://learn.microsoft.com/en-us/azure/bastion/media/create-host/host-architecture.png" alt="Azure Bastion"></p>
+<h2 id="steps-2">Steps</h2>
+<ul>
+<li>Create a private vm without public IP</li>
+<li>Configure Azure Bastion
+<ul>
+<li>Azure Bastion will be deployed into a dedicated subnet called &ldquo;AzureBastionSubnet&rdquo;</li>
+<li>The pricing is available <a href="https://azure.microsoft.com/en-us/pricing/details/azure-bastion/">here</a></li>
+<li>A new SKU (<a href="https://azure.microsoft.com/en-us/blog/introducing-azure-bastion-developer-secure-and-cost-effective-access-to-your-azure-virtual-machines/">Azure Bastion Developer</a>) is recently released. This SKU is ideal for Dev/Test (lightweight, lower-cost).
+<img src="../images/azure_bastion_developer.png" alt="Azure Bastion Developer"></li>
+</ul>
+</li>
+<li>Connect to private vm through Azure Bastion
+<ul>
+<li>From Azure Portal, choose the suitable authentication method and then click the Connect button
+<img src="../images/azure_bastion_developer_connect.png" alt=""></li>
+<li>Private Virtual Machine is connected through Azure Bastion. No public IP or inbound rule is required
+<img src="../images/azure_bastion_developer_vm.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h1 id="reference">Reference:</h1>
+<ul>
+<li><a href="https://dev.to/entest/setup-vscode-ssh-remote-to-a-private-ec2-instance-via-ssm-dm7">Setup vscode ssh remote to a private EC2 instance via ssm</a></li>
+</ul>
 
         
           <div class="blog-tags">
             
-              <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
+              <a href="https://blog.nhat-tong.com/tags/iap/">iap</a>&nbsp;
             
-              <a href="https://blog.nhat-tong.com/tags/azure-devops/">azure devops</a>&nbsp;
+              <a href="https://blog.nhat-tong.com/tags/ssm/">ssm</a>&nbsp;
             
-              <a href="https://blog.nhat-tong.com/tags/github-action/">github action</a>&nbsp;
-            
-              <a href="https://blog.nhat-tong.com/tags/k8s/">k8s</a>&nbsp;
-            
-              <a href="https://blog.nhat-tong.com/tags/aks/">aks</a>&nbsp;
-            
-              <a href="https://blog.nhat-tong.com/tags/gke/">gke</a>&nbsp;
+              <a href="https://blog.nhat-tong.com/tags/remotedev/">remotedev</a>&nbsp;
             
           </div>
         
@@ -346,15 +357,7 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
                   <ul>
                 
                 
-                    <li><a href="/post/2021/11/k8s/create_local_cluster/">K8s-Create a local cluster</a></li>
-                
-                    <li><a href="/post/2021/04/azure/site-to-site-vpn-ha/">Azure-Connect on-premises networks to Azure using VPN gateways (part 3)</a></li>
-                
-                    <li><a href="/post/2021/04/azure/site-to-site-vpn/">Azure-Connect on-premises networks to Azure using VPN gateways (part 2)</a></li>
-                
-                    <li><a href="/post/2021/04/azure/point-to-site-vpn/">Azure-Connect on-premises networks to Azure using VPN gateways (part 1)</a></li>
-                
-                    <li><a href="/post/2021/02/gcp/iam-breakdown/">GCP-IAM (Identity and Access Management)</a></li>
+                    <li><a href="/post/2023/11/remotedev/connect_private_vm_part2/">Connect to private virtual machine without public IP (part 2)</a></li>
                 
               </ul>
 
@@ -366,13 +369,9 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://blog.nhat-tong.com/post/2021/11/k8s/create_local_cluster/" data-toggle="tooltip" data-placement="top" title="K8s-Create a local cluster">&larr; Previous Post</a>
+              <a href="https://blog.nhat-tong.com/post/2023/11/remotedev/connect_private_vm_part2/" data-toggle="tooltip" data-placement="top" title="Connect to private virtual machine without public IP (part 2)">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://blog.nhat-tong.com/post/2023/11/remotedev/connect_private_vm_part2/" data-toggle="tooltip" data-placement="top" title="Connect to private virtual machine without public IP (part 2)">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
@@ -408,17 +407,13 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
         
       
       <div>
-        <meta property="og:title" content="K8s-Create a cloud cluster with CI/CD pipeline" />
-<meta property="og:description" content="In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI/CD pipeline (Azure DevOps Pipeline and Github Action).
-On the first project, we deploy our cluster to AKS through Azure DevOps pipeline.
-
-On the second project, we will use Github action as our CI/CD and we will create a GKE cluster.
-
-The choice of tool is indicatif. You can choose which one which is the best fit for your case/business." />
+        <meta property="og:title" content="Connect to private virtual machine without public IP (part 1)" />
+<meta property="og:description" content="In this article, we will explore the process of establishing a connection to a virtual machine situated within a private subnet without a public IP address. This method significantly enhances security by eliminating the need to expose the virtual machine to the open Internet.
+" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.nhat-tong.com/post/2021/12/k8s/cloud_cluster/" />
-<meta property="article:published_time" content="2021-12-01T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-12-01T00:00:00+00:00" />
+<meta property="og:url" content="https://blog.nhat-tong.com/post/2023/11/remotedev/connect_private_vm_part1/" />
+<meta property="article:published_time" content="2023-11-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-11-05T00:00:00+00:00" />
 
       </div>
     </div>

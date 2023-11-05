@@ -7,13 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>K8s-Create a cloud cluster with CI/CD pipeline - Home</title>
-  <meta name="description" content="In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI/CD pipeline (Azure DevOps Pipeline and Github Action).
-On the first project, we deploy our cluster to AKS through Azure DevOps pipeline.
-
-On the second project, we will use Github action as our CI/CD and we will create a GKE cluster.
-
-The choice of tool is indicatif. You can choose which one which is the best fit for your case/business.">
+  <title>Connect to private virtual machine without public IP (part 2) - Home</title>
+  <meta name="description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
+">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -49,8 +45,8 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/blog.nhat-tong.com\/post\/2021\/12\/k8s\/cloud_cluster\/",
-          "name": "K8s create a cloud cluster with c i\/ c d pipeline"
+          "@id": "https:\/\/blog.nhat-tong.com\/post\/2023\/11\/remotedev\/connect_private_vm_part2\/",
+          "name": "Connect to private virtual machine without public i p (part 2)"
         }
     }]
 }
@@ -61,15 +57,15 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
   "author": {
     "name" : "Nhat Tong"
   },
-  "headline": "K8s-Create a cloud cluster with CI\/CD pipeline",
-  "description" : "In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI\/CD pipeline (Azure DevOps Pipeline and Github Action).\nOn the first project, we deploy our cluster to AKS through Azure DevOps pipeline.\nOn the second project, we will use Github action as our CI\/CD and we will create a GKE cluster. The choice of tool is indicatif. You can choose which one which is the best fit for your case\/business.\n",
+  "headline": "Connect to private virtual machine without public IP (part 2)",
+  "description" : "In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.\n",
   "inLanguage" : "en",
-  "wordCount":  343 ,
-  "datePublished" : "2021-12-01T00:00:00",
-  "dateModified" : "2021-12-01T00:00:00",
+  "wordCount":  404 ,
+  "datePublished" : "2023-11-05T00:00:00",
+  "dateModified" : "2023-11-05T00:00:00",
   "image" : "https:\/\/blog.nhat-tong.com",
-  "keywords" : [ "terraform, azure devops, github action, k8s, aks, gke" ],
-  "mainEntityOfPage" : "https:\/\/blog.nhat-tong.com\/post\/2021\/12\/k8s\/cloud_cluster\/",
+  "keywords" : [ "iap, ssm, remotedev, vscode" ],
+  "mainEntityOfPage" : "https:\/\/blog.nhat-tong.com\/post\/2023\/11\/remotedev\/connect_private_vm_part2\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/blog.nhat-tong.com",
@@ -83,19 +79,16 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
 }
 </script>
 
-<meta property="og:title" content="K8s-Create a cloud cluster with CI/CD pipeline" />
-<meta property="og:description" content="In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI/CD pipeline (Azure DevOps Pipeline and Github Action).
-On the first project, we deploy our cluster to AKS through Azure DevOps pipeline.
-
-On the second project, we will use Github action as our CI/CD and we will create a GKE cluster.
-
-The choice of tool is indicatif. You can choose which one which is the best fit for your case/business.">
-<meta property="og:url" content="https://blog.nhat-tong.com/post/2021/12/k8s/cloud_cluster/" />
+<meta property="og:title" content="Connect to private virtual machine without public IP (part 2)" />
+<meta property="og:description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
+">
+<meta property="og:url" content="https://blog.nhat-tong.com/post/2023/11/remotedev/connect_private_vm_part2/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
-  <meta name="twitter:title" content="K8s-Create a cloud cluster with CI/CD pipeline" />
-  <meta name="twitter:description" content="In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI/CD pipeline (Azure DevOps Pipeline and …">
+  <meta name="twitter:title" content="Connect to private virtual machine without public IP (part 2)" />
+  <meta name="twitter:description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
+">
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.79.0" />
   <link rel="alternate" href="https://blog.nhat-tong.com/index.xml" type="application/rss+xml" title="Home"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
@@ -224,7 +217,7 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>K8s-Create a cloud cluster with CI/CD pipeline</h1>
+                <h1>Connect to private virtual machine without public IP (part 2)</h1>
               
               
               
@@ -232,13 +225,13 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;December 1, 2021
+  <i class="fas fa-calendar"></i>&nbsp;November 5, 2023
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;343&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;404&nbsp;words
   
   
   
@@ -259,77 +252,104 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI/CD pipeline (Azure DevOps Pipeline and Github Action).</p>
-<p>On the first project, we deploy our cluster to AKS through Azure DevOps pipeline.</p>
-<p><img src="../images/first_project.png" alt="first project"></p>
-<p>On the second project, we will use Github action as our CI/CD and we will create a GKE cluster.
-<img src="../images/second_project.png" alt="second project"></p>
-<p>The choice of tool is indicatif. You can choose which one which is the best fit for your case/business.</p>
-<h2 id="first-project">First project</h2>
-<p>In this project, we will create a AKS cluster using Terraform and deploy it through Azure DevOps pipeline.</p>
-<h2 id="code-terraform">Code Terraform</h2>
-<p>The example is available here: <a href="https://github.com/nhat-tong/k8s-terraform/tree/master/k8s/cloud_cluster/azure" target="_blank">deploy aks cluster using terraform</a></p>
-<p>We need to tell Terraform which credential and which subscription your resources will be deployed to by declare them into provider block:</p>
-<script type="application/javascript" src="https://gist.github.com/nhat-tong/c797021d26da76b6df0bb75fb04438c4.js"></script>
-
-<p>If you want to store terraform state on a remote backend which is recommended, you also need to tell to Terraform which credentials and which backend to work with:</p>
-<script type="application/javascript" src="https://gist.github.com/nhat-tong/77c4aba6656b86dee5412005b06efb97.js"></script>
-
-<p>Our credentials will be given at runtime through Azure DevOps pipeline.</p>
-<h2 id="azuredevops-pipeline">AzureDevOps pipeline</h2>
-<p>If you don&rsquo;t have an account on Azure DevOps, create one by this link: <a href="https://azure.microsoft.com/en-us/services/devops/pipelines/">https://azure.microsoft.com/en-us/services/devops/pipelines/</a>. You can use up to 10 free parallel jobs for your projects.</p>
-<p>The pipeline yaml look like this:</p>
-<script type="application/javascript" src="https://gist.github.com/nhat-tong/9576a97fbe80bc3b9a76baaf9fbb7387.js"></script>
-
-<p>It will:</p>
+        <p>In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.</p>
+<p><img src="../images/gcp_iap_vscode.png" alt="IAP via VSCode"></p>
+<h1 id="google-cloud-platform">Google Cloud Platform</h1>
+<h2 id="prerequisites-">Prerequisites :</h2>
 <ul>
-<li>install terraform</li>
-<li>connect terraform to backend via terraform init</li>
-<li>show infrastructure changes via terraform plan</li>
-<li>apply theses changes via terraform apply</li>
-</ul>
-<p>On AzureDevOps, we need to configure two secure files (from Azure DevOps pipeline):</p>
+<li>Install <a href="https://cloud.google.com/sdk/docs/install-sdk?hl=en#windows">Google Cloud SDK</a>
 <ul>
-<li>secret.tfvars
-<ul>
-<li>This file contains the following parameters:
-<ul>
-<li>client_id = [YOUR_CLIENT_ID]</li>
-<li>client_secret = [YOUR_CLIENT_SECRET]</li>
-<li>subscription_id = [YOUR_SUB_ID]</li>
-<li>tenant_id = [YOUR_TENANT_ID]</li>
+<li>Attention: try to avoid spaces while choosing the folder location (for ex: &ldquo;Cloud-SDK&rdquo; instead of &ldquo;Cloud SDK&rdquo;)</li>
 </ul>
 </li>
-<li>This file will be passed to Terraform using &ldquo;Partial Configuration&rdquo;. With this in place, we can secure our access to Azure.</li>
+<li>Install Remote-SSH extension for Visual Studio Code
+<img src="../images/vscode_remote_ssh_extension.png" alt="Remote-SSH extension"></li>
 </ul>
-</li>
-<li>sshpubkey: public ssh key to connect to our worker nodes</li>
+<h2 id="steps">Steps</h2>
+<ul>
+<li>Setup gcloud by running the following command from your Visual Studio Code&rsquo;s terminal:</li>
 </ul>
-<p><img src="../images/azdevops_secure_files.png" alt="second project"></p>
-<p>So far, so good. Now, we can run our pipeline to create our AKS cluster.</p>
-<h2 id="second-project">Second project</h2>
-<h2 id="code-terraform-1">Code Terraform</h2>
-<p>The example is available here: <a href="https://github.com/nhat-tong/k8s-terraform/tree/master/k8s/cloud_cluster/gcp" target="_blank">deploy gke cluster using terraform</a></p>
-<h2 id="github-action">Github Action</h2>
-<h2 id="create-a-pipeline-on-github">Create a pipeline on Github</h2>
-<p>The pipeline look like this:
-<script type="application/javascript" src="https://gist.github.com/nhat-tong/4ecb15984b96beb220e1310a5657c2c6.js"></script>
-</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud config set project [PROJECT_ID]
+gcloud config set compute/region [REGION]
+gcloud config set compute/zone [ZONE_NAME]
+# Optional: if the network is behind a proxy
+gcloud config set proxy/type http
+gcloud config set proxy/address [PROXY_IP]
+gcloud config set proxy/port [PROXY_PORT]
+</code></pre></div><ul>
+<li>Authenticate to GCP and connect to private instance through iap
+This command also generate a key pair named <em>google_compute_engine</em> if it doesn&rsquo;t exists and then add the public key to the private instance. The private key is stored in local.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud auth login
+gcloud compute ssh [VM_NAME] --tunnel-through-iap
+</code></pre></div><ul>
+<li>Generate ssh config for VSCode</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud compute ssh [VM_NAME] --tunnel-through-iap --dry-run
+</code></pre></div><ul>
+<li>Add new entry to ssh config and replace the following placeholders using output from the dry-run command above</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Host [VM_NAME]
+  HostName compute.XXXXXXXXXXXXX
+  IdentityFile C:\Users\[USER]\.ssh\google_compute_engine
+  ProxyCommand C:\Users\[USER]\AppData\Local\Programs\Python\Python311\python.exe -S C:\Users\[USER]\AppData\Local\Google\google-cloud-sdk\lib\gcloud.py compute start-iap-tunnel [VM_NAME] 22 --listen-on-stdin --project=[PROJECT_ID] --zone=[ZONE_NAME] --verbosity=warning
+  User [USER]
+</code></pre></div><pre><code>* [VM_NAME]: private instance name
+* HostName: the hostname provided by the dry-run command with format USER@HOSTNAME
+* [USER]: the user provided by the dry-run command with format USER@HOSTNAME
+* [PROJECT_ID]: gcp project id
+* [ZONE_NAME]: zone on which the vm is created
+</code></pre>
+<ul>
+<li>Connect to private instance using Remote-SSH extension from Visual Studio Code
+<img src="../images/gcp_iap_vscode.png" alt="IAP via VSCode"></li>
+</ul>
+<h1 id="amazon-web-services">Amazon Web Services</h1>
+<h2 id="prerequisites--1">Prerequisites :</h2>
+<ul>
+<li>Install <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">AWS CLI</a></li>
+<li>Install <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Session Manager plugin</a> for the AWS CLI</li>
+<li>Install Remote-SSH extension for Visual Studio Code
+<img src="../images/vscode_remote_ssh_extension.png" alt="Remote-SSH extension"></li>
+</ul>
+<h2 id="steps-1">Steps</h2>
+<ul>
+<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html">Authenticate to AWS</a> from VSCode&rsquo;s terminal</li>
+<li>Generate a ssh key pair for EC2 instance and then extract the public key from the private key</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">aws ec2 create-key-pair --key-name ec2 --key-type rsa --key-format pem --query &#34;KeyMaterial&#34; --output text &gt; ec2.pem
+chmod 400 ec2.pem
+ssh-keygen -y -f ec2.pem &gt; ec2.pub
+</code></pre></div><ul>
+<li>Connect to EC2 instance using Session Manager and then add public key <em>ec2.pub</em> to the instance at the location <em>/home/ec2-user/.ssh/authorized_keys</em>. Change the connected user to <em>ec2-user</em> if necessary:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo -i -u ec2-user
+</code></pre></div><ul>
+<li>Add new entry to ssh config</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Host ssm-private-ec2
+  IdentityFile C:\Users\[USER]\.ssh\ec2.pem
+  HostName [EC2_INSTANCE_ID]
+  User ec2-user
+  Port 22
+  ProxyCommand aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters portNumber=%p
+</code></pre></div><ul>
+<li>Connect to private EC2 using Remote-SSH extension from Visual Studio Code
+<img src="../images/aws_ec2_vscode.png" alt="Remote-SSH EC2 VSCode"></li>
+</ul>
+<h1 id="azure">Azure</h1>
+<p>Not available in Azure</p>
 
         
           <div class="blog-tags">
             
-              <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
+              <a href="https://blog.nhat-tong.com/tags/iap/">iap</a>&nbsp;
             
-              <a href="https://blog.nhat-tong.com/tags/azure-devops/">azure devops</a>&nbsp;
+              <a href="https://blog.nhat-tong.com/tags/ssm/">ssm</a>&nbsp;
             
-              <a href="https://blog.nhat-tong.com/tags/github-action/">github action</a>&nbsp;
+              <a href="https://blog.nhat-tong.com/tags/remotedev/">remotedev</a>&nbsp;
             
-              <a href="https://blog.nhat-tong.com/tags/k8s/">k8s</a>&nbsp;
-            
-              <a href="https://blog.nhat-tong.com/tags/aks/">aks</a>&nbsp;
-            
-              <a href="https://blog.nhat-tong.com/tags/gke/">gke</a>&nbsp;
+              <a href="https://blog.nhat-tong.com/tags/vscode/">vscode</a>&nbsp;
             
           </div>
         
@@ -346,15 +366,7 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
                   <ul>
                 
                 
-                    <li><a href="/post/2021/11/k8s/create_local_cluster/">K8s-Create a local cluster</a></li>
-                
-                    <li><a href="/post/2021/04/azure/site-to-site-vpn-ha/">Azure-Connect on-premises networks to Azure using VPN gateways (part 3)</a></li>
-                
-                    <li><a href="/post/2021/04/azure/site-to-site-vpn/">Azure-Connect on-premises networks to Azure using VPN gateways (part 2)</a></li>
-                
-                    <li><a href="/post/2021/04/azure/point-to-site-vpn/">Azure-Connect on-premises networks to Azure using VPN gateways (part 1)</a></li>
-                
-                    <li><a href="/post/2021/02/gcp/iam-breakdown/">GCP-IAM (Identity and Access Management)</a></li>
+                    <li><a href="/post/2023/11/remotedev/connect_private_vm_part1/">Connect to private virtual machine without public IP (part 1)</a></li>
                 
               </ul>
 
@@ -366,12 +378,12 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://blog.nhat-tong.com/post/2021/11/k8s/create_local_cluster/" data-toggle="tooltip" data-placement="top" title="K8s-Create a local cluster">&larr; Previous Post</a>
+              <a href="https://blog.nhat-tong.com/post/2021/12/k8s/cloud_cluster/" data-toggle="tooltip" data-placement="top" title="K8s-Create a cloud cluster with CI/CD pipeline">&larr; Previous Post</a>
             </li>
           
           
             <li class="next">
-              <a href="https://blog.nhat-tong.com/post/2023/11/remotedev/connect_private_vm_part2/" data-toggle="tooltip" data-placement="top" title="Connect to private virtual machine without public IP (part 2)">Next Post &rarr;</a>
+              <a href="https://blog.nhat-tong.com/post/2023/11/remotedev/connect_private_vm_part1/" data-toggle="tooltip" data-placement="top" title="Connect to private virtual machine without public IP (part 1)">Next Post &rarr;</a>
             </li>
           
         </ul>
@@ -408,17 +420,13 @@ The choice of tool is indicatif. You can choose which one which is the best fit 
         
       
       <div>
-        <meta property="og:title" content="K8s-Create a cloud cluster with CI/CD pipeline" />
-<meta property="og:description" content="In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI/CD pipeline (Azure DevOps Pipeline and Github Action).
-On the first project, we deploy our cluster to AKS through Azure DevOps pipeline.
-
-On the second project, we will use Github action as our CI/CD and we will create a GKE cluster.
-
-The choice of tool is indicatif. You can choose which one which is the best fit for your case/business." />
+        <meta property="og:title" content="Connect to private virtual machine without public IP (part 2)" />
+<meta property="og:description" content="In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
+" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.nhat-tong.com/post/2021/12/k8s/cloud_cluster/" />
-<meta property="article:published_time" content="2021-12-01T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-12-01T00:00:00+00:00" />
+<meta property="og:url" content="https://blog.nhat-tong.com/post/2023/11/remotedev/connect_private_vm_part2/" />
+<meta property="article:published_time" content="2023-11-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-11-05T00:00:00+00:00" />
 
       </div>
     </div>
