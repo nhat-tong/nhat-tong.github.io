@@ -7,11 +7,45 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Connect to private virtual machine without public IP (part 1)</title>
+      <link>https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part1/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part1/</guid>
+      <description>In this article, we will explore the process of establishing a connection to a virtual machine situated within a private subnet without a public IP address. This method significantly enhances security by eliminating the need to expose the virtual machine to the open Internet.
+Google Cloud Platform Google Cloud offers a feature known as Identity-Aware Proxy or IAP which enable us to access Compute Engine instances without the need for public IP address.</description>
+    </item>
+    
+    <item>
+      <title>Connect to private virtual machine without public IP (part 2)</title>
+      <link>https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part2/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part2/</guid>
+      <description>In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
+Google Cloud Platform Prerequisites :  Install Google Cloud SDK  Attention: try to avoid spaces while choosing the folder location (for ex: &amp;ldquo;Cloud-SDK&amp;rdquo; instead of &amp;ldquo;Cloud SDK&amp;rdquo;)   Install Remote-SSH extension for Visual Studio Code   Steps  Setup gcloud by running the following command from your Visual Studio Code&amp;rsquo;s terminal:  gcloud config set project [PROJECT_ID] gcloud config set compute/region [REGION] gcloud config set compute/zone [ZONE_NAME] # Optional: if the network is behind a proxy gcloud config set proxy/type http gcloud config set proxy/address [PROXY_IP] gcloud config set proxy/port [PROXY_PORT]  Authenticate to GCP and connect to private instance through iap This command also generate a key pair named google_compute_engine if it doesn&amp;rsquo;t exists and then add the public key to the private instance.</description>
+    </item>
+    
+    <item>
+      <title>K8s-Create a cloud cluster with CI/CD pipeline</title>
+      <link>https://blog.nhat-tong.com/post/2021/12/k8s/cloud_cluster/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2021/12/k8s/cloud_cluster/</guid>
+      <description>&lt;p&gt;In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI/CD pipeline (Azure DevOps Pipeline and Github Action).&lt;/p&gt;
+&lt;p&gt;On the first project, we deploy our cluster to AKS through Azure DevOps pipeline.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/first_project.png&#34; alt=&#34;first project&#34;&gt;&lt;/p&gt;
+&lt;p&gt;On the second project, we will use Github action as our CI/CD and we will create a GKE cluster.
+&lt;img src=&#34;../images/second_project.png&#34; alt=&#34;second project&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The choice of tool is indicatif. You can choose which one which is the best fit for your case/business.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>K8s-Create a local cluster</title>
       <link>https://blog.nhat-tong.com/post/2021/11/k8s/create_local_cluster/</link>
-      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/post/2021/11/k8s/create_local_cluster/</guid>
       <description>&lt;p&gt;In this article, we will walk through how provisioning a local Kubernetes cluster (single node or multiple nodes).&lt;/p&gt;
@@ -213,6 +247,24 @@ It&amp;rsquo;s quite tricky but I learned a lot from this exam 😊&lt;/p&gt;
 &lt;li&gt;Firewall&lt;/li&gt;
 &lt;li&gt;Route&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://blog.nhat-tong.com/post/2022/03/gcp/gcp-network/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2022/03/gcp/gcp-network/</guid>
+      <description>Cloud VPN  Securely connects your on-premises network to your GCP VPC network 99.9% SLA Site-to-site VPN Static routes/Dynamic routes IKEv1 and IKEv2  Static routes Dynamic routes Comparison of Interconnect options Comparison of Peering options </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://blog.nhat-tong.com/post/2022/04/azure/azure-storage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2022/04/azure/azure-storage/</guid>
+      <description></description>
     </item>
     
     <item>

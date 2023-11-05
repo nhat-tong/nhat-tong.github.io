@@ -7,16 +7,182 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitOps with ArgoCD</title>
+      <link></link>
+      <pubDate>Sat, 07 Oct 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Working with secret in Kubernetes</title>
+      <link></link>
+      <pubDate>Sat, 07 Oct 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>GitOps  BITNAMI SEALED SECRETS Mozilla SOPS  Non GitOps  KUBERNETES SECRETS STORE CSI DRIVER ArgoCD Vault Plugin  </description>
+    </item>
+    
+    <item>
+      <title>create cluster k8s-hard way</title>
+      <link></link>
+      <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Custom cluster</title>
+      <link></link>
+      <pubDate>Sat, 08 Jan 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>RAFT Architecture  multiple master nodes  multiple api server: load balancer multiple control planes: RAFT multiple etcd: same on control plane or dedicated machines    One master node and 2 worker nodes  kubeadm terraform ansible (or vagrant)  2 master nodes, 2 worker nodes and 1 load balancer openshift cluster </description>
+    </item>
+    
+    <item>
+      <title>K8s-Create a cloud cluster with CI/CD pipeline</title>
+      <link>https://blog.nhat-tong.com/post/2021/12/k8s/cloud_cluster/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2021/12/k8s/cloud_cluster/</guid>
+      <description>&lt;p&gt;In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI/CD pipeline (Azure DevOps Pipeline and Github Action).&lt;/p&gt;
+&lt;p&gt;On the first project, we deploy our cluster to AKS through Azure DevOps pipeline.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/first_project.png&#34; alt=&#34;first project&#34;&gt;&lt;/p&gt;
+&lt;p&gt;On the second project, we will use Github action as our CI/CD and we will create a GKE cluster.
+&lt;img src=&#34;../images/second_project.png&#34; alt=&#34;second project&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The choice of tool is indicatif. You can choose which one which is the best fit for your case/business.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Admission Control</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Argocd</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Installation RBAC Dift detection </description>
+    </item>
+    
+    <item>
+      <title>Authentication</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>  client-certs
+  bearer tokens
+  OIDC
+  </description>
+    </item>
+    
+    <item>
+      <title>Authorization</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>  clusterrole
+  clusterrolebinding
+  role
+  rolebinding
+  </description>
+    </item>
+    
+    <item>
+      <title>Backup</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Backup data using Velero </description>
+    </item>
+    
+    <item>
+      <title>Certificate</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Certificate with LetEncrypts </description>
+    </item>
+    
+    <item>
+      <title>develop k8s manifest</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Develop YAML files  YAML manifest files Helm chart Kustomize  </description>
+    </item>
+    
+    <item>
+      <title>Flux</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flux</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Install cert-manager helm repo add jetstack https://charts.jetstack.io helm repo update helm install cert-manager jetstack/cert-manager --namespace certmgr --version v1.6.0 --set installCRDs=true External Args: &amp;ndash;set &amp;lsquo;extraArgs={&amp;ndash;dns01-recursive-nameservers-only,&amp;ndash;dns01-recursive-nameservers=8.8.8.8:53,1.1.1.1:53}&amp;rsquo;
+Install cert-manager-webhook-ovh git clone https://github.com/baarde/cert-manager-webhook-ovh.git helm install cert-manager-webhook-ovh ./deploy/cert-manager-webhook-ovh --set groupName=[YOUR_GROUP_NAME] Yaml  issuer-staging.yaml  apiVersion: cert-manager.io/v1 kind: Issuer metadata: name: letsencrypt-staging spec: acme: server: https://acme-staging-v02.api.letsencrypt.org/directory email: [YOUR_EMAIL] privateKeySecretRef: name: acme-privatekey-staging solvers: - dns01: webhook: groupName: [YOUR_GROUP_NAME] solverName: ovh config: endpoint: ovh-eu applicationKey: [APPLICATION_KEY] applicationSecretRef: key: applicationSecret name: ovh-credentials consumerKey: [CONSUMER_KEY]  certificate-staging.</description>
+    </item>
+    
+    <item>
+      <title>Gitops</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>What is GitOps How it works </description>
+    </item>
+    
+    <item>
+      <title>Identity Provider</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Custom identity provider using KeyCloak Custom identity provider using Azure Active Directory </description>
+    </item>
+    
     <item>
       <title>K8s-Create a local cluster</title>
       <link>https://blog.nhat-tong.com/post/2021/11/k8s/create_local_cluster/</link>
-      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/post/2021/11/k8s/create_local_cluster/</guid>
       <description>&lt;p&gt;In this article, we will walk through how provisioning a local Kubernetes cluster (single node or multiple nodes).&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://d33wubrfki0l68.cloudfront.net/79bdd6c59934dec77bf525514c2416f547407720/a470d/docs/images/diagram.png&#34; alt=&#34;kind architecture&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The next part will guide you to provision a Kubernetes cluster on cloud (Azure or GCP).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Secret Management</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Encypt secret using seal secret Secret management using Hashicorp Vault </description>
     </item>
     
     <item>

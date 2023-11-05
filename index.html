@@ -192,6 +192,160 @@
           
           
             <article class="post-preview">
+    <a href="https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part1/">
+        <h2 class="post-title">Connect to private virtual machine without public IP (part 1)</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;November 5, 2023
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;350&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        In this article, we will explore the process of establishing a connection to a virtual machine situated within a private subnet without a public IP address. This method significantly enhances security by eliminating the need to expose the virtual machine to the open Internet.
+Google Cloud Platform Google Cloud offers a feature known as Identity-Aware Proxy or IAP which enable us to access Compute Engine instances without the need for public IP address.
+        <a href="https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part1/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.nhat-tong.com/tags/iap/">iap</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/ssm/">ssm</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/private/">private</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part2/">
+        <h2 class="post-title">Connect to private virtual machine without public IP (part 2)</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;November 5, 2023
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;404&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        In this article, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.
+Google Cloud Platform Prerequisites :  Install Google Cloud SDK  Attention: try to avoid spaces while choosing the folder location (for ex: &ldquo;Cloud-SDK&rdquo; instead of &ldquo;Cloud SDK&rdquo;)   Install Remote-SSH extension for Visual Studio Code   Steps  Setup gcloud by running the following command from your Visual Studio Code&rsquo;s terminal:  gcloud config set project [PROJECT_ID] gcloud config set compute/region [REGION] gcloud config set compute/zone [ZONE_NAME] # Optional: if the network is behind a proxy gcloud config set proxy/type http gcloud config set proxy/address [PROXY_IP] gcloud config set proxy/port [PROXY_PORT]  Authenticate to GCP and connect to private instance through iap This command also generate a key pair named google_compute_engine if it doesn&rsquo;t exists and then add the public key to the private instance.
+        <a href="https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part2/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.nhat-tong.com/tags/iap/">iap</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/ssm/">ssm</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/vscode/">vscode</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://blog.nhat-tong.com/post/2021/12/k8s/cloud_cluster/">
+        <h2 class="post-title">K8s-Create a cloud cluster with CI/CD pipeline</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;December 1, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;343&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI/CD pipeline (Azure DevOps Pipeline and Github Action).</p>
+<p>On the first project, we deploy our cluster to AKS through Azure DevOps pipeline.</p>
+<p><img src="../images/first_project.png" alt="first project"></p>
+<p>On the second project, we will use Github action as our CI/CD and we will create a GKE cluster.
+<img src="../images/second_project.png" alt="second project"></p>
+<p>The choice of tool is indicatif. You can choose which one which is the best fit for your case/business.</p>
+        <a href="https://blog.nhat-tong.com/post/2021/12/k8s/cloud_cluster/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/azure-devops/">azure devops</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/github-action/">github action</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/k8s/">k8s</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/aks/">aks</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/gke/">gke</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://blog.nhat-tong.com/post/2021/11/k8s/create_local_cluster/">
         <h2 class="post-title">K8s-Create a local cluster</h2>
         
@@ -203,7 +357,7 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;October 31, 2021
+  <i class="fas fa-calendar"></i>&nbsp;November 1, 2021
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
@@ -231,7 +385,7 @@
         
         <a href="https://blog.nhat-tong.com/tags/k8s/">k8s</a>&nbsp;
         
-        <a href="https://blog.nhat-tong.com/tags/local-cluster/">local cluster</a>&nbsp;
+        <a href="https://blog.nhat-tong.com/tags/cluster/">cluster</a>&nbsp;
         
         <a href="https://blog.nhat-tong.com/tags/minikube/">minikube</a>&nbsp;
         
@@ -573,163 +727,6 @@ It&rsquo;s quite tricky but I learned a lot from this exam 😊</p>
 
 </article>
           
-            <article class="post-preview">
-    <a href="https://blog.nhat-tong.com/post/2020/12/azure/azure-nat-gateway-proxyout/">
-        <h2 class="post-title">Azure-Nat Gateway with Virtual Network Appliance</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;December 20, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;463&nbsp;words
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <p>In contrast of Google Cloud Platform, Azure Virtual Machine has access to the Internet by default (even if your vm doesn&rsquo;t have a public ip). You don&rsquo;t need to do anything to have internet access.</p>
-<p>But what if you would like to control the web traffic (http/https) to the internet from your virtual networks (due to the company&rsquo;s policy for example). You may need to establish a single access point to the internet on which you could control the outbound access.</p>
-<p>In the previous article, we discussed the Hub-Spoke Topology. We will expand this architecture to cover our topic today.</p>
-<h3 id="our-architecture-modified"><strong>Our architecture modified:</strong></h3>
-<p>As you saw in the previous architecture, we have three virtual networks:</p>
-<ul>
-<li>Hub virtual network (hub-vnet): region France Central</li>
-<li>Spoke 1 virtual network (finance-vnet): region West Europe</li>
-<li>Spoke 2 virtual network (it-vnet): region North Europe</li>
-</ul>
-<p>We need to control the web traffic from all spoke networks to the Internet .</p>
-<p>We will add a new virtual network:</p>
-<ul>
-<li>Proxyout virtual network (proxyout-vnet): region France Central</li>
-</ul>
-<p>On this new virtual network, we place two virtual machines (proxyout) behind a Azure Load Balancer Standard to receive/control  the web traffic (http/https) from other spoke networks. You could install a middleware (<em>squid</em>) to allow/deny the access.</p>
-<p>So, our architecture will be the following:</p>
-<p><img src="../images/59_azure_hub_spoke_nva.png" alt="Proxyout Architecture"></p>
-        <a href="https://blog.nhat-tong.com/post/2020/12/azure/azure-nat-gateway-proxyout/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.nhat-tong.com/tags/azure/">azure</a>&nbsp;
-        
-        <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://blog.nhat-tong.com/post/2020/12/azure/azure-hub-spoke-topology/">
-        <h2 class="post-title">Azure-Hub Spoke topology</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;December 19, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;593&nbsp;words
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <p>Today, we will implement a hub-spoke topology in Azure.</p>
-<p>The hub is a virtual network in Azure that acts as a central point of connectivity to your on-premises network.</p>
-<p>The spokes are virtual networks that peer with the hub and can be used to isolate workloads.</p>
-<p>For more information, we refer to <a href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke" target="_blank"><u>this document.</u></a></p>
-<p>In our case-study, we don&rsquo;t have <em>on-premises network</em>, so the architecture will be adjusted a little bit:</p>
-<p><img src="../images/58_azure_hub_spoke.png" alt="Our hub-spoke"></p>
-        <a href="https://blog.nhat-tong.com/post/2020/12/azure/azure-hub-spoke-topology/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.nhat-tong.com/tags/azure/">azure</a>&nbsp;
-        
-        <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://blog.nhat-tong.com/post/2020/12/gcp/cloud-nat-multi-vpc-4/">
-        <h2 class="post-title">GCP-Cloud NAT with multiple VPC</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;December 13, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1060&nbsp;words
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <p>As you know in the previous article, we could take advantage of Cloud NAT to go to the Internet without an external IP.</p>
-<p>But the NAT gateway created in one VPC network cannot provide NAT to VMs in other VPC networks connected by using VPC Network Peering, even if the VMs in peered networks are in the same region as the gateway.</p>
-<p>So, how we can use Cloud NAT in case of we have some VPC networks ? I will explain to you in this article.</p>
-        <a href="https://blog.nhat-tong.com/post/2020/12/gcp/cloud-nat-multi-vpc-4/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.nhat-tong.com/tags/gcp/">gcp</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
         </div>
 
         
@@ -796,7 +793,7 @@ It&rsquo;s quite tricky but I learned a lot from this exam 😊</p>
 
           &nbsp;&bull;&nbsp;&copy;
           
-            2021
+            2023
           
 
           

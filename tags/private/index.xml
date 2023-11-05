@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>private on Home</title>
+    <link>https://blog.nhat-tong.com/tags/private/</link>
+    <description>Recent content in private on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
+    <lastBuildDate>Sun, 05 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/private/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Connect to private virtual machine without public IP (part 1)</title>
+      <link>https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part1/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2023/11/compute_engine/connect_private_vm_part1/</guid>
+      <description>In this article, we will explore the process of establishing a connection to a virtual machine situated within a private subnet without a public IP address. This method significantly enhances security by eliminating the need to expose the virtual machine to the open Internet.
+Google Cloud Platform Google Cloud offers a feature known as Identity-Aware Proxy or IAP which enable us to access Compute Engine instances without the need for public IP address.</description>
+    </item>
+    
+  </channel>
+</rss>

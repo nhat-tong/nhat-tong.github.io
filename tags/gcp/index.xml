@@ -7,7 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GCP Load Balancer</title>
+      <link></link>
+      <pubDate>Sat, 20 Aug 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GCP-Storage</title>
+      <link></link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Cloud Storage   Google Cloud object storage service
+  Use cases: website content, data for archiving
+  High availability
+  Storage class
+ Standard  Geo redundancy Best for short-term storage and frequently accessed data   Nearline  Geo reduendancy Best for backups and data accessed less than once a month   Coldline  Best for disaster recovery and data accessed less than once a quarter (3 months)   Archive  Best for long-term digital preservation of data accessed less than once a year data is available within a few seconds no SLA      Access control</description>
+    </item>
+    
     <item>
       <title>GCP-Instance groups</title>
       <link></link>

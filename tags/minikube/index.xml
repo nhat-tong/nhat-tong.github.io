@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/minikube/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/minikube/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>K8s-Create a local cluster</title>
       <link>https://blog.nhat-tong.com/post/2021/11/k8s/create_local_cluster/</link>
-      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/post/2021/11/k8s/create_local_cluster/</guid>
       <description>&lt;p&gt;In this article, we will walk through how provisioning a local Kubernetes cluster (single node or multiple nodes).&lt;/p&gt;

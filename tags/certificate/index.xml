@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>certificate on Home</title>
+    <link>https://blog.nhat-tong.com/tags/certificate/</link>
+    <description>Recent content in certificate on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
+    <lastBuildDate>Mon, 01 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/certificate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Certificate</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Certificate with LetEncrypts </description>
+    </item>
+    
+  </channel>
+</rss>

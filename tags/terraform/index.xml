@@ -7,7 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K8s-Create a cloud cluster with CI/CD pipeline</title>
+      <link>https://blog.nhat-tong.com/post/2021/12/k8s/cloud_cluster/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2021/12/k8s/cloud_cluster/</guid>
+      <description>&lt;p&gt;In this article, we walk through how to create a Kubernetes cluster on a cloud provider (AKS, GKE) using Terraform. Next, we deploy this cluster through a CI/CD pipeline (Azure DevOps Pipeline and Github Action).&lt;/p&gt;
+&lt;p&gt;On the first project, we deploy our cluster to AKS through Azure DevOps pipeline.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/first_project.png&#34; alt=&#34;first project&#34;&gt;&lt;/p&gt;
+&lt;p&gt;On the second project, we will use Github action as our CI/CD and we will create a GKE cluster.
+&lt;img src=&#34;../images/second_project.png&#34; alt=&#34;second project&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The choice of tool is indicatif. You can choose which one which is the best fit for your case/business.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Azure-Connect on-premises networks to Azure using VPN gateways (part 3)</title>
       <link>https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn-ha/</link>

@@ -7,7 +7,122 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Container</title>
+      <link></link>
+      <pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure HA</title>
+      <link></link>
+      <pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure DNS</title>
+      <link></link>
+      <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Azure DNS Public Zone Azure DNS Private Zone Azure Private Dns Resolver </description>
+    </item>
+    
+    <item>
+      <title>Azure Backup</title>
+      <link></link>
+      <pubDate>Sat, 20 Aug 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure Cost Management</title>
+      <link></link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Azure Cost Management + Billing Service is a service helping you to monitor, allocate and optimize your costs/expenses in Azure. You can use this service for multiple purposes:
+ Conduct billing administrative tasks such as paying your bill Manage billing access to costs Download cost and usage data that was used to generate your monthly invoice Proactively apply data analysis to your costs Set spending thresholds  Prerequisites:  For Enterprise Agreement offer, the option &amp;ldquo;Account owner can view charges&amp;rdquo; on the billing account must be enabled in order to view your costs/charges How to activate this option: https://docs.</description>
+    </item>
+    
+    <item>
+      <title>Azure Deployment</title>
+      <link></link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>ARM Template  ARM Json Template ARM Bicep Template Functions  Terraform  Functions  Templating engine </description>
+    </item>
+    
+    <item>
+      <title>Azure policy and tagging</title>
+      <link></link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure-Azure-Identity and Access Management part 3</title>
+      <link></link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Azure RBAC Custom Role
+Managed Identities </description>
+    </item>
+    
+    <item>
+      <title>Azure-Identity and Access Management part 1</title>
+      <link></link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Azure Active Directory User settings: Liences Custom domain
+Manage Users/Groups/Applications Manage Administrator Roles Sync on-premises Company branding Enable MFA
+Reference  Azure Free Trial  </description>
+    </item>
+    
+    <item>
+      <title>Azure-Identity and Access Management part 2</title>
+      <link></link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Management group hierarchy Management group &amp;ndash;&amp;gt; subscription &amp;ndash;&amp;gt; resource group &amp;ndash;&amp;gt; resource
+You can create a management group on the Azure portal but you cannot manage it until your permissions are given.
+The management group hierarchy is not enabled by default. You can enable it by clicking on button &amp;ldquo;Get Started&amp;rdquo;. This will create a default management group called &amp;ldquo;Tenant Root Group&amp;rdquo; and your subscriptions will be placed under this management group.</description>
+    </item>
+    
+    <item>
+      <title>Azure Network - Part 1</title>
+      <link></link>
+      <pubDate>Sun, 20 Feb 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Azure Virtual Networks (VNets) are the fundamental building block of your private network in Azure.
+Capabilities of Azure Virtual Networks  Communication with the Internet  Outbound: all resources in a Vnet can communicate outbound to the internet, by default Inbound: public IP or public Load Balancer   Communication between Azure resources  Through a virtual network: list of Azure resources that you can deploy into a virtual network  Through a virtual network service endpoint: extend your virtual network private address space to Azure service resources:  Azure Storage Azure Databases (SQL Database, PostgreSQL, MySQL, MariaDB, CosmosDB) Azure Key Vault Azure App Service Azure Container Registry   Through a virtual network peering: connect virtual networks to each other    Communication between on-premises resources  Point-to-site VPN (P2S) Site-to-site VPN (S2S) Azure ExpressRoute   Filtering network traffic: you can filter network traffic between subnets using:  Network security groups Network virtual appliances   Routing network traffic: Azure route traffic between subnets, connected virtual networks, on-premises networks and the Internet, by default.</description>
+    </item>
+    
+    <item>
+      <title>Azure Network - Part 1</title>
+      <link></link>
+      <pubDate>Sun, 20 Feb 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Azure-Connect on-premises networks to Azure using VPN gateways (part 3)</title>
       <link>https://blog.nhat-tong.com/post/2021/04/azure/site-to-site-vpn-ha/</link>

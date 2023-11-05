@@ -7,20 +7,263 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iap</title>
+      <link>https://blog.nhat-tong.com/tags/iap/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/iap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>private</title>
+      <link>https://blog.nhat-tong.com/tags/private/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/private/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssm</title>
+      <link>https://blog.nhat-tong.com/tags/ssm/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/ssm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vscode</title>
+      <link>https://blog.nhat-tong.com/tags/vscode/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/vscode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>argocd</title>
+      <link>https://blog.nhat-tong.com/tags/argocd/</link>
+      <pubDate>Sat, 07 Oct 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/argocd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gitops</title>
+      <link>https://blog.nhat-tong.com/tags/gitops/</link>
+      <pubDate>Sat, 07 Oct 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/gitops/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>k8s</title>
       <link>https://blog.nhat-tong.com/tags/k8s/</link>
-      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 07 Oct 2023 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/tags/k8s/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>azure</title>
+      <link>https://blog.nhat-tong.com/tags/azure/</link>
+      <pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>container</title>
+      <link>https://blog.nhat-tong.com/tags/container/</link>
+      <pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dns</title>
+      <link>https://blog.nhat-tong.com/tags/dns/</link>
+      <pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>backup</title>
+      <link>https://blog.nhat-tong.com/tags/backup/</link>
+      <pubDate>Sat, 20 Aug 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/backup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gcp</title>
+      <link>https://blog.nhat-tong.com/tags/gcp/</link>
+      <pubDate>Sat, 20 Aug 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/gcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lb</title>
+      <link>https://blog.nhat-tong.com/tags/lb/</link>
+      <pubDate>Sat, 20 Aug 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/lb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network</title>
+      <link>https://blog.nhat-tong.com/tags/network/</link>
+      <pubDate>Sun, 20 Feb 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>admission</title>
+      <link>https://blog.nhat-tong.com/tags/admission/</link>
+      <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/admission/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>custom</title>
+      <link>https://blog.nhat-tong.com/tags/custom/</link>
+      <pubDate>Sat, 08 Jan 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/custom/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubeadm</title>
+      <link>https://blog.nhat-tong.com/tags/kubeadm/</link>
+      <pubDate>Sat, 08 Jan 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/kubeadm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aks</title>
+      <link>https://blog.nhat-tong.com/tags/aks/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/aks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>azure devops</title>
+      <link>https://blog.nhat-tong.com/tags/azure-devops/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/azure-devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github action</title>
+      <link>https://blog.nhat-tong.com/tags/github-action/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/github-action/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gke</title>
+      <link>https://blog.nhat-tong.com/tags/gke/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/gke/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terraform</title>
+      <link>https://blog.nhat-tong.com/tags/terraform/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/terraform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>auth</title>
+      <link>https://blog.nhat-tong.com/tags/auth/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/auth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>authorization</title>
+      <link>https://blog.nhat-tong.com/tags/authorization/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/authorization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>certificate</title>
+      <link>https://blog.nhat-tong.com/tags/certificate/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/certificate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cluster</title>
+      <link>https://blog.nhat-tong.com/tags/cluster/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/cluster/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flux</title>
+      <link>https://blog.nhat-tong.com/tags/flux/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/flux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>idp</title>
+      <link>https://blog.nhat-tong.com/tags/idp/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/idp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>k9s</title>
       <link>https://blog.nhat-tong.com/tags/k9s/</link>
-      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/tags/k9s/</guid>
       <description></description>
@@ -29,27 +272,27 @@
     <item>
       <title>kind</title>
       <link>https://blog.nhat-tong.com/tags/kind/</link>
-      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/tags/kind/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>local cluster</title>
-      <link>https://blog.nhat-tong.com/tags/local-cluster/</link>
-      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      <title>minikube</title>
+      <link>https://blog.nhat-tong.com/tags/minikube/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://blog.nhat-tong.com/tags/local-cluster/</guid>
+      <guid>https://blog.nhat-tong.com/tags/minikube/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>minikube</title>
-      <link>https://blog.nhat-tong.com/tags/minikube/</link>
-      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      <title>secret</title>
+      <link>https://blog.nhat-tong.com/tags/secret/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://blog.nhat-tong.com/tags/minikube/</guid>
+      <guid>https://blog.nhat-tong.com/tags/secret/</guid>
       <description></description>
     </item>
     
@@ -68,15 +311,6 @@
       <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/tags/apiserver/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dns</title>
-      <link>https://blog.nhat-tong.com/tags/dns/</link>
-      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://blog.nhat-tong.com/tags/dns/</guid>
       <description></description>
     </item>
     
@@ -126,15 +360,6 @@
     </item>
     
     <item>
-      <title>network</title>
-      <link>https://blog.nhat-tong.com/tags/network/</link>
-      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://blog.nhat-tong.com/tags/network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>tls</title>
       <link>https://blog.nhat-tong.com/tags/tls/</link>
       <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
@@ -153,29 +378,11 @@
     </item>
     
     <item>
-      <title>azure</title>
-      <link>https://blog.nhat-tong.com/tags/azure/</link>
-      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://blog.nhat-tong.com/tags/azure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>expressroute</title>
       <link>https://blog.nhat-tong.com/tags/expressroute/</link>
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/tags/expressroute/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>terraform</title>
-      <link>https://blog.nhat-tong.com/tags/terraform/</link>
-      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://blog.nhat-tong.com/tags/terraform/</guid>
       <description></description>
     </item>
     
@@ -194,15 +401,6 @@
       <pubDate>Tue, 20 Apr 2021 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/tags/iac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gcp</title>
-      <link>https://blog.nhat-tong.com/tags/gcp/</link>
-      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://blog.nhat-tong.com/tags/gcp/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kubeadm on Home</title>
+    <link>https://blog.nhat-tong.com/tags/kubeadm/</link>
+    <description>Recent content in kubeadm on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
+    <lastBuildDate>Sat, 08 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/kubeadm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Custom cluster</title>
+      <link></link>
+      <pubDate>Sat, 08 Jan 2022 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>RAFT Architecture  multiple master nodes  multiple api server: load balancer multiple control planes: RAFT multiple etcd: same on control plane or dedicated machines    One master node and 2 worker nodes  kubeadm terraform ansible (or vagrant)  2 master nodes, 2 worker nodes and 1 load balancer openshift cluster </description>
+    </item>
+    
+  </channel>
+</rss>

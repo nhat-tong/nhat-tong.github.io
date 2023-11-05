@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>flux on Home</title>
+    <link>https://blog.nhat-tong.com/tags/flux/</link>
+    <description>Recent content in flux on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
+    <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
+    <lastBuildDate>Mon, 01 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/flux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flux</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flux</title>
+      <link></link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Install cert-manager helm repo add jetstack https://charts.jetstack.io helm repo update helm install cert-manager jetstack/cert-manager --namespace certmgr --version v1.6.0 --set installCRDs=true External Args: &amp;ndash;set &amp;lsquo;extraArgs={&amp;ndash;dns01-recursive-nameservers-only,&amp;ndash;dns01-recursive-nameservers=8.8.8.8:53,1.1.1.1:53}&amp;rsquo;
+Install cert-manager-webhook-ovh git clone https://github.com/baarde/cert-manager-webhook-ovh.git helm install cert-manager-webhook-ovh ./deploy/cert-manager-webhook-ovh --set groupName=[YOUR_GROUP_NAME] Yaml  issuer-staging.yaml  apiVersion: cert-manager.io/v1 kind: Issuer metadata: name: letsencrypt-staging spec: acme: server: https://acme-staging-v02.api.letsencrypt.org/directory email: [YOUR_EMAIL] privateKeySecretRef: name: acme-privatekey-staging solvers: - dns01: webhook: groupName: [YOUR_GROUP_NAME] solverName: ovh config: endpoint: ovh-eu applicationKey: [APPLICATION_KEY] applicationSecretRef: key: applicationSecret name: ovh-credentials consumerKey: [CONSUMER_KEY]  certificate-staging.</description>
+    </item>
+    
+  </channel>
+</rss>
