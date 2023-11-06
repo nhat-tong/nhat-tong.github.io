@@ -60,7 +60,7 @@
   "headline": "Connect to private virtual machine without public IP (part 2)",
   "description" : "In this part, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.\n",
   "inLanguage" : "en",
-  "wordCount":  426 ,
+  "wordCount":  528 ,
   "datePublished" : "2023-11-05T00:00:00",
   "dateModified" : "2023-11-05T00:00:00",
   "image" : "https:\/\/blog.nhat-tong.com",
@@ -228,10 +228,10 @@
   <i class="fas fa-calendar"></i>&nbsp;November 5, 2023
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;426&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;528&nbsp;words
   
   
   
@@ -337,11 +337,35 @@ ssh-keygen -y -f ec2.pem &gt; ec2.pub
 <img src="../images/aws_ec2_vscode.png" alt="Remote-SSH EC2 VSCode"></li>
 </ul>
 <h1 id="azure">Azure</h1>
-<p>Not available via VSCode</p>
+<p>Currently, this feature <em>Native SSH support via Azure CLI</em> is only supported by the SKU Standard.</p>
+<ul>
+<li>Create a new Azure Bastion, <em>Standard</em> tier and then enable feature <em>Native client support</em>
+<img src="../images/azure_bastion_standard_tunneling.png" alt="Azure Bastion Standard"></li>
+<li>Create a SSH tunnel via Azure CLI</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">az login --use-device-code -o none
+az network bastion tunnel -n [AZURE_BASTION_NAME] -g [RESOURCE_GROUP_NAME] --target-resource-id [VM_RESOURCE_ID] --resource-port 22 --port 2222
+</code></pre></div><pre><code>* Exemple fo VM_RESOURCE_ID: /subscriptions/[SUBSCRIPTION_ID]/resourceGroups/[RG_NAME]/providers/Microsoft.Compute/virtualMachines/[VM_NAME]
+![Create tunnel via AZ CLI](../images/azure_bastion_azcli_tunnel.png)
+</code></pre>
+<ul>
+<li>Add new entry to ssh config</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Host azure-tunnel-local
+  IdentityFile C:\\Users\\[USER]\\.ssh\\id_rsa
+  HostName 127.0.0.1
+  User azureuser
+  Port 2222
+  StrictHostKeyChecking=No
+</code></pre></div><ul>
+<li>Connect to private vm from Visual Studio Code via the tunnel created earlier
+<img src="../images/azure_bastion_standard_vscode.png" alt="Connect to private vm"></li>
+</ul>
 <h1 id="reference">Reference</h1>
 <ul>
 <li><a href="https://safwene-benaich.medium.com/developing-on-remote-vm-via-vscode-using-google-clouds-iap-6b6549f9270c">Developing on remote VM via VSCode using Google Cloud’s IAP</a></li>
 <li><a href="https://dev.to/entest/setup-vscode-ssh-remote-to-a-private-ec2-instance-via-ssm-dm7">Setup vscode ssh remote to a private EC2 instance via ssm</a></li>
+<li><a href="https://techcommunity.microsoft.com/t5/fasttrack-for-azure/accessing-aks-private-clusters-with-azure-bastion-and-vs-code/ba-p/3581367">Accessing AKS private clusters with Azure Bastion and VS Code</a></li>
 </ul>
 
         
