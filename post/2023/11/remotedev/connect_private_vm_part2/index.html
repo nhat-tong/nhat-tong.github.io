@@ -60,7 +60,7 @@
   "headline": "Connect to private virtual machine without public IP (part 2)",
   "description" : "In this part, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.\n",
   "inLanguage" : "en",
-  "wordCount":  528 ,
+  "wordCount":  523 ,
   "datePublished" : "2023-11-05T00:00:00",
   "dateModified" : "2023-11-05T00:00:00",
   "image" : "https:\/\/blog.nhat-tong.com",
@@ -231,7 +231,7 @@
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;528&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;523&nbsp;words
   
   
   
@@ -346,8 +346,8 @@ ssh-keygen -y -f ec2.pem &gt; ec2.pub
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">az login --use-device-code -o none
 az network bastion tunnel -n [AZURE_BASTION_NAME] -g [RESOURCE_GROUP_NAME] --target-resource-id [VM_RESOURCE_ID] --resource-port 22 --port 2222
 </code></pre></div><pre><code>* Exemple fo VM_RESOURCE_ID: /subscriptions/[SUBSCRIPTION_ID]/resourceGroups/[RG_NAME]/providers/Microsoft.Compute/virtualMachines/[VM_NAME]
-![Create tunnel via AZ CLI](../images/azure_bastion_azcli_tunnel.png)
 </code></pre>
+<p><img src="../images/azure_bastion_azcli_tunnel.png" alt="Create tunnel via AZ CLI"></p>
 <ul>
 <li>Add new entry to ssh config</li>
 </ul>
