@@ -60,7 +60,7 @@
   "headline": "Connect to private virtual machine without public IP (part 2)",
   "description" : "In this part, we will delve into the process of connecting to private instances using Visual Studio Code with Remote-SSH extension.\n",
   "inLanguage" : "en",
-  "wordCount":  523 ,
+  "wordCount":  553 ,
   "datePublished" : "2023-11-05T00:00:00",
   "dateModified" : "2023-11-05T00:00:00",
   "image" : "https:\/\/blog.nhat-tong.com",
@@ -231,7 +231,7 @@
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;523&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;553&nbsp;words
   
   
   
@@ -337,15 +337,24 @@ ssh-keygen -y -f ec2.pem &gt; ec2.pub
 <img src="../images/aws_ec2_vscode.png" alt="Remote-SSH EC2 VSCode"></li>
 </ul>
 <h1 id="azure">Azure</h1>
-<p>Currently, this feature <em>Native SSH support via Azure CLI</em> is only supported by the SKU Standard.</p>
+<p>In order to connect to private virtual machine using Azure Bastion and Visual Studio Code, the Azure Bastion&rsquo;s SKU Standard is required.</p>
+<p>Azure Bastion SKU Developer and Basic are not supported this feature yet.</p>
+<h2 id="prerequisites--2">Prerequisites :</h2>
 <ul>
-<li>Create a new Azure Bastion, <em>Standard</em> tier and then enable feature <em>Native client support</em>
+<li>Azure Bastion, tier <em>Standard</em></li>
+<li>Install <a href="https://learn.microsoft.com/en-us/cli/azure/install-azure-cli">Azure CLI</a></li>
+<li>Install Remote-SSH extension for Visual Studio Code
+<img src="../images/vscode_remote_ssh_extension.png" alt="Remote-SSH extension"></li>
+</ul>
+<h2 id="steps-2">Steps</h2>
+<ul>
+<li>Enable feature <em>Native client support</em> on Azure Bastion
 <img src="../images/azure_bastion_standard_tunneling.png" alt="Azure Bastion Standard"></li>
 <li>Create a SSH tunnel via Azure CLI</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">az login --use-device-code -o none
 az network bastion tunnel -n [AZURE_BASTION_NAME] -g [RESOURCE_GROUP_NAME] --target-resource-id [VM_RESOURCE_ID] --resource-port 22 --port 2222
-</code></pre></div><pre><code>* Example of VM_RESOURCE_ID: /subscriptions/[SUBSCRIPTION_ID]/resourceGroups/[RG_NAME]/providers/Microsoft.Compute/virtualMachines/[VM_NAME]
+</code></pre></div><pre><code>* VM_RESOURCE_ID's format should be: /subscriptions/[SUBSCRIPTION_ID]/resourceGroups/[RG_NAME]/providers/Microsoft.Compute/virtualMachines/[VM_NAME]
 </code></pre>
 <p><img src="../images/azure_bastion_azcli_tunnel.png" alt="Create tunnel via AZ CLI"></p>
 <ul>
