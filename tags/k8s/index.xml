@@ -18,12 +18,32 @@
     </item>
     
     <item>
-      <title>Working with secret in Kubernetes</title>
+      <title>K8S - Storage</title>
       <link></link>
       <pubDate>Sat, 07 Oct 2023 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid></guid>
-      <description>GitOps  BITNAMI SEALED SECRETS Mozilla SOPS  Non GitOps  KUBERNETES SECRETS STORE CSI DRIVER ArgoCD Vault Plugin  </description>
+      <description>Google Cloud Platform  Persistent Disk Filestore Cloud Storage (FUSE)  Azure  Disk Azure FileShare Blob storage  AWS  Disk AWS EFS S3  </description>
+    </item>
+    
+    <item>
+      <title>Working with secret in Kubernetes - GitOps (part 1)</title>
+      <link></link>
+      <pubDate>Sat, 07 Oct 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>Kubernetes Secret is one of the most important suject that you need to deal with when deploying your applications into Kubernetes. As you may know, the K8S secrets are encoded (not encrypted) by design. In this article, you&amp;rsquo;ll explore some ways that can help you secure your secrets.
+We will go through :
+ Bitnami Sealed Secrets Mozilla SOPS CSI Store Driver ArgoCD Vault Plugin  BITNAMI SEALED SECRETS  Bitnami Sealed Secret is used/deployed as a Kubernetes Controller.</description>
+    </item>
+    
+    <item>
+      <title>Working with secret in Kubernetes - GitOps (part 2)</title>
+      <link></link>
+      <pubDate>Sat, 07 Oct 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description>K8S CSI Store Driver ArgoCD Vault Plugin </description>
     </item>
     
     <item>

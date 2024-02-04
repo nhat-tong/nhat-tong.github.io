@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>GCP - How to connect to CloudSQL through private IP - Home</title>
+  <meta name="description" content="Recently, I work on a project on which we need to access privately to CloudSQL instance (Postgres in our case). In this article, we will explore two options to do so. This guideline can still apply for other type of CloudSQL (SQL Server or MySQL).
+Prerequisite In order to connect privately to CloudSQL, you need to have :
+ CloudSQL with private services access connection enabled  Enable Cloud SQL Admin API A private virtual machine (bastion) on the same network as your private services connection  Required access scopes: Cloud Platform &amp; Cloud SQL or Allow full access to all Cloud APIs   A firewall rule allowing IAP on port 22 (SSH)  gcloud compute --project=[YOUR_PROJECT_ID] firewall-rules create allow-iap --direction=INGRESS --priority=1000 --network=[YOUR_NETWORK_NAME] --action=ALLOW --rules=tcp:22 --source-ranges=35.">
+  <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Home",
+    
+    "url": "https:\/\/blog.nhat-tong.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/blog.nhat-tong.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/blog.nhat-tong.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/blog.nhat-tong.com\/post\/2024\/02\/gcp\/cloudsql\/",
+          "name": "G c p how to connect to cloud s q l through private i p"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Nhat Tong"
+  },
+  "headline": "GCP - How to connect to CloudSQL through private IP",
+  "description" : "Recently, I work on a project on which we need to access privately to CloudSQL instance (Postgres in our case). In this article, we will explore two options to do so. This guideline can still apply for other type of CloudSQL (SQL Server or MySQL).\nPrerequisite In order to connect privately to CloudSQL, you need to have :\n CloudSQL with private services access connection enabled  Enable Cloud SQL Admin API A private virtual machine (bastion) on the same network as your private services connection  Required access scopes: Cloud Platform \u0026amp; Cloud SQL or Allow full access to all Cloud APIs   A firewall rule allowing IAP on port 22 (SSH)  gcloud compute --project=[YOUR_PROJECT_ID] firewall-rules create allow-iap --direction=INGRESS --priority=1000 --network=[YOUR_NETWORK_NAME] --action=ALLOW --rules=tcp:22 --source-ranges=35.",
+  "inLanguage" : "en",
+  "wordCount":  561 ,
+  "datePublished" : "2024-02-02T00:00:00",
+  "dateModified" : "2024-02-02T00:00:00",
+  "image" : "https:\/\/blog.nhat-tong.com",
+  "keywords" : [ "cloudsql, gcp" ],
+  "mainEntityOfPage" : "https:\/\/blog.nhat-tong.com\/post\/2024\/02\/gcp\/cloudsql\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/blog.nhat-tong.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/blog.nhat-tong.com",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="GCP - How to connect to CloudSQL through private IP" />
+<meta property="og:description" content="Recently, I work on a project on which we need to access privately to CloudSQL instance (Postgres in our case). In this article, we will explore two options to do so. This guideline can still apply for other type of CloudSQL (SQL Server or MySQL).
+Prerequisite In order to connect privately to CloudSQL, you need to have :
+ CloudSQL with private services access connection enabled  Enable Cloud SQL Admin API A private virtual machine (bastion) on the same network as your private services connection  Required access scopes: Cloud Platform &amp; Cloud SQL or Allow full access to all Cloud APIs   A firewall rule allowing IAP on port 22 (SSH)  gcloud compute --project=[YOUR_PROJECT_ID] firewall-rules create allow-iap --direction=INGRESS --priority=1000 --network=[YOUR_NETWORK_NAME] --action=ALLOW --rules=tcp:22 --source-ranges=35.">
+<meta property="og:url" content="https://blog.nhat-tong.com/post/2024/02/gcp/cloudsql/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Home" />
+
+  <meta name="twitter:title" content="GCP - How to connect to CloudSQL through private IP" />
+  <meta name="twitter:description" content="Recently, I work on a project on which we need to access privately to CloudSQL instance (Postgres in our case). In this article, we will explore two options to do so. This guideline can still apply …">
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.79.0" />
+  <link rel="alternate" href="https://blog.nhat-tong.com/index.xml" type="application/rss+xml" title="Home"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.nhat-tong.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://blog.nhat-tong.com/css/highlight.min.css" /><link rel="stylesheet" href="https://blog.nhat-tong.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://blog.nhat-tong.com">Home</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>GCP - How to connect to CloudSQL through private IP</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;February 2, 2024
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;561&nbsp;words
+  
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Recently, I work on a project on which we need to access privately to CloudSQL instance (Postgres in our case). In this article, we will explore two options to do so. This guideline can still apply for other type of CloudSQL (SQL Server or MySQL).</p>
+<h1 id="prerequisite">Prerequisite</h1>
+<p>In order to connect privately to CloudSQL, you need to have :</p>
+<ul>
+<li>CloudSQL with private services access connection enabled
+<img src="../images/cloudsql_private_services_connection.png" alt="Private services access connection enabled"></li>
+<li>Enable Cloud SQL Admin API</li>
+<li>A private virtual machine (bastion) on the same network as your private services connection
+<ul>
+<li>Required access scopes: Cloud Platform &amp; Cloud SQL or Allow full access to all Cloud APIs</li>
+</ul>
+</li>
+<li>A firewall rule allowing IAP on port 22 (SSH)</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud compute --project=[YOUR_PROJECT_ID] firewall-rules create allow-iap --direction=INGRESS --priority=1000 --network=[YOUR_NETWORK_NAME] --action=ALLOW --rules=tcp:22 --source-ranges=35.235.240.0/20
+</code></pre></div><ul>
+<li>A Cloud NAT gateway allowing outbound connections to the Internet without public IP on the bastion</li>
+</ul>
+<h1 id="connect-to-cloudsql-through-gcloud-command-line">Connect to CloudSQL through gcloud command line</h1>
+<p>With the IAP in place, we can now access to the bastion with private ip through IAP</p>
+<p><img src="../images/bastion_ssh_iap.png" alt="Access bastion through IAP"></p>
+<p>On your bastion, you need to install <a href="https://github.com/GoogleCloudPlatform/cloud-sql-proxy/releases?page=1">Cloud SQL Proxy (v1)</a>. At the time of writing, the latest v1 version is v1.33.16.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">curl -O https://storage.googleapis.com/cloudsql-proxy/v1.33.16/cloud_sql_proxy.linux.amd64
+
+chmod +x cloud_sql_proxy.linux.amd64
+
+sudo mv cloud_sql_proxy.linux.amd64 /usr/local/bin/cloud_sql_proxy
+</code></pre></div><p>You must be able to go to the Internet in order to download this binary thanks to Cloud NAT. If it doesn&rsquo;t work, please review your Cloud NAT configuration.</p>
+<p>Next, you install the psql client on this bastion:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get update
+sudo apt-get install postgresql-client
+</code></pre></div><p>Now, you can authenticate to Google and then connect to private CloudSQL using gcloud:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud auth login
+gcloud config set project [YOUR_CLOUDSQL_PROJECT_ID]
+
+gcloud beta sql connect [CLOUD_SQL_INSTANCE_NAME] --database [YOUR_DB] --user [YOUR_USER]
+</code></pre></div><p>Congratulation! You have established successfully the private connection from your bastion to CloudSQL through Cloud SQL Proxy.
+<img src="../images/cloudsql_connection_ok.png" alt="Connection success to CloudSQL"></p>
+<p>If you installed the Cloud SQL Proxy v2 instead of v1, you&rsquo;ll see this error:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ERROR: (gcloud.beta.sql.connect) Cloud SQL Proxy (v1) couldn&#39;t be found in PATH. Either install the component with `gcloud components install cloud_sql_proxy` or see https://github.com/GoogleCloudPlatform/cloud-sql-proxy/releases to install the v1 Cloud SQL Proxy. The v2 Cloud SQL Proxy is currently not supported by the connect command. You need to install the v1 Cloud SQL Proxy binary to use the connect command
+</code></pre></div><h1 id="connect-to-cloudsql-through-database-management-tool">Connect to CloudSQL through database management tool</h1>
+<p>If your organization policy does not block the tunnel on port 5432 from your local machine to your bastion in GCP, you can further connect to this CloudSQL through a database management tool like pgAdmin.</p>
+<p>Update your above IAP rule &ldquo;allow-iap&rdquo; to allow IAP tunnel on port 5432 for Postgres.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud compute --project=[YOUR_PROJECT_ID] firewall-rules update allow-iap \
+--rules=tcp:22,tcp:5432 --source-ranges=35.235.240.0/20
+</code></pre></div><p>On your bastion, start CloudSQL Proxy to create a tunnel to CloudSQL on port 5432.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cloud_sql_proxy -instances [YOUR_CLOUDSQL_CONNECTION_NAME]=tcp:0.0.0.0:5432
+</code></pre></div><p>This tunnel listen on port 5432 on your bastion and will forward the received requests to CloudSQL.</p>
+<p>On your local machine, create a tunnel to your bastion on port 5432:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud auth login
+gcloud config set project [BASTION_PROJECT_ID]
+gcloud compute start-iap-tunnel [YOUR_VM_BASTION_NAME] 5432 --local-host-port=127.0.0.1:5432 --zone [YOUR_VM_BASTION_ZONE]
+</code></pre></div><p>This tunnel listen on port 5432 on your local machine and take care of forwarding the received requests to your vm bastion.</p>
+<p>Open your pgAdmin, register your postgres server as following</p>
+<ul>
+<li>Name: postgres-server</li>
+<li>Connection
+<ul>
+<li>Host name/address: 127.0.0.1</li>
+<li>Port: 5432</li>
+<li>Username: your database&rsquo;s username</li>
+<li>Password: your database&rsquo;s password</li>
+</ul>
+</li>
+</ul>
+<p><img src="../images/pgAdmin_register_server.png" alt="pgAdmin register server"></p>
+<p>Click Save button to register this server. You can now connect to CloudSQL instance from your local machine et run the query against your database.</p>
+<p><img src="../images/pgAdmin_query.png" alt="run database query"></p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://blog.nhat-tong.com/tags/cloudsql/">cloudsql</a>&nbsp;
+            
+              <a href="https://blog.nhat-tong.com/tags/gcp/">gcp</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+          
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="/post/2021/02/gcp/iam-breakdown/">GCP-IAM (Identity and Access Management)</a></li>
+                
+                    <li><a href="/post/2021/01/gcp/sharing-networks/">GCP-Sharing networks across projects</a></li>
+                
+                    <li><a href="/post/2020/12/gcp/cloud-nat-multi-vpc-4/">GCP-Cloud NAT with multiple VPC</a></li>
+                
+                    <li><a href="/post/2020/12/gcp/private-access-cloud-nat-3/">GCP-Google Private Access &amp; Cloud NAT</a></li>
+                
+                    <li><a href="/post/2020/12/gcp/basic-cloud-dns-3/">GCP-Basic Google Cloud DNS</a></li>
+                
+              </ul>
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://blog.nhat-tong.com/post/2023/11/remotedev/connect_private_vm_part1/" data-toggle="tooltip" data-placement="top" title="Connect to private virtual machine without public IP (part 1)">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "nhattong" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+          
+        
+        
+      
+      <div>
+        <meta property="og:title" content="GCP - How to connect to CloudSQL through private IP" />
+<meta property="og:description" content="Recently, I work on a project on which we need to access privately to CloudSQL instance (Postgres in our case). In this article, we will explore two options to do so. This guideline can still apply for other type of CloudSQL (SQL Server or MySQL).
+Prerequisite In order to connect privately to CloudSQL, you need to have :
+ CloudSQL with private services access connection enabled  Enable Cloud SQL Admin API A private virtual machine (bastion) on the same network as your private services connection  Required access scopes: Cloud Platform &amp; Cloud SQL or Allow full access to all Cloud APIs   A firewall rule allowing IAP on port 22 (SSH)  gcloud compute --project=[YOUR_PROJECT_ID] firewall-rules create allow-iap --direction=INGRESS --priority=1000 --network=[YOUR_NETWORK_NAME] --action=ALLOW --rules=tcp:22 --source-ranges=35." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.nhat-tong.com/post/2024/02/gcp/cloudsql/" />
+<meta property="article:published_time" content="2024-02-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-02-02T00:00:00+00:00" />
+
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:thqnhat@outlook.com" title="Email me" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/nhat-tong" title="GitHub" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/hoang-quoc-nhat-tong-8b738233" title="LinkedIn" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://nhat-tong.github.com">Nhat Tong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2024
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://blog.nhat-tong.com">Home</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://blog.nhat-tong.com/js/main.js"></script>
+<script src="https://blog.nhat-tong.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://blog.nhat-tong.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

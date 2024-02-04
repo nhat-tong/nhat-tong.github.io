@@ -7,7 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sat, 20 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GCP - How to connect to CloudSQL through private IP</title>
+      <link>https://blog.nhat-tong.com/post/2024/02/gcp/cloudsql/</link>
+      <pubDate>Fri, 02 Feb 2024 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/post/2024/02/gcp/cloudsql/</guid>
+      <description>Recently, I work on a project on which we need to access privately to CloudSQL instance (Postgres in our case). In this article, we will explore two options to do so. This guideline can still apply for other type of CloudSQL (SQL Server or MySQL).
+Prerequisite In order to connect privately to CloudSQL, you need to have :
+ CloudSQL with private services access connection enabled  Enable Cloud SQL Admin API A private virtual machine (bastion) on the same network as your private services connection  Required access scopes: Cloud Platform &amp;amp; Cloud SQL or Allow full access to all Cloud APIs   A firewall rule allowing IAP on port 22 (SSH)  gcloud compute --project=[YOUR_PROJECT_ID] firewall-rules create allow-iap --direction=INGRESS --priority=1000 --network=[YOUR_NETWORK_NAME] --action=ALLOW --rules=tcp:22 --source-ranges=35.</description>
+    </item>
+    
+    <item>
+      <title>GCP Filestore Enterprise Multishare</title>
+      <link></link>
+      <pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>GCP Load Balancer</title>
       <link></link>

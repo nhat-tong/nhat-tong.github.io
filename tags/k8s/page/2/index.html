@@ -187,6 +187,109 @@
           
             <article class="post-preview">
     <a href="">
+        <h2 class="post-title">Authorization</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;November 1, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;4&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <ul>
+<li>
+<p>clusterrole</p>
+</li>
+<li>
+<p>clusterrolebinding</p>
+</li>
+<li>
+<p>role</p>
+</li>
+<li>
+<p>rolebinding</p>
+</li>
+</ul>
+
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.nhat-tong.com/tags/k8s/">k8s</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/authorization/">authorization</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="">
+        <h2 class="post-title">Backup</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;November 1, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;4&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <h3 id="backup-data-using-velero">Backup data using Velero</h3>
+
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.nhat-tong.com/tags/k8s/">k8s</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/backup/">backup</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="">
         <h2 class="post-title">Certificate</h2>
         
         
@@ -561,95 +664,6 @@ Install cert-manager-webhook-ovh git clone https://github.com/baarde/cert-manage
 
 </article>
           
-            <article class="post-preview">
-    <a href="">
-        <h2 class="post-title">Vault on Kubernetes</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;October 1, 2021
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;126&nbsp;words
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        Authentication Methods  Userpass AppRole: enable the communication between a machine and Vault Kubernetes  vault auth enable kubernetes configure k8s auth (KUBERNETES_HOST from kubectl cluster-info)  vault write auth/kubernetes/config \ kubernetes_host=&#34;https://$KUBERNETES_HOST:443&#34; \ token_reviewer_jwt=&#34;$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)&#34; \ kubernetes_ca_cert=@/var/run/secrets/kubernetes.io/serviceaccount/ca.crt  create policy allowing read secret at the path:  vault policy write isite-reader - &lt;&lt;EOF path &#34;kv/data/isite/*&#34; { capabilities=[&#34;read&#34;,&#34;list&#34;] } EOF vault policy write isite-writer - &lt;&lt;EOF path &#34;kv/data/isite/*&#34; { capabilities=[&#34;read&#34;,&#34;list&#34;,&#34;create&#34;,&#34;update&#34;,&#34;delete&#34;] } EOF  Create k8s auth role:  vault write auth/kubernetes/role/isite \ bound_service_account_names=default \ bound_service_account_namespaces=isite \ policies=isite-reader \ ttl=24h  Create yaml  apiVersion: v1   kind: Pod metadata: name: payroll namespace: demo labels: app: payroll annotations: vault.
-        <a href="" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.nhat-tong.com/tags/k8s/">k8s</a>&nbsp;
-        
-        <a href="https://blog.nhat-tong.com/tags/vault/">vault</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="">
-        <h2 class="post-title">Vault on Kubernetes</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;October 1, 2021
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;0&nbsp;words
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://blog.nhat-tong.com/tags/k8s/">k8s</a>&nbsp;
-        
-        <a href="https://blog.nhat-tong.com/tags/vault/">vault</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
         </div>
         
           <ul class="pager main-pager">
@@ -711,7 +725,7 @@ Install cert-manager-webhook-ovh git clone https://github.com/baarde/cert-manage
 
           &nbsp;&bull;&nbsp;&copy;
           
-            2023
+            2024
           
 
           

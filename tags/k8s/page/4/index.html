@@ -203,6 +203,96 @@
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;155&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Download and install etcd binary on each controlplane node wget -q --show-progress --https-only --timestamping \ &#34;https://github.com/coreos/etcd/releases/download/v3.3.5/etcd-v3.3.5-linux-amd64.tar.gz&#34; tar -xvf etcd-v3.3.5-linux-amd64.tar.gz sudo mv etcd-v3.3.5-linux-amd64/etcd* /usr/local/bin/ Create etcd directories sudo mkdir -p /etc/etcd /var/lib/etcd sudo cp ca.pem kubernetes-key.pem kubernetes.pem /etc/etcd/ Set env variables ETCD_NAME=controller-0 INTERNAL_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4) CONTROLLER_0_INTERNAL_IP=10.0.1.251 CONTROLLER_1_INTERNAL_IP=10.0.1.178 ETCD_NAME=controller-1 INTERNAL_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4) CONTROLLER_0_INTERNAL_IP=10.0.1.251 CONTROLLER_1_INTERNAL_IP=10.0.1.178 Create etcd systemd unit file cat &lt;&lt; EOF | sudo tee /etc/systemd/system/etcd.service [Unit] Description=etcd Documentation=https://github.com/coreos [Service] ExecStart=/usr/local/bin/etcd \\ --name ${ETCD_NAME} \\ --cert-file=/etc/etcd/kubernetes.
+        <a href="" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.nhat-tong.com/tags/k8s/">k8s</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/etcd/">etcd</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="">
+        <h2 class="post-title">Kubernetes</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;September 1, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;446&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Download and install binaries (kube-apiserver, kube-controller-manager, kube-scheduler, kubectl) sudo mkdir -p /etc/kubernetes/config wget -q --show-progress --https-only --timestamping \ &#34;https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kube-apiserver&#34; \ &#34;https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kube-controller-manager&#34; \ &#34;https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kube-scheduler&#34; \ &#34;https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kubectl&#34; chmod +x kube-apiserver kube-controller-manager kube-scheduler kubectl sudo mv kube-apiserver kube-controller-manager kube-scheduler kubectl /usr/local/bin/ Configure kube-api-server service  Copy ca and tls certificates  sudo mkdir -p /var/lib/kubernetes/ sudo cp ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem \ service-account-key.pem service-account.pem \ encryption-config.yaml /var/lib/kubernetes/ INTERNAL_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)  Set env variables  ETCD_SERVER_0=10.
+        <a href="" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.nhat-tong.com/tags/k8s/">k8s</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/master/">master</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="">
+        <h2 class="post-title">Kubernetes</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;September 1, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
     &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;87&nbsp;words
   
   
@@ -526,7 +616,7 @@ kubectl exec $POD_NAME -- nslookup nginx
 
           &nbsp;&bull;&nbsp;&copy;
           
-            2023
+            2024
           
 
           

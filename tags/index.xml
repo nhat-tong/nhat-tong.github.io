@@ -7,7 +7,61 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>thqnhat@outlook.com (Nhat Tong)</managingEditor>
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
-    <lastBuildDate>Sun, 05 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cloudsql</title>
+      <link>https://blog.nhat-tong.com/tags/cloudsql/</link>
+      <pubDate>Fri, 02 Feb 2024 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/cloudsql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gcp</title>
+      <link>https://blog.nhat-tong.com/tags/gcp/</link>
+      <pubDate>Fri, 02 Feb 2024 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/gcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>authentication</title>
+      <link>https://blog.nhat-tong.com/tags/authentication/</link>
+      <pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/authentication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>filestore</title>
+      <link>https://blog.nhat-tong.com/tags/filestore/</link>
+      <pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/filestore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>identity</title>
+      <link>https://blog.nhat-tong.com/tags/identity/</link>
+      <pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/identity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>workload</title>
+      <link>https://blog.nhat-tong.com/tags/workload/</link>
+      <pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/workload/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>iap</title>
       <link>https://blog.nhat-tong.com/tags/iap/</link>
@@ -72,6 +126,15 @@
     </item>
     
     <item>
+      <title>storage</title>
+      <link>https://blog.nhat-tong.com/tags/storage/</link>
+      <pubDate>Sat, 07 Oct 2023 00:00:00 +0000</pubDate>
+      <author>thqnhat@outlook.com (Nhat Tong)</author>
+      <guid>https://blog.nhat-tong.com/tags/storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>azure</title>
       <link>https://blog.nhat-tong.com/tags/azure/</link>
       <pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate>
@@ -104,15 +167,6 @@
       <pubDate>Sat, 20 Aug 2022 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/tags/backup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gcp</title>
-      <link>https://blog.nhat-tong.com/tags/gcp/</link>
-      <pubDate>Sat, 20 Aug 2022 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid>https://blog.nhat-tong.com/tags/gcp/</guid>
       <description></description>
     </item>
     
