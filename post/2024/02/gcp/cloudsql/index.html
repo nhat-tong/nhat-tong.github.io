@@ -299,12 +299,14 @@ gcloud beta sql connect [CLOUD_SQL_INSTANCE_NAME] --database [YOUR_DB] --user [Y
 --rules=tcp:22,tcp:5432 --source-ranges=35.235.240.0/20
 </code></pre></div><p>On your bastion, start CloudSQL Proxy to create a tunnel to CloudSQL on port 5432.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cloud_sql_proxy -instances [YOUR_CLOUDSQL_CONNECTION_NAME]=tcp:0.0.0.0:5432
-</code></pre></div><p>This tunnel listen on port 5432 on your bastion and will forward the received requests to CloudSQL.</p>
+</code></pre></div><p>This tunnel listen on port 5432 on your bastion and will forward the received requests to CloudSQL.
+<img src="../images/cloudsql_proxy_tunnel.png" alt="cloud sql proxy tunnel"></p>
 <p>On your local machine, create a tunnel to your bastion on port 5432:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud auth login
 gcloud config set project [BASTION_PROJECT_ID]
 gcloud compute start-iap-tunnel [YOUR_VM_BASTION_NAME] 5432 --local-host-port=127.0.0.1:5432 --zone [YOUR_VM_BASTION_ZONE]
-</code></pre></div><p>This tunnel listen on port 5432 on your local machine and take care of forwarding the received requests to your vm bastion.</p>
+</code></pre></div><p>This tunnel listen on port 5432 on your local machine and take care of forwarding the received requests to your vm bastion.
+<img src="../images/local_machine_tunnel.png" alt="local machine tunnel"></p>
 <p>Open your pgAdmin, register your postgres server as following</p>
 <ul>
 <li>Name: postgres-server</li>
