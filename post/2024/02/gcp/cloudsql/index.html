@@ -293,7 +293,7 @@ gcloud beta sql connect [CLOUD_SQL_INSTANCE_NAME] --database [YOUR_DB] --user [Y
 <p>If you installed the Cloud SQL Proxy v2 instead of v1, you&rsquo;ll see this error:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ERROR: (gcloud.beta.sql.connect) Cloud SQL Proxy (v1) couldn&#39;t be found in PATH. Either install the component with `gcloud components install cloud_sql_proxy` or see https://github.com/GoogleCloudPlatform/cloud-sql-proxy/releases to install the v1 Cloud SQL Proxy. The v2 Cloud SQL Proxy is currently not supported by the connect command. You need to install the v1 Cloud SQL Proxy binary to use the connect command
 </code></pre></div><h1 id="connect-to-cloudsql-through-database-management-tool">Connect to CloudSQL through database management tool</h1>
-<p>If your organization policy does not block the tunnel on port 5432 from your local machine to your bastion in GCP, you can further connect to this CloudSQL through a database management tool like pgAdmin.</p>
+<p>If your organization policy does not block the tunnel on port 5432 from your local machine to your bastion in GCP, you can further connect to this CloudSQL through a database management tool like <a href="https://www.pgadmin.org/download/">pgAdmin</a>.</p>
 <p>Update your above IAP rule &ldquo;allow-iap&rdquo; to allow IAP tunnel on port 5432 for Postgres.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud compute --project=[YOUR_PROJECT_ID] firewall-rules update allow-iap \
 --rules=tcp:22,tcp:5432 --source-ranges=35.235.240.0/20
