@@ -9,7 +9,7 @@
     <webMaster>thqnhat@outlook.com (Nhat Tong)</webMaster>
     <lastBuildDate>Sun, 04 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.nhat-tong.com/tags/iap/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>GCP - How to connect to CloudSQL through private IP</title>
+      <title>GCP - How to connect to CloudSQL through private connection</title>
       <link>https://blog.nhat-tong.com/post/2024/02/gcp/cloudsql/</link>
       <pubDate>Sun, 04 Feb 2024 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
