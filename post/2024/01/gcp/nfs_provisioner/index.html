@@ -61,7 +61,7 @@ However, there is a technique that can help you enable this functionality by usi
   "headline": "GCP - Share a single filestore instance across multiple pods using an external NFS provisioner",
   "description" : "By default, a single filestore instance cannot be shared across multiple pods in GCP. However, there is a technique that can help you enable this functionality by using an external NFS provisioner. The latter separates the PVC of each application by using a subdirectory.\n",
   "inLanguage" : "en",
-  "wordCount":  355 ,
+  "wordCount":  365 ,
   "datePublished" : "2024-01-07T00:00:00",
   "dateModified" : "2024-01-07T00:00:00",
   "image" : "https:\/\/blog.nhat-tong.com",
@@ -233,7 +233,7 @@ However, there is a technique that can help you enable this functionality by usi
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;355&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;365&nbsp;words
   
   
   
@@ -313,13 +313,13 @@ helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs
 </span></code></pre></div><p>The value of provisioner attribute must match with the previously created <em>PROVISIONER_NAME</em> parameter.</p>
 <p><img src="../images/nfs-client-sc.png" alt="NFS Storage Class"></p>
 <h1 id="create-a-pvc">Create a PVC</h1>
-<p>Create a PVC using the StorageClass above:</p>
+<p>Create two examples PVC using the StorageClass above:</p>
 <div class="highlight"><pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">PersistentVolumeClaim</span><span class="w">
 </span><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
 </span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">demo-pvc</span><span class="w">
 </span><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">nfs.io/storage-path</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;demo&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">nfs.io/storage-path</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;demo1&#34;</span><span class="w">
 </span><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="l">nfs-client</span><span class="w">
 </span><span class="w">  </span><span class="nt">accessModes</span><span class="p">:</span><span class="w">
@@ -327,8 +327,26 @@ helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs
 </span><span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w">
 </span><span class="w">    </span><span class="nt">requests</span><span class="p">:</span><span class="w">
 </span><span class="w">      </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l">100Mi</span><span class="w">
-</span></code></pre></div><p><img src="../images/nfs-pvc.png" alt="Demo PVC"></p>
-<p>In this example, the PVC will be created in the filestore instance under the directory named <em>demo</em>.</p>
+</span><span class="w">
+</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">PersistentVolumeClaim</span><span class="w">
+</span><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">demo2-pvc</span><span class="w">
+</span><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">nfs.io/storage-path</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;test/demo2&#34;</span><span class="w">
+</span><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="l">nfs-client</span><span class="w">
+</span><span class="w">  </span><span class="nt">accessModes</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="l">ReadWriteMany</span><span class="w">
+</span><span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">requests</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l">100Mi</span><span class="w">
+</span></code></pre></div><p><img src="../images/nfs-pvc.png" alt="Example PVCs"></p>
+<p>In this example:</p>
+<ul>
+<li>the first PVC will be created under the subdirectory named <strong>demo</strong></li>
+<li>the second PVC will be created under the subdirectory named <strong>test/demo2</strong>.</li>
+</ul>
 <p>You can modify the annotation <strong>nfs.io/storage-path</strong> to configure the directory in which the pvc will be created.</p>
 <p>If you want to go further, you can mount this filestore instance into a compute engine client to view your data:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get -y update &amp;&amp;
