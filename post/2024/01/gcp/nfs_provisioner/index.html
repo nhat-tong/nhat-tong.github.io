@@ -341,7 +341,7 @@ helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs
 </span><span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w">
 </span><span class="w">    </span><span class="nt">requests</span><span class="p">:</span><span class="w">
 </span><span class="w">      </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l">100Mi</span><span class="w">
-</span></code></pre></div><p><img src="../images/nfs-pvc.png" alt="Example PVCs"></p>
+</span></code></pre></div><p><img src="../images/nfs_pvc.png" alt="Example PVCs"></p>
 <p>In this example:</p>
 <ul>
 <li>the first PVC will be created under the subdirectory named <strong>demo</strong></li>
@@ -354,7 +354,7 @@ sudo apt-get install nfs-common
 
 sudo mkdir -p /mnt/nfs-server
 sudo mount -o rw,intr 10.48.71.154:/nfs_server /mnt/nfs-server
-</code></pre></div><p><img src="../images/nfs_mount_client.png" alt="NFS Mount Client"></p>
+</code></pre></div><p><img src="../images/nfs_mount_ce_client.png" alt="NFS Mount Client"></p>
 <h1 id="references">References</h1>
 <ul>
 <li><a href="https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner">NFS Subdir External Provisioner</a></li>
