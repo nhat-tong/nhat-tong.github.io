@@ -7,9 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>GCP - Share a single filestore instance across multiple pods using a NFS provisioner - Home</title>
+  <title>GCP - Share a single filestore instance across multiple pods using an external NFS provisioner - Home</title>
   <meta name="description" content="By default, a single filestore instance cannot be shared across multiple pods in GCP.
-However, there is a technique that can help you enable this functionality by using an external NFS subdir provisioner.
+However, there is a technique that can help you enable this functionality by using an external NFS provisioner. The latter separates the PVC of each application by using a subdirectory.
 ">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
 {
@@ -47,7 +47,7 @@ However, there is a technique that can help you enable this functionality by usi
         "position": 3,
         "item": {
           "@id": "https:\/\/blog.nhat-tong.com\/post\/2024\/01\/gcp\/nfs_provisioner\/",
-          "name": "G c p share a single filestore instance across multiple pods using a n f s provisioner"
+          "name": "G c p share a single filestore instance across multiple pods using an external n f s provisioner"
         }
     }]
 }
@@ -58,10 +58,10 @@ However, there is a technique that can help you enable this functionality by usi
   "author": {
     "name" : "Nhat Tong"
   },
-  "headline": "GCP - Share a single filestore instance across multiple pods using a NFS provisioner",
-  "description" : "By default, a single filestore instance cannot be shared across multiple pods in GCP. However, there is a technique that can help you enable this functionality by using an external NFS subdir provisioner.\n",
+  "headline": "GCP - Share a single filestore instance across multiple pods using an external NFS provisioner",
+  "description" : "By default, a single filestore instance cannot be shared across multiple pods in GCP. However, there is a technique that can help you enable this functionality by using an external NFS provisioner. The latter separates the PVC of each application by using a subdirectory.\n",
   "inLanguage" : "en",
-  "wordCount":  344 ,
+  "wordCount":  355 ,
   "datePublished" : "2024-01-07T00:00:00",
   "dateModified" : "2024-01-07T00:00:00",
   "image" : "https:\/\/blog.nhat-tong.com",
@@ -80,17 +80,17 @@ However, there is a technique that can help you enable this functionality by usi
 }
 </script>
 
-<meta property="og:title" content="GCP - Share a single filestore instance across multiple pods using a NFS provisioner" />
+<meta property="og:title" content="GCP - Share a single filestore instance across multiple pods using an external NFS provisioner" />
 <meta property="og:description" content="By default, a single filestore instance cannot be shared across multiple pods in GCP.
-However, there is a technique that can help you enable this functionality by using an external NFS subdir provisioner.
+However, there is a technique that can help you enable this functionality by using an external NFS provisioner. The latter separates the PVC of each application by using a subdirectory.
 ">
 <meta property="og:url" content="https://blog.nhat-tong.com/post/2024/01/gcp/nfs_provisioner/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Home" />
 
-  <meta name="twitter:title" content="GCP - Share a single filestore instance across multiple pods using a …" />
+  <meta name="twitter:title" content="GCP - Share a single filestore instance across multiple pods using an …" />
   <meta name="twitter:description" content="By default, a single filestore instance cannot be shared across multiple pods in GCP.
-However, there is a technique that can help you enable this functionality by using an external NFS subdir …">
+However, there is a technique that can help you enable this functionality by using an external NFS provisioner. …">
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.79.0" />
   <link rel="alternate" href="https://blog.nhat-tong.com/index.xml" type="application/rss+xml" title="Home"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
@@ -219,7 +219,7 @@ However, there is a technique that can help you enable this functionality by usi
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>GCP - Share a single filestore instance across multiple pods using a NFS provisioner</h1>
+                <h1>GCP - Share a single filestore instance across multiple pods using an external NFS provisioner</h1>
               
               
               
@@ -233,7 +233,7 @@ However, there is a technique that can help you enable this functionality by usi
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;344&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;355&nbsp;words
   
   
   
@@ -255,7 +255,7 @@ However, there is a technique that can help you enable this functionality by usi
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>By default, a single filestore instance cannot be shared across multiple pods in GCP.
-However, there is a technique that can help you enable this functionality by using an <a href="https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner">external NFS subdir provisioner</a>.</p>
+However, there is a technique that can help you enable this functionality by using an <a href="https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner">external NFS provisioner</a>. The latter separates the PVC of each application by using a subdirectory.</p>
 <p><img src="../images/NFS_external_provisioner.png" alt="NFS External Provisioner"></p>
 <h1 id="create-a-single-filestore-instance">Create a single filestore instance</h1>
 <p>Firstly, you need to create a filestore instance in GCP.</p>
@@ -430,9 +430,9 @@ sudo mount -o rw,intr 10.48.71.154:/nfs_server /mnt/nfs-server
         
       
       <div>
-        <meta property="og:title" content="GCP - Share a single filestore instance across multiple pods using a NFS provisioner" />
+        <meta property="og:title" content="GCP - Share a single filestore instance across multiple pods using an external NFS provisioner" />
 <meta property="og:description" content="By default, a single filestore instance cannot be shared across multiple pods in GCP.
-However, there is a technique that can help you enable this functionality by using an external NFS subdir provisioner.
+However, there is a technique that can help you enable this functionality by using an external NFS provisioner. The latter separates the PVC of each application by using a subdirectory.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.nhat-tong.com/post/2024/01/gcp/nfs_provisioner/" />
