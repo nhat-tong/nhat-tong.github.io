@@ -192,6 +192,63 @@
           
           
             <article class="post-preview">
+    <a href="https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/">
+        <h2 class="post-title">GCP-Sharing networks across projects</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;January 30, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1251&nbsp;words
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>In GCP, you have two options for sharing networks across GCP projects: Shared VPC and VPC Network Peering.</p>
+<p>In this article, we discuss more detail its features and how to implement them.</p>
+<h3 id="shared-vpc-overview"><strong>Shared VPC overview</strong></h3>
+<ul>
+<li>Shared VPC is a centralized approach to multi-project networking allowing an organization to connect resources from multiple projects to a common Virtual Private Cloud (VPC) network, so that they can communicate with each other securely and efficiently using <strong>internal IPs</strong> from that network.</li>
+<li>When you use Shared VPC, you designate a project as a host project and attach one or more other service projects to it</li>
+<li>Shared VPC network is created and managed by a Shared VPC Admin which is nominated by an Organization Admin</li>
+<li>Shared VPC Admin is responsible to enable shared vpc feature on the host project and attach service projects to the host project. He can also delegate access to some or all subnets in the shared VPC network by granting the <em>compute.networkUser</em> role for Service Project Admins at the project level or the subnet level</li>
+<li>Service Project Admins in his turn maintain ownership and control over resources defined in their service projects. They could create and manage resources (vm instances, instance templates, instance groups, static internal ip, load balancers) in the shared VPC.</li>
+</ul>
+<p><img src="../images/gcp_shared_vpc_example.png" alt="shared vpc"></p>
+        <a href="https://blog.nhat-tong.com/post/2021/01/gcp/sharing-networks/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://blog.nhat-tong.com/tags/gcp/">gcp</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/terraform/">terraform</a>&nbsp;
+        
+        <a href="https://blog.nhat-tong.com/tags/vpc/">vpc</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://blog.nhat-tong.com/post/2021/01/azure/azure-az-500-exam/">
         <h2 class="post-title">Azure Security Engineer Associate exam (AZ-500)</h2>
         
@@ -550,94 +607,6 @@ It&rsquo;s quite tricky but I learned a lot from this exam 😊</p>
         <a href="https://blog.nhat-tong.com/tags/gcp/">gcp</a>&nbsp;
         
     </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://blog.nhat-tong.com/post/2022/03/gcp/gcp-network/">
-        <h2 class="post-title"></h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;January 1, 0001
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;34&nbsp;words
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <h2 id="cloud-vpn">Cloud VPN</h2>
-<ul>
-<li>Securely connects your on-premises network to your GCP VPC network</li>
-<li>99.9% SLA</li>
-<li>Site-to-site VPN</li>
-<li>Static routes/Dynamic routes</li>
-<li>IKEv1 and IKEv2</li>
-</ul>
-<p>Static routes
-<img src="../images/gcp_cloud_vpn.png" alt="Cloud VPN"></p>
-<p>Dynamic routes
-<img src="../images/gcp_cloud_router_vpn.png" alt="Cloud VPN"></p>
-<p>Comparison of Interconnect options
-<img src="../images/gcp_cloud_vpn_compare.png" alt="Compare"></p>
-<p>Comparison of Peering options
-<img src="../images/gcp_cloud_vpn_compare_peering.png" alt="Compare"></p>
-
-        
-    </div>
-
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://blog.nhat-tong.com/post/2022/04/azure/azure-storage/">
-        <h2 class="post-title"></h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;January 1, 0001
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;0&nbsp;words
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        
-        
-    </div>
-
     
 
 </article>

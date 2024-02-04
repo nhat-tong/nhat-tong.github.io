@@ -19,43 +19,12 @@
     </item>
     
     <item>
-      <title>GCP Filestore Enterprise Multishare</title>
-      <link></link>
-      <pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate>
+      <title>GCP - Share a single filestore instance across multiple pods using a NFS provisioner</title>
+      <link>https://blog.nhat-tong.com/post/2024/01/gcp/nfs_provisioner/</link>
+      <pubDate>Sun, 07 Jan 2024 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid></guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GCP Load Balancer</title>
-      <link></link>
-      <pubDate>Sat, 20 Aug 2022 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid></guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GCP-Storage</title>
-      <link></link>
-      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid></guid>
-      <description>Cloud Storage   Google Cloud object storage service
-  Use cases: website content, data for archiving
-  High availability
-  Storage class
- Standard  Geo redundancy Best for short-term storage and frequently accessed data   Nearline  Geo reduendancy Best for backups and data accessed less than once a month   Coldline  Best for disaster recovery and data accessed less than once a quarter (3 months)   Archive  Best for long-term digital preservation of data accessed less than once a year data is available within a few seconds no SLA      Access control</description>
-    </item>
-    
-    <item>
-      <title>GCP-Instance groups</title>
-      <link></link>
-      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid></guid>
-      <description></description>
+      <guid>https://blog.nhat-tong.com/post/2024/01/gcp/nfs_provisioner/</guid>
+      <description>&lt;p&gt;By default, a single filestore instance cannot be shared across multiple pods in GCP. However, there is a technique that can help you enable this functionality by using an &lt;a href=&#34;https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner&#34;&gt;external NFS subdir provisioner&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -70,15 +39,6 @@
 &lt;p&gt;As you can see, IAM includes some basic objects at each level: organization, folders, projects and resources.
 GCP allows you to set IAM policies at any of these levels.&lt;/p&gt;
 &lt;p&gt;Understanding these IAM objects and how to set IAM at the corresponding level will help you to design your solution following Google&amp;rsquo;s recommended best practices.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>GCP-Cloud Function</title>
-      <link></link>
-      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
-      <author>thqnhat@outlook.com (Nhat Tong)</author>
-      <guid></guid>
-      <description></description>
     </item>
     
     <item>

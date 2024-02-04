@@ -271,7 +271,7 @@
 <li>A Cloud NAT gateway allowing outbound connections to the Internet without public IP on the bastion</li>
 </ul>
 <h1 id="connect-to-cloudsql-through-gcloud-command-line">Connect to CloudSQL through gcloud command line</h1>
-<p>With the IAP in place, we can now access to the bastion with private ip through IAP</p>
+<p>With the IAP in place, you can now access to the bastion with private ip through IAP</p>
 <p><img src="../images/bastion_ssh_iap.png" alt="Access bastion through IAP"></p>
 <p>On your bastion, you need to install <a href="https://github.com/GoogleCloudPlatform/cloud-sql-proxy/releases?page=1">Cloud SQL Proxy (v1)</a>. At the time of writing, the latest v1 version is v1.33.16.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">curl -O https://storage.googleapis.com/cloudsql-proxy/v1.33.16/cloud_sql_proxy.linux.amd64
@@ -347,6 +347,8 @@ gcloud compute start-iap-tunnel [YOUR_VM_BASTION_NAME] 5432 --local-host-port=12
                   <ul>
                 
                 
+                    <li><a href="/post/2024/01/gcp/nfs_provisioner/">GCP - Share a single filestore instance across multiple pods using a NFS provisioner</a></li>
+                
                     <li><a href="/post/2023/11/remotedev/connect_private_vm_part1/">Connect to private virtual machine without public IP (part 1)</a></li>
                 
                     <li><a href="/post/2023/11/remotedev/connect_private_vm_part2/">Connect to private virtual machine without public IP (part 2)</a></li>
@@ -354,8 +356,6 @@ gcloud compute start-iap-tunnel [YOUR_VM_BASTION_NAME] 5432 --local-host-port=12
                     <li><a href="/post/2021/02/gcp/iam-breakdown/">GCP-IAM (Identity and Access Management)</a></li>
                 
                     <li><a href="/post/2021/01/gcp/sharing-networks/">GCP-Sharing networks across projects</a></li>
-                
-                    <li><a href="/post/2020/12/gcp/cloud-nat-multi-vpc-4/">GCP-Cloud NAT with multiple VPC</a></li>
                 
               </ul>
 
@@ -367,7 +367,7 @@ gcloud compute start-iap-tunnel [YOUR_VM_BASTION_NAME] 5432 --local-host-port=12
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://blog.nhat-tong.com/post/2023/11/remotedev/connect_private_vm_part1/" data-toggle="tooltip" data-placement="top" title="Connect to private virtual machine without public IP (part 1)">&larr; Previous Post</a>
+              <a href="https://blog.nhat-tong.com/post/2024/01/gcp/nfs_provisioner/" data-toggle="tooltip" data-placement="top" title="GCP - Share a single filestore instance across multiple pods using a NFS provisioner">&larr; Previous Post</a>
             </li>
           
           
