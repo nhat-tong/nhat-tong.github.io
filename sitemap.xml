@@ -4,32 +4,37 @@
   
   <url>
     <loc>https://blog.nhat-tong.com/tags/cloudsql/</loc>
-    <lastmod>2024-02-02T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/tags/gcp/</loc>
-    <lastmod>2024-02-02T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/post/2024/02/gcp/cloudsql/</loc>
-    <lastmod>2024-02-02T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/</loc>
-    <lastmod>2024-02-02T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.nhat-tong.com/tags/iap/</loc>
+    <lastmod>2024-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/post/</loc>
-    <lastmod>2024-02-02T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.nhat-tong.com/tags/</loc>
-    <lastmod>2024-02-02T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -59,11 +64,6 @@
   
   <url>
     <loc>https://blog.nhat-tong.com/post/2023/11/remotedev/connect_private_vm_part2/</loc>
-    <lastmod>2023-11-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.nhat-tong.com/tags/iap/</loc>
     <lastmod>2023-11-05T00:00:00+00:00</lastmod>
   </url>
   

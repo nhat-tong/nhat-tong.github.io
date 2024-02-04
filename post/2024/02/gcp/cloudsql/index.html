@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>GCP - How to connect to CloudSQL through private IP - Home</title>
-  <meta name="description" content="Recently, I work on a project on which we need to access privately to CloudSQL instance (Postgres in our case). In this article, we will explore two options to do so. This guideline can still apply for other type of CloudSQL (SQL Server or MySQL).
+  <meta name="description" content="Recently, I worked on a project on which we need to access privately to CloudSQL instance (PostgreSQL instance in our case). In this article, we will explore two options to do so. However, you can use the same technique for other types of CloudSQL (SQL Server or MySQL).
 Prerequisite In order to connect privately to CloudSQL, you need to have :
  CloudSQL with private services access connection enabled  Enable Cloud SQL Admin API A private virtual machine (bastion) on the same network as your private services connection  Required access scopes: Cloud Platform &amp; Cloud SQL or Allow full access to all Cloud APIs   A firewall rule allowing IAP on port 22 (SSH)  gcloud compute --project=[YOUR_PROJECT_ID] firewall-rules create allow-iap --direction=INGRESS --priority=1000 --network=[YOUR_NETWORK_NAME] --action=ALLOW --rules=tcp:22 --source-ranges=35.">
   <meta name="author" content="Nhat Tong"/><script type="application/ld+json">
@@ -59,13 +59,13 @@ Prerequisite In order to connect privately to CloudSQL, you need to have :
     "name" : "Nhat Tong"
   },
   "headline": "GCP - How to connect to CloudSQL through private IP",
-  "description" : "Recently, I work on a project on which we need to access privately to CloudSQL instance (Postgres in our case). In this article, we will explore two options to do so. This guideline can still apply for other type of CloudSQL (SQL Server or MySQL).\nPrerequisite In order to connect privately to CloudSQL, you need to have :\n CloudSQL with private services access connection enabled  Enable Cloud SQL Admin API A private virtual machine (bastion) on the same network as your private services connection  Required access scopes: Cloud Platform \u0026amp; Cloud SQL or Allow full access to all Cloud APIs   A firewall rule allowing IAP on port 22 (SSH)  gcloud compute --project=[YOUR_PROJECT_ID] firewall-rules create allow-iap --direction=INGRESS --priority=1000 --network=[YOUR_NETWORK_NAME] --action=ALLOW --rules=tcp:22 --source-ranges=35.",
+  "description" : "Recently, I worked on a project on which we need to access privately to CloudSQL instance (PostgreSQL instance in our case). In this article, we will explore two options to do so. However, you can use the same technique for other types of CloudSQL (SQL Server or MySQL).\nPrerequisite In order to connect privately to CloudSQL, you need to have :\n CloudSQL with private services access connection enabled  Enable Cloud SQL Admin API A private virtual machine (bastion) on the same network as your private services connection  Required access scopes: Cloud Platform \u0026amp; Cloud SQL or Allow full access to all Cloud APIs   A firewall rule allowing IAP on port 22 (SSH)  gcloud compute --project=[YOUR_PROJECT_ID] firewall-rules create allow-iap --direction=INGRESS --priority=1000 --network=[YOUR_NETWORK_NAME] --action=ALLOW --rules=tcp:22 --source-ranges=35.",
   "inLanguage" : "en",
-  "wordCount":  561 ,
-  "datePublished" : "2024-02-02T00:00:00",
-  "dateModified" : "2024-02-02T00:00:00",
+  "wordCount":  564 ,
+  "datePublished" : "2024-02-04T00:00:00",
+  "dateModified" : "2024-02-04T00:00:00",
   "image" : "https:\/\/blog.nhat-tong.com",
-  "keywords" : [ "cloudsql, gcp" ],
+  "keywords" : [ "iap, cloudsql, gcp" ],
   "mainEntityOfPage" : "https:\/\/blog.nhat-tong.com\/post\/2024\/02\/gcp\/cloudsql\/",
   "publisher" : {
     "@type": "Organization",
@@ -81,7 +81,7 @@ Prerequisite In order to connect privately to CloudSQL, you need to have :
 </script>
 
 <meta property="og:title" content="GCP - How to connect to CloudSQL through private IP" />
-<meta property="og:description" content="Recently, I work on a project on which we need to access privately to CloudSQL instance (Postgres in our case). In this article, we will explore two options to do so. This guideline can still apply for other type of CloudSQL (SQL Server or MySQL).
+<meta property="og:description" content="Recently, I worked on a project on which we need to access privately to CloudSQL instance (PostgreSQL instance in our case). In this article, we will explore two options to do so. However, you can use the same technique for other types of CloudSQL (SQL Server or MySQL).
 Prerequisite In order to connect privately to CloudSQL, you need to have :
  CloudSQL with private services access connection enabled  Enable Cloud SQL Admin API A private virtual machine (bastion) on the same network as your private services connection  Required access scopes: Cloud Platform &amp; Cloud SQL or Allow full access to all Cloud APIs   A firewall rule allowing IAP on port 22 (SSH)  gcloud compute --project=[YOUR_PROJECT_ID] firewall-rules create allow-iap --direction=INGRESS --priority=1000 --network=[YOUR_NETWORK_NAME] --action=ALLOW --rules=tcp:22 --source-ranges=35.">
 <meta property="og:url" content="https://blog.nhat-tong.com/post/2024/02/gcp/cloudsql/" />
@@ -89,7 +89,7 @@ Prerequisite In order to connect privately to CloudSQL, you need to have :
 <meta property="og:site_name" content="Home" />
 
   <meta name="twitter:title" content="GCP - How to connect to CloudSQL through private IP" />
-  <meta name="twitter:description" content="Recently, I work on a project on which we need to access privately to CloudSQL instance (Postgres in our case). In this article, we will explore two options to do so. This guideline can still apply …">
+  <meta name="twitter:description" content="Recently, I worked on a project on which we need to access privately to CloudSQL instance (PostgreSQL instance in our case). In this article, we will explore two options to do so. However, you can use …">
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.79.0" />
   <link rel="alternate" href="https://blog.nhat-tong.com/index.xml" type="application/rss+xml" title="Home"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
@@ -226,13 +226,13 @@ Prerequisite In order to connect privately to CloudSQL, you need to have :
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;February 2, 2024
+  <i class="fas fa-calendar"></i>&nbsp;February 4, 2024
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;561&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;564&nbsp;words
   
   
   
@@ -253,7 +253,8 @@ Prerequisite In order to connect privately to CloudSQL, you need to have :
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>Recently, I work on a project on which we need to access privately to CloudSQL instance (Postgres in our case). In this article, we will explore two options to do so. This guideline can still apply for other type of CloudSQL (SQL Server or MySQL).</p>
+        <p>Recently, I worked on a project on which we need to access privately to CloudSQL instance (PostgreSQL instance in our case). In this article, we will explore two options to do so. However, you can use the same technique for other types of CloudSQL (SQL Server or MySQL).</p>
+<p><img src="../images/pgAdmin_query.png" alt="run database query"></p>
 <h1 id="prerequisite">Prerequisite</h1>
 <p>In order to connect privately to CloudSQL, you need to have :</p>
 <ul>
@@ -326,6 +327,8 @@ gcloud compute start-iap-tunnel [YOUR_VM_BASTION_NAME] 5432 --local-host-port=12
         
           <div class="blog-tags">
             
+              <a href="https://blog.nhat-tong.com/tags/iap/">iap</a>&nbsp;
+            
               <a href="https://blog.nhat-tong.com/tags/cloudsql/">cloudsql</a>&nbsp;
             
               <a href="https://blog.nhat-tong.com/tags/gcp/">gcp</a>&nbsp;
@@ -345,15 +348,15 @@ gcloud compute start-iap-tunnel [YOUR_VM_BASTION_NAME] 5432 --local-host-port=12
                   <ul>
                 
                 
+                    <li><a href="/post/2023/11/remotedev/connect_private_vm_part1/">Connect to private virtual machine without public IP (part 1)</a></li>
+                
+                    <li><a href="/post/2023/11/remotedev/connect_private_vm_part2/">Connect to private virtual machine without public IP (part 2)</a></li>
+                
                     <li><a href="/post/2021/02/gcp/iam-breakdown/">GCP-IAM (Identity and Access Management)</a></li>
                 
                     <li><a href="/post/2021/01/gcp/sharing-networks/">GCP-Sharing networks across projects</a></li>
                 
                     <li><a href="/post/2020/12/gcp/cloud-nat-multi-vpc-4/">GCP-Cloud NAT with multiple VPC</a></li>
-                
-                    <li><a href="/post/2020/12/gcp/private-access-cloud-nat-3/">GCP-Google Private Access &amp; Cloud NAT</a></li>
-                
-                    <li><a href="/post/2020/12/gcp/basic-cloud-dns-3/">GCP-Basic Google Cloud DNS</a></li>
                 
               </ul>
 
@@ -404,13 +407,13 @@ gcloud compute start-iap-tunnel [YOUR_VM_BASTION_NAME] 5432 --local-host-port=12
       
       <div>
         <meta property="og:title" content="GCP - How to connect to CloudSQL through private IP" />
-<meta property="og:description" content="Recently, I work on a project on which we need to access privately to CloudSQL instance (Postgres in our case). In this article, we will explore two options to do so. This guideline can still apply for other type of CloudSQL (SQL Server or MySQL).
+<meta property="og:description" content="Recently, I worked on a project on which we need to access privately to CloudSQL instance (PostgreSQL instance in our case). In this article, we will explore two options to do so. However, you can use the same technique for other types of CloudSQL (SQL Server or MySQL).
 Prerequisite In order to connect privately to CloudSQL, you need to have :
  CloudSQL with private services access connection enabled  Enable Cloud SQL Admin API A private virtual machine (bastion) on the same network as your private services connection  Required access scopes: Cloud Platform &amp; Cloud SQL or Allow full access to all Cloud APIs   A firewall rule allowing IAP on port 22 (SSH)  gcloud compute --project=[YOUR_PROJECT_ID] firewall-rules create allow-iap --direction=INGRESS --priority=1000 --network=[YOUR_NETWORK_NAME] --action=ALLOW --rules=tcp:22 --source-ranges=35." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.nhat-tong.com/post/2024/02/gcp/cloudsql/" />
-<meta property="article:published_time" content="2024-02-02T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-02-02T00:00:00+00:00" />
+<meta property="article:published_time" content="2024-02-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-02-04T00:00:00+00:00" />
 
       </div>
     </div>
