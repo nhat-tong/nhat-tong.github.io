@@ -14,7 +14,9 @@
       <pubDate>Sun, 07 Jan 2024 00:00:00 +0000</pubDate>
       <author>thqnhat@outlook.com (Nhat Tong)</author>
       <guid>https://blog.nhat-tong.com/post/2024/01/gcp/nfs_provisioner/</guid>
-      <description>&lt;p&gt;By default, a single filestore instance cannot be shared across multiple pods in GCP. However, there is a technique that can help you enable this functionality by using an &lt;a href=&#34;https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner&#34;&gt;external NFS subdir provisioner&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;By default, a single filestore instance cannot be shared across multiple pods in GCP.
+However, there is a technique that can help you enable this functionality by using an &lt;a href=&#34;https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner&#34;&gt;external NFS subdir provisioner&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/NFS_external_provisioner.png&#34; alt=&#34;NFS External Provisioner&#34;&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
