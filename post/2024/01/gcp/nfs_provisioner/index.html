@@ -266,7 +266,7 @@ However, there is a technique that can help you enable this functionality by usi
 </code></pre></div><ul>
 <li>If you use a Shared VPC:</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud filestore instances create filestore-basic-hdd --tier=BASIC_HDD --network=name=custom,reserved-ip-range=172.16.0.0/29,connect-mode=PRIVATE_SERVICE_ACCESS --file-share=capacity=1TB,name=nfs_server --zone us-central1-a
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">gcloud filestore instances create filestore-basic --tier=BASIC_HDD --network=name=custom,reserved-ip-range=172.16.0.0/29,connect-mode=PRIVATE_SERVICE_ACCESS --file-share=capacity=1TB,name=nfs_server --zone us-central1-a
 </code></pre></div><p><img src="../images/nfs_server.png" alt="NFS Server"></p>
 <p>Please note the following configurations:</p>
 <ul>
